@@ -1,10 +1,11 @@
 package Bean;
 
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 public class Topic {
-    private Integer id;
+    private Integer tid;
     private Integer type;
     private Integer uid;
     private String title;
@@ -13,17 +14,10 @@ public class Topic {
     private Date time;
 
 
-    private Set<Reverts> reverts;
+    private Set<Reverts> reverts = new HashSet<>();
 
 
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public Integer getType() {
         return type;
@@ -79,5 +73,13 @@ public class Topic {
 
     public void setReverts(Set<Reverts> reverts) {
         this.reverts = reverts;
+    }
+
+    public Integer getTid() {
+        return tid;
+    }
+
+    public void setTid(Integer tid) {
+        this.tid = tid;
     }
 }

@@ -4,7 +4,6 @@ import java.util.Date;
 
 public class Reverts {
     private int rid;
-    private int tid;
     private int uid;
     private String content;
     private Date time;
@@ -20,13 +19,7 @@ public class Reverts {
         this.rid = rid;
     }
 
-    public int getTid() {
-        return tid;
-    }
 
-    public void setTid(int tid) {
-        this.tid = tid;
-    }
 
     public int getUid() {
         return uid;
