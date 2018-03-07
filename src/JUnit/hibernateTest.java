@@ -3,17 +3,23 @@ package JUnit;
 import Bean.Topic;
 import Bean.User;
 import Dao.DaoImpl.UserDaoImpl;
+import Dao.UserDao;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import javax.annotation.Resource;
 import java.util.List;
-
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration("classpath:applicationContext.xml")
 public class hibernateTest {
+    @Resource(name = "userDao")
+    private UserDao dao;
     @Test
     public void hibernate() {
         Configuration configuration = new Configuration().configure();
@@ -35,8 +41,17 @@ public class hibernateTest {
 
     @Test
     public void loginTest() {
-        UserDaoImpl dao = new UserDaoImpl();
         User byPassword = dao.findByPassword("xc", "xc");
         System.out.println(byPassword.getUsername());
+    }
+
+    @Test
+    public void addUserTest() {
+        User user = new User();
+        user.setUsername("test");
+        user.setPassword("test");
+        user.setAccountName("test");
+
+        dao.addUser(user);
     }
 }

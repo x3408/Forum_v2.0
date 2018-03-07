@@ -3,19 +3,12 @@ package Bean;
 import java.util.Set;
 
 public class User {
-    private int uid;
+    private String uid;
     private String username;
     private String accountName;
     private String password;
 
 
-    public int getUid() {
-        return uid;
-    }
-
-    public void setUid(int uid) {
-        this.uid = uid;
-    }
 
     public String getUsername() {
         return username;
@@ -39,5 +32,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 }

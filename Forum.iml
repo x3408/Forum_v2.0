@@ -16,9 +16,19 @@
         <datasource-map>
           <unit-entry name="a.xml" value="9faea432-de63-40ce-b249-151924672dca" />
           <unit-entry name="hibernate.cfg.xml" value="9faea432-de63-40ce-b249-151924672dca" />
+          <unit-entry name="noname-bean-base.xml@1378" value="dataSource" />
         </datasource-map>
         <naming-strategy-map />
         <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/hibernate.cfg.xml" />
+      </configuration>
+    </facet>
+    <facet type="Spring" name="Spring">
+      <configuration>
+        <fileset id="fileset" name="Spring Application Context" removed="false">
+          <file>file://$MODULE_DIR$/src/Dao/DaoImpl/applicationContext.xml</file>
+          <file>file://$MODULE_DIR$/src/zbean/bean-dao.xml</file>
+          <file>file://$MODULE_DIR$/src/zbean/bean-base.xml</file>
+        </fileset>
       </configuration>
     </facet>
   </component>

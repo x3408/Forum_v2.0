@@ -15,7 +15,7 @@ import java.util.List;
 public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
     @Override
     public User findByPassword(String username, String password) {
-        /*return getHibernateTemplate().execute(new HibernateCallback<User>() {
+        return getHibernateTemplate().execute(new HibernateCallback<User>() {
             @Override
             public User doInHibernate(Session session) throws HibernateException {
                 String sql = "from User where username = ? and password = ?";
@@ -25,25 +25,17 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
                         .uniqueResult();
                 return user_sql;
             }
-        });*/
+        });
+    }
 
-        Configuration configuration = new Configuration().configure();
-        SessionFactory sessionFactory = configuration.buildSessionFactory();
-        Session session = sessionFactory.openSession();
-        Transaction transaction = session.beginTransaction();
-
-
-        List list = session.createQuery("from User where username = ? and password = ?")
-                .setParameter(0, username)
-                .setParameter(1, password)
-                .list();
-
-        System.out.println(list.size());
-
-
-
-        transaction.commit();
-
-        return list.get(0)
+    @Override
+    public Boolean addUser(User user) {
+        return getHibernateTemplate().execute(new HibernateCallback<Boolean>() {
+            @Override
+            public Boolean doInHibernate(Session session) throws HibernateException {
+                session.save(user);
+                return true;
+            }
+        });
     }
 }

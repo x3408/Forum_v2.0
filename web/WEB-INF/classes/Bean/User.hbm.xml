@@ -5,7 +5,7 @@
 <hibernate-mapping package="Bean">
     <class name="User" table="user">
         <id name="uid">
-            <generator class="native"></generator>
+            <generator class="uuid"></generator>
         </id>
         <property name="username"></property>
         <property name="accountName"></property>
