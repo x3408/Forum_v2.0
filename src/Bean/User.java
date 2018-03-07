@@ -5,8 +5,8 @@ import java.util.Set;
 public class User {
     private String uid;
     private String username;
-    private String accountName;
     private String password;
+    private String accountName;
 
 
 

@@ -4,10 +4,10 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="Bean">
     <class name="User" table="user">
-        <id name="uid">
+        <id name="uid" column="uid">
             <generator class="uuid"></generator>
         </id>
-        <property name="username"></property>
+        <property name="username" column="username"></property>
         <property name="accountName"></property>
         <property name="password"></property>
     </class>

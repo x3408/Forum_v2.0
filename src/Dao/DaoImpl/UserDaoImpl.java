@@ -4,13 +4,8 @@ import Bean.User;
 import Dao.UserDao;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
 import org.springframework.orm.hibernate5.HibernateCallback;
 import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
-
-import java.util.List;
 
 public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
     @Override
@@ -29,13 +24,7 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
     }
 
     @Override
-    public Boolean addUser(User user) {
-        return getHibernateTemplate().execute(new HibernateCallback<Boolean>() {
-            @Override
-            public Boolean doInHibernate(Session session) throws HibernateException {
-                session.save(user);
-                return true;
-            }
-        });
+    public void addUser(User user) {
+        getHibernateTemplate().save(user);
     }
 }

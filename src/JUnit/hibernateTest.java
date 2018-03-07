@@ -1,8 +1,6 @@
 package JUnit;
 
-import Bean.Topic;
 import Bean.User;
-import Dao.DaoImpl.UserDaoImpl;
 import Dao.UserDao;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -48,9 +46,9 @@ public class hibernateTest {
     @Test
     public void addUserTest() {
         User user = new User();
-        user.setUsername("test");
-        user.setPassword("test");
-        user.setAccountName("test");
+        user.setUsername("123");
+        user.setPassword("123");
+        user.setAccountName("123");
 
         dao.addUser(user);
     }
