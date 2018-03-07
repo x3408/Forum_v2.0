@@ -28,6 +28,9 @@
           <file>file://$MODULE_DIR$/src/Dao/DaoImpl/applicationContext.xml</file>
           <file>file://$MODULE_DIR$/src/zbean/bean-dao.xml</file>
           <file>file://$MODULE_DIR$/src/zbean/bean-base.xml</file>
+          <file>file://$MODULE_DIR$/src/zbean/bean-action.xml</file>
+          <file>file://$MODULE_DIR$/src/zbean/bean-service.xml</file>
+          <file>file://$MODULE_DIR$/src/applicationContext.xml</file>
         </fileset>
       </configuration>
     </facet>

@@ -2,6 +2,7 @@ package JUnit;
 
 import Bean.User;
 import Dao.UserDao;
+import org.apache.struts2.ServletActionContext;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -26,7 +27,7 @@ public class hibernateTest {
         Transaction transaction = session.beginTransaction();
 
 
-        List list = session.createQuery("from Reverts where rid = ?")
+        List list = session.createQuery("from Topic where tid = ?")
                 .setParameter(0, 1)
                 .list();
 

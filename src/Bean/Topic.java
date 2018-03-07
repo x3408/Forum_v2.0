@@ -12,7 +12,7 @@ public class Topic {
     private String descriptive;
     private Byte content;
     private Date time;
-
+    private Integer viewCount;
 
     private Set<Reverts> reverts = new HashSet<>();
 
@@ -81,5 +81,13 @@ public class Topic {
 
     public void setTid(Integer tid) {
         this.tid = tid;
+    }
+
+    public Integer getViewCount() {
+        return viewCount;
+    }
+
+    public void setViewCount(Integer viewCount) {
+        this.viewCount = viewCount;
     }
 }
