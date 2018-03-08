@@ -6,7 +6,7 @@ public class User {
     private String uid;
     private String username;
     private String password;
-    private String accountName;
+    private String phoneNumber;
 
 
 
@@ -16,14 +16,6 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public String getAccountName() {
-        return accountName;
-    }
-
-    public void setAccountName(String accountName) {
-        this.accountName = accountName;
     }
 
     public String getPassword() {
@@ -40,5 +32,13 @@ public class User {
 
     public void setUid(String uid) {
         this.uid = uid;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 }

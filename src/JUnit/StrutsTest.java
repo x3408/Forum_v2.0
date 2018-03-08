@@ -16,13 +16,12 @@ public class StrutsTest {
     @Resource(name = "userService")
     private UserService userService;
 
-
     @Test
     public void serviceTest() {
         User u = new User();
         u.setUsername("xc");
         u.setPassword("xc");
-        User login = userService.login(u);
-        System.out.println(login.getUid());
+        u.setAccountName("xc");
+        userService.add(u);
     }
 }
