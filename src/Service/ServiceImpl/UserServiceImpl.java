@@ -11,6 +11,11 @@ public class UserServiceImpl implements UserService {
         return userDao.findByPassword(user.getUsername(), user.getPassword());
     }
 
+    @Override
+    public void add(User user) {
+        userDao.addUser(user);
+    }
+
     public void setUserDao(UserDao userDao) {
         this.userDao = userDao;
     }

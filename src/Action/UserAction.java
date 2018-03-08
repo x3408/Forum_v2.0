@@ -25,6 +25,14 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
         return "login";
     }
 
+    //注册用户
+    public String add() {
+        userService.add(user);
+
+        ActionContext.getContext().getSession().put("user", user);
+        return "toIndex";
+    }
+
 
 
     @Override
