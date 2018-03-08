@@ -11,6 +11,7 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
 
     private UserService userService;
 
+    //用户登陆
     public String login() {
         if (user.getUsername() != null) {
             User existUser = userService.login(user);
@@ -33,7 +34,18 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
         return "toIndex";
     }
 
+    //查看用户
+    public String showUser() {
+        return null;
+    }
 
+    //关注该用户
+    public String follow() {
+        return null;
+    }
+
+
+    public show
 
     @Override
     public User getModel() {
