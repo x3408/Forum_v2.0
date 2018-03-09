@@ -1,7 +1,5 @@
 # IntelliJ
 *.iml
-*.ipr
-*.iws
 .idea/
 out/
 
