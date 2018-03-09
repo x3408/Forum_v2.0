@@ -49,8 +49,13 @@ public class hibernateTest {
         User user = new User();
         user.setUsername("123");
         user.setPassword("123");
-        user.setAccountName("123");
+        user.setPhoneNumber("123");
 
         dao.addUser(user);
+    }
+
+    @Test
+    public void followTest() {
+        dao.follow("1", "2");
     }
 }

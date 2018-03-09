@@ -21,7 +21,6 @@ public class StrutsTest {
         User u = new User();
         u.setUsername("xc");
         u.setPassword("xc");
-        u.setAccountName("xc");
         userService.add(u);
     }
 }

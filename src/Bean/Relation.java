@@ -2,8 +2,8 @@ package Bean;
 
 public class Relation {
     private int id;
-    private int uid;
-    private int follow_uid;
+    private String uid;
+    private String follow_uid;
     private int type;
 
     public Relation() {
@@ -17,11 +17,11 @@ public class Relation {
         this.id = id;
     }
 
-    public int getUid() {
+    public String getUid() {
         return uid;
     }
 
-    public void setUid(int uid) {
+    public void setUid(String uid) {
         this.uid = uid;
     }
 
@@ -34,11 +34,11 @@ public class Relation {
         this.type = type;
     }
 
-    public int getFollow_uid() {
+    public String getFollow_uid() {
         return follow_uid;
     }
 
-    public void setFollow_uid(int follow_uid) {
+    public void setFollow_uid(String follow_uid) {
         this.follow_uid = follow_uid;
     }
 }

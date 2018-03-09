@@ -16,6 +16,11 @@ public class UserServiceImpl implements UserService {
         userDao.addUser(user);
     }
 
+    @Override
+    public void follow(User user, String follow_id) {
+        userDao.follow(user.getUid(), follow_id);
+    }
+
     public void setUserDao(UserDao userDao) {
         this.userDao = userDao;
     }

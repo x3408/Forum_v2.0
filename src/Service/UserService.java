@@ -6,4 +6,6 @@ public interface UserService {
     User login(User user);
 
     void add(User user);
+
+    void follow(User user, String follow_id);
 }

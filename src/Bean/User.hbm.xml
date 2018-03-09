@@ -8,7 +8,7 @@
             <generator class="uuid"></generator>
         </id>
         <property name="username" column="username"></property>
-        <property name="accountName"></property>
+        <property name="phoneNumber"></property>
         <property name="password"></property>
     </class>
 </hibernate-mapping>

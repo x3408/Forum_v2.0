@@ -9,18 +9,8 @@
 <html>
   <head>
     <title>$Title$</title>
-    <script charset="utf-8" src="/js/kindeditor-all-min.js"></script>
-    <script charset="utf-8" src="/js/zh-CN.js"></script>
-    <link rel="stylesheet" type="text/css" href="../Editor/themes/default/default.css" />
-    <script>
-        KindEditor.ready(function(K) {
-            window.editor = K.create('#editor_id');
-        });
-    </script>
   </head>
   <body>
-  <textarea id="editor_id" name="content" style="width:700px;height:300px;">
-      &lt;strong&gt;HTML内容&lt;/strong&gt;
-  </textarea>
+  <img src="${pageContext.request.contextPath}/UserAction_verifyImg">
   </body>
 </html>
