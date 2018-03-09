@@ -7,59 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12683f8f-7dbf-41f3-9efb-9913e15b5d46" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/Forum_war_exploded/WEB-INF/classes/Service/ServiceImpl/UserServiceImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Bean/Relation.hbm.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/Bean/Relation.hbm.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Forum_war_exploded/css/background.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Forum_war_exploded/css/default.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Forum_war_exploded/css/default.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Forum_war_exploded/demo.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Forum_war_exploded/js/kindeditor-all-min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Forum_war_exploded/js/zh-CN.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/css/background.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/css/default.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/css/default.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/demo.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/js/kindeditor-all-min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/js/zh-CN.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Forum_war_exploded/WEB-INF/classes/Action/UserAction.class" afterPath="$PROJECT_DIR$/out/artifacts/Forum_war_exploded/WEB-INF/classes/Action/UserAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Forum_war_exploded/WEB-INF/classes/Bean/Relation.class" afterPath="$PROJECT_DIR$/out/artifacts/Forum_war_exploded/WEB-INF/classes/Bean/Relation.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Forum_war_exploded/WEB-INF/classes/Bean/User.class" afterPath="$PROJECT_DIR$/out/artifacts/Forum_war_exploded/WEB-INF/classes/Bean/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Forum_war_exploded/WEB-INF/classes/Dao/DaoImpl/UserDaoImpl$1.class" afterPath="$PROJECT_DIR$/out/artifacts/Forum_war_exploded/WEB-INF/classes/Dao/DaoImpl/UserDaoImpl$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Forum_war_exploded/WEB-INF/classes/Dao/DaoImpl/UserDaoImpl.class" afterPath="$PROJECT_DIR$/out/artifacts/Forum_war_exploded/WEB-INF/classes/Dao/DaoImpl/UserDaoImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Forum_war_exploded/WEB-INF/classes/Dao/UserDao.class" afterPath="$PROJECT_DIR$/out/artifacts/Forum_war_exploded/WEB-INF/classes/Dao/UserDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Forum_war_exploded/WEB-INF/classes/JUnit/StrutsTest.class" afterPath="$PROJECT_DIR$/out/artifacts/Forum_war_exploded/WEB-INF/classes/JUnit/StrutsTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Forum_war_exploded/WEB-INF/classes/JUnit/hibernateTest.class" afterPath="$PROJECT_DIR$/out/artifacts/Forum_war_exploded/WEB-INF/classes/JUnit/hibernateTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Forum_war_exploded/WEB-INF/classes/Service/UserService.class" afterPath="$PROJECT_DIR$/out/artifacts/Forum_war_exploded/WEB-INF/classes/Service/UserService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/Action/UserAction.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/Action/UserAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/Bean/Relation.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/Bean/Relation.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/Bean/User.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/Bean/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/Dao/DaoImpl/UserDaoImpl$1.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/Dao/DaoImpl/UserDaoImpl$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/Dao/DaoImpl/UserDaoImpl.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/Dao/DaoImpl/UserDaoImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/Dao/UserDao.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/Dao/UserDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/JUnit/StrutsTest.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/JUnit/StrutsTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/JUnit/hibernateTest.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/JUnit/hibernateTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/Service/ServiceImpl/UserServiceImpl.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/Service/ServiceImpl/UserServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/Service/UserService.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/Service/UserService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Forum_war_exploded/WEB-INF/classes/Bean/User.hbm.xml" afterPath="$PROJECT_DIR$/out/artifacts/Forum_war_exploded/WEB-INF/classes/Bean/User.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Forum_war_exploded/WEB-INF/classes/zbean/bean-base.xml" afterPath="$PROJECT_DIR$/out/artifacts/Forum_war_exploded/WEB-INF/classes/zbean/bean-base.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Forum_war_exploded/index.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Forum_war_exploded/index.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Action/UserAction.java" afterPath="$PROJECT_DIR$/src/Action/UserAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Bean/Relation.java" afterPath="$PROJECT_DIR$/src/Bean/Relation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Bean/User.hbm.xml" afterPath="$PROJECT_DIR$/src/Bean/User.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Bean/User.java" afterPath="$PROJECT_DIR$/src/Bean/User.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Dao/DaoImpl/UserDaoImpl.java" afterPath="$PROJECT_DIR$/src/Dao/DaoImpl/UserDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Dao/UserDao.java" afterPath="$PROJECT_DIR$/src/Dao/UserDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JUnit/StrutsTest.java" afterPath="$PROJECT_DIR$/src/JUnit/StrutsTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JUnit/hibernateTest.java" afterPath="$PROJECT_DIR$/src/JUnit/hibernateTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Service/ServiceImpl/UserServiceImpl.java" afterPath="$PROJECT_DIR$/src/Service/ServiceImpl/UserServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Service/UserService.java" afterPath="$PROJECT_DIR$/src/Service/UserService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/zbean/bean-base.xml" afterPath="$PROJECT_DIR$/src/zbean/bean-base.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/Bean/User.hbm.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/Bean/User.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/classes/zbean/bean-base.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/zbean/bean-base.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/index.jsp" afterPath="$PROJECT_DIR$/web/index.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -125,10 +73,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Relation.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Relation.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Bean/Relation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="624">
+            <state relative-caret-position="594">
               <caret line="40" column="36" lean-forward="false" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
               <folding>
                 <element signature="e#648#649#0" expanded="true" />
@@ -148,11 +96,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserAction.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserAction.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Action/UserAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="65" column="20" lean-forward="true" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="20" />
+            <state relative-caret-position="-361">
+              <caret line="23" column="29" lean-forward="true" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
               <folding>
                 <element signature="method#add#0;class#UserAction#0" expanded="false" />
                 <element signature="method#verifyImg#0;class#UserAction#0" expanded="false" />
@@ -285,6 +233,12 @@
               <item name="Forum" type="b2602c69:ProjectViewProjectNode" />
               <item name="Forum" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Forum" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Forum" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Action" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Forum" type="b2602c69:ProjectViewProjectNode" />
@@ -676,7 +630,7 @@
       <workItem from="1520500652290" duration="899000" />
       <workItem from="1520502155021" duration="1461000" />
       <workItem from="1520578768270" duration="31000" />
-      <workItem from="1520579621320" duration="757000" />
+      <workItem from="1520579621320" duration="1029000" />
     </task>
     <task id="LOCAL-00001" summary="git test">
       <created>1520406619745</created>
@@ -728,7 +682,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36314000" />
+    <option name="totallyTimeSpent" value="36586000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -741,6 +695,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938644" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -764,7 +719,7 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17435622" sideWeight="0.50449437" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17060086" sideWeight="0.49550563" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17060086" sideWeight="0.49550563" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14055794" sideWeight="0.50449437" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14055794" sideWeight="0.50449437" order="2" side_tool="true" content_ui="tabs" />
@@ -1081,18 +1036,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Action/UserAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="65" column="20" lean-forward="true" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="20" />
-          <folding>
-            <element signature="method#add#0;class#UserAction#0" expanded="false" />
-            <element signature="method#verifyImg#0;class#UserAction#0" expanded="false" />
-            <element signature="method#getRandColor#0;class#UserAction#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -1122,11 +1065,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Bean/Relation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
+        <state relative-caret-position="594">
           <caret line="40" column="36" lean-forward="false" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
           <folding>
             <element signature="e#648#649#0" expanded="true" />
             <element signature="e#692#693#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Action/UserAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-361">
+          <caret line="23" column="29" lean-forward="true" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+          <folding>
+            <element signature="method#add#0;class#UserAction#0" expanded="false" />
+            <element signature="method#verifyImg#0;class#UserAction#0" expanded="false" />
+            <element signature="method#getRandColor#0;class#UserAction#0" expanded="false" />
           </folding>
         </state>
       </provider>
