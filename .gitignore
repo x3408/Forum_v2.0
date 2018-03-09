@@ -1,0 +1,10 @@
+# IntelliJ
+.idea/
+out/
+
+# Eclipse
+.classpath
+.project
+.externalToolBuilders/
+.metadata
+.settings
