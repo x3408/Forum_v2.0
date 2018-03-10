@@ -11,6 +11,7 @@
         <action name="UserAction_*" class="userAction" method="{1}">
             <result name="toIndex" type="redirect">/index.jsp</result>
             <result name="login">/login.jsp</result>
+            <result name="regist">/regist.jsp</result>
         </action>
     </package>
 </struts>
