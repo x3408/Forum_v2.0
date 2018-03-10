@@ -58,4 +58,10 @@ public class hibernateTest {
     public void followTest() {
         dao.follow("1", "2");
     }
+
+    @Test
+    public void checkUserExistTest() {
+        User u = dao.findUserByUsername("xc");
+        System.out.println(u.getUsername());
+    }
 }

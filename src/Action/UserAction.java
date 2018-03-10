@@ -17,9 +17,15 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
     private User user = new User();
     //关注功能，得到关注用户的id值
     private String follow_id;
+    //注册时的用户输入的验证码
+    private String verifyCodeFromUser;
+    //查看某个用户时的用户id
+    private String showUserId;
+    //验证用户是否已经注册
+    private String checkname;
     private UserService userService;
 
-    //用户登陆
+    //用户登陆--xc
     public String login() {
         if (user.getUsername() != null) {
             User existUser = userService.login(user);
@@ -34,20 +40,27 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
         return "login";
     }
 
-    //注册用户
+    //注册用户--xc
     public String add() {
+        if (verifyCodeFromUser != ActionContext.getContext().getSession().get("checkcode")) {
+            ActionContext.getContext().put("msg","验证码不正确");
+            return "login";
+        }
         userService.add(user);
 
         ActionContext.getContext().getSession().put("user", user);
         return "toIndex";
     }
 
-    //查看用户
+    //查看用户--xc
     public String showUser() {
-        return null;
+        User user = userService.findUserById(showUserId);
+
+        ActionContext.getContext().put("showUser", user);
+        return "showUser";
     }
 
-    //关注该用户
+    //关注该用户--xc
     public String follow() {
         //查看该用户登录状态
         User user = (User) ActionContext.getContext().getSession().get("user");
@@ -66,13 +79,23 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
         return null;
     }
 
+    public String checkUser() {
+        boolean flag = userService.checkUser(checkname);
+
+        try {
+            ServletActionContext.getResponse().getWriter().write("{\"isExist\":"+flag+"}\n");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
     //查看用户所有文章
     public String showAllTopic() {
         return null;
     }
 
 
-    //注册页面生成验证码
+    //注册页面生成验证码--xc
     //生成的验证码存放在session域中
     public String verifyImg() {
         int width = 120;
@@ -152,7 +175,6 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
 
         return null;
     }
-
     private Color getRandColor(int fc, int bc) {
         // 取其随机颜色
         Random random = new Random();
@@ -168,6 +190,11 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
         return new Color(r, g, b);
     }
 
+
+
+
+
+
     @Override
     public User getModel() {
         return user;
@@ -179,5 +206,29 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
 
     public void setFollow_id(String follow_id) {
         this.follow_id = follow_id;
+    }
+
+    public String getVerifyCodeFromUser() {
+        return verifyCodeFromUser;
+    }
+
+    public void setVerifyCodeFromUser(String verifyCodeFromUser) {
+        this.verifyCodeFromUser = verifyCodeFromUser;
+    }
+
+    public String getShowUserId() {
+        return showUserId;
+    }
+
+    public void setShowUserId(String showUserId) {
+        this.showUserId = showUserId;
+    }
+
+    public void setCheckname(String checkname) {
+        this.checkname = checkname;
+    }
+
+    public String getCheckname() {
+        return this.checkname;
     }
 }

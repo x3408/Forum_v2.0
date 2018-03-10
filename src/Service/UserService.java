@@ -8,4 +8,8 @@ public interface UserService {
     void add(User user);
 
     void follow(User user, String follow_id);
+
+    User findUserById(String showUserId);
+
+    boolean checkUser(String username);
 }

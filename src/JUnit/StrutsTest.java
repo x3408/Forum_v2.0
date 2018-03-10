@@ -18,9 +18,7 @@ public class StrutsTest {
 
     @Test
     public void serviceTest() {
-        User u = new User();
-        u.setUsername("xc");
-        u.setPassword("xc");
-        userService.add(u);
+        Boolean flag = userService.checkUser("xc");
+        System.out.println(flag);
     }
 }

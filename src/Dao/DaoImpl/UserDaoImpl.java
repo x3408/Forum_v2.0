@@ -52,4 +52,26 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
 
         getHibernateTemplate().save(fans);
     }
+
+    @Override
+    public User findUserById(String showUserId) {
+        return getHibernateTemplate().execute(new HibernateCallback<User>() {
+            @Override
+            public User doInHibernate(Session session) throws HibernateException {
+                return session.get(User.class, showUserId);
+            }
+        });
+    }
+
+    @Override
+    public User findUserByUsername(String username) {
+        return getHibernateTemplate().execute(new HibernateCallback<User>() {
+            @Override
+            public User doInHibernate(Session session) throws HibernateException {
+                return (User) session.createQuery("from User where username = ?")
+                        .setParameter(0, username)
+                        .uniqueResult();
+            }
+        });
+    }
 }

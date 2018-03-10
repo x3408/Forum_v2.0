@@ -8,4 +8,8 @@ public interface UserDao {
     void addUser(User user);
 
     void follow(String uid, String follow_id);
+
+    User findUserById(String showUserId);
+
+    User findUserByUsername(String username);
 }
