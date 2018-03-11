@@ -13,4 +13,11 @@
         <property name="userDao" ref="userDao"></property>
     </bean>
 
+    <bean name="topicService" class="Service.ServiceImpl.TopicServiceImpl">
+        <property name="topicBean" ref="topicBean"></property>
+    </bean>
+    <bean name="topicBean" class="Util.TopicBean">
+        <property name="topicDao" ref="topicDao"></property>
+    </bean>
+
 </beans>

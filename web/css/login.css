@@ -107,14 +107,22 @@ form input{
 }
 /*登录内容*/
 #btn{
- display:inline-block;
+    display:inline-block;
 	margin-left:10px;
 	width:275px;
 	height:30px;
-	margin-top:150px;
+	margin-top:180px;
 	border:solid 1px black;
 	border-radius:45deg;
 	font-size:15px;
 	background: red;
 	outline: none;
 	}
+#sp{
+	color:red;
+	width:150px;
+	height:20px;
+	position: absolute;
+	top:200px;
+	left:10px;
+}

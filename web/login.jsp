@@ -24,6 +24,7 @@
             </div>
         </div>
         <form action="${pageContext.request.contextPath}/UserAction_login" id="login-form" method="post">
+
             <div class="form-group">
                 <div class="form-group--user">
                     <img src="img/user.png" class="icon">
@@ -46,6 +47,7 @@
                     <p class="msg" id="msg">密码不能为空</p>
                 </div>
             </div>
+                <div id="sp">${msg}</div>
             <div id="login-button">
                 <button id="btn">登录</button>
             </div>

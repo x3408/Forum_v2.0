@@ -91,8 +91,8 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
         }
         return null;
     }
-    //查看用户所有文章
-    public String showAllTopic() {
+    //查看一个用户所有文章
+    public String showUserAllTopic() {
         return null;
     }
 

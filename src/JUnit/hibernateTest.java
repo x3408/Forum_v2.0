@@ -1,6 +1,7 @@
 package JUnit;
 
 import Bean.User;
+import Dao.TopicDao;
 import Dao.UserDao;
 import org.apache.struts2.ServletActionContext;
 import org.hibernate.Session;
@@ -18,7 +19,11 @@ import java.util.List;
 @ContextConfiguration("classpath:applicationContext.xml")
 public class hibernateTest {
     @Resource(name = "userDao")
-    private UserDao dao;
+    private UserDao userDao;
+    @Resource(name = "topicDao")
+    private TopicDao topicDao;
+
+
     @Test
     public void hibernate() {
         Configuration configuration = new Configuration().configure();
@@ -40,7 +45,7 @@ public class hibernateTest {
 
     @Test
     public void loginTest() {
-        User byPassword = dao.findByPassword("xc", "xc");
+        User byPassword = userDao.findByPassword("xc", "xc");
         System.out.println(byPassword.getUsername());
     }
 
@@ -51,17 +56,27 @@ public class hibernateTest {
         user.setPassword("123");
         user.setPhoneNumber("123");
 
-        dao.addUser(user);
+        userDao.addUser(user);
     }
 
     @Test
     public void followTest() {
-        dao.follow("1", "2");
+        userDao.follow("1", "2");
     }
 
     @Test
     public void checkUserExistTest() {
-        User u = dao.findUserByUsername("xc");
+        User u = userDao.findUserByUsername("xc");
         System.out.println(u.getUsername());
+    }
+
+    @Test
+    public void getTotalCountByTypeTest() {
+        System.out.println(topicDao.getTotalCountByType("result_show"));
+    }
+
+    @Test
+    public void getTopicByTypeTest() {
+        System.out.println(topicDao.getTopicByType(1, 1, "result_show"));
     }
 }

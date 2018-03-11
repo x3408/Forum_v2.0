@@ -13,4 +13,8 @@
         <property name="sessionFactory" ref="sessionFactory"></property>
     </bean>
 
+    <bean class="Dao.DaoImpl.TopicDaoImpl" name="topicDao">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
+
 </beans>

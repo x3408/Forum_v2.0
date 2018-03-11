@@ -6,7 +6,7 @@ import java.util.Set;
 
 public class Topic {
     private Integer tid;
-    private Integer type;
+    private String type;
     private Integer uid;
     private String title;
     private String descriptive;
@@ -19,11 +19,11 @@ public class Topic {
 
 
 
-    public Integer getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(Integer type) {
+    public void setType(String type) {
         this.type = type;
     }
 
