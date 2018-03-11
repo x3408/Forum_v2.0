@@ -29,11 +29,11 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
     public String login() {
         if (user.getUsername() != null) {
             User existUser = userService.login(user);
-
-            ActionContext.getContext().getSession().put("user", existUser);
-
-            //重定向到首页
-            return "toIndex";
+            if(existUser != null) {
+                ActionContext.getContext().getSession().put("user", existUser);
+                //重定向到首页
+                return "toIndex";
+            }
         }
         //或者可以采用转发到login页面 ActionContext.getContext().put("msg", "用户名或密码不正确");
         ActionContext.getContext().put("msg", "用户名或密码不正确");
@@ -80,6 +80,7 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
         return null;
     }
 
+    //注册页面查看用户是否已经存在--xc
     public String checkUser() {
         boolean flag = userService.checkUser(checkname);
 
