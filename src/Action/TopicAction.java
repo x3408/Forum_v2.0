@@ -1,7 +1,9 @@
 package Action;
 
 import Bean.Topic;
+import Bean.User;
 import Service.TopicService;
+import Service.UserService;
 import Util.TopicBean;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -25,6 +27,9 @@ public class TopicAction extends ActionSupport{
     //得到当前页
     private Integer page;
 
+    //UserService方便获取用户信息
+    private UserService userService;
+
 
     //查看某一个分类的所有文章--xc
     public String showTopicByType() throws IOException {
@@ -43,11 +48,16 @@ public class TopicAction extends ActionSupport{
 
         //json格式回写
         List<Topic> list = topicBean.getList();
-        String s = JSONArray.fromObject(list,config).toString();
-        System.out.println(s);
+        User userById = userService.findUserById(list.get(0).getUid().toString());
+
+        String s1 = JSONArray.fromObject(list,config).toString();
+        String s2 = JSONArray.fromObject(userById).toString();
+
+        String data = s1.substring(0, s1.length()-1) + "," + s2.substring(1,s2.length());
 
         ServletActionContext.getResponse().setContentType("application/json;charset=utf-8");
-        ServletActionContext.getResponse().getWriter().write(s);
+        ServletActionContext.getResponse().getWriter().write(data);
+
 
         //放置在session域
         ActionContext.getContext().getSession().put("topicBean", topicBean);
@@ -74,5 +84,9 @@ public class TopicAction extends ActionSupport{
 
     public void setTopicService(TopicService topicService) {
         this.topicService = topicService;
+    }
+
+    public void setUserService(UserService userService) {
+        this.userService = userService;
     }
 }

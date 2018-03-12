@@ -12,4 +12,6 @@ public interface UserService {
     User findUserById(String showUserId);
 
     boolean checkUser(String username);
+
+    Integer findFansCount(User user);
 }

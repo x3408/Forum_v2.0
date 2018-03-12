@@ -8,4 +8,6 @@ public interface TopicDao {
     Integer getTotalCountByType(String type);
 
     List<Topic> getTopicByType(int start, Integer limit, String type);
+
+    Integer findTopicCountByUser(String uid);
 }

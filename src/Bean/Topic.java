@@ -7,7 +7,7 @@ import java.util.Set;
 public class Topic {
     private Integer tid;
     private String type;
-    private Integer uid;
+    private String uid;
     private String title;
     private String descriptive;
     private String content;
@@ -27,11 +27,11 @@ public class Topic {
         this.type = type;
     }
 
-    public Integer getUid() {
+    public String getUid() {
         return uid;
     }
 
-    public void setUid(Integer uid) {
+    public void setUid(String uid) {
         this.uid = uid;
     }
 

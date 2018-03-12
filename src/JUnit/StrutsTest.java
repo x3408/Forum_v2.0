@@ -6,9 +6,11 @@ import Bean.User;
 import Service.TopicService;
 import Service.UserService;
 import Util.TopicBean;
+import com.opensymphony.xwork2.ActionContext;
 import net.sf.json.JSONArray;
 import net.sf.json.JsonConfig;
 import net.sf.json.util.PropertyFilter;
+import org.apache.struts2.ServletActionContext;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -46,10 +48,22 @@ public class StrutsTest {
             }
         });
 
-        TopicBean bean = topicService.showTopicByType(1, "result_show");
-        List<Topic> list = bean.getList();
+        TopicBean topicBean = topicService.showTopicByType(1, "result_show");
+        List<Topic> list = topicBean.getList();
+        User userById = userService.findUserById(list.get(0).getUid().toString());
 
-        String s = JSONArray.fromObject(list,config).toString();
-        System.out.println(s);
+        String s1 = JSONArray.fromObject(list,config).toString();
+        String s2 = JSONArray.fromObject(userById).toString();
+
+        String data = s1.substring(0, s1.length()-1) + "," + s2.substring(1,s2.length());
+
+        System.out.println(data);
+    }
+
+    @Test
+    public void findTopicCountByUserTest() {
+        User user = new User();
+        user.setUid("1");
+        topicService.findTopicCountByUser(user);
     }
 }
