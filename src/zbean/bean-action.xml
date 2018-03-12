@@ -12,5 +12,8 @@
     <bean name="userAction" class="Action.UserAction" scope="prototype">
         <property name="userService" ref="userService"></property>
     </bean>
+    <bean name="topicAction" class="Action.TopicAction" scope="prototype">
+        <property name="topicService" ref="topicService"></property>
+    </bean>
 
 </beans>

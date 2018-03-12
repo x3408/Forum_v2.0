@@ -26,7 +26,7 @@ public class TopicAction extends ActionSupport{
     private Integer page;
 
 
-    //查看某一个分类的所有文章
+    //查看某一个分类的所有文章--xc
     public String showTopicByType() throws IOException {
         //过滤一对多实体对象
         JsonConfig config = new JsonConfig();
@@ -43,7 +43,7 @@ public class TopicAction extends ActionSupport{
 
         //json格式回写
         List<Topic> list = topicBean.getList();
-        String s = JSONArray.fromObject(list).toString();
+        String s = JSONArray.fromObject(list,config).toString();
         System.out.println(s);
 
         ServletActionContext.getResponse().setContentType("application/json;charset=utf-8");
@@ -70,5 +70,9 @@ public class TopicAction extends ActionSupport{
 
     public Integer getPage() {
         return page;
+    }
+
+    public void setTopicService(TopicService topicService) {
+        this.topicService = topicService;
     }
 }

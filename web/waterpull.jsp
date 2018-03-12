@@ -36,16 +36,17 @@
     <script type="text/javascript"src="js/waterpull.js"></script>
     <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
     <script type="text/javascript">
-        Window.onload= function() {
-            $.post(
-                "${pageContext.request.contextPath}/TopicAction_showTopicByType",
-                {type:"result_show",page:1},
-                function (data) {
-                    alert(data.title);
-                },
-                "json"
-            );
+        $(window).ready(function(){
+                $.post(
+                    "${pageContext.request.contextPath}/TopicAction_showTopicByType",
+                    {type:"result_show",page:1},
+                    function (data) {
+                        alert(data.uid);
+                    },
+                    "json"
+                )
         }
+        )
     </script>
 </head>
 <body>
