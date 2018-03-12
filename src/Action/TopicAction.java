@@ -33,6 +33,11 @@ public class TopicAction extends ActionSupport{
 
     //查看某一个分类的所有文章--xc
     public String showTopicByType() throws IOException {
+        /*
+        问题描述
+            每篇文章对应的user怎么组成
+         */
+
         //过滤一对多实体对象
         JsonConfig config = new JsonConfig();
         config.setJsonPropertyFilter(new PropertyFilter() {

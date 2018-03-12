@@ -17,6 +17,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.List;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -49,11 +50,15 @@ public class StrutsTest {
         });
 
         TopicBean topicBean = topicService.showTopicByType(1, "result_show");
-        List<Topic> list = topicBean.getList();
-        User userById = userService.findUserById(list.get(0).getUid().toString());
+        List<Topic> topicList = topicBean.getList();
+        List<User> userList = new ArrayList<>();
+        for (int i=0;i < topicList.size(); i++) {
+            User user = userService.findUserById(topicList.get(i).getUid().toString());
+            userList.add(user);
+        }
 
-        String s1 = JSONArray.fromObject(list,config).toString();
-        String s2 = JSONArray.fromObject(userById).toString();
+        String s1 = JSONArray.fromObject(topicList,config).toString();
+        String s2 = JSONArray.fromObject(userList).toString();
 
         String data = s1.substring(0, s1.length()-1) + "," + s2.substring(1,s2.length());
 
