@@ -10,7 +10,7 @@ public class Topic {
     private Integer uid;
     private String title;
     private String descriptive;
-    private Byte content;
+    private String content;
     private Date time;
     private Integer viewCount;
 
@@ -51,11 +51,11 @@ public class Topic {
         this.descriptive = descriptive;
     }
 
-    public Byte getContent() {
+    public String getContent() {
         return content;
     }
 
-    public void setContent(Byte content) {
+    public void setContent(String content) {
         this.content = content;
     }
 

@@ -1,0 +1,56 @@
+body{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+#main{
+	position: relative;
+}
+.box{
+	width: 800px;
+	height: 150px;
+	border: 1px solid red;
+	padding: 15px;
+	margin: auto;
+	margin-top: 15px;
+	font-size: 24px;
+	border-radius: 10px;
+}
+.topicFrom{
+	width: 800px;
+	height: 20px;
+	font-size: 8px;
+	color: darkgray;
+}
+#viewCount{
+	float: right;
+	margin-right: 50px;
+}
+#myPic{
+	margin: 10px 0 10px 20px;
+	width: 30px;
+	height: 30px;
+	border: 1px dashed red;
+	border-radius: 30px;
+}
+.context{
+	width: 600px;
+	height:70px;
+	border: 1px solid red;
+	margin-left: 60px;
+}
+.context h2{
+	width:600px;
+	border: 1px solid gray;
+}
+.other a{
+	color: darkgray;
+	text-decoration: none;
+}
+.like{
+	float: right;
+	margin-right: 20px;
+	display: inline;
+	color: red;
+}
+
