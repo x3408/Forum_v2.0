@@ -7,6 +7,7 @@ import org.apache.struts2.ServletActionContext;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.criterion.DetachedCriteria;
+import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate5.HibernateCallback;
 import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
@@ -73,5 +74,16 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
                         .uniqueResult();
             }
         });
+    }
+
+    @Override
+    public Integer findFansCount(String uid) {
+        DetachedCriteria dc = DetachedCriteria.forClass(Relation.class)
+                .setProjection(Projections.rowCount())
+                .add(Restrictions.eq("uid", uid))
+                .add(Restrictions.eq("type", 2));
+
+        Long aLong = (Long) getHibernateTemplate().findByCriteria(dc).get(0);
+        return aLong.intValue();
     }
 }

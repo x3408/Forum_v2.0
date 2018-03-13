@@ -35,6 +35,12 @@ public class UserServiceImpl implements UserService {
         return false;
     }
 
+    @Override
+    public Integer findFansCount(User user) {
+        userDao.findFansCount(user.getUid());
+        return null;
+    }
+
     public void setUserDao(UserDao userDao) {
         this.userDao = userDao;
     }

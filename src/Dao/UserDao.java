@@ -12,4 +12,6 @@ public interface UserDao {
     User findUserById(String showUserId);
 
     User findUserByUsername(String username);
+
+    Integer findFansCount(String uid);
 }

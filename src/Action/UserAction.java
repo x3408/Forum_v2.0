@@ -1,6 +1,8 @@
 package Action;
 
+import Bean.Topic;
 import Bean.User;
+import Service.TopicService;
 import Service.UserService;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -11,6 +13,7 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.util.List;
 import java.util.Random;
 
 public class UserAction extends ActionSupport implements ModelDriven<User>{
@@ -23,7 +26,10 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
     private String showUserId;
     //验证用户是否已经注册
     private String checkname;
+
+
     private UserService userService;
+    private TopicService topicService;
 
     //用户登陆--xc
     public String login() {
@@ -56,8 +62,14 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
     //查看用户--xc
     public String showUser() {
         User user = userService.findUserById(showUserId);
+        Integer topicCount = topicService.findTopicCountByUser(user);
+        Integer fansCount = userService.findFansCount(user);
 
         ActionContext.getContext().put("showUser", user);
+        ActionContext.getContext().put("topicCount", topicCount);
+        ActionContext.getContext().put("fansCount", fansCount);
+
+
         return "showUser";
     }
 
@@ -91,9 +103,15 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
         }
         return null;
     }
-    //查看一个用户所有文章
+    //查看一个用户所有文章列表--xc
     public String showUserAllTopic() {
-        return null;
+        //调用service得到Topic集合
+        List<Topic> list = topicService.findTopicByUser(showUserId);
+
+        //回写方法
+
+        //action跳转
+        return "userTopic";
     }
 
 
@@ -232,5 +250,9 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
 
     public String getCheckname() {
         return this.checkname;
+    }
+
+    public void setTopicService(TopicService topicService) {
+        this.topicService = topicService;
     }
 }

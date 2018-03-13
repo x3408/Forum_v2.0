@@ -79,4 +79,20 @@ public class hibernateTest {
     public void getTopicByTypeTest() {
         System.out.println(topicDao.getTopicByType(1, 1, "result_show"));
     }
+
+    @Test
+    public void findTopicCountByUserTest() {
+        Integer topicCountByUser = topicDao.findTopicCountByUser("1");
+        System.out.println(topicCountByUser);
+    }
+
+    @Test
+    public void findFansCountTest() {
+        System.out.println(userDao.findFansCount("2"));
+    }
+
+    @Test
+    public void getTopicByUserTest() {
+        System.out.println(topicDao.findTopicByUser("1").get(0).getContent());
+    }
 }

@@ -12,8 +12,10 @@ import org.springframework.orm.hibernate5.HibernateCallback;
 import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
 
 import java.util.List;
+import java.util.Properties;
 
 public class TopicDaoImpl extends HibernateDaoSupport implements TopicDao {
+    //按类型获取文章总数
     @Override
     public Integer getTotalCountByType(String type) {
         //Criteria
@@ -26,6 +28,7 @@ public class TopicDaoImpl extends HibernateDaoSupport implements TopicDao {
 
     }
 
+    //按类型获取文章对象集合
     @Override
     public List<Topic> getTopicByType(int start, Integer limit, String type) {
         return getHibernateTemplate().execute(new HibernateCallback<List<Topic>>() {
@@ -37,6 +40,30 @@ public class TopicDaoImpl extends HibernateDaoSupport implements TopicDao {
                         .setMaxResults(limit)
                         .list();
                 return list;
+            }
+        });
+    }
+
+    //按用户id获取文章总数
+    @Override
+    public Integer findTopicCountByUser(String uid) {
+        DetachedCriteria dc = DetachedCriteria.forClass(Topic.class)
+                .setProjection(Projections.rowCount())
+                .add(Restrictions.eq("uid", uid));
+
+        Long aLong = (Long) getHibernateTemplate().findByCriteria(dc).get(0);
+        return aLong.intValue();
+    }
+
+    //按用户id获取文章列表对象
+    @Override
+    public List<Topic> findTopicByUser(String userId) {
+        return getHibernateTemplate().execute(new HibernateCallback<List<Topic>>() {
+            @Override
+            public List doInHibernate(Session session) throws HibernateException {
+                return session.createQuery("from Topic where uid = ?")
+                        .setParameter(0, userId)
+                        .list();
             }
         });
     }
