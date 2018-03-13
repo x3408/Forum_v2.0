@@ -41,7 +41,9 @@
                     "${pageContext.request.contextPath}/TopicAction_showTopicByType",
                     {type:"result_show",page:1},
                     function (data) {
-                        alert(data.uid);
+                        $("#title").css({"display":"block","height":40,"text-align":"center"});
+                        $('#title').text(data[0].title);
+
                     },
                     "json"
                 )
