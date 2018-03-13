@@ -1,0 +1,11 @@
+# IntelliJ
+*.iml
+.idea/
+out/
+
+# Eclipse
+.classpath
+.project
+.externalToolBuilders/
+.metadata
+.settings
