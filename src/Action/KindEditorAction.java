@@ -15,7 +15,7 @@ import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-public class KeAction {
+public class KindEditorAction {
     private File imgFile;
 
     //文件名称
@@ -35,10 +35,10 @@ public class KeAction {
         ServletActionContext.getResponse().setContentType("text/html; charset=UTF-8");
 
         //文件保存目录路径
-        String savePath = this.getClass().getClassLoader().getResource("/").getPath();
+        String savePath = ServletActionContext.getServletContext().getRealPath("/");
 
         //文件保存目录URL
-        String saveUrl  = this.getClass().getClassLoader().getResource("/").getPath();
+        String saveUrl  = "";
 
         //定义允许上传的文件扩展名
         HashMap<String, String> extMap = new HashMap<String, String>();
@@ -123,6 +123,7 @@ public class KeAction {
 
         JSONObject obj = new JSONObject();
         obj.put("error", 0);
+        //bug
         obj.put("url", saveUrl + newFileName);
         out.println(obj.toString());
     }
