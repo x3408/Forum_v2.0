@@ -1,0 +1,21 @@
+/*KindEditor.ready(function(k){
+	window.editor=k.create('#editor_id',{
+		cssPath:'/public/plugin/editor/plugins/code/prettify.css',
+		uploadJson:'/upload/image.php',
+		resizeType:1,
+		allowPreviewEmoticons:true,
+		allowImageUpload:true,
+	});
+});*/
+var editor;
+KindEditor.ready(function(k){
+	editor=k.create('textarea[name="content"]',{
+		allowFileManager:true
+	});
+	k('input[name=getHtml]').click(function(e){
+		alert(editor.html());
+	});
+	k('input[name=getText]').click(function(e){
+		alert(editor.text());
+	});
+})
