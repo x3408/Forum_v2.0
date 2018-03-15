@@ -13,4 +13,6 @@ public interface TopicService {
     Integer findTopicCountByUser(User user);
 
     List<Topic> findTopicByUser(String showUserId);
+
+    boolean addTopic(Topic topic);
 }

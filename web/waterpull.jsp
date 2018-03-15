@@ -1,11 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: x3408
-  Date: 2018/3/12
-  Time: 9:59
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,29 +22,13 @@
             color: red;
 
         }
-
     </style>
     <link rel="stylesheet" type="text/css" href="css/waterpull.css"/>
     <script type="text/javascript"src="js/waterpull.js"></script>
-    <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
-    <script type="text/javascript">
-        $(window).ready(function(){
-                $.post(
-                    "${pageContext.request.contextPath}/TopicAction_showTopicByType",
-                    {type:"result_show",page:1},
-                    function (data) {
-                        $('#title').text(data[0].title);
-                        $('#content').text(data[0].content);
-                    },
-                    "json"
-                )
-        }
-        )
-    </script>
 </head>
 <body>
 <div id="main">
-    <div class="box" id="first">
+    <div class="box">
         <div class="topicFrom">
             <span id="userid"> 来自话题：</span>
             <span id="date"></span>
@@ -63,7 +39,7 @@
             <h2 >
                 <span id="title"></span>
             </h2>
-            <p id="content"></p>
+            <p id="text"></p>
         </div>
         <div class="other">
             <a href=" javascript:;" id="like" class="like">&#xe9d7;</a>

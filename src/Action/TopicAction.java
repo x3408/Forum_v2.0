@@ -7,6 +7,7 @@ import Service.UserService;
 import Util.TopicBean;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
 import net.sf.json.JSONArray;
 import net.sf.json.JsonConfig;
 import net.sf.json.util.PropertyFilter;
@@ -20,7 +21,8 @@ import java.util.List;
     1进首页之前显示文章摘要列表
     2具体点开文章显示内容
  */
-public class TopicAction extends ActionSupport{
+public class TopicAction extends ActionSupport implements ModelDriven<Topic>{
+    private Topic topic = new Topic();
     private TopicService topicService;
     //文章类型 从网页获取
     private String type;
@@ -71,6 +73,21 @@ public class TopicAction extends ActionSupport{
         return null;
     }
 
+    //发表文章--xc
+    public String addTopic() {
+        //使用判断的形式
+        boolean flag = topicService.addTopic(topic);
+
+
+        if (!flag) {
+            //不成功 设置错误信息 返回发布文章页显示信息
+            ActionContext.getContext().put("msg", "抱歉! 发布文章失败,请稍后重试!");
+            return "addTopic";
+        }
+        //成功 回首页
+        return "toIndex";
+    }
+
     public String getType() {
         return type;
     }
@@ -93,5 +110,10 @@ public class TopicAction extends ActionSupport{
 
     public void setUserService(UserService userService) {
         this.userService = userService;
+    }
+
+    @Override
+    public Topic getModel() {
+        return topic;
     }
 }

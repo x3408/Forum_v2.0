@@ -1,5 +1,6 @@
 package JUnit;
 
+import Bean.Topic;
 import Bean.User;
 import Dao.TopicDao;
 import Dao.UserDao;
@@ -14,6 +15,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.List;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:applicationContext.xml")
@@ -94,5 +96,15 @@ public class hibernateTest {
     @Test
     public void getTopicByUserTest() {
         System.out.println(topicDao.findTopicByUser("1").get(0).getContent());
+    }
+
+    @Test
+    public void addTopicTest() {
+        Topic topic = new Topic();
+        topic.setTitle("test");
+        topic.setContent("test");
+        topic.setUid("1");
+        topic.setTime(new Date());
+        topicDao.addTopic(topic);
     }
 }

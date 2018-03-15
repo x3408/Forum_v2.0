@@ -11,6 +11,10 @@ import net.sf.json.JSONArray;
 import net.sf.json.JsonConfig;
 import net.sf.json.util.PropertyFilter;
 import org.apache.struts2.ServletActionContext;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -49,7 +53,7 @@ public class StrutsTest {
             }
         });
 
-        TopicBean topicBean = topicService.showTopicByType(1, "result_show");
+        TopicBean topicBean = topicService.showTopicByType(2, "result_show");
         List<Topic> topicList = topicBean.getList();
         List<User> userList = new ArrayList<>();
         for (int i=0;i < topicList.size(); i++) {
@@ -76,5 +80,25 @@ public class StrutsTest {
     public void findTopicByUserTest() {
         List<Topic> topicByUser = topicService.findTopicByUser("1");
         System.out.println(topicByUser.get(0).getContent());
+    }
+
+    @Test
+    public void saveTopicContentTest() {
+        Topic topic = new Topic();
+        topic.setUid("1");
+        topic.setContent("Hello");
+
+        topicService.addTopic(topic);
+    }
+
+    @Test
+    public void descriptTest() {
+        //调用方法获取摘要
+        Document doc = Jsoup.parse("<p>hello</p>");
+        Elements element = doc.getElementsByTag("p");
+
+
+
+        System.out.println(element.text());
     }
 }

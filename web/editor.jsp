@@ -18,6 +18,10 @@
     <script type="text/javascript" >
         var editor;
         KindEditor.ready(function(k){
+            k('input[name=test]').click(function(e){
+                editor.sync();
+                alert(editor.html());
+            });
             editor=k.create('textarea[name="content"]',{
                 allowFileManager:true,
                 cssPath : 'kindeditor/plugins/code/prettify.css',
@@ -48,11 +52,16 @@
             });
 
             prettyPrint();
+
+
         })
     </script>
 </head>
 <body>
-<textarea id="editor_id" name="content"></textarea>
-<input type="button" value="提交" onclick="editor.html()">
+<form action="TopicAction_addTopic" method="post">
+    <input type="text" name="title">
+    <textarea id="editor_id" name="content"></textarea>
+    <input type="submit" value="提交" name="test">
+</form>
 </body>
 </html>
