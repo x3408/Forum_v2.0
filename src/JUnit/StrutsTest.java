@@ -83,22 +83,10 @@ public class StrutsTest {
     }
 
     @Test
-    public void saveTopicContentTest() {
+    public void addTopicTest() {
         Topic topic = new Topic();
         topic.setUid("1");
-        topic.setContent("Hello");
-
+        topic.setContent("<p>Hello</p>");
         topicService.addTopic(topic);
-    }
-
-    @Test
-    public void descriptTest() {
-        //调用方法获取摘要
-        Document doc = Jsoup.parse("<p>hello</p>");
-        Elements element = doc.getElementsByTag("p");
-
-
-
-        System.out.println(element.text());
     }
 }

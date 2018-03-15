@@ -44,15 +44,20 @@ public class TopicServiceImpl implements TopicService {
 
         //将文章内容存储到特定文件中
         String address = saveTopicContent(topic, time);
-        topic.setContent(address);
 
         //调用方法获取摘要
         Document doc = Jsoup.parse(topic.getContent());
         Elements element = doc.getElementsByTag("p");
+        //获得所有p标签的内容
         String content = element.text();
-        String descriptive = content.substring(0, 50);
-        System.out.println(descriptive);
-        topic.setDescriptive(descriptive);
+        //截取内容作为摘要
+        if (content.length() > 50) {
+            topic.setDescriptive(content.substring(0, 50));
+        } else {
+            topic.setDescriptive(content);
+        }
+        //设置文章内容的文件地址
+        topic.setContent(address);
 
         //存入数据库
         return topicDao.addTopic(topic);
