@@ -1,6 +1,7 @@
 package JUnit;
 
 import Bean.User;
+import Dao.RecommendDao;
 import Dao.TopicDao;
 import Dao.UserDao;
 import org.apache.struts2.ServletActionContext;
@@ -10,6 +11,7 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -18,6 +20,8 @@ import java.util.List;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:applicationContext.xml")
 public class hibernateTest {
+    @Resource(name="RecommendDao")
+    private RecommendDao rd;
     @Resource(name = "userDao")
     private UserDao userDao;
     @Resource(name = "topicDao")
@@ -57,6 +61,12 @@ public class hibernateTest {
         user.setPhoneNumber("123");
 
         userDao.addUser(user);
+    }
+    @Test
+    public void Recommend() {
+        List list= rd.getListRecommend();
+        System.out.println(list);
+
     }
 
     @Test

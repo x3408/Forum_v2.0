@@ -15,5 +15,8 @@
             <result name="showUser">/persion.jsp</result>
         </action>
         <action name="TopicAction_*" class="topicAction" method="{1}"></action>
+        <action name="Recommend_*" class="RecommendAction" method="{1}">
+            <result name="toIndex1" >/index1.jsp</result>
+        </action>
     </package>
 </struts>
