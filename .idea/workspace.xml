@@ -6,38 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31a88faa-ded7-436b-8e8e-85caab6bb250" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/Action/KindEditorAction.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/Action/KindEditorAction.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/css/kd.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/editor.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/editor.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/js/kd.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/js/kindeditor-all-min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/js/upload_json.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/kindeditor/jsp/file_manager_json.jsp" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/kindeditor/kindeditor-all-min.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/kindeditor/kindeditor-all.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/kindeditor/lang/zh-CN.js" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/kindeditor/license.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/kindeditor/plugins/code/prettify.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/kindeditor/themes/default/background.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/kindeditor/themes/default/default.css" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/kindeditor/themes/default/default.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/web/waterpull.html" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/struts.xml" afterPath="$PROJECT_DIR$/src/struts.xml" />
-      <change beforePath="$PROJECT_DIR$/src/zbean/bean-action.xml" afterPath="$PROJECT_DIR$/src/zbean/bean-action.xml" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/Dao/DaoImpl/TopicDaoImpl$2.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/Dao/DaoImpl/TopicDaoImpl$2.class" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/Dao/DaoImpl/TopicDaoImpl.class" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/Dao/DaoImpl/TopicDaoImpl.class" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/struts.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/struts.xml" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/zbean/bean-action.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/zbean/bean-action.xml" />
-      <change beforePath="$PROJECT_DIR$/web/fonts/icomoon.eot" afterPath="$PROJECT_DIR$/web/fonts/icomoon.eot" />
-      <change beforePath="$PROJECT_DIR$/web/fonts/icomoon.ttf" afterPath="$PROJECT_DIR$/web/fonts/icomoon.ttf" />
-      <change beforePath="$PROJECT_DIR$/web/fonts/icomoon.woff" afterPath="$PROJECT_DIR$/web/fonts/icomoon.woff" />
-      <change beforePath="$PROJECT_DIR$/web/index2.jsp" afterPath="" />
-    </list>
+    <list default="true" id="31a88faa-ded7-436b-8e8e-85caab6bb250" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -617,7 +586,7 @@
       <workItem from="1520988190216" duration="4523000" />
       <workItem from="1520992794597" duration="6056000" />
       <workItem from="1521006781045" duration="853000" />
-      <workItem from="1521112789494" duration="7475000" />
+      <workItem from="1521112789494" duration="7580000" />
     </task>
     <servers />
   </component>
@@ -648,7 +617,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27580000" />
+    <option name="totallyTimeSpent" value="27685000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
