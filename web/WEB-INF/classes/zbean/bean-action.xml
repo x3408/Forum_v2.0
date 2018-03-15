@@ -16,5 +16,6 @@
         <property name="topicService" ref="topicService"></property>
         <property name="userService" ref="userService"></property>
     </bean>
+    <bean name="kindeditor" class="Action.KindEditorAction" scope="prototype"></bean>
 
 </beans>

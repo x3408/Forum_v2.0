@@ -9,3 +9,5 @@ out/
 .externalToolBuilders/
 .metadata
 .settings
+
+src/db.properties
