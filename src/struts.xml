@@ -8,6 +8,7 @@
 
     <constant name="struts.multipart.maxSize" value="-1"></constant>
     <constant name="struts.multipart.parser" value="jakarta"></constant>
+    <constant name="struts.multipart.saveDir" value="/tmp"/>
 
     <!--全局视图-->
     <package name="Action" namespace="/" extends="struts-default">
@@ -18,6 +19,7 @@
             <result name="showUser">/persion.jsp</result>
         </action>
         <action name="TopicAction_*" class="topicAction" method="{1}"></action>
-        <action name="KeAction" class="kindeditor" method="uploadImg"></action>
+        <action name="Recommend_*" class="RecommendAction" method="{1}"></action>
+        <action name="KindEditorAction_uploadImg" class="kindeditor" method="uploadImg"></action>
     </package>
 </struts>

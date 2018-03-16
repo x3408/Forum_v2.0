@@ -16,5 +16,8 @@
     <bean class="Dao.DaoImpl.TopicDaoImpl" name="topicDao">
         <property name="sessionFactory" ref="sessionFactory"></property>
     </bean>
+    <bean name="RecommendDao" class="Dao.DaoImpl.RecommendDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
 
 </beans>

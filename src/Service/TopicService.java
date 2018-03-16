@@ -14,5 +14,5 @@ public interface TopicService {
 
     List<Topic> findTopicByUser(String showUserId);
 
-    void addTopic(Topic topic);
+    boolean addTopic(Topic topic, User user);
 }

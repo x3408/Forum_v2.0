@@ -9,47 +9,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8" />
-  <title>kindeditor</title>
-  <script src="js/kindeditor-all-min.js"></script>
-  <script src="kindeditor/lang/zh-CN.js"></script>
-  <script type="text/javascript" >
-      var editor;
-      KindEditor.ready(function(k){
-          editor=k.create('textarea[name="content"]',{
-              allowFileManager:true,
-              cssPath : 'kindeditor/plugins/code/prettify.css',
-              uploadJson : 'KeAction.action',//提交地址，action要自己配置
-              fileManagerJson : 'kindeditor/jsp/file_manager_json.jsp',
-              afterCreate : function() {
-                  var self = this;
-                  K.ctrl(document, 13, function() {
-                      self.sync();
-                      document.forms['content'].submit();
-                  });
-                  K.ctrl(self.edit.doc, 13, function() {
-                      self.sync();
-                      document.forms['content'].submit();
-                  });
-              }
-          });
-          k('input[name=getHtml]').click(function(e){
-              alert(editor.html());
-          });
-          k('input[name=getText]').click(function(e){
-              alert(editor.text());
-          });
-      })
+    <meta charset="utf-8" />
+    <title>kindeditor</title>
+    <script src="js/jquery-1.8.3.js"></script>
+    <script src="js/kindeditor-all-min.js"></script>
+    <script src="kindeditor/lang/zh-CN.js"></script>
+    <link rel="stylesheet" href="kindeditor/themes/default/default.css">
+    <script type="text/javascript" >
+        var editor;
+        KindEditor.ready(function(k){
+            k('input[name=test]').click(function(e){
+                editor.sync();
+                alert(editor.html());
+            });
+            editor=k.create('textarea[name="content"]',{
+                allowFileManager:true,
+                cssPath : 'kindeditor/plugins/code/prettify.css',
+                uploadJson : 'KindEditorAction_uploadImg',//提交地址，action要自己配置
+                fileManagerJson : 'kindeditor/jsp/file_manager_json.jsp',
+                urlType: 'domain',
+                afterCreate : function() {
+                    var self = this;
+                    K.ctrl(document, 13, function() {
+                        self.sync();
+                        document.forms['content'].submit();
+                    });
+                    K.ctrl(self.edit.doc, 13, function() {
+                        self.sync();
+                        document.forms['content'].submit();
+                    });
+                },
+                afterCreate: function () {  //要取值设置这里 这个函数就是同步KindEditor的值到textarea文本框
+                this.sync();
+            },
+            afterBlur: function () {  //同时设置这里
+                this.sync();
+            },
+                items : [
+                    'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+                    'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+                    'insertunorderedlist', '|', 'image', 'link']
+            });
 
-  </script>
-  <link rel="stylesheet" href="kindeditor/themes/default/default.css">
+            prettyPrint();
+
+
+        })
+    </script>
 </head>
 <body>
-<textarea id="editor_id" name="content">
-			<img src="img/2.jpg">
-			<p>html</p>
-		</textarea>
-<input type="button" name="getHtml" value="取得HTML"/>
-<input type="button" name="getText" value="取得文本(img)"/>
+<form action="TopicAction_addTopic" method="post">
+    <input type="text" name="title">
+    <textarea id="editor_id" name="content"></textarea>
+    <input type="submit" value="提交" name="test">
+</form>
 </body>
 </html>
