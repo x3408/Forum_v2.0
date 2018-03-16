@@ -5,6 +5,7 @@ import Bean.User;
 import Service.TopicService;
 import Service.UserService;
 import Util.TopicBean;
+import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
@@ -35,11 +36,6 @@ public class TopicAction extends ActionSupport implements ModelDriven<Topic>{
 
     //查看某一个分类的所有文章--xc
     public String showTopicByType() throws IOException {
-        /*
-        问题描述
-            每篇文章对应的user怎么组成
-         */
-
         //过滤一对多实体对象
         JsonConfig config = new JsonConfig();
         config.setJsonPropertyFilter(new PropertyFilter() {
@@ -75,8 +71,14 @@ public class TopicAction extends ActionSupport implements ModelDriven<Topic>{
 
     //发表文章--xc
     public String addTopic() {
+        //获取发表文章的用户
+        User user = (User) ActionContext.getContext().getSession().get("user");
+
+        //设置文章发布类型
+        topic.setType(type);
+
         //使用判断的形式
-        boolean flag = topicService.addTopic(topic);
+        boolean flag = topicService.addTopic(topic, user);
 
 
         if (!flag) {

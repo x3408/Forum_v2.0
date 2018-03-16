@@ -89,7 +89,11 @@ public class hibernateTest {
 
     @Test
     public void getTopicByTypeTest() {
-        System.out.println(topicDao.getTopicByType(1, 1, "result_show"));
+        List<Topic> result_show = topicDao.getTopicByType(1, 3, "result_show");
+        for (Topic topic : result_show) {
+            System.out.println(topic.getTime());
+        }
+
     }
 
     @Test

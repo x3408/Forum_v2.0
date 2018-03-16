@@ -1,20 +1,13 @@
 package JUnit;
 
-import Action.UserAction;
 import Bean.Topic;
 import Bean.User;
 import Service.TopicService;
 import Service.UserService;
 import Util.TopicBean;
-import com.opensymphony.xwork2.ActionContext;
 import net.sf.json.JSONArray;
 import net.sf.json.JsonConfig;
 import net.sf.json.util.PropertyFilter;
-import org.apache.struts2.ServletActionContext;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -87,6 +80,5 @@ public class StrutsTest {
         Topic topic = new Topic();
         topic.setUid("1");
         topic.setContent("<p>Hello</p>");
-        topicService.addTopic(topic);
     }
 }

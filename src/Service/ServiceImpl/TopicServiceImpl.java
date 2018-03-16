@@ -8,7 +8,6 @@ import Util.TopicBean;
 import org.apache.struts2.ServletActionContext;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.io.*;
@@ -35,10 +34,11 @@ public class TopicServiceImpl implements TopicService {
     }
 
     @Override
-    public boolean addTopic(Topic topic) {
+    public boolean addTopic(Topic topic, User user) {
         //发布时间
         Date time = new Date();
         topic.setTime(time);
+
         //初始浏览数
         topic.setViewCount(0);
 
@@ -56,8 +56,13 @@ public class TopicServiceImpl implements TopicService {
         } else {
             topic.setDescriptive(content);
         }
+
+
         //设置文章内容的文件地址
         topic.setContent(address);
+
+        //设置文章用户
+        topic.setUid(user.getUid());
 
         //存入数据库
         return topicDao.addTopic(topic);
