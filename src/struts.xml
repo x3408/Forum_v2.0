@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <!--将Action交给Spring创建-->
+    <constant name="struts.objectFactory" value="spring"></constant>
+
+    <!--全局视图-->
+    <package name="Action" namespace="/" extends="struts-default">
+        <action name="UserAction_*" class="userAction" method="{1}">
+            <result name="toIndex" type="redirect">/index.jsp</result>
+            <result name="login">/login.jsp</result>
+            <result name="regist">/regist.jsp</result>
+            <result name="showUser">/persion.jsp</result>
+        </action>
+        <action name="TopicAction_*" class="topicAction" method="{1}"></action>
+    </package>
+</struts>
