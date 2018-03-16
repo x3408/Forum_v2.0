@@ -20,5 +20,9 @@
     <bean name="topicBean" class="Util.TopicBean">
         <property name="topicDao" ref="topicDao"></property>
     </bean>
+    <bean name="RecommendService" class="Service.ServiceImpl.RecommendServiceImpl">
+        <property name="rd" ref="RecommendDao"></property>
+    </bean>
+
 
 </beans>

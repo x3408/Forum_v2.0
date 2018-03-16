@@ -13,11 +13,16 @@ public class Topic {
     private String content;
     private Date time;
     private Integer viewCount;
+    //一对多 一的一方 用set
+    private Set<comment> comments=new HashSet<>();
 
-    private Set<Reverts> reverts = new HashSet<>();
+    public Set<comment> getComments() {
+        return comments;
+    }
 
-
-
+    public void setComments(Set<comment> comments) {
+        this.comments = comments;
+    }
 
     public String getType() {
         return type;
@@ -67,13 +72,7 @@ public class Topic {
         this.time = time;
     }
 
-    public Set<Reverts> getReverts() {
-        return reverts;
-    }
 
-    public void setReverts(Set<Reverts> reverts) {
-        this.reverts = reverts;
-    }
 
     public Integer getTid() {
         return tid;

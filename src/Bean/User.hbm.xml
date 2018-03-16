@@ -10,5 +10,10 @@
         <property name="username" column="username"></property>
         <property name="phoneNumber"></property>
         <property name="password"></property>
+        <!--交给多的一方维护外键关系-->
+        <set name="comments" inverse="true">
+            <key column="comment_User_id"></key>
+            <one-to-many class="Bean.comment"></one-to-many>
+        </set>
     </class>
 </hibernate-mapping>

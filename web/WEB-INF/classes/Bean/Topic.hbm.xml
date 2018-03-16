@@ -3,7 +3,7 @@
         "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="Bean">
-    <class name="Topic" table="topic">
+    <class name="Topic" table="topic" >
         <id name="tid">
             <generator class="native"></generator>
         </id>
@@ -15,9 +15,9 @@
         <property name="time"></property>
         <property name="viewCount"></property>
 
-        <set name="reverts" table="reverts" inverse="true">
-            <key column="tid"></key>
-            <one-to-many class="Bean.Reverts"></one-to-many>
+        <set name="comments" inverse="true">
+            <key column="comment_Topic_id"></key>
+            <one-to-many class="Bean.comment"></one-to-many>
         </set>
     </class>
 </hibernate-mapping>
