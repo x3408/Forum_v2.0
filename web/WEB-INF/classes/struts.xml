@@ -6,6 +6,10 @@
     <!--将Action交给Spring创建-->
     <constant name="struts.objectFactory" value="spring"></constant>
 
+    <constant name="struts.multipart.maxSize" value="-1"></constant>
+    <constant name="struts.multipart.parser" value="jakarta"></constant>
+    <constant name="struts.multipart.saveDir" value="/tmp"/>
+
     <!--全局视图-->
     <package name="Action" namespace="/" extends="struts-default">
         <action name="UserAction_*" class="userAction" method="{1}">
@@ -15,5 +19,7 @@
             <result name="showUser">/persion.jsp</result>
         </action>
         <action name="TopicAction_*" class="topicAction" method="{1}"></action>
+        <action name="Recommend_*" class="RecommendAction" method="{1}"></action>
+        <action name="KindEditorAction_uploadImg" class="kindeditor" method="uploadImg"></action>
     </package>
 </struts>

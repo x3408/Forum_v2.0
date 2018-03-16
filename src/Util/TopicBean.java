@@ -27,7 +27,7 @@ public class TopicBean {
         this.page = page;
 
         if (limit == null) {
-            this.limit = 4;
+            this.limit = 3;
         }
 
         int start = (page - 1) * limit;

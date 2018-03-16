@@ -67,4 +67,10 @@ public class TopicDaoImpl extends HibernateDaoSupport implements TopicDao {
             }
         });
     }
+
+    @Override
+    public boolean addTopic(Topic topic) {
+        getHibernateTemplate().saveOrUpdate(topic);
+        return true;
+    }
 }
