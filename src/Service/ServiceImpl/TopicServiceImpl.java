@@ -5,8 +5,13 @@ import Bean.User;
 import Dao.TopicDao;
 import Service.TopicService;
 import Util.TopicBean;
+import org.apache.struts2.ServletActionContext;
 
 import java.awt.*;
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class TopicServiceImpl implements TopicService {
@@ -25,6 +30,21 @@ public class TopicServiceImpl implements TopicService {
     @Override
     public List<Topic> findTopicByUser(String showUserId) {
         return topicDao.findTopicByUser(showUserId);
+    }
+
+    @Override
+    public void addTopic(Topic topic) {
+        //保存路径
+        String savePath = this.getClass().getClassLoader().getResource("/").getPath() + "/TopicContent/";
+
+
+        //创建文件夹
+        File file = new File(savePath);
+        if (!file.exists()) {
+            file.mkdirs();
+        }
+
+        SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");
     }
 
 
