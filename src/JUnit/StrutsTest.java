@@ -80,6 +80,5 @@ public class StrutsTest {
         Topic topic = new Topic();
         topic.setUid("1");
         topic.setContent("<p>Hello</p>");
-        topicService.addTopic(topic, user);
     }
 }
