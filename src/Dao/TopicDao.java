@@ -14,4 +14,8 @@ public interface TopicDao {
     List<Topic> findTopicByUser(String userId);
 
     boolean addTopic(Topic topic);
+
+    List<String> findTopicTypeList();
+
+    Topic findTopicById(Integer tid);
 }

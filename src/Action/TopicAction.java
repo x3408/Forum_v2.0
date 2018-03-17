@@ -5,6 +5,7 @@ import Bean.User;
 import Service.TopicService;
 import Service.UserService;
 import Util.TopicBean;
+import Util.TopicTypeBean;
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -73,9 +74,11 @@ public class TopicAction extends ActionSupport implements ModelDriven<Topic>{
     public String addTopic() {
         //获取发表文章的用户
         User user = (User) ActionContext.getContext().getSession().get("user");
+        /*if (user == null) {
+            ActionContext.getContext().put("msg", "您还没有登录，请登录后再尝试该操作。");
+            return "login";
+        }*/
 
-        //设置文章发布类型
-        topic.setType(type);
 
         //使用判断的形式
         boolean flag = topicService.addTopic(topic, user);
@@ -88,6 +91,38 @@ public class TopicAction extends ActionSupport implements ModelDriven<Topic>{
         }
         //成功 回首页
         return "toIndex";
+    }
+
+    //发表文章时用于查询有哪些类型
+    public String findTopicTypeList() {
+        //获得类型对象集合
+        List<TopicTypeBean> list = topicService.findTopicTypeList();
+        //转换为json数据
+        String typeName = JSONArray.fromObject(list).toString();
+
+        ServletActionContext.getResponse().setCharacterEncoding("UTF-8");
+        try {
+            ServletActionContext.getResponse().getWriter().write(typeName);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    //文章详情--xc
+    public String showTopic() {
+
+        //获得文章id 查询数据库取得对象
+        Topic trueTopic = topicService.showTopicById(topic.getTid());
+        //获得文章作者信息
+        User topicUser = userService.findUserById(trueTopic.getUid());
+
+
+        ActionContext.getContext().put("topic", trueTopic);
+        ActionContext.getContext().put("topicUser", topicUser);
+
+        return "showTopic";
     }
 
     public String getType() {

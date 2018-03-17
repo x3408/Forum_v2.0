@@ -121,4 +121,17 @@ public class hibernateTest {
         topic.setTime(new Date());
         topicDao.addTopic(topic);
     }
+
+    @Test
+    public void findTopicTypeListTest() {
+        List<String> topicTypeList = topicDao.findTopicTypeList();
+
+        System.out.println(topicTypeList.size());
+    }
+
+    @Test
+    public void findTopicByIdTest() {
+        Topic topic = topicDao.findTopicById(1);
+        System.out.println(topic.getContent());
+    }
 }

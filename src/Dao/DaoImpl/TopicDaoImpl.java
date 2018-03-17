@@ -5,14 +5,12 @@ import Dao.TopicDao;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.criterion.DetachedCriteria;
-import org.hibernate.criterion.Projection;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate5.HibernateCallback;
 import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
 
 import java.util.List;
-import java.util.Properties;
 
 public class TopicDaoImpl extends HibernateDaoSupport implements TopicDao {
     //按类型获取文章总数
@@ -72,5 +70,21 @@ public class TopicDaoImpl extends HibernateDaoSupport implements TopicDao {
     public boolean addTopic(Topic topic) {
         getHibernateTemplate().saveOrUpdate(topic);
         return true;
+    }
+
+    @Override
+    public List<String> findTopicTypeList() {
+        return getHibernateTemplate().execute(new HibernateCallback<List<String>>() {
+            @Override
+            public List doInHibernate(Session session) throws HibernateException {
+                return session.createQuery("select type from Topic group by type")
+                        .list();
+            }
+        });
+    }
+
+    @Override
+    public Topic findTopicById(Integer tid) {
+        return getHibernateTemplate().get(Topic.class, tid);
     }
 }

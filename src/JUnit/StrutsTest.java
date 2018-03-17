@@ -5,6 +5,7 @@ import Bean.User;
 import Service.TopicService;
 import Service.UserService;
 import Util.TopicBean;
+import Util.TopicTypeBean;
 import net.sf.json.JSONArray;
 import net.sf.json.JsonConfig;
 import net.sf.json.util.PropertyFilter;
@@ -80,5 +81,17 @@ public class StrutsTest {
         Topic topic = new Topic();
         topic.setUid("1");
         topic.setContent("<p>Hello</p>");
+    }
+
+    @Test
+    public void findTopicTypeListTest() {
+        List<TopicTypeBean> topicTypeList = topicService.findTopicTypeList();
+        System.out.println(topicTypeList.get(0).getTypeName());
+    }
+
+    @Test
+    public void findTopicByIdTest() {
+        Topic topic = topicService.showTopicById(1);
+        System.out.println(topic.getContent());
     }
 }
