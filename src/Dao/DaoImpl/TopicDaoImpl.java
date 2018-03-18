@@ -87,4 +87,16 @@ public class TopicDaoImpl extends HibernateDaoSupport implements TopicDao {
     public Topic findTopicById(Integer tid) {
         return getHibernateTemplate().get(Topic.class, tid);
     }
+
+    @Override
+    public List<Topic> findTopicByKeyword(String keyword) {
+         return getHibernateTemplate().execute(new HibernateCallback<List<Topic>>() {
+             @Override
+             public List doInHibernate(Session session) throws HibernateException {
+                 return session.createQuery("from Topic where title like ?")
+                         .setParameter(0, "%"+ keyword+"%")
+                         .list();
+             }
+         });
+    }
 }

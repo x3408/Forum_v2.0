@@ -84,6 +84,7 @@ body{
 #specificWrite-right{
 	width:900px;
 	height:100%;
+	border:solid 1px black;
 	position: absolute;
 	right:13px;
 	top:15px;
@@ -93,12 +94,11 @@ body{
 	height:40px;
 	border:solid 1px black;
 }
-#specificWrite-right--center p{
-	overflow: hidden;
-	width:895px;
-	height:700px;
-	/*border-bottom: solid 1px black;*/
-	resize:none;
+#specificWrite-right--top p{
+	font-size:22px;
+	font-weight:bold;
+	margin-top:10px;
+	margin-left:18px;
 }
 /*左边开始*/
 #specificWrite-left--headImg{
@@ -120,4 +120,30 @@ body{
 	font-size:18px;
 	margin-left:20px;
 	margin-top:10px;
+}
+
+#specificWrite-right--center img{
+	width:200px;
+	height:200px;
+}
+#specificWrite-right--center p{
+	overflow: hidden;
+	width:860px;
+	left:20px;
+	margin-top:20px;
+	margin-left:20px;
+
+
+	font-size:18px;
+	resize:none;
+}
+#specificWrite-right--center {
+	overflow: hidden;
+	width:860px;
+	left:20px;
+	margin-top:20px;
+	margin-left:20px;
+	resize:none;
+
+	word-break: break-all;word-wrap: break-word;
 }

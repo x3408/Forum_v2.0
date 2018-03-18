@@ -4,6 +4,8 @@ import Bean.User;
 import Dao.UserDao;
 import Service.UserService;
 
+import java.util.List;
+
 public class UserServiceImpl implements UserService {
     private UserDao userDao;
     @Override
@@ -39,6 +41,11 @@ public class UserServiceImpl implements UserService {
     public Integer findFansCount(User user) {
         userDao.findFansCount(user.getUid());
         return null;
+    }
+
+    @Override
+    public List<User> findUserByKeyword(String keyword) {
+        return userDao.findUserByKeyword(keyword);
     }
 
     public void setUserDao(UserDao userDao) {

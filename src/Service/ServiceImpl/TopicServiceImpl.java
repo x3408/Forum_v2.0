@@ -126,6 +126,11 @@ public class TopicServiceImpl implements TopicService{
         return topicDao.findTopicById(tid);
     }
 
+    @Override
+    public List<Topic> findTopicByKeyword(String keyword) {
+        return topicDao.findTopicByKeyword(keyword);
+    }
+
     private String saveTopicContent(Topic topic, Date time) {
         //将文章内容存储到特定文件中
         String savePath = ServletActionContext.getServletContext().getRealPath("/") + "TopicContent/";

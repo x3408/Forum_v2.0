@@ -20,4 +20,6 @@ public interface TopicService {
     List<TopicTypeBean> findTopicTypeList();
 
     Topic showTopicById(Integer tid);
+
+    List<Topic> findTopicByKeyword(String keyword);
 }

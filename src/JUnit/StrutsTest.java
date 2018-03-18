@@ -47,7 +47,7 @@ public class StrutsTest {
             }
         });
 
-        TopicBean topicBean = topicService.showTopicByType(2, "result_show");
+        TopicBean topicBean = topicService.showTopicByType(1, "result_show");
         List<Topic> topicList = topicBean.getList();
         List<User> userList = new ArrayList<>();
         for (int i=0;i < topicList.size(); i++) {

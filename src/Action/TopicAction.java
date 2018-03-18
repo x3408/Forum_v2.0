@@ -16,6 +16,7 @@ import net.sf.json.util.PropertyFilter;
 import org.apache.struts2.ServletActionContext;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 /*
@@ -52,10 +53,14 @@ public class TopicAction extends ActionSupport implements ModelDriven<Topic>{
 
         //json格式回写
         List<Topic> list = topicBean.getList();
-        User userById = userService.findUserById(list.get(0).getUid().toString());
+        List<User> userList = new ArrayList<>();
+        for (int i=0;i < list.size(); i++) {
+            User user = userService.findUserById(list.get(i).getUid().toString());
+            userList.add(user);
+        }
 
         String s1 = JSONArray.fromObject(list,config).toString();
-        String s2 = JSONArray.fromObject(userById).toString();
+        String s2 = JSONArray.fromObject(userList).toString();
 
         String data = s1.substring(0, s1.length()-1) + "," + s2.substring(1,s2.length());
 

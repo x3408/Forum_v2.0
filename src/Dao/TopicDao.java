@@ -18,4 +18,6 @@ public interface TopicDao {
     List<String> findTopicTypeList();
 
     Topic findTopicById(Integer tid);
+
+    List<Topic> findTopicByKeyword(String keyword);
 }

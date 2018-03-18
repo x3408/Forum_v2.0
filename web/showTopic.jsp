@@ -12,11 +12,13 @@
 <head>
     <meta charset="utf-8" />
     <title>user</title>
-    <link rel="stylesheet" href="css/user.css">
+
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/user.css?3">
     <script src="js/user.js"></script>
 </head>
+<body>
 <body>
 <div class="header">
     <div class="header-content">
@@ -33,24 +35,23 @@
     <div id="specificWrite-left">
         <div id="specificWrite-left--headImg">
             <img src="img/timg (1).jpeg" class="img-circle">
-            <p>${topicUser.username}</p>
+            <p>一个好名字</p>
         </div>
     </div>
     <div id="specificWrite-right">
-        <div id="specificWrite-right--top">作者发表于 ${topic.time}</div>
+        <div id="specificWrite-right--top">
+            <p>${topic.title}</p>
+        </div>
         <div id="specificWrite-right--center">
-            <div id="title">
-                ${topic.title}
-            </div>
-            <div id="content">
-                <jsp:include page="${topic.content}"></jsp:include>
-            </div>
+            <jsp:include page="${topic.content}"></jsp:include>
         </div>
         <div id="specificWrite-right--buttom"></div>
     </div>
 
 
 </div>
+
+</body>
 
 </body>
 </html>
