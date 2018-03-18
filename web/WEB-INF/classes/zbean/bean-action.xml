@@ -20,5 +20,7 @@
         <property name="rs" ref="RecommendService"></property>
     </bean>
     <bean name="kindeditor" class="Action.KindEditorAction" scope="prototype"></bean>
-
+    <bean name="CommentAction" class="Action.CommentAction" scope="prototype">
+        <property name="cs" ref="CommentService"></property>
+    </bean>
 </beans>

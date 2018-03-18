@@ -1,9 +1,14 @@
 package JUnit;
 
+import Action.CommentAction;
+import Bean.Topic;
 import Bean.User;
+import Bean.comment;
+import Dao.CommentDao;
 import Dao.RecommendDao;
 import Dao.TopicDao;
 import Dao.UserDao;
+import Service.CommentService;
 import org.apache.struts2.ServletActionContext;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -16,6 +21,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.List;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:applicationContext.xml")
@@ -68,6 +74,14 @@ public class hibernateTest {
         System.out.println(list);
 
     }
+    @Resource(name = "CommentService")
+    private CommentService cs;
+    @Test
+    public void comment() {
+        List<comment> list = cs.getList();
+        System.out.println(list);
+
+    }
 
     @Test
     public void followTest() {
@@ -87,7 +101,11 @@ public class hibernateTest {
 
     @Test
     public void getTopicByTypeTest() {
-        System.out.println(topicDao.getTopicByType(1, 1, "result_show"));
+        List<Topic> result_show = topicDao.getTopicByType(1, 3, "result_show");
+        for (Topic topic : result_show) {
+            System.out.println(topic.getTime());
+        }
+
     }
 
     @Test
@@ -104,5 +122,15 @@ public class hibernateTest {
     @Test
     public void getTopicByUserTest() {
         System.out.println(topicDao.findTopicByUser("1").get(0).getContent());
+    }
+
+    @Test
+    public void addTopicTest() {
+        Topic topic = new Topic();
+        topic.setTitle("test");
+        topic.setContent("test");
+        topic.setUid("1");
+        topic.setTime(new Date());
+        topicDao.addTopic(topic);
     }
 }

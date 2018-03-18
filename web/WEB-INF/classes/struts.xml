@@ -21,5 +21,8 @@
         <action name="TopicAction_*" class="topicAction" method="{1}"></action>
         <action name="Recommend_*" class="RecommendAction" method="{1}"></action>
         <action name="KindEditorAction_uploadImg" class="kindeditor" method="uploadImg"></action>
+        <action name="CommentAction_*" class="CommentAction" method="{1}">
+            <result name="success">/reply.jsp</result>
+        </action>
     </package>
 </struts>

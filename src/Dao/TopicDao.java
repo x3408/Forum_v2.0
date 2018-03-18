@@ -12,4 +12,6 @@ public interface TopicDao {
     Integer findTopicCountByUser(String uid);
 
     List<Topic> findTopicByUser(String userId);
+
+    boolean addTopic(Topic topic);
 }

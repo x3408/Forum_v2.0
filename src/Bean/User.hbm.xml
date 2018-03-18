@@ -11,7 +11,7 @@
         <property name="phoneNumber"></property>
         <property name="password"></property>
         <!--交给多的一方维护外键关系-->
-        <set name="comments" inverse="true">
+        <set name="comments" >
             <key column="comment_User_id"></key>
             <one-to-many class="Bean.comment"></one-to-many>
         </set>

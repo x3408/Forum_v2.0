@@ -1,0 +1,76 @@
+#personCenter{
+	width:1115px;
+	height:250px;
+	margin:auto;
+	border:solid 1px black;
+	position: relative;
+}
+#personCenter-top{
+	width:1115px;
+	height:120px;
+	overflow: hidden;
+}
+#personCenter-headImg{
+	position: absolute;
+	width:100px;
+	height:100px;
+	left:80px;
+	top:80px;
+}
+#personCenter-headImg img{
+	width:100px;
+	height:100px;
+	
+}
+#personCenter-name{
+	position: absolute;
+	font-size:20px;
+	font-weight: bold;
+	color:black;
+	left:190px;
+}
+#personCenter-name a{
+	text-decoration: none;
+	color:black;
+}
+#personCenter-edit{
+	width:350px;
+	height:370px;
+	position: absolute;
+	border:solid 1px #C0C0C0;
+	right:0px;
+}
+#personCenter-edit--btn{
+	position: absolute;
+	margin-left:170px;
+	margin-top:20px;
+}
+#personCenter-edit--follow{
+	position: absolute;
+	width:400px;
+	height:200px;
+	/*border:solid 1px black;*/
+	top:190px;
+}
+#personCenter-edit--follow .attention{
+	font-size:20px;
+	margin:0px 60px;
+}
+#personCenter-edit--follow .number{
+	display:inline-block;
+	text-align: center;
+	width:40px;
+	height:40px;
+	/*border:solid 1px black;*/
+	font-size:20px;
+	margin:20px 67px;
+}
+#personMain{
+	position: absolute;
+	width:765px;
+	height:900px;
+	border:solid 1px red;
+	top:248px;
+	
+}
+/*tab*/

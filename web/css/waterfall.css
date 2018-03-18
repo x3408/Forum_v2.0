@@ -1,0 +1,113 @@
+body{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+#main{
+	position: relative;
+}
+.box{
+	width: 685px;
+	height: 150px;
+	
+	padding: 15px;
+	margin: auto;
+	margin-top:5px;
+	font-size: 24px;
+	border-radius: 10px;
+	background: #FFFFFF;
+}
+.box:hover{
+	background: rgb(245,246,247);
+}
+.topicFrom{
+	width:685px;
+	height: 20px;
+	font-size: 8px;
+	 color: rgb(185,190,193);
+	border: 1px solid red;
+}
+.viewCount{
+	color: rgb(69,77,141);
+	float: right;
+	margin-right: 50px;
+}
+.name{
+	height: 40px;
+	line-height: 40px;
+	
+}
+.myPic{
+	margin: 4px 0 10px 20px;
+	width: 30px;
+	height: 30px;
+	border: 1px dashed red;
+	border-radius: 30px;
+	overflow: hidden;
+	float: left;
+	
+}
+.userid{
+	font-size: 8px;
+	
+	margin-right: 20px;
+	
+}
+
+.username{
+	font-size: 14px;
+	color: rgb(78,82,83);
+	float: left;
+	padding-left: 15px;
+}
+.title{
+	color: rgb(31,38,117);
+	margin: 0;
+	padding: 0;
+	border: 1px solid lightblue;
+}
+.text{
+	height:50px;
+	margin-top: 5px;
+	padding: 0px;
+	font-size: 8px;
+	color: rgb(102,101,108);
+	border: 1px solid darkseagreen;
+}
+.context{
+	width: 600px;
+	height:80px;
+	border: 1px solid red;
+	margin-left: 60px;
+}
+.context h2{
+	width:600px;
+	border: 1px solid gray;
+}
+.other a{
+	color: darkgray;
+	text-decoration: none;
+}
+/*.other a:hover{
+	color: red;
+}*/
+.other-like{
+	float: right;
+	margin-right: 40px;
+	display: inline;
+	font-size: 16px;
+	color: darkgray;
+	color:rgb(89,90,91);
+}
+.other-follow{
+	float: right;
+	margin-right: 40px;
+	display: inline;
+	font-size: 16px;
+	color: darkgray;
+	color:rgb(89,90,91);
+}
+.like-text{
+	font-size: 14px;
+	color:rgb(89,90,91);
+}

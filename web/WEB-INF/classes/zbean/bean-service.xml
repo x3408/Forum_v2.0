@@ -23,6 +23,8 @@
     <bean name="RecommendService" class="Service.ServiceImpl.RecommendServiceImpl">
         <property name="rd" ref="RecommendDao"></property>
     </bean>
-
+    <bean name="CommentService" class="Service.ServiceImpl.CommentServiceImpl">
+        <property name="cd" ref="CommentDao"></property>
+    </bean>
 
 </beans>

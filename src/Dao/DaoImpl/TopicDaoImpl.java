@@ -34,7 +34,7 @@ public class TopicDaoImpl extends HibernateDaoSupport implements TopicDao {
         return getHibernateTemplate().execute(new HibernateCallback<List<Topic>>() {
             @Override
             public List<Topic> doInHibernate(Session session) throws HibernateException {
-                List list =  session.createQuery("from Topic where type = ?")
+                List list =  session.createQuery("from Topic where type = ? order by time desc ")
                         .setParameter(0, type)
                         .setFirstResult(start)
                         .setMaxResults(limit)
@@ -66,5 +66,11 @@ public class TopicDaoImpl extends HibernateDaoSupport implements TopicDao {
                         .list();
             }
         });
+    }
+
+    @Override
+    public boolean addTopic(Topic topic) {
+        getHibernateTemplate().saveOrUpdate(topic);
+        return true;
     }
 }

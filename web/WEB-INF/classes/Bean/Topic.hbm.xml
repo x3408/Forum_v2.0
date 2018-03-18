@@ -15,7 +15,7 @@
         <property name="time"></property>
         <property name="viewCount"></property>
 
-        <set name="comments" inverse="true">
+        <set name="comments" >
             <key column="comment_Topic_id"></key>
             <one-to-many class="Bean.comment"></one-to-many>
         </set>
