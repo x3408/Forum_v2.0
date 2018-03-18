@@ -2,6 +2,8 @@ package Dao;
 
 import Bean.User;
 
+import java.util.List;
+
 public interface UserDao {
     User findByPassword(String username, String password);
 
@@ -14,4 +16,6 @@ public interface UserDao {
     User findUserByUsername(String username);
 
     Integer findFansCount(String uid);
+
+    List<User> findUserByKeyword(String keyword);
 }

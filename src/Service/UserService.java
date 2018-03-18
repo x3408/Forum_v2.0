@@ -2,6 +2,8 @@ package Service;
 
 import Bean.User;
 
+import java.util.List;
+
 public interface UserService {
     User login(User user);
 
@@ -14,4 +16,6 @@ public interface UserService {
     boolean checkUser(String username);
 
     Integer findFansCount(User user);
+
+    List<User> findUserByKeyword(String keyword);
 }

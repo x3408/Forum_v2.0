@@ -18,15 +18,15 @@
     <script type="text/javascript" >
         var editor;
         KindEditor.ready(function(k){
-            k('input[name=test]').click(function(e){
+            k('input[name=content]').click(function(e){
                 editor.sync();
-                alert(editor.html());
             });
             editor=k.create('textarea[name="content"]',{
                 allowFileManager:true,
                 cssPath : 'kindeditor/plugins/code/prettify.css',
                 uploadJson : 'KindEditorAction_uploadImg',//提交地址，action要自己配置
                 fileManagerJson : 'kindeditor/jsp/file_manager_json.jsp',
+                resizeType:0,
                 urlType: 'domain',
                 afterCreate : function() {
                     var self = this;
@@ -45,10 +45,7 @@
             afterBlur: function () {  //同时设置这里
                 this.sync();
             },
-                items : [
-                    'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
-                    'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
-                    'insertunorderedlist', '|', 'image', 'link']
+                items : ['source','fontname','fontsize','forecolor','preview','selectall','justifyleft','justifycenter','justifyright','emoticons','link','unlink','image'],
             });
 
             prettyPrint();

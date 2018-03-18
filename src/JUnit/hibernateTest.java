@@ -133,4 +133,29 @@ public class hibernateTest {
         topic.setTime(new Date());
         topicDao.addTopic(topic);
     }
+
+    @Test
+    public void findTopicTypeListTest() {
+        List<String> topicTypeList = topicDao.findTopicTypeList();
+
+        System.out.println(topicTypeList.size());
+    }
+
+    @Test
+    public void findTopicByIdTest() {
+        Topic topic = topicDao.findTopicById(1);
+        System.out.println(topic.getContent());
+    }
+
+    @Test
+    public void findTopicByKeywordTest() {
+        List<Topic> topic = topicDao.findTopicByKeyword("这是");
+        System.out.println(topic.size());
+    }
+
+    @Test
+    public void fundUserByKeywordTest() {
+        List<User> xc = userDao.findUserByKeyword("xc");
+        System.out.println(xc.size());
+    }
 }
