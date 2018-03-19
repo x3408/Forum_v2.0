@@ -18,7 +18,10 @@
             <result name="regist">/regist.jsp</result>
             <result name="showUser">/persion.jsp</result>
         </action>
-        <action name="TopicAction_*" class="topicAction" method="{1}"></action>
+        <action name="TopicAction_*" class="topicAction" method="{1}">
+            <result name="login">/login.jsp</result>
+            <result name="showTopic">/showTopic.jsp</result>
+        </action>
         <action name="Recommend_*" class="RecommendAction" method="{1}"></action>
         <action name="KindEditorAction_uploadImg" class="kindeditor" method="uploadImg"></action>
         <action name="PersonAction_*" class="personAction" method="{1}">

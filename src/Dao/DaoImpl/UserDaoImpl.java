@@ -13,6 +13,7 @@ import org.springframework.orm.hibernate5.HibernateCallback;
 import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
 
 import javax.servlet.Servlet;
+import java.util.List;
 
 public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
     @Override
@@ -85,5 +86,17 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
 
         Long aLong = (Long) getHibernateTemplate().findByCriteria(dc).get(0);
         return aLong.intValue();
+    }
+
+    @Override
+    public List<User> findUserByKeyword(String keyword) {
+        return getHibernateTemplate().execute(new HibernateCallback<List<User>>() {
+            @Override
+            public List doInHibernate(Session session) throws HibernateException {
+                return session.createQuery("from User where username like ?")
+                        .setParameter(0, "%"+ keyword+"%")
+                        .list();
+            }
+        });
     }
 }

@@ -23,7 +23,7 @@ import java.util.List;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:applicationContext.xml")
 public class hibernateTest {
-    @Resource(name="RecommendDao")
+    @Resource(name = "RecommendDao")
     private RecommendDao rd;
     @Resource(name = "userDao")
     private UserDao userDao;
@@ -48,7 +48,6 @@ public class hibernateTest {
         System.out.println(list.size());
 
 
-
         transaction.commit();
     }
 
@@ -67,9 +66,10 @@ public class hibernateTest {
 
         userDao.addUser(user);
     }
+
     @Test
     public void Recommend() {
-        List list= rd.getListRecommend();
+        List list = rd.getListRecommend();
         System.out.println(list);
 
     }
@@ -126,14 +126,18 @@ public class hibernateTest {
     }
 
     @Test
+
     public void updateDataTest() {
         User user = new User();
         user.setUid("1");
         user.setUsername("xuchen");
         personDao.updateData(user);
     }
+
     @Test
-    public void  findAttentionCount() {
+    public void findAttentionCount() {
         System.out.println(personDao.findAttentionCount());
+
+
     }
 }

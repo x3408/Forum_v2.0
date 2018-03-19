@@ -1,0 +1,149 @@
+body{
+	padding: 0;
+	margin: 0;
+	
+}
+.header{
+	width: 100%;
+	height: 163px;
+	position: fixed;
+	border-bottom: 2px solid red;
+	min-width:1115px ;
+	z-index: 2;
+}
+.header-content{
+	width:1115px;
+	height: 163px;
+	background:url(../img/navPic.png) no-repeat;
+	margin: auto;
+	position:fixed;
+	left:21%;
+	}
+.logo{
+	width: 196px;
+	height: 84px;
+	float: left;
+	margin: 50px 0 0 80px ;
+}
+.search{
+	position: absolute;
+	top: 70px;
+	left: 30%;
+	width: 450px;
+	height: 45px;
+	line-height: 45px;
+  }
+.search-text{
+	width: 300px;
+	height: 43px;
+	font-size: 16px;
+	color: #FFFFFF;
+	outline: none;
+	box-shadow: 5px 5px 5px black;
+	border: 2px solid red;
+	margin-left: 80px;
+	background: transparent;
+	border-radius:20px;
+	}
+.search button{
+	width: 48px;
+	height: 48px;
+	border: none;
+	outline: none;
+	text-align: center;
+	line-height: 40px;
+	border-radius:40px;
+	position: absolute;
+	left:320px;
+	top: 8px;
+	/*box-shadow: 5px 5px 5px black;*/
+	background: transparent;
+}
+.icon-search{
+	color: red;
+	font-size: 30px;
+}
+/*core部分*/
+#specificWrite{
+	position: absolute;
+	width:1113px;
+	height:980px;
+	/*border:solid 1px black;*/
+	left:21%;
+	top:170px;
+}
+#specificWrite-left{
+	width:180px;
+	height:800px;
+	border:solid 2px red;
+	border-radius: 10px;
+	position:fixed;
+	top:180px;
+	left:21%;
+}
+#specificWrite-right{
+	width:900px;
+	height:100%;
+	border:solid 1px black;
+	position: absolute;
+	right:13px;
+	top:15px;
+}
+#specificWrite-right--top{
+	width:900px;
+	height:40px;
+	border:solid 1px black;
+}
+#specificWrite-right--top p{
+	font-size:22px;
+	font-weight:bold;
+	margin-top:10px;
+	margin-left:18px;
+}
+/*左边开始*/
+#specificWrite-left--headImg{
+	width:150px;
+	height:150px;
+	border:solid 1px black;
+	position: absolute;
+	top:20px;
+	left:20px;
+}
+#specificWrite-left--headImg img{
+	width:90px;
+	height:90px;
+	border:dashed 2px red;
+	margin-left:22px;
+	margin-top:10px;
+}
+#specificWrite-left--headImg p{
+	font-size:18px;
+	margin-left:20px;
+	margin-top:10px;
+}
+
+#specificWrite-right--center img{
+	width:200px;
+	height:200px;
+}
+#specificWrite-right--center p{
+	overflow: hidden;
+	width:860px;
+	left:20px;
+	margin-top:20px;
+	margin-left:20px;
+
+
+	font-size:18px;
+	resize:none;
+}
+#specificWrite-right--center {
+	overflow: hidden;
+	width:860px;
+	left:20px;
+	margin-top:20px;
+	margin-left:20px;
+	resize:none;
+
+	word-break: break-all;word-wrap: break-word;
+}
