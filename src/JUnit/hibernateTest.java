@@ -2,6 +2,7 @@ package JUnit;
 
 import Bean.Topic;
 import Bean.User;
+import Dao.PersonDao;
 import Dao.RecommendDao;
 import Dao.TopicDao;
 import Dao.UserDao;
@@ -28,6 +29,8 @@ public class hibernateTest {
     private UserDao userDao;
     @Resource(name = "topicDao")
     private TopicDao topicDao;
+    @Resource(name = "PersonDao")
+    private PersonDao personDao;
 
 
     @Test
@@ -120,5 +123,17 @@ public class hibernateTest {
         topic.setUid("1");
         topic.setTime(new Date());
         topicDao.addTopic(topic);
+    }
+
+    @Test
+    public void updateDataTest() {
+        User user = new User();
+        user.setUid("1");
+        user.setUsername("xuchen");
+        personDao.updateData(user);
+    }
+    @Test
+    public void  findAttentionCount() {
+        System.out.println(personDao.findAttentionCount());
     }
 }

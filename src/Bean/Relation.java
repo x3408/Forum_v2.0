@@ -41,4 +41,14 @@ public class Relation {
     public void setFollow_uid(String follow_uid) {
         this.follow_uid = follow_uid;
     }
+
+    @Override
+    public String toString() {
+        return "Relation{" +
+                "id=" + id +
+                ", uid='" + uid + '\'' +
+                ", follow_uid='" + follow_uid + '\'' +
+                ", type=" + type +
+                '}';
+    }
 }

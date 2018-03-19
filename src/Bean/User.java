@@ -7,7 +7,7 @@ public class User {
     private String username;
     private String password;
     private String phoneNumber;
-
+    private String sex;
 
 
     public String getUsername() {
@@ -41,4 +41,8 @@ public class User {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+
+    public String getSex() { return sex; }
+
+    public void setSex(String sex) { this.sex = sex; }
 }

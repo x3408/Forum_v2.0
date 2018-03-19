@@ -53,7 +53,7 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
             ActionContext.getContext().put("msg","验证码不正确");
             return "regist";
         }
-        userService.add(user);
+         userService.add(user);
 
         ActionContext.getContext().getSession().put("user", user);
         return "toIndex";

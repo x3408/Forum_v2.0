@@ -19,5 +19,7 @@
     <bean name="RecommendDao" class="Dao.DaoImpl.RecommendDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"></property>
     </bean>
-
+    <bean name="PersonDao" class="Dao.DaoImpl.PersonDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
 </beans>

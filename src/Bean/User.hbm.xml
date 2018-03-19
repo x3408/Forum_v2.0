@@ -10,5 +10,6 @@
         <property name="username" column="username"></property>
         <property name="phoneNumber"></property>
         <property name="password"></property>
+        <property name="sex"></property>
     </class>
 </hibernate-mapping>

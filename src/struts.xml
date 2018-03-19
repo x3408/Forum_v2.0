@@ -21,5 +21,13 @@
         <action name="TopicAction_*" class="topicAction" method="{1}"></action>
         <action name="Recommend_*" class="RecommendAction" method="{1}"></action>
         <action name="KindEditorAction_uploadImg" class="kindeditor" method="uploadImg"></action>
+        <action name="PersonAction_*" class="personAction" method="{1}">
+            <result name="list">/personCenter.jsp</result>
+            <result name="data">/editorData.jsp</result>
+            <result name="editor" type="chain">
+                 <param name="actionName">PersonAction_findData</param>
+                <param name="namespace">/</param>
+            </result>
+        </action>
     </package>
 </struts>
