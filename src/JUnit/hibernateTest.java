@@ -74,14 +74,6 @@ public class hibernateTest {
         System.out.println(list);
 
     }
-    @Resource(name = "CommentService")
-    private CommentService cs;
-    @Test
-    public void comment() {
-        List<comment> list = cs.getList();
-        System.out.println(list);
-
-    }
 
     @Test
     public void followTest() {

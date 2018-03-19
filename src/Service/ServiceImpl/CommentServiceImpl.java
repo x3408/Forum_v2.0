@@ -19,9 +19,9 @@ public class CommentServiceImpl implements CommentService{
     }
 
     @Override
-    public List<comment> getList() {
+    public List<comment> getList(Integer tid) {
         //向DAO层要list
-        List<comment> list= cd.getList();
+        List<comment> list= cd.getList(tid);
         return list;
     }
 }

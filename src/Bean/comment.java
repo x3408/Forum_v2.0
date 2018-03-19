@@ -10,7 +10,7 @@ public class comment {
     //这个是评论的id
     private Integer id;
     //这是评论所在文章的id
-    private String tid;
+    private Integer tid;
     //这是评论者的id
     private String uid;
 
@@ -51,11 +51,11 @@ public class comment {
         this.id = id;
     }
 
-    public String getTid() {
+    public Integer getTid() {
         return tid;
     }
 
-    public void setTid(String tid) {
+    public void setTid(Integer tid) {
         this.tid = tid;
     }
 
@@ -83,11 +83,10 @@ public class comment {
         this.comment_content = comment_content;
     }
 
-    @Override
     public String toString() {
         return "comment{" +
-                "uid='" + uid + '\'' +
-                ", uid_name='" + uid_name + '\'' +
+                "tid=" + tid +
+                ", uid='" + uid + '\'' +
                 ", comment_content='" + comment_content + '\'' +
                 '}';
     }

@@ -16,20 +16,20 @@
     <link rel="stylesheet" href="css/try.css">
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.8.3.js"></script>
     <script type="text/javascript">
-        $.get("${pageContext.request.contextPath}/Recommend_list",
-            function(data){
+    $.get("${pageContext.request.contextPath}/Recommend_list",
+        function(data){
 
-                $.each( data , function(i, json){
-                    document.getElementById("span1").innerHTML=json['recommend_topic']
+            $.each( data , function(i, json){
+                document.getElementById("span1").innerHTML=json['recommend_topic']
 
-                    var src=$('#left').children("img").attr("src",json['recommend_image'])
-
-
-                });
-            },"json");
+                var src=$('#left').children("img").attr("src",json['recommend_image'])
 
 
-    </script>
+            });
+        },"json");
+
+
+</script>
 
 </head>
 <body>

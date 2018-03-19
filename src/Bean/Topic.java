@@ -89,4 +89,12 @@ public class Topic {
     public void setViewCount(Integer viewCount) {
         this.viewCount = viewCount;
     }
+
+    @Override
+    public String toString() {
+        return "Topic{" +
+                "tid=" + tid +
+                ", content='" + content + '\'' +
+                '}';
+    }
 }

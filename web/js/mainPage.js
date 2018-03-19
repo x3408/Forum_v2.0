@@ -70,4 +70,6 @@
 			
 		}
 	}
-
+	// var navContent=document.getElementById('nav-content');
+	// var oli=navContent.getElementsByTagName('li');
+	// console.log(oli.length);

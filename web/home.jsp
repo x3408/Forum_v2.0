@@ -1,0 +1,267 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: 许晨
+  Date: 2018/3/18
+  Time: 20:37
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.8.3.js"></script>
+
+    <meta charset="utf-8" />
+    <title>健身首页</title>
+    <link rel="stylesheet" href="css/MainPage.css?1" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/waterfall.css" />
+
+</head>
+
+<body>
+<div class="header">
+    <div class="header-content">
+        <div class="logo">
+            <a href=""><img src="img/logo.png"></a>
+        </div>
+        <div class="search" id="search-form">
+            <form action="${pageContext.request.contextPath}/SearchAction_search" method="post">
+                <input type="text" class="search-text" id="search-input" name="keyword" /><button><i onclick="form.submit()" class="icon-search"></i></button>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+<div class="main">
+    <div class="nav">
+        <ul class="nav-content" id="nav-content">
+            <li class="nav-content-detail">
+                <a href="javascript:void(0);" onclick="updataData(1, 'result_show')">成果展示</a>
+            </li>
+            <li class="nav-content-detail">
+                <a href="javascript:void(0);" onclick="updataData(1, 'training_experience')">训练心得</a>
+            </li>
+            <li class="nav-content-detail">
+                <a href="javascript:void(0);" onclick="updataData(1, 'diet_plan')">饮食计划</a>
+            </li>
+            <li class="nav-content-detail">
+                <a href="javascript:void(0);" onclick="updataData(1, 'appliance_use')">器具使用</a>
+            </li>
+            <li class="nav-content-detail">
+                <a href="javascript:void(0);" onclick="updataData(1, 'action')">动作要领</a>
+            </li>
+            <li class="nav-content-detail">
+                <a href="javascript:void(0);" onclick="updataData(1, 'diary')">健身日记</a>
+            </li>
+        </ul>
+    </div>
+    <div class="contain">
+        <div id="banner">
+            <div id="list" style="left:-723px">
+                <img src="img/4.jpg">
+                <img src="img/1.jpg">
+                <img src="img/2.png">
+                <img src="img/3.jpg">
+                <img src="img/4.jpg">
+                <img src="img/1.jpg">
+            </div>
+            <div id="buttons">
+                <span index="1" class="on"></span>
+                <span index="2"></span>
+                <span index="3"></span>
+                <span index="4"></span>
+            </div>
+            <a href="javascript:;" class="arrow" id="prev">&lt;</a>
+            <a href="javascript:;" class="arrow" id="next">&gt;</a>
+        </div>
+        <div class="new-recommand"></div>
+
+        <div class="contain" id="main">
+
+        </div>
+
+    </div>
+    <div class="otherNews">
+        <div class="recommand">
+            <div class="recommand-today">今日推荐</div>
+            <ul>
+                <li>
+                    <a href="">
+                        <div id="img1" class="img">
+                            <img src="">
+                        </div>
+                        <div class="atext">
+                            <span id="text1"  class="strongText"></span>
+                            <span class="detailText"></span>
+
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <div id="img2" class="img">
+                            <img src="">
+                        </div>
+                        <div  class="atext">
+                            <span id="text2" class="strongText"></span>
+                            <span class="detailText"></span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <div id="img3" class="img">
+                            <img src="">
+                        </div>
+                        <div class="atext">
+                            <span id="text3"  class="strongText"></span>
+                            <span class="detailText"></span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <div id="img4" class="img">
+                            <img src="">
+                        </div>
+                        <div  class="atext">
+                            <span id="text4" class="strongText"></span>
+                            <span class="detailText"></span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <div id="img5" class="img">
+                            <img src="">
+                        </div>
+                        <div  class="atext">
+                            <span id="text5" class="strongText"></span>
+                            <span class="detailText"></span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <div id="img6" class="img">
+                            <img src="">
+                        </div>
+                        <div  class="atext">
+                            <span id="text6" class="strongText"></span>
+                            <span class="detailText"></span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <div id="img7" class="img">
+                            <img src="">
+                        </div>
+                        <div  class="atext">
+                            <span id="text7" class="strongText"></span>
+                            <span class="detailText"></span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="advertisePic"></div>
+        <div class="competition"></div>
+    </div>
+</div>
+
+
+
+</body>
+<script type="text/javascript" src="js/mainPage.js"></script>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+    $.get("${pageContext.request.contextPath}/Recommend_list",
+        function(data){
+
+            $.each( data , function(i, json){
+                  j=i+1;
+                document.getElementById("text"+""+j).innerHTML=json['recommend_topic']
+                $('#img'+''+j).children("img").attr("src",json['recommend_image'])
+
+
+            });
+        },"json");
+
+    var i = 0;
+    var page;
+    var type;
+    function updataData(page, type) {
+        this.page = page;
+        this.type = type;
+        if(page == 1){
+            $("#main").empty();
+        }
+        $.post("${pageContext.request.contextPath}/TopicAction_showTopicByType", {
+            page: page, type: type
+        }, function(data) {
+//            var j = 1;
+//            while(j <= 3) {
+            for(i=0;i>=0;i++){
+                var timer =  data[i].time.month + "月" + data[i].time.day + "日" + data[i].time.hours + "时" + data[i].time.minutes + "分";
+                $("#main").append('<div class="box"><div class="topicFrom"><span class="date" id="date">' + timer + '</span><span class="viewCount" id="viewCount">阅读量： ' + data[i].viewCount + '</span></div><div class="name"><div class="myPic" id="myPic"><img src="" /></div><div class="username" id="username">' + data[i + 3].username + '</div></div><div class="context"><h6 class="title" id="title"><a href="TopicAction_showTopic?tid='+data[0].tid+'" style="text-decoration:none" >' + data[i].title + '</a></h6><p class="text" id="text">' + data[i].descriptive + '</p></div><div class="other-follow "><i class="icon-star-empty" id="follow"></i><span class="like-text">关注</span></div><div class="other-like "><i class="icon-heart2" id="like"></i><span class="like-text">点赞</span></div></div>');
+//                j++;
+//                i++;
+                var like = document.getElementsByClassName('icon-heart2');
+                for(var n = 0; n < like.length; n++) {
+                    like[n].onclick = function() {
+                        if(this.style.color == 'red') {
+                            this.style.color = 'gray';
+                        } else {
+                            this.style.color = 'red';
+                        }
+                    }
+
+                    var follow = document.getElementsByClassName('icon-star-empty');
+                    for(var m = 0; m < follow.length; m++) {
+                        follow[m].onclick = function() {
+                            if(this.style.color == 'red') {
+                                this.style.color = 'gray';
+                            } else {
+                                this.style.color = 'red';
+                            }
+                        };
+                    }
+                }
+            }
+        });
+
+    }
+    $(window).scroll(function() {
+        var scrollTop = $(this).scrollTop(); //滚动条距离顶部的高度
+        var scrollHeight = $(document).height(); //当前页面的总高度
+        var clientHeight = $(this).height(); //当前可视的页面高度
+
+        if(scrollTop + clientHeight >= scrollHeight) { //距离顶部+当前高度 >=文档总高度 即代表滑动到底部 count++;         //每次滑动count加1
+            // 							filterData(serviceTypeId,industryId,cityId,count); //调用筛选方法，count为当前分页数
+            updataData(page+1, type);
+        } else if(scrollTop <= 0) {
+            //滚动条距离顶部的高度小于等于0
+
+        }
+    });
+    function showTopic(tid) {
+        window.location.href="${pageContext.request.contextPath}/TopicAction_showTopic?tid="+tid;
+    }
+
+    window.onload(updataData(1, 'result_show'));
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>

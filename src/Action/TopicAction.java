@@ -123,8 +123,7 @@ public class TopicAction extends ActionSupport implements ModelDriven<Topic>{
         //获得文章作者信息
         User topicUser = userService.findUserById(trueTopic.getUid());
 
-
-        ActionContext.getContext().put("topic", trueTopic);
+        ActionContext.getContext().getSession().put("topic", trueTopic);
         ActionContext.getContext().put("topicUser", topicUser);
 
         return "showTopic";

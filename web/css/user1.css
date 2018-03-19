@@ -1,7 +1,7 @@
 body{
 	padding: 0;
 	margin: 0;
-
+	
 }
 .header{
 	width: 100%;
@@ -18,7 +18,7 @@ body{
 	margin: auto;
 	position:fixed;
 	left:21%;
-}
+	}
 .logo{
 	width: 196px;
 	height: 84px;
@@ -32,7 +32,7 @@ body{
 	width: 450px;
 	height: 45px;
 	line-height: 45px;
-}
+  }
 .search-text{
 	width: 300px;
 	height: 43px;
@@ -44,7 +44,7 @@ body{
 	margin-left: 80px;
 	background: transparent;
 	border-radius:20px;
-}
+	}
 .search button{
 	width: 48px;
 	height: 48px;
@@ -83,11 +83,11 @@ body{
 }
 #specificWrite-right{
 	width:900px;
-	resize: none;
-	border:solid 1px #f5e79e;
-	position:relative;
+	border:solid 1px black;
+	position: relative;
 	right:-210px;
 	top:15px;
+	resize: none;
 }
 #specificWrite-right--top{
 	width:900px;
@@ -99,24 +99,6 @@ body{
 	font-weight:bold;
 	margin-top:10px;
 	margin-left:18px;
-}
-#specificWrite-right--center p{
-	overflow: hidden;
-	width:850px;
-	margin-top:10px;
-	margin-left:10px;
-	font-size:18px;
-	resize:none;
-	/*border:solid 1px black;*/
-}
-#specificWrite-right--center{
-	overflow: hidden;
-	width:860px;
-	margin-top:20px;
-	margin-left:20px;
-	font-size:18px;
-	resize:none;
-
 }
 /*左边开始*/
 #specificWrite-left--headImg{
@@ -144,14 +126,31 @@ body{
 	width:200px;
 	height:200px;
 }
+#specificWrite-right--center p{
+	overflow: hidden;
+	width:860px;
+	left:20px;
+	margin-top:20px;
+	margin-left:20px;
+
+
+	font-size:18px;
+	resize:none;
+}
+#specificWrite-right--center {
+	overflow: hidden;
+	width:860px;
+	left:20px;
+	margin-top:20px;
+	margin-left:20px;
+	resize:none;
+
+	word-break: break-all;word-wrap: break-word;
+}
 #specificWrite-right--buttom{
 	width:900px;
 	resize: none;
-	/*border:solid 1px black;*/
+	border:solid 1px black;
 	position:absolute;
 
-}
-.container{
-	margin-left:-140px;
-	margin-top:-5px;
 }

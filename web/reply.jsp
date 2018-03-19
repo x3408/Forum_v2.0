@@ -81,6 +81,60 @@
             color: #aaa;
         }
     </style>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.comment.js" ></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+
+        //初始化数据
+        $.get("${pageContext.request.contextPath}/CommentAction_list",
+
+            function(data){
+                var date = new Date();
+                var seperator1 = "-";
+                var year = date.getFullYear();
+                var month = date.getMonth() + 1;
+                var strDate = date.getDate();
+                if (month >= 1 && month <= 9) {
+                    month = "0" + month;
+                }
+                if (strDate >= 0 && strDate <= 9) {
+                    strDate = "0" + strDate;
+                }
+                var currentdate = year + seperator1 + month + seperator1 + strDate;
+
+                $.each( data, function(i, json){
+                    var arr=[
+                        {id:1,img:"./images/img.jpg",replyName:json['uid_name'],beReplyName:"",content:json['comment_content'],time:currentdate,replyBody:[]}
+                    ];
+                    $(function(){
+
+                        $(".comment-list").addCommentList({data:arr,add:""});
+                        $("#comment").click(function(){
+                            var obj = new Object();
+                            obj.img="./images/img.jpg";
+                            obj.replyName="匿名";
+                            obj.content=$("#content").val();
+                            obj.replyBody="";
+
+                            if(i==0){
+                                $(".comment-list").addCommentList({data:[],add:obj});
+                                $.post("${pageContext.request.contextPath}/CommentAction_save", { replyName:"<s:property value="#session.user.username"></s:property>" , comment_content: obj.content,uid:"<s:property value="#session.user.uid"></s:property>" }
+                                );
+                            }
+
+                        });
+                    })
+                });
+
+
+
+
+            });
+
+
+
+    </script>
 </head>
 <body>
 
@@ -96,46 +150,7 @@
     </div>
 </div>
 
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/jquery.comment.js" ></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<script type="text/javascript">
-    var arr;
 
-    //初始化数据
-    $.get("${pageContext.request.contextPath}/CommentAction_list",
-
-        function(data){
-
-            $.each( data, function(i, json){
-                var obj=[
-                    {id:1,img:"./images/img.jpg",replyName:json['uid_name'],beReplyName:"",content:json['comment_content'],time:"2017-10-17 11:42:53",replyBody:[]}
-                ];
-                 arr=obj;
-            });
-
-
-            $(function(){
-
-
-                $(".comment-list").addCommentList({data:arr,add:""});
-                $("#comment").click(function(){
-                    var obj = new Object();
-                    obj.img="./images/img.jpg";
-                    obj.replyName="匿名";
-                    obj.content=$("#content").val();
-                    obj.replyBody="";
-                    $(".comment-list").addCommentList({data:[],add:obj});
-                    $.post("${pageContext.request.contextPath}/CommentAction_save", { replyName:"<s:property value="#session.user.username"></s:property>" , comment_content: obj.content,uid:"<s:property value="#session.user.uid"></s:property>" }
-                    );
-                });
-            })
-
-        });
-
-
-
-</script>
 
 </body>
 </html>
