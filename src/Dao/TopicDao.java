@@ -20,4 +20,8 @@ public interface TopicDao {
     Topic findTopicById(Integer tid);
 
     List<Topic> findTopicByKeyword(String keyword);
+
+    Integer getTotalCountByTitle(String keyword);
+
+    List<Topic> getTopicByTitle(int start, Integer limit, String keyword);
 }

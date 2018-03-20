@@ -44,6 +44,27 @@ public class TopicBean {
         return this;
     }
 
+    public TopicBean showTopicByKeyword(Integer page, String keyword) {
+        this.page = page;
+
+        if (limit == null) {
+            this.limit = 6;
+        }
+
+        int start = (page - 1) * limit;
+
+        totalCount = topicDao.getTotalCountByTitle(keyword);
+
+        if (totalCount % limit == 0)
+            totalPage = totalCount / limit;
+        else
+            totalPage = totalCount / limit + 1;
+
+        list = topicDao.getTopicByTitle(start, limit, keyword);
+
+        return this;
+    }
+
     public Integer getPage() {
         return page;
     }

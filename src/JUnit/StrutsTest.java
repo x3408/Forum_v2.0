@@ -94,4 +94,10 @@ public class StrutsTest {
         Topic topic = topicService.showTopicById(1);
         System.out.println(topic.getContent());
     }
+
+    @Test
+    public void findTopicByKeywordTest() {
+        TopicBean a = topicService.findTopicByKeyword("a", 1);
+        System.out.println(a.getList().size());
+    }
 }
