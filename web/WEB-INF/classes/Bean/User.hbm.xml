@@ -15,5 +15,6 @@
             <key column="comment_User_id"></key>
             <one-to-many class="Bean.comment"></one-to-many>
         </set>
+        <property name="sex"></property>
     </class>
 </hibernate-mapping>

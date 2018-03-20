@@ -22,4 +22,7 @@
     <bean name="CommentDao" class="Dao.DaoImpl.CommentDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"></property>
     </bean>
+    <bean name="PersonDao" class="Dao.DaoImpl.PersonDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
 </beans>

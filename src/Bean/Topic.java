@@ -94,7 +94,10 @@ public class Topic {
     public String toString() {
         return "Topic{" +
                 "tid=" + tid +
+                ", uid='" + uid + '\'' +
+                ", title='" + title + '\'' +
                 ", content='" + content + '\'' +
+                ", time=" + time +
                 '}';
     }
 }

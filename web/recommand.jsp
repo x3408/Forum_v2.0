@@ -19,6 +19,7 @@
     $.get("${pageContext.request.contextPath}/Recommend_list",
         function(data){
 
+<<<<<<< HEAD
             $.each( data , function(i, json){
                 document.getElementById("span1").innerHTML=json['recommend_topic']
 
@@ -26,6 +27,15 @@
 
 
             });
+=======
+                       $.each( data , function(i, json){
+            document.getElementById("span1").innerHTML=json['recommend_topic']
+
+            var src=$('#left').children("img").attr("src",json['recommend_image'])
+
+
+        });
+>>>>>>> f7751d5b95afbe8c53eb6f1f7316666a37369ccb
         },"json");
 
 

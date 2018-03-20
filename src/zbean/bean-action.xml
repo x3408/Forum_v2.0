@@ -23,4 +23,7 @@
     <bean name="CommentAction" class="Action.CommentAction" scope="prototype">
         <property name="cs" ref="CommentService"></property>
     </bean>
+    <bean name="personAction" class="Action.PersonAction" scope="prototype">
+        <property name="ps" ref="personService"></property>
+    </bean>
 </beans>

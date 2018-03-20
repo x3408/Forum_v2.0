@@ -14,6 +14,7 @@ public class User {
     public Set<comment> getComments() {
         return comments;
     }
+    private String sex;
 
     public void setComments(Set<comment> comments) {
         this.comments = comments;
@@ -50,4 +51,8 @@ public class User {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+
+    public String getSex() { return sex; }
+
+    public void setSex(String sex) { this.sex = sex; }
 }
