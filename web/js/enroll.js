@@ -1,6 +1,4 @@
-//function getLength(str){
-//	return str.replace(/[^\X00-xff]/g,'xx');
-//}
+
 window.onload=function(){
 	var alinput=document.getElementsByTagName('input');
 	var  username=alinput[0],

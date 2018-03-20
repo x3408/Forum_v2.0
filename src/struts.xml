@@ -19,10 +19,14 @@
             <result name="showUser">/persion.jsp</result>
         </action>
         <action name="TopicAction_*" class="topicAction" method="{1}">
+            <result name="toHome" type="redirect">/home.jsp</result>
             <result name="login">/login.jsp</result>
             <result name="showTopic">/showTopic.jsp</result>
         </action>
         <action name="Recommend_*" class="RecommendAction" method="{1}"></action>
         <action name="KindEditorAction_uploadImg" class="kindeditor" method="uploadImg"></action>
+        <action name="SearchAction_*" class="searchAction" method="{1}">
+            <result name="search">/search.jsp</result>
+        </action>
     </package>
 </struts>

@@ -99,4 +99,28 @@ public class TopicDaoImpl extends HibernateDaoSupport implements TopicDao {
              }
          });
     }
+
+    @Override
+    public Integer getTotalCountByTitle(String keyword) {
+        DetachedCriteria dc = DetachedCriteria.forClass(Topic.class)
+                .setProjection(Projections.rowCount())
+                .add(Restrictions.like("title", "%"+keyword+"%"));
+        Long aLong = (Long) getHibernateTemplate().findByCriteria(dc).get(0);
+        return aLong.intValue();
+    }
+
+    @Override
+    public List<Topic> getTopicByTitle(int start, Integer limit, String keyword) {
+        return getHibernateTemplate().execute(new HibernateCallback<List<Topic>>() {
+            @Override
+            public List<Topic> doInHibernate(Session session) throws HibernateException {
+                List list =  session.createQuery("from Topic where title like ? order by time desc ")
+                        .setParameter(0, "%"+keyword+"%")
+                        .setFirstResult(start)
+                        .setMaxResults(limit)
+                        .list();
+                return list;
+            }
+        });
+    }
 }

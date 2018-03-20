@@ -16,6 +16,4 @@ public interface UserService {
     boolean checkUser(String username);
 
     Integer findFansCount(User user);
-
-    List<User> findUserByKeyword(String keyword);
 }

@@ -49,7 +49,7 @@ public class TopicAction extends ActionSupport implements ModelDriven<Topic>{
                                      });
 
         //找Service要文章分页对象
-        TopicBean topicBean = topicService.showTopicByType(page, type);
+        TopicBean topicBean = topicService.showTopicByType(page, topic.getType());
 
         //json格式回写
         List<Topic> list = topicBean.getList();
@@ -63,6 +63,8 @@ public class TopicAction extends ActionSupport implements ModelDriven<Topic>{
         String s2 = JSONArray.fromObject(userList).toString();
 
         String data = s1.substring(0, s1.length()-1) + "," + s2.substring(1,s2.length());
+
+        System.out.println(data);
 
         ServletActionContext.getResponse().setContentType("application/json;charset=utf-8");
         ServletActionContext.getResponse().getWriter().write(data);
@@ -95,7 +97,7 @@ public class TopicAction extends ActionSupport implements ModelDriven<Topic>{
             return "addTopic";
         }
         //成功 回首页
-        return "toIndex";
+        return "toHome";
     }
 
     //发表文章时用于查询有哪些类型
@@ -126,6 +128,7 @@ public class TopicAction extends ActionSupport implements ModelDriven<Topic>{
 
         ActionContext.getContext().put("topic", trueTopic);
         ActionContext.getContext().put("topicUser", topicUser);
+
 
         return "showTopic";
     }

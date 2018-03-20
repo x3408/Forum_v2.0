@@ -127,8 +127,8 @@ public class TopicServiceImpl implements TopicService{
     }
 
     @Override
-    public List<Topic> findTopicByKeyword(String keyword) {
-        return topicDao.findTopicByKeyword(keyword);
+    public TopicBean findTopicByKeyword(String keyword, Integer page) {
+        return topicBean.showTopicByKeyword(page, keyword);
     }
 
     private String saveTopicContent(Topic topic, Date time) {

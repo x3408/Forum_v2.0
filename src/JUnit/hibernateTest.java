@@ -146,4 +146,12 @@ public class hibernateTest {
         List<User> xc = userDao.findUserByKeyword("xc");
         System.out.println(xc.size());
     }
+
+    @Test
+    public void getTopicByTitleTest() {
+        List<Topic> a = topicDao.getTopicByTitle(0, 6, "a");
+        for (Topic topic : a) {
+            System.out.println(topic.getTitle());
+        }
+    }
 }

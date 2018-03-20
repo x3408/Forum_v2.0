@@ -43,10 +43,6 @@ public class UserServiceImpl implements UserService {
         return null;
     }
 
-    @Override
-    public List<User> findUserByKeyword(String keyword) {
-        return userDao.findUserByKeyword(keyword);
-    }
 
     public void setUserDao(UserDao userDao) {
         this.userDao = userDao;
