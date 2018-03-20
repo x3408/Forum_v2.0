@@ -23,7 +23,7 @@
 <body>
 <div class="header">
     <div class="header-content">
-        <div class="logo"><a href=""><img src="img/logo.png"></a></div>
+        <div class="logo"><a href="${pageContext.request.contextPath}/home.jsp"><img src="img/logo.png"></a></div>
         <div class="search" id="search-form">
             <input type="text" class="search-text" id="search-input" value="<s:property value="#userBean.keyword"/> "/><button><i onclick="search()" class="icon-search"></i></button>
         </div>
