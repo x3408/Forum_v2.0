@@ -1,0 +1,86 @@
+#editorData{
+	width:1115px;
+	height:1000px;
+	margin:0 auto;
+	border:solid 1px #cccccc;
+	position: relative;
+}
+#editorData-top{
+	width:1115px;
+	height:100px;
+	background:#d9d9d9;
+}
+#editorData-top span{
+	font-size: 25px;
+	position: absolute;
+	top:50px;
+	left:40px;
+}
+#editorData-main{
+	width:800px;
+	height:800px;
+/*	border:solid 1px black;*/
+	position: relative;
+	left:150px;
+	top:40px;
+}
+#editorData-headImg{
+	width:400px;
+	height:100px;
+	/*border:solid 1px black;*/
+	position: absolute;
+	top:20px;
+	left:200px;
+}
+#editorData-headImg span{
+	font-size:18px;
+	color:#8e8888;
+	position: absolute;
+	top:20px;
+}
+#editorData-headImg img{
+	width:80px;
+	height:80px;
+	position: absolute;
+	left:110px;
+	top:10px;
+}
+#editorData-headImg a{
+	position: absolute;
+	left:117px;
+	top:70px;
+	color:white;
+	background:black;
+	opacity: 0.5;
+	width:73px;
+	text-align: center;
+	text-decoration: none;
+}
+#editorData-ip{
+	width:400px;
+	height:600px;
+	/*border:solid 1px black;*/
+	position: absolute;
+	left:204px;
+	top:130px;
+}
+#editorData-ip label{
+	font-size:18px;
+	color:#8e8888;
+	margin-top:5px;
+}
+.form-group{
+	margin-bottom:40px;
+	margin-top:30px;
+}
+#editorData #btn{
+	position: absolute;
+	left:750px;
+	bottom:140px;
+}
+#editorData #editorData-top button{
+	position: absolute;
+	right:80px;
+	top:20px;
+	
+}

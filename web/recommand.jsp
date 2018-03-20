@@ -19,14 +19,14 @@
         $.get("${pageContext.request.contextPath}/Recommend_list",
             function(data){
 
-                $.each( data , function(i, json){
-                    document.getElementById("span1").innerHTML=json['recommend_topic']
+                       $.each( data , function(i, json){
+            document.getElementById("span1").innerHTML=json['recommend_topic']
 
-                    var src=$('#left').children("img").attr("src",json['recommend_image'])
+            var src=$('#left').children("img").attr("src",json['recommend_image'])
 
 
-                });
-            },"json");
+        });
+        },"json");
 
 
     </script>

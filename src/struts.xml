@@ -28,5 +28,13 @@
         <action name="SearchAction_*" class="searchAction" method="{1}">
             <result name="search">/search.jsp</result>
         </action>
+        <action name="PersonAction_*" class="personAction" method="{1}">
+            <result name="list">/personCenter.jsp</result>
+            <result name="data">/editorData.jsp</result>
+            <result name="editor" type="chain">
+                 <param name="actionName">PersonAction_findData</param>
+                <param name="namespace">/</param>
+            </result>
+        </action>
     </package>
 </struts>

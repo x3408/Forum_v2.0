@@ -73,4 +73,26 @@
 	top:248px;
 	
 }
-/*tab*/
+/*addDiv*/
+#addDiv{
+
+  display:block;
+	width:600px;
+	height:40px;
+	margin-top:10px;
+	font-size:18px;
+	font-style:italic;
+	font-weight: bold;
+	text-decoration: none;
+  outline:none;
+}
+/*#attention{*/
+	/*display:block;*/
+	/*width:600px;*/
+	/*height:40px;*/
+	/*margin-top:10px;*/
+	/*font-size:18px;*/
+	/*font-style:italic;*/
+	/*font-weight: bold;*/
+	/*border:solid 1px red;*/
+/*}*/

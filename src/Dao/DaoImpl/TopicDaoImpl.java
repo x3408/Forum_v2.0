@@ -55,12 +55,12 @@ public class TopicDaoImpl extends HibernateDaoSupport implements TopicDao {
 
     //按用户id获取文章列表对象
     @Override
-    public List<Topic> findTopicByUser(String userId) {
+    public List<Topic> findTopicByUser(String showuserId) {
         return getHibernateTemplate().execute(new HibernateCallback<List<Topic>>() {
             @Override
             public List doInHibernate(Session session) throws HibernateException {
                 return session.createQuery("from Topic where uid = ?")
-                        .setParameter(0, userId)
+                        .setParameter(0, showuserId)
                         .list();
             }
         });
@@ -123,4 +123,6 @@ public class TopicDaoImpl extends HibernateDaoSupport implements TopicDao {
             }
         });
     }
+
+
 }

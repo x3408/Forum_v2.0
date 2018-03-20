@@ -38,7 +38,7 @@ body{
 	font-size: 16px;
 	color: #FFFFFF;
 	outline: none;
-	box-shadow: 5px 5px 5px black;
+	/*box-shadow: 5px 5px 5px black;*/
 	border: 2px solid red;
 	margin-left: 80px;
 	background: transparent;
@@ -67,6 +67,7 @@ body{
 	width: 1115px;
 	margin: auto;
 	margin-top: 10px;
+	position: relative;
 }
 .nav{
 	width: 100px;
@@ -76,34 +77,46 @@ body{
 	border-radius: 5px ;
 	margin-right: 10px;
 	background: #FFFFFF;
+	position: absolute;
 }
-.nav-content-detail{
+
+.nav li{
 	width: 100px ;
-	height: 30px;
-	line-height: 30px;
+	height: 40px;
+	line-height: 40px;
 	 list-style: none;
+	 margin-top: 20px;
+
 }
 .nav-content{
 	margin-left:-40px;
 }
-.nav-content-detail a{
+
+.nav li a{
 	display:inline-block;
 	width: 100px ;
-	height: 30px;
+	height: 40px;
+	line-height: 40px;
 	text-align: center;
-	margin-top: 10px;
+
 	text-decoration: none;
 	color: gray;
 }
-.nav-content-detail a:hover{
+.select a:link{
+	color: #FFFFFF;
+	background: indianred;
+	
+}
+.nav li a:hover{
 	color: #ffffff;
 	background: indianred;
+	
 }
 .contain{
 	width: 735px;
 	height: 800px;
-	
-	float: left;
+	position: absolute;
+	left: 120px;
 	margin-right: 10px;
 }
 
@@ -175,9 +188,10 @@ body{
 	width: 255px;
 	height: 800px;
 	/*border: 1px solid indianred;*/
-	float:right;
 	background: #FFFFFF;
-	
+	/*position: fixed;*/
+	margin-left:860px;
+
 }
 .recommand{
 	height: 600px;

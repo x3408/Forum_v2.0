@@ -2,6 +2,7 @@ package JUnit;
 
 import Bean.Topic;
 import Bean.User;
+import Dao.PersonDao;
 import Dao.RecommendDao;
 import Dao.TopicDao;
 import Dao.UserDao;
@@ -22,12 +23,14 @@ import java.util.List;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:applicationContext.xml")
 public class hibernateTest {
-    @Resource(name="RecommendDao")
+    @Resource(name = "RecommendDao")
     private RecommendDao rd;
     @Resource(name = "userDao")
     private UserDao userDao;
     @Resource(name = "topicDao")
     private TopicDao topicDao;
+    @Resource(name = "PersonDao")
+    private PersonDao personDao;
 
 
     @Test
@@ -43,7 +46,6 @@ public class hibernateTest {
                 .list();
 
         System.out.println(list.size());
-
 
 
         transaction.commit();
@@ -64,9 +66,10 @@ public class hibernateTest {
 
         userDao.addUser(user);
     }
+
     @Test
     public void Recommend() {
-        List list= rd.getListRecommend();
+        List list = rd.getListRecommend();
         System.out.println(list);
 
     }
@@ -123,28 +126,19 @@ public class hibernateTest {
     }
 
     @Test
-    public void findTopicTypeListTest() {
-        List<String> topicTypeList = topicDao.findTopicTypeList();
 
-        System.out.println(topicTypeList.size());
+    public void updateDataTest() {
+        User user = new User();
+        user.setUid("1");
+        user.setUsername("xuchen");
+        personDao.updateData(user);
     }
 
     @Test
-    public void findTopicByIdTest() {
-        Topic topic = topicDao.findTopicById(1);
-        System.out.println(topic.getContent());
-    }
+    public void findAttentionCount() {
+        System.out.println(personDao.findAttentionCount());
 
-    @Test
-    public void findTopicByKeywordTest() {
-        List<Topic> topic = topicDao.findTopicByKeyword("这是");
-        System.out.println(topic.size());
-    }
 
-    @Test
-    public void fundUserByKeywordTest() {
-        List<User> xc = userDao.findUserByKeyword("xc");
-        System.out.println(xc.size());
     }
 
     @Test
@@ -153,5 +147,15 @@ public class hibernateTest {
         for (Topic topic : a) {
             System.out.println(topic.getTitle());
         }
+    }
+
+    @Test
+    public void getUserByNameTest() {
+        userDao.getTotalCountByName("xc");
+    }
+
+    @Test
+    public void getTotalCountByName() {
+        userDao.getUserByName(1, 3, "xc");
     }
 }

@@ -70,6 +70,35 @@
 			
 		}
 	}
-	// var navContent=document.getElementById('nav-content');
-	// var oli=navContent.getElementsByTagName('li');
-	// console.log(oli.length);
+//       导航栏被选中时的效果显示
+var nav=document.getElementById('nav');
+	var titles=nav.getElementsByTagName('li');
+	for(var s=0;s<titles.length;s++){
+			titles[s].id=s;
+			 titles[s].onclick=function(){
+			       	for(var j=0;j<titles.length;j++){
+				 			titles[j].className='';
+				 	
+			       	}
+			       	this.className='select';
+			       }
+			}
+		
+//		滚动时两旁导航栏不懂得效果
+		window.onscroll=function(){
+			var scrollH=document.documentElement.scrollTop;
+			var a=parseInt(scrollH);
+			var nav=document.getElementById('nav');
+			var otherNews=document.getElementById('otherNews');
+			if(a>163){
+				nav.style.cssText='position: fixed;top:0;'
+				otherNews.style.cssText='position: fixed;top: 0;'
+			
+			}
+			else{
+				nav.style.position='absolute';
+				otherNews.style.position='static';
+			}
+			
+		}
+	

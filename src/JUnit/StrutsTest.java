@@ -6,15 +6,18 @@ import Service.TopicService;
 import Service.UserService;
 import Util.TopicBean;
 import Util.TopicTypeBean;
+import Util.UserBean;
 import net.sf.json.JSONArray;
 import net.sf.json.JsonConfig;
 import net.sf.json.util.PropertyFilter;
+import org.apache.struts2.ServletActionContext;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -99,5 +102,13 @@ public class StrutsTest {
     public void findTopicByKeywordTest() {
         TopicBean a = topicService.findTopicByKeyword("a", 1);
         System.out.println(a.getList().size());
+    }
+
+    @Test
+    public void findUserByKeywordTest() {
+        UserBean bean = userService.findUserByKeyword("xc", 1);
+
+        System.out.println(JSONArray.fromObject(bean.getList()).toString());
+
     }
 }

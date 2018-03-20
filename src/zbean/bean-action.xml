@@ -24,4 +24,7 @@
         <property name="userService" ref="userService"></property>
         <property name="topicService" ref="topicService"></property>
     </bean>
+    <bean name="personAction" class="Action.PersonAction" scope="prototype">
+        <property name="ps" ref="personService"></property>
+    </bean>
 </beans>

@@ -1,7 +1,9 @@
 package Util;
 
 import Bean.Topic;
+import Bean.User;
 import Dao.TopicDao;
+import Dao.UserDao;
 
 import java.util.List;
 
@@ -21,6 +23,8 @@ public class TopicBean {
     private List<Topic> list;
 
     private TopicDao topicDao;
+
+    private String keyword;
 
 
     public TopicBean showTopicByType(Integer page, String type) {
@@ -46,7 +50,7 @@ public class TopicBean {
 
     public TopicBean showTopicByKeyword(Integer page, String keyword) {
         this.page = page;
-
+        this.keyword = keyword;
         if (limit == null) {
             this.limit = 6;
         }
@@ -64,6 +68,8 @@ public class TopicBean {
 
         return this;
     }
+
+
 
     public Integer getPage() {
         return page;
@@ -83,5 +89,13 @@ public class TopicBean {
 
     public void setTopicDao(TopicDao topicDao) {
         this.topicDao = topicDao;
+    }
+
+    public String getKeyword() {
+        return keyword;
+    }
+
+    public void setKeyword(String keyword) {
+        this.keyword = keyword;
     }
 }
