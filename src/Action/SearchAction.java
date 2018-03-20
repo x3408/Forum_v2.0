@@ -8,6 +8,7 @@ import Util.TopicBean;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 public class SearchAction extends ActionSupport {
@@ -22,7 +23,8 @@ public class SearchAction extends ActionSupport {
     private UserService userService;
 
 
-    public String search() {
+    public String search() throws UnsupportedEncodingException {
+        keyword = new String(keyword.getBytes("iso-8859-1"), "UTF-8");
         switch (type) {
             case "title":
                 return searchTopic(keyword);

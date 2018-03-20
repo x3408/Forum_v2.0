@@ -24,11 +24,10 @@
 <body>
 <div class="header">
     <div class="header-content">
-        <div class="logo"><a href=""><img src="img/logo.png"></a></div><div class="search" id="search-form">
-        <form action="${pageContext.request.contextPath}/SearchAction_search?type=title&page=1" method="post">
-            <input type="text" name="keyword" class="search-text" id="search-input"/><button><i class="icon-search"></i></button>
-        </form>
-    </div>
+        <div class="logo"><a href=""><img src="img/logo.png"></a></div>
+        <div class="search" id="search-form">
+            <input type="text" class="search-text" id="search-input" name="keyword" value="<s:property value="#topicBeanBySearch.keyword"/> "/><button><i onclick="search()" class="icon-search"></i></button>
+        </div>
     </div>
 </div>
 <!--下面是搜索的main了-->
@@ -39,8 +38,8 @@
             <li><a href="#F" data-toggle="tab">按人名搜索</a></li>
         </ul>
         <div class="tab-content">
-            <div class="tab-pane active" id="E">
-                <div id="tab-content--E">
+            <div class="tab-pane active" id="E" onclick="searchTitle()">
+                <div id="tab-content--E" >
                     <s:iterator value="#topicListBySearch" var="Topiclist">
                         <p><s:property value="#Topiclist.title"></s:property></p>
                     </s:iterator>
@@ -67,16 +66,31 @@
                     </div>
                 </div>
             </div>
-            <div class="tab-pane" id="F">
+            <div class="tab-pane" id="F" onclick="searchUser()">
                 <div id="tab-content--F">
                     <%--用户--%>
+                        <s:iterator value="#topicListBySearch" var="Topiclist">
+                            <p><s:property value="#Topiclist.title"></s:property></p>
+                        </s:iterator>
                         <div id="paging">
                             <ul class="pagination pagination-lg">
                                 <span class="sr-only"></span>
-                                <li><a href="${pageContext.request.contextPath}/SearchAction_search?type=title&page=1">&laquo;</a></li>
-                                <li class="active"><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">&raquo;</a></li>
+                                <li><a href="${pageContext.request.contextPath}/SearchAction_search?type=user&page=1&keyword=<s:property value="#topicBeanBySearch.keyword" />">第一页</a></li>
+                                <s:if test="#topicBeanBySearch.page!=1 && #topicBeanBySearch.totalPage!=0">
+                                    <li><a href="${pageContext.request.contextPath}/SearchAction_search?type=user&page=<s:property value="#topicBeanBySearch.page-1" />&keyword=<s:property value="#topicBeanBySearch.keyword" /> ">上一页</a></li>
+                                </s:if>
+                                <s:iterator begin="#topicBeanBySearch.page-2>0?#topicBeanBySearch.page-2:1" var="i" end="#topicBeanBySearch.page+3>#topicBeanBySearch.totalPage?#topicBeanBySearch.totalPage:#topicBeanBySearch.page+3" step="1">
+                                    <s:if test="#topicBeanBySearch.page == #i">
+                                        <li class="active"><a><s:property value="#i"/></a></li>
+                                    </s:if>
+                                    <s:if test="#topicBeanBySearch.page != #i">
+                                        <li><a href="${pageContext.request.contextPath}/SearchAction_search?type=user&page=<s:property value="#i"/>&keyword=<s:property value="#topicBeanBySearch.keyword" /> "><s:property value="#i"/></a></li>
+                                    </s:if>
+                                </s:iterator>
+                                <s:if test="#topicBeanBySearch.page!=#topicBeanBySearch.totalPage && #topicBeanBySearch.totalPage!=0">
+                                    <li><a href="${pageContext.request.contextPath}/SearchAction_search?type=user&page=<s:property value="#topicBeanBySearch.page+1" />&keyword=<s:property value="#topicBeanBySearch.keyword" /> ">下一页</a></li>
+                                </s:if>
+                                <li><a href="${pageContext.request.contextPath}/SearchAction_search?type=user&page=<s:property value="#topicBeanBySearch.totalPage" />&keyword=<s:property value="#topicBeanBySearch.keyword" /> ">最后一页</a></li>
                             </ul>
                         </div>
                 </div>
@@ -85,4 +99,14 @@
     </div>
 </div>
 </body>
+<script type="text/javascript">
+    function searchTitle() {
+        var keyword = $("#search-input").val();
+        window.location.href="${pageContext.request.contextPath}/SearchAction_search?type=title&page=1&keyword="+keyword;
+    }
+    function searchUser() {
+        var keyword = $("#search-input").val();
+        window.location.href="${pageContext.request.contextPath}/SearchAction_search?type=user&page=1&keyword="+keyword;
+    }
+</script>
 </html>

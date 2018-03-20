@@ -12,7 +12,7 @@
 <head>
     <meta charset="utf-8" />
     <title>健身首页</title>
-    <link rel="stylesheet" href="css/MainPage.css?1" />
+    <link rel="stylesheet" href="css/mainPage.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/waterfall.css" />
 
@@ -25,32 +25,30 @@
             <a href=""><img src="img/logo.png"></a>
         </div>
         <div class="search" id="search-form">
-            <form action="${pageContext.request.contextPath}/SearchAction_search?type=title&page=1" method="post">
-                <input type="text" class="search-text" id="search-input" name="keyword" /><button><i onclick="form.submit()" class="icon-search"></i></button>
-            </form>
+            <input type="text" class="search-text" id="search-input" name="keyword" /><button><i onclick="search()" class="icon-search"></i></button>
         </div>
     </div>
 </div>
 </div>
 <div class="main">
-    <div class="nav">
+    <div class="nav"id="nav">
         <ul class="nav-content" id="nav-content">
-            <li class="nav-content-detail">
+            <li class="select">
                 <a href="javascript:void(0);" onclick="updataData(1, 'result_show')">成果展示</a>
             </li>
-            <li class="nav-content-detail">
+            <li>
                 <a href="javascript:void(0);" onclick="updataData(1, 'training_experience')">训练心得</a>
             </li>
-            <li class="nav-content-detail">
+            <li>
                 <a href="javascript:void(0);" onclick="updataData(1, 'diet_plan')">饮食计划</a>
             </li>
-            <li class="nav-content-detail">
+            <li >
                 <a href="javascript:void(0);" onclick="updataData(1, 'appliance_use')">器具使用</a>
             </li>
-            <li class="nav-content-detail">
+            <li >
                 <a href="javascript:void(0);" onclick="updataData(1, 'action')">动作要领</a>
             </li>
-            <li class="nav-content-detail">
+            <li >
                 <a href="javascript:void(0);" onclick="updataData(1, 'diary')">健身日记</a>
             </li>
         </ul>
@@ -81,7 +79,7 @@
         </div>
 
     </div>
-    <div class="otherNews">
+    <div class="otherNews"id="otherNews">
         <div class="recommand">
             <div class="recommand-today">今日推荐</div>
             <ul>
@@ -159,7 +157,7 @@
 
 
 </body>
-<script type="text/javascript" src="js/mainPage.js"></script>
+<script type="text/javascript" src="js/mainPage.js?1"></script>
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript">
     var i = 0;
@@ -224,6 +222,10 @@
     }
 
     window.onload(updataData(1, 'result_show'));
+    function search() {
+        var keyword = $("#search-input").val();
+        window.location.href="${pageContext.request.contextPath}/SearchAction_search?type=title&page=1&keyword="+keyword;
+    }
 </script>
 
 </html>
