@@ -22,6 +22,8 @@ public class TopicBean {
 
     private TopicDao topicDao;
 
+    private String keyword;
+
 
     public TopicBean showTopicByType(Integer page, String type) {
         this.page = page;
@@ -46,7 +48,7 @@ public class TopicBean {
 
     public TopicBean showTopicByKeyword(Integer page, String keyword) {
         this.page = page;
-
+        this.keyword = keyword;
         if (limit == null) {
             this.limit = 6;
         }
@@ -83,5 +85,13 @@ public class TopicBean {
 
     public void setTopicDao(TopicDao topicDao) {
         this.topicDao = topicDao;
+    }
+
+    public String getKeyword() {
+        return keyword;
+    }
+
+    public void setKeyword(String keyword) {
+        this.keyword = keyword;
     }
 }
