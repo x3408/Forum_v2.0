@@ -110,8 +110,16 @@ body{
 	border-top:1px solid #dddddd;
 
 }*/
+#tab-content--E{
+	position:relative;
+}
 #paging{
 	position:absolute;
-	left:-120px;
-	bottom:-80px;
+	width:800px;
+	max-width:1000px;
+	min-width:600px;
+	left:50%;
+	bottom:0px;
+	margin-left:-400px;
+
 }
