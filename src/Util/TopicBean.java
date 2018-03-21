@@ -31,7 +31,7 @@ public class TopicBean {
         this.page = page;
 
         if (limit == null) {
-            this.limit = 3;
+            this.limit = 6;
         }
 
         int start = (page - 1) * limit;
