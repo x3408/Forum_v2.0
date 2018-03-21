@@ -14,7 +14,7 @@
     <title>search</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="css/search.css?1">
+    <link rel="stylesheet" href="css/search.css?2">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css"/>

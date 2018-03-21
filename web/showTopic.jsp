@@ -15,7 +15,7 @@
 
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/user.css">
+    <link rel="stylesheet" href="css/user.css?4">
     <script src="js/user.js"></script>
 </head>
 <body>
