@@ -148,4 +148,14 @@ public class hibernateTest {
             System.out.println(topic.getTitle());
         }
     }
+
+    @Test
+    public void getUserByNameTest() {
+        userDao.getTotalCountByName("xc");
+    }
+
+    @Test
+    public void getTotalCountByName() {
+        userDao.getUserByName(1, 3, "xc");
+    }
 }

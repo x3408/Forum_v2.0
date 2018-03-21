@@ -15,14 +15,14 @@
 
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/user.css?3">
+    <link rel="stylesheet" href="css/user.css">
     <script src="js/user.js"></script>
 </head>
 <body>
 <body>
 <div class="header">
     <div class="header-content">
-        <div class="logo"><a href=""><img src="img/logo.png"></a></div><div class="search" id="search-form">
+        <div class="logo"><a href="${pageContext.request.contextPath}/home.jsp"><img src="img/logo.png"></a></div><div class="search" id="search-form">
         <form>
             <input type="text"  class="search-text" id="search-input"/><button><i class="icon-search"></i></button>
         </form>

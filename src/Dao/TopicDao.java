@@ -24,4 +24,6 @@ public interface TopicDao {
     Integer getTotalCountByTitle(String keyword);
 
     List<Topic> getTopicByTitle(int start, Integer limit, String keyword);
+
+    void addShowCount(Integer tid);
 }

@@ -1,6 +1,7 @@
 package Dao.DaoImpl;
 
 import Bean.Relation;
+import Bean.Topic;
 import Bean.User;
 import Dao.UserDao;
 import org.apache.struts2.ServletActionContext;
@@ -90,6 +91,27 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
 
     @Override
     public List<User> findUserByKeyword(String keyword) {
+        return getHibernateTemplate().execute(new HibernateCallback<List<User>>() {
+            @Override
+            public List doInHibernate(Session session) throws HibernateException {
+                return session.createQuery("from User where username like ?")
+                        .setParameter(0, "%"+ keyword+"%")
+                        .list();
+            }
+        });
+    }
+
+    @Override
+    public Integer getTotalCountByName(String keyword) {
+        DetachedCriteria dc = DetachedCriteria.forClass(User.class)
+                .setProjection(Projections.rowCount())
+                .add(Restrictions.like("username", "%"+keyword+"%"));
+        Long aLong = (Long) getHibernateTemplate().findByCriteria(dc).get(0);
+        return aLong.intValue();
+    }
+    //分页查询所有用户
+    @Override
+    public List<User> getUserByName(int start, Integer limit, String keyword) {
         return getHibernateTemplate().execute(new HibernateCallback<List<User>>() {
             @Override
             public List doInHibernate(Session session) throws HibernateException {

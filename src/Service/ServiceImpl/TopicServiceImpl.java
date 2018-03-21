@@ -123,6 +123,7 @@ public class TopicServiceImpl implements TopicService{
 
     @Override
     public Topic showTopicById(Integer tid) {
+        topicDao.addShowCount(tid);
         return topicDao.findTopicById(tid);
     }
 

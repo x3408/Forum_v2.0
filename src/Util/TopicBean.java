@@ -1,7 +1,9 @@
 package Util;
 
 import Bean.Topic;
+import Bean.User;
 import Dao.TopicDao;
+import Dao.UserDao;
 
 import java.util.List;
 
@@ -66,6 +68,8 @@ public class TopicBean {
 
         return this;
     }
+
+
 
     public Integer getPage() {
         return page;
