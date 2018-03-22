@@ -89,6 +89,11 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
 
         //调用service方法
         userService.follow(user,follow_id);
+        try {
+            ServletActionContext.getResponse().getWriter().write("{\"status\":\"success\"}");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         return null;
     }
 

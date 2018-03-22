@@ -35,7 +35,7 @@
     <div id="specificWrite-left">
         <div id="specificWrite-left--headImg">
             <img src="img/timg (1).jpeg" class="img-circle">
-            <p>一个好名字</p>
+            <p>${user.username}</p>
         </div>
     </div>
     <div id="specificWrite-right">

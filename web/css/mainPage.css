@@ -246,3 +246,25 @@ body{
 	line-height: 1em;
 	display: inline-block;
 }
+#entry{
+	position: absolute;
+	right:100px;
+	top:10px;
+	font-size: 15px;
+	color:red;
+}
+#register{
+	position: absolute;
+	right:60px;
+	top:10px;
+	font-size: 15px;
+}
+a{
+	color:red;
+	text-decoration:none;
+}
+a:hover{
+	color:white;
+	text-decoration:none;
+}
+
