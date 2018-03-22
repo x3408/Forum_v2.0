@@ -1,7 +1,9 @@
 package Util;
 
 import Bean.Topic;
+import Bean.User;
 import Dao.TopicDao;
+import Dao.UserDao;
 
 import java.util.List;
 
@@ -29,7 +31,7 @@ public class TopicBean {
         this.page = page;
 
         if (limit == null) {
-            this.limit = 3;
+            this.limit = 6;
         }
 
         int start = (page - 1) * limit;
@@ -66,6 +68,8 @@ public class TopicBean {
 
         return this;
     }
+
+
 
     public Integer getPage() {
         return page;

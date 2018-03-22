@@ -171,14 +171,18 @@
 
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+<<<<<<< HEAD
    <link rel="stylesheet" href="css/user.css">
+=======
+    <link rel="stylesheet" href="css/user.css">
+>>>>>>> 6825d042abb4d22ca19c889ce9b388abc5742141
     <script src="js/user.js"></script>
 </head>
 <body>
 <body>
 <div class="header">
     <div class="header-content">
-        <div class="logo"><a href=""><img src="img/logo.png"></a></div><div class="search" id="search-form">
+        <div class="logo"><a href="${pageContext.request.contextPath}/home.jsp"><img src="img/logo.png"></a></div><div class="search" id="search-form">
         <form>
             <input type="text"  class="search-text" id="search-input"/><button><i class="icon-search"></i></button>
         </form>

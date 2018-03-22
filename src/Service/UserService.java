@@ -1,8 +1,7 @@
 package Service;
 
 import Bean.User;
-
-import java.util.List;
+import Util.UserBean;
 
 public interface UserService {
     User login(User user);
@@ -16,4 +15,6 @@ public interface UserService {
     boolean checkUser(String username);
 
     Integer findFansCount(User user);
+
+    UserBean findUserByKeyword(String keyword, Integer page);
 }

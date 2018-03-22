@@ -5,16 +5,19 @@ import Bean.User;
 import Service.TopicService;
 import Service.UserService;
 import Util.TopicBean;
+import Util.UserBean;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+import net.sf.json.JSONArray;
+import org.apache.struts2.ServletActionContext;
 
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 public class SearchAction extends ActionSupport {
     //搜索关键词
     private String keyword;
-    //搜索类型
-    private String type;
     //搜索页
     private Integer page;
 
@@ -22,33 +25,18 @@ public class SearchAction extends ActionSupport {
     private UserService userService;
 
 
-    public String search() {
-        switch (type) {
-            case "title":
-                return searchTopic(keyword);
-            case "user":
-                return searchUser(keyword);
-            default:
-                type = "title";
-                return searchTopic(keyword);
-            //防止以后有新类型搜索 所以使用switch语句
-        }
-    }
-
-    private String searchUser(String keyword) {
+    public String search() throws UnsupportedEncodingException {
+        keyword = new String(keyword.getBytes("iso-8859-1"), "UTF-8");
+        UserBean userBean = userService.findUserByKeyword(keyword, page);
+        TopicBean topicBean = topicService.findTopicByKeyword(keyword, page);
+        ServletActionContext.getResponse().setCharacterEncoding("UTF-8");
+        ActionContext.getContext().put("userBean", userBean);
+        ActionContext.getContext().put("userListBySearch", userBean.getList());
+        ActionContext.getContext().put("topicBean", topicBean);
+        ActionContext.getContext().put("topicListBySearch", topicBean.getList());
 
         return "search";
     }
-
-    //搜索文章
-    private String searchTopic(String keyword) {
-        TopicBean bean = topicService.findTopicByKeyword(keyword, page);
-
-        ActionContext.getContext().put("topicBeanBySearch", bean);
-        ActionContext.getContext().put("topicListBySearch", bean.getList());
-        return "search";
-    }
-
 
     public String getKeyword() {
         return keyword;
@@ -56,14 +44,6 @@ public class SearchAction extends ActionSupport {
 
     public void setKeyword(String keyword) {
         this.keyword = keyword;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 
     public void setTopicService(TopicService topicService) {

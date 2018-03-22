@@ -1,5 +1,6 @@
 package Dao;
 
+import Bean.Topic;
 import Bean.User;
 
 import java.util.List;
@@ -18,4 +19,8 @@ public interface UserDao {
     Integer findFansCount(String uid);
 
     List<User> findUserByKeyword(String keyword);
+
+    Integer getTotalCountByName(String keyword);
+
+    List<User> getUserByName(int start, Integer limit, String keyword);
 }

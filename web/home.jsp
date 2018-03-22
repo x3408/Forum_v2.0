@@ -13,7 +13,7 @@
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.8.3.js"></script>
     <meta charset="utf-8" />
     <title>健身首页</title>
-    <link rel="stylesheet" href="css/MainPage.css?1" />
+    <link rel="stylesheet" href="css/mainPage.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/waterfall.css" />
 
@@ -26,10 +26,8 @@
             <a href=""><img src="img/logo.png"></a>
         </div>
         <div class="search" id="search-form">
-            <form action="${pageContext.request.contextPath}/SearchAction_search" method="post">
-            <form action="${pageContext.request.contextPath}/SearchAction_search?type=title&page=1" method="post">
-                <input type="text" class="search-text" id="search-input" name="keyword" /><button><i onclick="form.submit()" class="icon-search"></i></button>
-            </form>
+
+            <input type="text" class="search-text" id="search-input" name="keyword" /><button><i onclick="search()" class="icon-search"></i></button>
         </div>
     </div>
 
@@ -37,24 +35,24 @@
 
 </div>
 <div class="main">
-    <div class="nav">
+    <div class="nav"id="nav">
         <ul class="nav-content" id="nav-content">
-            <li class="nav-content-detail">
+            <li class="select">
                 <a href="javascript:void(0);" onclick="updataData(1, 'result_show')">成果展示</a>
             </li>
-            <li class="nav-content-detail">
+            <li>
                 <a href="javascript:void(0);" onclick="updataData(1, 'training_experience')">训练心得</a>
             </li>
-            <li class="nav-content-detail">
+            <li>
                 <a href="javascript:void(0);" onclick="updataData(1, 'diet_plan')">饮食计划</a>
             </li>
-            <li class="nav-content-detail">
+            <li >
                 <a href="javascript:void(0);" onclick="updataData(1, 'appliance_use')">器具使用</a>
             </li>
-            <li class="nav-content-detail">
+            <li >
                 <a href="javascript:void(0);" onclick="updataData(1, 'action')">动作要领</a>
             </li>
-            <li class="nav-content-detail">
+            <li >
                 <a href="javascript:void(0);" onclick="updataData(1, 'diary')">健身日记</a>
             </li>
         </ul>
@@ -85,7 +83,7 @@
         </div>
 
     </div>
-    <div class="otherNews">
+    <div class="otherNews"id="otherNews">
         <div class="recommand">
             <div class="recommand-today">今日推荐</div>
             <ul>
@@ -225,6 +223,7 @@
                 var timer =  data[i].time.month + "月" + data[i].time.day + "日" + data[i].time.hours + "时" + data[i].time.minutes + "分";
                 $("#main").append('<div class="box"><div class="topicFrom"><span class="date" id="date">' + timer + '</span><span class="viewCount" id="viewCount">阅读量： ' + data[i].viewCount + '</span></div><div class="name"><div class="myPic" id="myPic"><img src="" /></div><div class="username" id="username">' + data[i + 3].username + '</div></div><div class="context"><h6 class="title" id="title"><a href="TopicAction_showTopic?tid='+data[0].tid+'" style="text-decoration:none" >' + data[i].title + '</a></h6><p class="text" id="text">' + data[i].descriptive + '</p></div><div class="other-follow "><i class="icon-star-empty" id="follow"></i><span class="like-text">关注</span></div><div class="other-like "><i class="icon-heart2" id="like"></i><span class="like-text">点赞</span></div></div>');
                 $("#main").append('<div class="box"><div class="topicFrom"><span class="date" id="date">' + timer + '</span><span class="viewCount" id="viewCount">阅读量： ' + data[i].viewCount + '</span></div><div class="name"><div class="myPic" id="myPic"><img src="" /></div><div class="username" id="username">' + data[i+3].username + '</div></div><div class="context"><h6 class="title" id="title"><a href="TopicAction_showTopic?tid='+data[0].tid+'" style="text-decoration:none" >' + data[i].title + '</a></h6><p class="text" id="text">' + data[i].descriptive + '</p></div><div class="other-follow "><i class="icon-star-empty" id="follow"></i><span class="like-text">关注</span></div><div class="other-like "><i class="icon-heart2" id="like"></i><span class="like-text">点赞</span></div></div>');
+                $("#main").append('<div class="box"><div class="topicFrom"><span class="date" id="date">' + timer + '</span><span class="viewCount" id="viewCount">阅读量： ' + data[i].viewCount + '</span></div><div class="name"><div class="myPic" id="myPic"><img src="" /></div><div class="username" id="username">' + data[i+3].username + '</div></div><div class="context"><h6 class="title" id="title"><a href="TopicAction_showTopic?tid='+data[0].tid+'" style="text-decoration:none;color:#202678;" target="_blank" >' + data[i].title + '</a></h6><p class="text" id="text">' + data[i].descriptive + '</p></div><div class="other-follow "><i class="icon-star-empty" id="follow"></i><span class="like-text">关注</span></div><div class="other-like "><i class="icon-heart2" id="like"></i><span class="like-text">点赞</span></div></div>');
 //                j++;
 //                i++;
                 var like = document.getElementsByClassName('icon-heart2');
@@ -280,6 +279,10 @@
 
 
 
+    function search() {
+        var keyword = $("#search-input").val();
+        window.location.href="${pageContext.request.contextPath}/SearchAction_search?page=1&keyword="+keyword;
+    }
 </script>
 
 </html>
