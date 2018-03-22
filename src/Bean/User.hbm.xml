@@ -11,5 +11,7 @@
         <property name="phoneNumber"></property>
         <property name="password"></property>
         <property name="sex"></property>
+        <property name="headPortrait"></property>
+        <property name="signature"></property>
     </class>
 </hibernate-mapping>

@@ -76,6 +76,11 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
         ServletActionContext.getResponse().getWriter().write(json4);
         return null;
     }
+    public String findAllData() throws Exception{
+        List<User> list4 = ps.findAllData();
+        ActionContext.getContext().getSession().put("listAllData",list4);
+        return "list";
+    }
     @Override
     public User getModel() {
         return user ;

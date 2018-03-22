@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -39,6 +39,12 @@
                     <label class="control-lable col-lg-3">用户名</label>
                     <div class="col-lg-7">
                         <input type="text" id="txtUserName" class="form-control" value="${list.username}" name="username"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-lable col-lg-3">个性签名</label>
+                    <div class="col-lg-7">
+                        <input type="text" id="txtSignature" class="form-control" value="${list.signature}" name="signature"/>
                     </div>
                 </div>
 

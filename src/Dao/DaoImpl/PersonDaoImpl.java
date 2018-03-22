@@ -19,24 +19,25 @@ public class PersonDaoImpl extends HibernateDaoSupport implements PersonDao {
         return getHibernateTemplate().execute(new HibernateCallback<List<Topic>>() {
 
             @Override
-            public List<Topic> doInHibernate(Session session ) throws HibernateException {
-                String hql= "from Topic" ;//这里的表名不能直接填写表名，而是填写该表在orm元数据中的映射关系名字
+            public List<Topic> doInHibernate(Session session) throws HibernateException {
+                String hql = "from Topic";//这里的表名不能直接填写表名，而是填写该表在orm元数据中的映射关系名字
                 Query query = session.createQuery(hql);
-                List<Topic> list =query.list();
+                List<Topic> list = query.list();
                 return list;
             }
         });
 
     }
+
     //我的关注
     @Override
     public List<Relation> findAttention() {
-       return getHibernateTemplate().execute(new HibernateCallback<List<Relation>>() {
+        return getHibernateTemplate().execute(new HibernateCallback<List<Relation>>() {
             @Override
             public List<Relation> doInHibernate(Session session) throws HibernateException {
-                String hql= "from Relation where uid='3' and type=1" ;//这里的表名不能直接填写表名，而是填写该表在orm元数据中的映射关系名字
+                String hql = "from Relation where uid='3' and type=1";//这里的表名不能直接填写表名，而是填写该表在orm元数据中的映射关系名字
                 Query query = session.createQuery(hql);
-                List<Relation> list1 =query.list();
+                List<Relation> list1 = query.list();
                 return list1;
             }
         });
@@ -60,7 +61,7 @@ public class PersonDaoImpl extends HibernateDaoSupport implements PersonDao {
         return getHibernateTemplate().execute(new HibernateCallback<List<User>>() {
             @Override
             public List<User> doInHibernate(Session session) throws HibernateException {
-                String hql = "from User ";//这里的表名不能直接填写表名，而是填写该表在orm元数据中的映射关系名字
+                String hql = "from User where uid='1' ";//这里的表名不能直接填写表名，而是填写该表在orm元数据中的映射关系名字
                 Query query = session.createQuery(hql);
                 List<User> list3 = query.list();
                 return list3;
@@ -70,7 +71,7 @@ public class PersonDaoImpl extends HibernateDaoSupport implements PersonDao {
 
     @Override
     public void updateData(User user) {
-        User OldUser = getHibernateTemplate().get(User.class,"1");
+        User OldUser = getHibernateTemplate().get(User.class, "1");
         OldUser.setUsername(user.getUsername());
         OldUser.setSex(user.getSex());
         getHibernateTemplate().update(OldUser);
@@ -78,16 +79,16 @@ public class PersonDaoImpl extends HibernateDaoSupport implements PersonDao {
 
     @Override
     public int findAttentionCount() {
-       return getHibernateTemplate().execute(new HibernateCallback<Integer>() {
+        return getHibernateTemplate().execute(new HibernateCallback<Integer>() {
 
-           @Override
-           public Integer doInHibernate(Session session) throws HibernateException {
-               String hql = "select count(*)  from Relation where uid='3'and type=2 ";
-               Query query = session.createQuery(hql);
-               int AttentionCount = ((Long) query.iterate().next()).intValue();
-               return AttentionCount;
-           }
-       });
+            @Override
+            public Integer doInHibernate(Session session) throws HibernateException {
+                String hql = "select count(*)  from Relation where uid='3'and type=2 ";
+                Query query = session.createQuery(hql);
+                int AttentionCount = ((Long) query.iterate().next()).intValue();
+                return AttentionCount;
+            }
+        });
     }
 
     @Override
@@ -104,5 +105,17 @@ public class PersonDaoImpl extends HibernateDaoSupport implements PersonDao {
         });
     }
 
+    @Override
+    public List<User> findAllData() {
+       return getHibernateTemplate().execute(new HibernateCallback<List<User>>() {
+            @Override
+            public List<User> doInHibernate(Session session) throws HibernateException {
+                String hql = "from User ";//这里的表名不能直接填写表名，而是填写该表在orm元数据中的映射关系名字
+                Query query = session.createQuery(hql);
+                List<User> list4 = query.list();
+                return list4;
+            }
+        });
 
+    }
 }

@@ -8,7 +8,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="S" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,9 +28,22 @@
     <div id="personCenter-headImg">
         <img src="img/timg (1).jpeg" class="img-rounded">
     </div>
-    <span id="personCenter-name">
-			  <a href="${pageContext.request.contextPath}/PersonAction_findData">原来是一个好名字</a>
-			</span>
+
+         <%--<span id="personCenter-name">--%>
+                <%--<s:property value="#listAllData[0].username" />--%>
+         <%--</span>--%>
+        <%--<span id="personCenter-character">--%>
+			  <%--<a href="${pageContext.request.contextPath}/PersonAction_findData"><s:property value="#listAllData[0].signature" /></a>--%>
+        <%--</span>--%>
+
+   <c:forEach items="${listAllData}" var="list1">
+        <span id="personCenter-name">
+    <a href="${pageContext.request.contextPath}/PersonAction_findData">${list1.username}</a>
+        </span>
+        <span id="personCenter-character">
+			  <a href="${pageContext.request.contextPath}/PersonAction_findData">${list1.signature}</a>
+        </span>
+    </c:forEach>
     <div id="personCenter-edit">
         <div id="personCenter-edit--btn">
             <form action="${pageContext.request.contextPath}/PersonAction_findData">
@@ -109,5 +121,7 @@
                     json4 );
             });
         },"json");
+    $.get("${pageContext.request.contextPath}/PersonAction_findAllData"
+      );
 </script>
 </html>

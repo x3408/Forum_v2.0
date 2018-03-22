@@ -56,4 +56,10 @@ public class PersonServiceImpl implements PersonService {
         return  FansCount;
     }
 
+    @Override
+    public List<User> findAllData() {
+        List<User> list4 = pd.findAllData();
+        return list4;
+    }
+
 }

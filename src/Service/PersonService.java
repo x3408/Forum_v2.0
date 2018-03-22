@@ -20,4 +20,6 @@ public interface PersonService {
     int findAttentionCount();
 
     int findFansCount();
+
+    List<User> findAllData();
 }

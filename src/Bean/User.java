@@ -8,7 +8,16 @@ public class User {
     private String password;
     private String phoneNumber;
     private String sex;
+    private String headPortrait;
+    private String signature;
 
+    public String getSignature() { return signature; }
+
+    public void setSignature(String signature) { this.signature = signature; }
+
+    public String getHeadPortrait() { return headPortrait; }
+
+    public void setHeadPortrait(String headPortrait) { this.headPortrait = headPortrait; }
 
     public String getUsername() {
         return username;
