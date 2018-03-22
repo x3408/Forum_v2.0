@@ -11,6 +11,7 @@
 <html>
 
 <head>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.8.3.js"></script>
     <meta charset="utf-8" />
     <title>健身首页</title>
     <link rel="stylesheet" href="css/mainPage.css" />
@@ -26,6 +27,7 @@
             <a href=""><img src="img/logo.png"></a>
         </div>
         <div class="search" id="search-form">
+
             <input type="text" class="search-text" id="search-input" name="keyword" /><button><i onclick="search()" class="icon-search"></i></button>
         </div>
         <s:if test="#session.user==null">
@@ -36,7 +38,9 @@
         <span id="entry">欢迎您: <s:property value="#session.user.username"></s:property> <a href="${pageContext.request.contextPath}/personCenter.jsp"> 个人中心</a></span>
         </s:else>
     </div>
+
 </div>
+
 </div>
 <div class="main">
     <div class="nav"id="nav">
@@ -93,66 +97,95 @@
             <ul>
                 <li>
                     <a href="">
-                        <div id="img-one" class="img"></div>
+                        <div id="img1" class="img">
+                            <img src="">
+                        </div>
+                        <div class="atext">
+                            <span id="text1"  class="strongText"></span>
                         <div id="text-one" class="atext">
                             <span class="strongText"></span>
                             <span class="detailText"></span>
 
-                        </div>
+                        </div></div>
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <div id="img-two" class="img"></div>
+                        <div id="img2" class="img">
+                            <img src="">
+                        </div>
+                        <div  class="atext">
+                            <span id="text2" class="strongText"></span>
                         <div id="text-two" class="atext">
                             <span class="strongText"></span>
                             <span class="detailText"></span>
-                        </div>
+                        </div></div>
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <div id="img-three" class="img"></div>
+                        <div id="img3" class="img">
+                            <img src="">
+                        </div>
+                        <div class="atext">
+                            <span id="text3"  class="strongText"></span>
                         <div id="text-three" class="atext">
                             <span class="strongText"></span>
                             <span class="detailText"></span>
                         </div>
+                        </div>
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <div id="img-four" class="img"></div>
+                        <div id="img4" class="img">
+                            <img src="">
+                        </div>
+                        <div  class="atext">
+                            <span id="text4" class="strongText"></span>
                         <div id="text-four" class="atext">
                             <span class="strongText"></span>
                             <span class="detailText"></span>
-                        </div>
+                        </div></div>
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <div id="img-five" class="img"></div>
+                        <div id="img5" class="img">
+                            <img src="">
+                        </div>
+                        <div  class="atext">
+                            <span id="text5" class="strongText"></span>
                         <div id="text-five" class="atext">
                             <span class="strongText"></span>
                             <span class="detailText"></span>
-                        </div>
+                        </div></div>
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <div id="img-six" class="img"></div>
+                        <div id="img6" class="img">
+                            <img src="">
+                        </div>
+                        <div  class="atext">
+                            <span id="text6" class="strongText"></span>
                         <div id="text-six" class="atext">
                             <span class="strongText"></span>
                             <span class="detailText"></span>
-                        </div>
+                        </div></div>
                     </a>
                 </li>
                 <li>
                     <a href="">
-                        <div id="img-seven" class="img"></div>
+                        <div id="img7" class="img">
+                            <img src="">
+                        </div>
+                        <div  class="atext">
+                            <span id="text7" class="strongText"></span>
                         <div id="text-seven" class="atext">
                             <span class="strongText"></span>
                             <span class="detailText"></span>
-                        </div>
+                        </div></div>
                     </a>
                 </li>
             </ul>
@@ -168,6 +201,18 @@
 <script type="text/javascript" src="js/mainPage.js"></script>
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript">
+    $.get("${pageContext.request.contextPath}/Recommend_list",
+        function(data){
+
+            $.each( data , function(i, json){
+                  j=i+1;
+                document.getElementById("text"+""+j).innerHTML=json['recommend_topic']
+                $('#img'+''+j).children("img").attr("src",json['recommend_image'])
+
+
+            });
+        },"json");
+
     var i = 0;
     var page;
     var type;
@@ -230,6 +275,16 @@
     }
 
     window.onload(updataData(1, 'result_show'));
+
+
+
+
+
+
+
+
+
+
     function search() {
         var keyword = $("#search-input").val();
         window.location.href="${pageContext.request.contextPath}/SearchAction_search?page=1&keyword="+keyword;

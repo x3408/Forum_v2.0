@@ -65,10 +65,10 @@ public class TopicServiceImpl implements TopicService{
 
         //设置文章用户
         //测试使用代码
-        if(user == null) {
+        /*if(user == null) {
             user = new User();
             user.setUid("1");
-        }
+        }*/
 
         topic.setUid(user.getUid());
 

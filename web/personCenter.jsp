@@ -65,7 +65,6 @@
     //文章的加载与遍历jQuery
     $.get("${pageContext.request.contextPath}/PersonAction_findArticle",
         function(data){
-
             $.each( data , function(i, json){
                 $("#article").append(
                     "<a id='addDiv' href='#'>" + json.title + "</a>" );

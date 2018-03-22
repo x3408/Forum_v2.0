@@ -4,6 +4,7 @@ import Bean.Relation;
 import Bean.Topic;
 import Bean.User;
 import Service.PersonService;
+import com.alibaba.fastjson.JSON;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
@@ -26,7 +27,7 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
     //我的文章
     public String findArticle() throws Exception {
         List<Topic> list = ps.findArticle();
-        String json = JSONArray.fromObject(list).toString();
+        String json = JSON.toJSONString(list).toString();
             System.out.println(json);
          ServletActionContext.getResponse().setContentType("application/json;charset=UTF-8");
             ServletActionContext.getResponse().getWriter().write(json);

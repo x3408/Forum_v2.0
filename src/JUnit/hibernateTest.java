@@ -1,11 +1,15 @@
 package JUnit;
 
+import Action.CommentAction;
 import Bean.Topic;
 import Bean.User;
+import Bean.comment;
+import Dao.CommentDao;
 import Dao.PersonDao;
 import Dao.RecommendDao;
 import Dao.TopicDao;
 import Dao.UserDao;
+import Service.CommentService;
 import org.apache.struts2.ServletActionContext;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -133,6 +137,14 @@ public class hibernateTest {
         user.setUsername("xuchen");
         personDao.updateData(user);
     }
+    @Test
+
+    public void test1() {
+        User user = new User();
+        user.setUid("1");
+        user.setUsername("xuchen");
+        personDao.updateData(user);
+    }
 
     @Test
     public void findAttentionCount() {
@@ -140,6 +152,12 @@ public class hibernateTest {
 
 
     }
+    @Test
+    public void findArticle() {
+        System.out.println(personDao.findArticle());
+
+
+}
 
     @Test
     public void getTopicByTitleTest() {

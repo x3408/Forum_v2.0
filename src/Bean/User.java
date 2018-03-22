@@ -1,5 +1,6 @@
 package Bean;
 
+import java.util.HashSet;
 import java.util.Set;
 
 public class User {
@@ -7,8 +8,17 @@ public class User {
     private String username;
     private String password;
     private String phoneNumber;
+    //一对多 一的一方 对应回复版块的评论v用set
+    private Set<comment> comments=new HashSet<>();
+
+    public Set<comment> getComments() {
+        return comments;
+    }
     private String sex;
 
+    public void setComments(Set<comment> comments) {
+        this.comments = comments;
+    }
 
     public String getUsername() {
         return username;
