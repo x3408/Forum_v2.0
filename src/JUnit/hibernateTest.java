@@ -155,6 +155,15 @@ public class hibernateTest {
     @Test
     public void findArticle() {
         System.out.println(personDao.findArticle());
-    }
 
+
+}
+
+    @Test
+    public void getTopicByTitleTest() {
+        List<Topic> a = topicDao.getTopicByTitle(0, 6, "a");
+        for (Topic topic : a) {
+            System.out.println(topic.getTitle());
+        }
+    }
 }

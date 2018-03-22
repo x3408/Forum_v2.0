@@ -4,6 +4,7 @@ import Bean.Topic;
 import Bean.User;
 import Service.TopicService;
 import Service.UserService;
+import Util.TopicBean;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -14,6 +15,8 @@ public class SearchAction extends ActionSupport {
     private String keyword;
     //搜索类型
     private String type;
+    //搜索页
+    private Integer page;
 
     private TopicService topicService;
     private UserService userService;
@@ -25,23 +28,24 @@ public class SearchAction extends ActionSupport {
                 return searchTopic(keyword);
             case "user":
                 return searchUser(keyword);
+            default:
+                type = "title";
+                return searchTopic(keyword);
             //防止以后有新类型搜索 所以使用switch语句
         }
-        return null;
     }
 
     private String searchUser(String keyword) {
-        List<User> userList = userService.findUserByKeyword(keyword);
 
-        ActionContext.getContext().put("userListBySearch", userList);
         return "search";
     }
 
     //搜索文章
     private String searchTopic(String keyword) {
-        List<Topic> topicList = topicService.findTopicByKeyword(keyword);
+        TopicBean bean = topicService.findTopicByKeyword(keyword, page);
 
-        ActionContext.getContext().put("topicListBySearch", topicList);
+        ActionContext.getContext().put("topicBeanBySearch", bean);
+        ActionContext.getContext().put("topicListBySearch", bean.getList());
         return "search";
     }
 
@@ -68,5 +72,9 @@ public class SearchAction extends ActionSupport {
 
     public void setUserService(UserService userService) {
         this.userService = userService;
+    }
+
+    public void setPage(Integer page) {
+        this.page = page;
     }
 }

@@ -22,6 +22,8 @@ public class TopicBean {
 
     private TopicDao topicDao;
 
+    private String keyword;
+
 
     public TopicBean showTopicByType(Integer page, String type) {
         this.page = page;
@@ -44,6 +46,27 @@ public class TopicBean {
         return this;
     }
 
+    public TopicBean showTopicByKeyword(Integer page, String keyword) {
+        this.page = page;
+        this.keyword = keyword;
+        if (limit == null) {
+            this.limit = 6;
+        }
+
+        int start = (page - 1) * limit;
+
+        totalCount = topicDao.getTotalCountByTitle(keyword);
+
+        if (totalCount % limit == 0)
+            totalPage = totalCount / limit;
+        else
+            totalPage = totalCount / limit + 1;
+
+        list = topicDao.getTopicByTitle(start, limit, keyword);
+
+        return this;
+    }
+
     public Integer getPage() {
         return page;
     }
@@ -62,5 +85,13 @@ public class TopicBean {
 
     public void setTopicDao(TopicDao topicDao) {
         this.topicDao = topicDao;
+    }
+
+    public String getKeyword() {
+        return keyword;
+    }
+
+    public void setKeyword(String keyword) {
+        this.keyword = keyword;
     }
 }

@@ -21,5 +21,5 @@ public interface TopicService {
 
     Topic showTopicById(Integer tid);
 
-    List<Topic> findTopicByKeyword(String keyword);
+    TopicBean findTopicByKeyword(String keyword, Integer page);
 }

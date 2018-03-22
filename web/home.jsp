@@ -11,7 +11,6 @@
 
 <head>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.8.3.js"></script>
-
     <meta charset="utf-8" />
     <title>健身首页</title>
     <link rel="stylesheet" href="css/MainPage.css?1" />
@@ -28,11 +27,14 @@
         </div>
         <div class="search" id="search-form">
             <form action="${pageContext.request.contextPath}/SearchAction_search" method="post">
+            <form action="${pageContext.request.contextPath}/SearchAction_search?type=title&page=1" method="post">
                 <input type="text" class="search-text" id="search-input" name="keyword" /><button><i onclick="form.submit()" class="icon-search"></i></button>
             </form>
         </div>
     </div>
+
 </div>
+
 </div>
 <div class="main">
     <div class="nav">
@@ -94,9 +96,11 @@
                         </div>
                         <div class="atext">
                             <span id="text1"  class="strongText"></span>
+                        <div id="text-one" class="atext">
+                            <span class="strongText"></span>
                             <span class="detailText"></span>
 
-                        </div>
+                        </div></div>
                     </a>
                 </li>
                 <li>
@@ -106,8 +110,10 @@
                         </div>
                         <div  class="atext">
                             <span id="text2" class="strongText"></span>
+                        <div id="text-two" class="atext">
+                            <span class="strongText"></span>
                             <span class="detailText"></span>
-                        </div>
+                        </div></div>
                     </a>
                 </li>
                 <li>
@@ -117,7 +123,10 @@
                         </div>
                         <div class="atext">
                             <span id="text3"  class="strongText"></span>
+                        <div id="text-three" class="atext">
+                            <span class="strongText"></span>
                             <span class="detailText"></span>
+                        </div>
                         </div>
                     </a>
                 </li>
@@ -128,8 +137,10 @@
                         </div>
                         <div  class="atext">
                             <span id="text4" class="strongText"></span>
+                        <div id="text-four" class="atext">
+                            <span class="strongText"></span>
                             <span class="detailText"></span>
-                        </div>
+                        </div></div>
                     </a>
                 </li>
                 <li>
@@ -139,8 +150,10 @@
                         </div>
                         <div  class="atext">
                             <span id="text5" class="strongText"></span>
+                        <div id="text-five" class="atext">
+                            <span class="strongText"></span>
                             <span class="detailText"></span>
-                        </div>
+                        </div></div>
                     </a>
                 </li>
                 <li>
@@ -150,8 +163,10 @@
                         </div>
                         <div  class="atext">
                             <span id="text6" class="strongText"></span>
+                        <div id="text-six" class="atext">
+                            <span class="strongText"></span>
                             <span class="detailText"></span>
-                        </div>
+                        </div></div>
                     </a>
                 </li>
                 <li>
@@ -161,8 +176,10 @@
                         </div>
                         <div  class="atext">
                             <span id="text7" class="strongText"></span>
+                        <div id="text-seven" class="atext">
+                            <span class="strongText"></span>
                             <span class="detailText"></span>
-                        </div>
+                        </div></div>
                     </a>
                 </li>
             </ul>
@@ -207,6 +224,7 @@
             for(i=0;i>=0;i++){
                 var timer =  data[i].time.month + "月" + data[i].time.day + "日" + data[i].time.hours + "时" + data[i].time.minutes + "分";
                 $("#main").append('<div class="box"><div class="topicFrom"><span class="date" id="date">' + timer + '</span><span class="viewCount" id="viewCount">阅读量： ' + data[i].viewCount + '</span></div><div class="name"><div class="myPic" id="myPic"><img src="" /></div><div class="username" id="username">' + data[i + 3].username + '</div></div><div class="context"><h6 class="title" id="title"><a href="TopicAction_showTopic?tid='+data[0].tid+'" style="text-decoration:none" >' + data[i].title + '</a></h6><p class="text" id="text">' + data[i].descriptive + '</p></div><div class="other-follow "><i class="icon-star-empty" id="follow"></i><span class="like-text">关注</span></div><div class="other-like "><i class="icon-heart2" id="like"></i><span class="like-text">点赞</span></div></div>');
+                $("#main").append('<div class="box"><div class="topicFrom"><span class="date" id="date">' + timer + '</span><span class="viewCount" id="viewCount">阅读量： ' + data[i].viewCount + '</span></div><div class="name"><div class="myPic" id="myPic"><img src="" /></div><div class="username" id="username">' + data[i+3].username + '</div></div><div class="context"><h6 class="title" id="title"><a href="TopicAction_showTopic?tid='+data[0].tid+'" style="text-decoration:none" >' + data[i].title + '</a></h6><p class="text" id="text">' + data[i].descriptive + '</p></div><div class="other-follow "><i class="icon-star-empty" id="follow"></i><span class="like-text">关注</span></div><div class="other-like "><i class="icon-heart2" id="like"></i><span class="like-text">点赞</span></div></div>');
 //                j++;
 //                i++;
                 var like = document.getElementsByClassName('icon-heart2');
