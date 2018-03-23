@@ -176,4 +176,15 @@ public class hibernateTest {
     public void getTotalCountByName() {
         userDao.getUserByName(1, 3, "xc");
     }
+
+    @Test
+    public void checkStatusTest() {
+        Boolean aBoolean = userDao.checkStatus("1", "3");
+        System.out.println(aBoolean);
+    }
+
+    @Test
+    public void unFollowTest() {
+        userDao.unFollow("2", "1");
+    }
 }

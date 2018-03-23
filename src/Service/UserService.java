@@ -10,6 +10,8 @@ public interface UserService {
 
     void follow(User user, String follow_id);
 
+    void unFollow(User user, String follow_id);
+
     User findUserById(String showUserId);
 
     boolean checkUser(String username);
@@ -17,4 +19,6 @@ public interface UserService {
     Integer findFansCount(User user);
 
     UserBean findUserByKeyword(String keyword, Integer page);
+
+    Boolean checkStatus(String uid, String uid1);
 }
