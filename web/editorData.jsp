@@ -15,24 +15,30 @@
     <title>编辑资料</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/editorData.css">
+    <script src="js/jquery.min.js"></script>
     <script src="js/editorData.js"></script>
+
 </head>
 <body>
 <div id="editorData">
     <div id="editorData-top">
         <span>个人信息</span>
-        <form action="personCenter.jsp">
+        <form action="${pageContext.request.contextPath}/PersonAction_findAllData">
             <button class="btn btn-danger btn-sm">返回首页</button>
         </form>
 
     </div>
-    <form action="${pageContext.request.contextPath}/PersonAction_updateData" method="post">
+    <form action="${pageContext.request.contextPath}/PersonAction_updateData" method="post" enctype="multipart/form-data">
         <div id="editorData-main">
             <c:forEach items="${listData}" var ="list">
             <div id="editorData-headImg">
-                <span>当前头像</span>
-                <img src="img/timg (1).jpeg">
-                <a href="">修改头像</a>
+                <span id="imgtext">当前头像
+                <img src="${basePath}/headPortrait/${list.headPortrait}">
+                </span>
+                <%--<input type="file" name ="headPortrait">--%>
+                <input id="fileupload" name ="photo" type="file" name="photo" onchange="imagesSelectedForHead(this.files)" class="btn">
+
+                <a id="changeImg"><!--改变头像--></a>
             </div>
             <div id="editorData-ip" class="form-horizontal">
                 <div class="form-group">
@@ -61,4 +67,20 @@
     </form>
 </div>
 </body>
+<script type="text/javascript">
+function imagesSelectedForHead(myFiles) {
+    for (var i = 0, f; f = myFiles[i]; i++) {
+        var imageReader = new FileReader();
+        imageReader.onload = (function(aFile) {
+            return function(e) {
+                $('#imgtext').html('<img  class="images" style="width: 100px;height: 100px" src="'+e.target.result+'" title="'+aFile.name
+                                    +'"/>');
+                // $('#imageUrl').val(e.target.result);
+            };
+        })(f);
+        imageReader.readAsDataURL(f);
+    }
+}
+
+</script>
 </html>

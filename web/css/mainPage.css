@@ -11,7 +11,7 @@ body{
 	min-width:1115px ;
 }
 .header-content{
-	width:1115px;
+	width:1108px;
 	height: 163px;
 	background:url(../img/navPic.png) no-repeat;
 	margin: auto;
@@ -71,7 +71,7 @@ body{
 }
 .nav{
 	width: 100px;
-	height: 800px;
+	height: 600px;
 	border: 1px solid darkgray;
 	float: left;
 	border-radius: 5px ;
@@ -191,7 +191,7 @@ body{
 	background: #FFFFFF;
 	/*position: fixed;*/
 	margin-left:860px;
-	
+
 }
 .recommand{
 	height: 600px;
@@ -246,3 +246,25 @@ body{
 	line-height: 1em;
 	display: inline-block;
 }
+#entry{
+	position: absolute;
+	right:100px;
+	top:10px;
+	font-size: 15px;
+	color:red;
+}
+#register{
+	position: absolute;
+	right:60px;
+	top:10px;
+	font-size: 15px;
+}
+a{
+	color:red;
+	text-decoration:none;
+}
+a:hover{
+	color:white;
+	text-decoration:none;
+}
+

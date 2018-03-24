@@ -16,9 +16,18 @@
     <link rel="stylesheet" href="css/try.css">
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.8.3.js"></script>
     <script type="text/javascript">
-        $.get("${pageContext.request.contextPath}/Recommend_list",
-            function(data){
+    $.get("${pageContext.request.contextPath}/Recommend_list",
+        function(data){
 
+<<<<<<< HEAD
+            $.each( data , function(i, json){
+                document.getElementById("span1").innerHTML=json['recommend_topic']
+
+                var src=$('#left').children("img").attr("src",json['recommend_image'])
+
+
+            });
+=======
                        $.each( data , function(i, json){
             document.getElementById("span1").innerHTML=json['recommend_topic']
 
@@ -26,10 +35,11 @@
 
 
         });
+>>>>>>> f7751d5b95afbe8c53eb6f1f7316666a37369ccb
         },"json");
 
 
-    </script>
+</script>
 
 </head>
 <body>

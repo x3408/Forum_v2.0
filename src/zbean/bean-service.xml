@@ -11,6 +11,7 @@
 
     <bean name="userService" class="Service.ServiceImpl.UserServiceImpl">
         <property name="userDao" ref="userDao"></property>
+        <property name="userBean" ref="userBean"></property>
     </bean>
 
     <bean name="topicService" class="Service.ServiceImpl.TopicServiceImpl">
@@ -20,8 +21,14 @@
     <bean name="topicBean" class="Util.TopicBean">
         <property name="topicDao" ref="topicDao"></property>
     </bean>
+    <bean name="userBean" class="Util.UserBean">
+        <property name="userDao" ref="userDao"></property>
+    </bean>
     <bean name="RecommendService" class="Service.ServiceImpl.RecommendServiceImpl">
         <property name="rd" ref="RecommendDao"></property>
+    </bean>
+    <bean name="CommentService" class="Service.ServiceImpl.CommentServiceImpl">
+        <property name="cd" ref="CommentDao"></property>
     </bean>
     <bean name="personService" class="Service.ServiceImpl.PersonServiceImpl">
         <property name="pd" ref="PersonDao"></property>

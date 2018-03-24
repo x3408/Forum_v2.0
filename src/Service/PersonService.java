@@ -21,5 +21,8 @@ public interface PersonService {
 
     int findFansCount();
 
+
     List<User> findAllData();
+
+
 }

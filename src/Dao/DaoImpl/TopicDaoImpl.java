@@ -123,4 +123,13 @@ public class TopicDaoImpl extends HibernateDaoSupport implements TopicDao {
             }
         });
     }
+
+    @Override
+    public void addShowCount(Integer tid) {
+        Topic topic = getHibernateTemplate().get(Topic.class, tid);
+        topic.setViewCount(topic.getViewCount()+1);
+        getHibernateTemplate().saveOrUpdate(topic);
+    }
+
+
 }

@@ -25,8 +25,9 @@
     <div id="personCenter-top">
         <img src="img/QQ20180315-0.jpg">
     </div>
+    <c:forEach items="${listAllData}" var="list1">
     <div id="personCenter-headImg">
-        <img src="img/timg (1).jpeg" class="img-rounded">
+        <img src="${basePath}/headPortrait/${list1.headPortrait}" class="img-rounded">
     </div>
 
          <%--<span id="personCenter-name">--%>
@@ -36,7 +37,7 @@
 			  <%--<a href="${pageContext.request.contextPath}/PersonAction_findData"><s:property value="#listAllData[0].signature" /></a>--%>
         <%--</span>--%>
 
-   <c:forEach items="${listAllData}" var="list1">
+
         <span id="personCenter-name">
     <a href="${pageContext.request.contextPath}/PersonAction_findData">${list1.username}</a>
         </span>
@@ -74,10 +75,11 @@
 
 </body>
 <script type="text/javascript">
+    $.get("${pageContext.request.contextPath}/PersonAction_findAllData"
+    );
     //文章的加载与遍历jQuery
     $.get("${pageContext.request.contextPath}/PersonAction_findArticle",
         function(data){
-
             $.each( data , function(i, json){
                 $("#article").append(
                     "<a id='addDiv' href='#'>" + json.title + "</a>" );
@@ -121,7 +123,6 @@
                     json4 );
             });
         },"json");
-    $.get("${pageContext.request.contextPath}/PersonAction_findAllData"
-      );
+
 </script>
 </html>

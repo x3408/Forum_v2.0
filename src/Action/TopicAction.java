@@ -6,7 +6,6 @@ import Service.TopicService;
 import Service.UserService;
 import Util.TopicBean;
 import Util.TopicTypeBean;
-import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
@@ -42,7 +41,7 @@ public class TopicAction extends ActionSupport implements ModelDriven<Topic>{
         JsonConfig config = new JsonConfig();
         config.setJsonPropertyFilter(new PropertyFilter() {
                                          public boolean apply(Object source, String name, Object value) {
-                                             if (name.equals("reverts"))
+                                             if (name.equals("comments"))
                                                  return true;
                                              return false;
                                          }
@@ -60,7 +59,9 @@ public class TopicAction extends ActionSupport implements ModelDriven<Topic>{
         }
 
         String s1 = JSONArray.fromObject(list,config).toString();
-        String s2 = JSONArray.fromObject(userList).toString();
+//        String s1 = JSON.toJSONString(list).toString();
+        String s2 = JSONArray.fromObject(userList,config).toString();
+//        String s2 = JSON.toJSONString(userList).toString();
 
         String data = s1.substring(0, s1.length()-1) + "," + s2.substring(1,s2.length());
 
@@ -125,8 +126,7 @@ public class TopicAction extends ActionSupport implements ModelDriven<Topic>{
         //获得文章作者信息
         User topicUser = userService.findUserById(trueTopic.getUid());
 
-
-        ActionContext.getContext().put("topic", trueTopic);
+        ActionContext.getContext().getSession().put("topic", trueTopic);
         ActionContext.getContext().put("topicUser", topicUser);
 
 

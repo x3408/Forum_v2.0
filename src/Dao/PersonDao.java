@@ -22,4 +22,6 @@ public interface PersonDao {
     int findFansCount();
 
     List<User> findAllData();
+
+
 }

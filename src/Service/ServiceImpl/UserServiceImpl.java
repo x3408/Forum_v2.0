@@ -3,11 +3,12 @@ package Service.ServiceImpl;
 import Bean.User;
 import Dao.UserDao;
 import Service.UserService;
-
-import java.util.List;
+import Util.TopicBean;
+import Util.UserBean;
 
 public class UserServiceImpl implements UserService {
     private UserDao userDao;
+    private UserBean userBean;
     @Override
     public User login(User user) {
         return userDao.findByPassword(user.getUsername(), user.getPassword());
@@ -43,8 +44,17 @@ public class UserServiceImpl implements UserService {
         return null;
     }
 
+    @Override
+    public UserBean findUserByKeyword(String keyword, Integer page) {
+        return userBean.showUserByKeyword(page, keyword);
+    }
+
 
     public void setUserDao(UserDao userDao) {
         this.userDao = userDao;
+    }
+
+    public void setUserBean(UserBean userBean) {
+        this.userBean = userBean;
     }
 }

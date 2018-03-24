@@ -61,20 +61,23 @@ public class PersonDaoImpl extends HibernateDaoSupport implements PersonDao {
         return getHibernateTemplate().execute(new HibernateCallback<List<User>>() {
             @Override
             public List<User> doInHibernate(Session session) throws HibernateException {
-                String hql = "from User where uid='1' ";//这里的表名不能直接填写表名，而是填写该表在orm元数据中的映射关系名字
+                String hql = "from User where uid='5e43f570624c9d6c01624c9df37f0000' ";//这里的表名不能直接填写表名，而是填写该表在orm元数据中的映射关系名字
                 Query query = session.createQuery(hql);
                 List<User> list3 = query.list();
                 return list3;
             }
         });
     }
-
+    //更改信息
     @Override
     public void updateData(User user) {
-        User OldUser = getHibernateTemplate().get(User.class, "1");
+        user.setUid("5e43f570624c9d6c01624c9df37f0000");
+        /*User OldUser = getHibernateTemplate().get(User.class, "5e43f570624c9d6c01624c9df37f0000");
         OldUser.setUsername(user.getUsername());
         OldUser.setSex(user.getSex());
-        getHibernateTemplate().update(OldUser);
+
+        OldUser.setSignature(user.getSignature());*/
+        getHibernateTemplate().update(user);
     }
 
     @Override
@@ -104,7 +107,7 @@ public class PersonDaoImpl extends HibernateDaoSupport implements PersonDao {
             }
         });
     }
-
+    //查询信息发布
     @Override
     public List<User> findAllData() {
        return getHibernateTemplate().execute(new HibernateCallback<List<User>>() {
@@ -118,4 +121,7 @@ public class PersonDaoImpl extends HibernateDaoSupport implements PersonDao {
         });
 
     }
+
+
+
 }
