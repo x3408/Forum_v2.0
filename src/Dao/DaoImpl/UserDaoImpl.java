@@ -57,6 +57,36 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
     }
 
     @Override
+    public void unFollow(String uid, String follow_id) {
+        //删除关注用户
+        Relation follow = getHibernateTemplate().execute(new HibernateCallback<Relation>() {
+            @Override
+            public Relation doInHibernate(Session session) throws HibernateException {
+                return (Relation) session.createQuery("from Relation where uid = ? and follow_uid = ? and type = ?")
+                        .setParameter(0, uid)
+                        .setParameter(1, follow_id)
+                        .setParameter(2, 1)
+                        .uniqueResult();
+            }
+        });
+        getHibernateTemplate().delete(follow);
+
+        //删除粉丝用户
+        Relation fans = getHibernateTemplate().execute(new HibernateCallback<Relation>() {
+            @Override
+            public Relation doInHibernate(Session session) throws HibernateException {
+                return (Relation) session.createQuery("from Relation where uid = ? and follow_uid = ? and type = ?")
+                        .setParameter(0, follow_id)
+                        .setParameter(1, uid)
+                        .setParameter(2, 2)
+                        .uniqueResult();
+            }
+        });
+        getHibernateTemplate().delete(fans);
+    }
+
+
+    @Override
     public User findUserById(String showUserId) {
         return getHibernateTemplate().execute(new HibernateCallback<User>() {
             @Override
@@ -120,5 +150,23 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
                         .list();
             }
         });
+    }
+
+    @Override
+    public Boolean checkStatus(String uid, String uid1) {
+        Relation relation = getHibernateTemplate().execute(new HibernateCallback<Relation>() {
+            @Override
+            public Relation doInHibernate(Session session) throws HibernateException {
+                return (Relation) session.createQuery("from Relation where uid = ? and follow_uid = ? and type = ?")
+                        .setParameter(0, uid)
+                        .setParameter(1, uid1)
+                        .setParameter(2, 1)
+                        .uniqueResult();
+            }
+        });
+
+        if (relation != null)
+            return true;
+        return false;
     }
 }

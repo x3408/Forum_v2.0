@@ -88,7 +88,6 @@
     <script type="text/javascript">
         //初始化数据
         $.get("${pageContext.request.contextPath}/CommentAction_list?tid="+"<s:property value="#session.topic.tid"></s:property>",
-
             function(data){
                 var date = new Date();
                 var seperator1 = "-";
@@ -107,7 +106,6 @@
                         {id:3,img:"./images/img.jpg",replyName:"帅大叔",beReplyName:"匿名",content:"同学聚会，看到当年追我的屌丝开着宝马车带着他老婆来了，他老婆是我隔壁宿舍的同班同学，心里后悔极了。",time:"2017-10-17 11:42:53",replyBody:[]}
                     ];
                     $(function(){
-
                         $(".comment-list").addCommentList({data:arr,add:""});
                         $("#comment").click(function(){
                             var obj = new Object();
@@ -115,28 +113,18 @@
                             obj.replyName="<s:property value="#session.user.username"></s:property>";
                             obj.content=$("#content").val();
                             obj.replyBody="";
-
-                                $(".comment-list").addCommentList({data:[],add:obj});
-                                $.post("${pageContext.request.contextPath}/CommentAction_save", { replyName:"<s:property value="#session.user.username"></s:property>" , comment_content: obj.content,uid:"<s:property value="#session.user.uid"></s:property>",tid: "<s:property value="#session.topic.tid"></s:property>"}
-                                );
-
+                            $(".comment-list").addCommentList({data:[],add:obj});
+                            $.post("${pageContext.request.contextPath}/CommentAction_save", { replyName:"<s:property value="#session.user.username"></s:property>" , comment_content: obj.content,uid:"<s:property value="#session.user.uid"></s:property>",tid: "<s:property value="#session.topic.tid"></s:property>"}
+                            );
                         });
                     })
-
-
-                            }
-
-
-
+                }
                 else{
-
                 $.each( data, function(i, json){
-
                     var arr=[
                         {id:1,img:"./images/img.jpg",replyName:json['uid_name'],beReplyName:"",content:json['comment_content'],time:currentdate,replyBody:[]}
                     ];
                     $(function(){
-
                         $(".comment-list").addCommentList({data:arr,add:""});
                         $("#comment").click(function(){
                             var obj = new Object();
@@ -144,25 +132,16 @@
                             obj.replyName=json['uid_name'];
                             obj.content=$("#content").val();
                             obj.replyBody="";
-
                             if(i==0){
                                 $(".comment-list").addCommentList({data:[],add:obj});
                                 $.post("${pageContext.request.contextPath}/CommentAction_save", { replyName:"<s:property value="#session.user.username"></s:property>" , comment_content: obj.content,uid:"<s:property value="#session.user.uid"></s:property>",tid: "<s:property value="#session.topic.tid"></s:property>"}
                                 );
                             }
-
                         });
                     })
                 });
                 }
-
-
-
-
             });
-
-
-
     </script>
     <meta charset="utf-8" />
     <title>user</title>
@@ -170,16 +149,12 @@
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/user.css">
-    <script src="js/user.js"></script>
+
 </head>
-<body>
 <body>
 <div class="header">
     <div class="header-content">
         <div class="logo"><a href="${pageContext.request.contextPath}/home.jsp"><img src="img/logo.png"></a></div><div class="search" id="search-form">
-        <form>
-            <input type="text"  class="search-text" id="search-input"/><button><i class="icon-search"></i></button>
-        </form>
     </div>
     </div>
 </div>
@@ -189,8 +164,9 @@
     <div id="specificWrite-left">
         <div id="specificWrite-left--headImg">
             <img src="img/timg (1).jpeg" class="img-circle">
-            <p>${user.username}</p>
+            <p>${topicUser.username}</p>
         </div>
+        <div id="specificWrite-left-follow"></div>
     </div>
     <div id="specificWrite-right">
         <div id="specificWrite-right--top">
@@ -219,8 +195,6 @@
 
 
 </div>
-
 </body>
-
-</body>
+<script src="js/user.js"></script>
 </html>

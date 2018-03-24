@@ -127,7 +127,7 @@ public class TopicAction extends ActionSupport implements ModelDriven<Topic>{
         User topicUser = userService.findUserById(trueTopic.getUid());
 
         ActionContext.getContext().getSession().put("topic", trueTopic);
-        ActionContext.getContext().put("topicUser", topicUser);
+        ActionContext.getContext().getSession().put("topicUser", topicUser);
 
 
         return "showTopic";

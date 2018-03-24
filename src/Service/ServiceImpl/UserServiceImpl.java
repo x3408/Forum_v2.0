@@ -25,6 +25,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public void unFollow(User user, String follow_id) {
+        userDao.unFollow(user.getUid(),follow_id);
+    }
+
+    @Override
     public User findUserById(String showUserId) {
         User user = userDao.findUserById(showUserId);
         return user;
@@ -47,6 +52,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserBean findUserByKeyword(String keyword, Integer page) {
         return userBean.showUserByKeyword(page, keyword);
+    }
+
+    @Override
+    public Boolean checkStatus(String uid, String uid1) {
+        return userDao.checkStatus(uid, uid1);
     }
 
 

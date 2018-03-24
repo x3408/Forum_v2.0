@@ -11,6 +11,8 @@ public interface UserDao {
 
     void follow(String uid, String follow_id);
 
+    void unFollow(String uid,String follow_id);
+
     User findUserById(String showUserId);
 
     User findUserByUsername(String username);
@@ -22,4 +24,6 @@ public interface UserDao {
     Integer getTotalCountByName(String keyword);
 
     List<User> getUserByName(int start, Integer limit, String keyword);
+
+    Boolean checkStatus(String uid, String uid1);
 }
