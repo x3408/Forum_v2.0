@@ -46,7 +46,7 @@
             position: absolute;
         }
         .comment-list .comment-info header img{
-            width: 100%;
+            width: 86%;
             border-radius: 50%;
             padding: 5px;
         }

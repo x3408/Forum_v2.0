@@ -25,9 +25,8 @@
     <div id="personCenter-top">
         <img src="img/QQ20180315-0.jpg">
     </div>
-    <c:forEach items="${listAllData}" var="list1">
     <div id="personCenter-headImg">
-        <img src="${basePath}/headPortrait/${list1.headPortrait}" class="img-rounded">
+        <img src="/headPortrait/${listAllData.headPortrait}" class="img-rounded">
     </div>
 
          <%--<span id="personCenter-name">--%>
@@ -39,12 +38,11 @@
 
 
         <span id="personCenter-name">
-    <a href="${pageContext.request.contextPath}/PersonAction_findData">${list1.username}</a>
+    <a href="${pageContext.request.contextPath}/PersonAction_findData">${listAllData.username}</a>
         </span>
         <span id="personCenter-character">
-			  <a href="${pageContext.request.contextPath}/PersonAction_findData">${list1.signature}</a>
+			  <a href="${pageContext.request.contextPath}/PersonAction_findData">${listAllData.signature}</a>
         </span>
-    </c:forEach>
     <div id="personCenter-edit">
         <div id="personCenter-edit--btn">
             <form action="${pageContext.request.contextPath}/PersonAction_findData">
@@ -75,7 +73,7 @@
 
 </body>
 <script type="text/javascript">
-    $.get("${pageContext.request.contextPath}/PersonAction_findAllData"
+    window.onload = $.get("${pageContext.request.contextPath}/PersonAction_findAllData"
     );
     //文章的加载与遍历jQuery
     $.get("${pageContext.request.contextPath}/PersonAction_findArticle",

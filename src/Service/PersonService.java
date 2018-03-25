@@ -7,22 +7,22 @@ import Bean.User;
 import java.util.List;
 
 public interface PersonService {
-    List<Topic> findArticle();
+    List<Topic> findArticle(User user);
 
-    List<Relation> findAttention();
+    List<Relation> findAttention(User user);
 
-    List<Relation> findFans();
+    List<Relation> findFans(User user);
 
-    List<User> findData();
+    User findData(User user);
 
     void updateData(User user);
 
-    int findAttentionCount();
+    int findAttentionCount(User user);
 
-    int findFansCount();
+    int findFansCount(User user);
 
 
-    List<User> findAllData();
+    User findAllData(User user);
 
 
 }

@@ -1,23 +1,17 @@
 package JUnit;
 
-import Action.CommentAction;
 import Bean.Topic;
 import Bean.User;
-import Bean.comment;
-import Dao.CommentDao;
 import Dao.PersonDao;
 import Dao.RecommendDao;
 import Dao.TopicDao;
 import Dao.UserDao;
-import Service.CommentService;
-import org.apache.struts2.ServletActionContext;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -146,18 +140,6 @@ public class hibernateTest {
         personDao.updateData(user);
     }
 
-    @Test
-    public void findAttentionCount() {
-        System.out.println(personDao.findAttentionCount());
-
-
-    }
-    @Test
-    public void findArticle() {
-        System.out.println(personDao.findArticle());
-
-
-}
 
     @Test
     public void getTopicByTitleTest() {

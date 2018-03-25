@@ -16,26 +16,26 @@ public class PersonServiceImpl implements PersonService {
     }
     //我的文章
     @Override
-    public List<Topic> findArticle() {
-        List<Topic>list =pd .findArticle();
+    public List<Topic> findArticle(User user) {
+        List<Topic>list =pd .findArticle(user.getUid());
         return list ;
     }
     //我的关注
     @Override
-    public List<Relation> findAttention() {
-        List<Relation> list1 = pd.findAttention();
+    public List<Relation> findAttention(User user) {
+        List<Relation> list1 = pd.findAttention(user.getUid());
         return list1;
     }
 
     @Override
-    public List<Relation> findFans() {
-        List<Relation> list2 = pd.findFans();
+    public List<Relation> findFans(User user) {
+        List<Relation> list2 = pd.findFans(user.getUid());
         return list2;
     }
 
     @Override
-    public List<User> findData() {
-        List<User> list3 = pd.findData();
+    public User findData(User user) {
+        User list3 = pd.findData(user.getUid());
         return list3;
     }
 
@@ -45,20 +45,20 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
-    public int findAttentionCount() {
-        int AttentionCount =pd.findAttentionCount();
+    public int findAttentionCount(User user) {
+        int AttentionCount =pd.findAttentionCount(user.getUid());
         return  AttentionCount;
     }
 
     @Override
-    public int findFansCount() {
-        int FansCount =pd.findFansCount();
+    public int findFansCount(User user) {
+        int FansCount =pd.findFansCount(user.getUid());
         return  FansCount;
     }
 
     @Override
-    public List<User> findAllData() {
-        List<User> list4 = pd.findAllData();
+    public User findAllData(User user) {
+        User list4 = pd.findAllData(user.getUid());
         return list4;
     }
 

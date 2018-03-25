@@ -29,11 +29,12 @@
 
     </div>
     <form action="${pageContext.request.contextPath}/PersonAction_updateData" method="post" enctype="multipart/form-data">
+        <input type="hidden" value="${listData.uid}" name="uid">
+        <input type="hidden" value="${listData.password}" name="password">
         <div id="editorData-main">
-            <c:forEach items="${listData}" var ="list">
             <div id="editorData-headImg">
                 <span id="imgtext">当前头像
-                <img src="${basePath}/headPortrait/${list.headPortrait}">
+                <img src="${basePath}/headPortrait/${listData.headPortrait}">
                 </span>
                 <%--<input type="file" name ="headPortrait">--%>
                 <input id="fileupload" name ="photo" type="file" name="photo" onchange="imagesSelectedForHead(this.files)" class="btn">
@@ -44,24 +45,23 @@
                 <div class="form-group">
                     <label class="control-lable col-lg-3">用户名</label>
                     <div class="col-lg-7">
-                        <input type="text" id="txtUserName" class="form-control" value="${list.username}" name="username"/>
+                        <input type="text" id="txtUserName" class="form-control" value="${listData.username}" name="username"/>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="control-lable col-lg-3">个性签名</label>
                     <div class="col-lg-7">
-                        <input type="text" id="txtSignature" class="form-control" value="${list.signature}" name="signature"/>
+                        <input type="text" id="txtSignature" class="form-control" value="${listData.signature}" name="signature"/>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="control-lable col-lg-3">性别</label>
                     <div class="col-lg-7">
-                        <input type="text" id="txtUserSex" class="form-control"value="${list.sex}" name="sex" />
+                        <input type="text" id="txtUserSex" class="form-control"value="${listData.sex}" name="sex" />
                     </div>
                 </div>
             </div>
-            </c:forEach>
         </div>
         <button type="submit" id="btn" class="btn btn-danger btn-lg">保存</button>
     </form>

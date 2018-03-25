@@ -37,7 +37,8 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
     }
     //我的文章
     public String findArticle() throws Exception {
-        List<Topic> list = ps.findArticle();
+        User user = (User) ActionContext.getContext().getSession().get("user");
+        List<Topic> list = ps.findArticle(user);
         String json = JSON.toJSONString(list).toString();
             out.println(json);
          ServletActionContext.getResponse().setContentType("application/json;charset=UTF-8");
@@ -48,7 +49,8 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
 
     public String findAttention() throws Exception{
 
-        List<Relation> list1 = ps.findAttention();
+        User user = (User) ActionContext.getContext().getSession().get("user");
+        List<Relation> list1 = ps.findAttention(user);
         String json1 = JSONArray.fromObject(list1).toString();
         out.println(json1);
         ServletActionContext.getResponse().setContentType("application/json;charset=UTF-8");
@@ -56,7 +58,8 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
         return null;
     }
     public String findFans() throws Exception{
-        List<Relation> list2 = ps.findFans();
+        User user = (User) ActionContext.getContext().getSession().get("user");
+        List<Relation> list2 = ps.findFans(user);
         String json2 = JSONArray.fromObject(list2).toString();
         out.println(json2);
         ServletActionContext.getResponse().setContentType("application/json;charset=UTF-8");
@@ -64,12 +67,12 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
         return null;
         }
     public String findData() throws Exception{
-        List<User> list3 = ps.findData();
-        ActionContext.getContext().getSession().put("listData",list3);
+        User user = (User) ActionContext.getContext().getSession().get("user");
+        user = ps.findData(user);
+        ActionContext.getContext().getSession().put("listData",user);
         return "data";
     }
     public String updateData() throws Exception{
-
         try {
             if(user!=null){
                 //处理头像
@@ -100,7 +103,8 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
         return "editor";
     }
     public String  findAttentionCount() throws Exception{
-       int AttentionCount = ps.findAttentionCount();
+        User user = (User) ActionContext.getContext().getSession().get("user");
+        int AttentionCount = ps.findAttentionCount(user);
         String json3 = JSONArray.fromObject(AttentionCount).toString();
         out.println(json3);
         ServletActionContext.getResponse().setContentType("application/json;charset=UTF-8");
@@ -108,7 +112,8 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
        return null;
     }
     public String  findFansCount() throws Exception{
-        int FansCount = ps.findFansCount();
+        User user = (User) ActionContext.getContext().getSession().get("user");
+        int FansCount = ps.findFansCount(user);
         String json4 = JSONArray.fromObject(FansCount).toString();
         out.println(json4);
         ServletActionContext.getResponse().setContentType("application/json;charset=UTF-8");
@@ -116,7 +121,8 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
         return null;
     }
     public String findAllData() throws Exception{
-        List<User> list4 = ps.findAllData();
+        User user = (User) ActionContext.getContext().getSession().get("user");
+        User list4 = ps.findAllData(user);
         ActionContext.getContext().getSession().put("listAllData",list4);
         return "list";
     }
