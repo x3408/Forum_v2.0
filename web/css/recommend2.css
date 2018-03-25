@@ -1,0 +1,38 @@
+#recommendTwo{
+	width:1100px;
+	height:2460px;
+    border:solid 1px #ccc;
+	position:relative;
+	left:50%;
+	top:50%;
+	margin-left:-550px;
+	
+}
+#recommendTwo-head{
+	width:1100px;
+	height:50px;
+	border-bottom: 1px red solid;
+	padding-top:5px;
+}
+#recommendTwo-head p{
+	font-size:23px;
+	margin-left:350px;
+	font-weight: bold;
+
+}
+#recommendTwo-main{
+	width:900px;
+	height:800px;
+	/*border:solid 1px black;*/
+	margin-left:100px;
+}
+#recommendTwo-main p{
+	margin-top:20px;
+}
+
+#recommendTwo-evaluate{
+	width:800px;
+	height:400px;
+	border:solid 1px red;
+   
+}
