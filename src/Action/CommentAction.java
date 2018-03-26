@@ -3,9 +3,7 @@ package Action;
 import Bean.comment;
 import Service.CommentService;
 import com.alibaba.fastjson.JSON;
-import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
-import net.sf.json.JSONArray;
 import org.apache.struts2.ServletActionContext;
 
 import java.util.List;

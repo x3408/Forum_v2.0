@@ -15,40 +15,46 @@ import java.util.List;
 public class PersonDaoImpl extends HibernateDaoSupport implements PersonDao {
     //我的文章
     @Override
-    public List<Topic> findArticle() {
+    public List<Topic> findArticle(String uid) {
         return getHibernateTemplate().execute(new HibernateCallback<List<Topic>>() {
 
             @Override
-            public List<Topic> doInHibernate(Session session ) throws HibernateException {
-                String hql= "from Topic" ;//这里的表名不能直接填写表名，而是填写该表在orm元数据中的映射关系名字
-                Query query = session.createQuery(hql);
-                List<Topic> list =query.list();
+            public List<Topic> doInHibernate(Session session) throws HibernateException {
+                String hql = "from Topic where uid = ?";//这里的表名不能直接填写表名，而是填写该表在orm元数据中的映射关系名字
+                Query query = session.createQuery(hql)
+                        .setParameter(0, uid);
+                List<Topic> list = query.list();
                 return list;
             }
         });
 
     }
+
     //我的关注
     @Override
-    public List<Relation> findAttention() {
-       return getHibernateTemplate().execute(new HibernateCallback<List<Relation>>() {
+    public List<Relation> findAttention(String uid) {
+        return getHibernateTemplate().execute(new HibernateCallback<List<Relation>>() {
             @Override
             public List<Relation> doInHibernate(Session session) throws HibernateException {
-                String hql= "from Relation where uid='3' and type=1" ;//这里的表名不能直接填写表名，而是填写该表在orm元数据中的映射关系名字
-                Query query = session.createQuery(hql);
-                List<Relation> list1 =query.list();
+                String hql = "from Relation where uid= ? and type = ?";//这里的表名不能直接填写表名，而是填写该表在orm元数据中的映射关系名字
+                Query query = session.createQuery(hql)
+                        .setParameter(0, uid)
+                        .setParameter(1, 1);
+                List<Relation> list1 = query.list();
                 return list1;
             }
         });
     }
 
     @Override
-    public List<Relation> findFans() {
+    public List<Relation> findFans(String uid) {
         return getHibernateTemplate().execute(new HibernateCallback<List<Relation>>() {
             @Override
             public List<Relation> doInHibernate(Session session) throws HibernateException {
-                String hql = "from Relation where uid='3' and type=2";//这里的表名不能直接填写表名，而是填写该表在orm元数据中的映射关系名字
-                Query query = session.createQuery(hql);
+                String hql = "from Relation where uid=? and type=?";//这里的表名不能直接填写表名，而是填写该表在orm元数据中的映射关系名字
+                Query query = session.createQuery(hql)
+                        .setParameter(0, uid)
+                        .setParameter(1, 2);
                 List<Relation> list2 = query.list();
                 return list2;
             }
@@ -56,53 +62,64 @@ public class PersonDaoImpl extends HibernateDaoSupport implements PersonDao {
     }
 
     @Override
-    public List<User> findData() {
-        return getHibernateTemplate().execute(new HibernateCallback<List<User>>() {
+    public User findData(String uid) {
+        return getHibernateTemplate().get(User.class, uid);
+    }
+    //更改信息
+    @Override
+    public void updateData(User user) {
+        //测试使用代码
+//        user.setUid("5e43f570624c9d6c01624c9df37f0000");
+        /*User OldUser = getHibernateTemplate().get(User.class, "5e43f570624c9d6c01624c9df37f0000");
+        OldUser.setUsername(user.getUsername());
+        OldUser.setSex(user.getSex());
+
+        OldUser.setSignature(user.getSignature());*/
+        getHibernateTemplate().update(user);
+    }
+
+    @Override
+    public int findAttentionCount(String uid) {
+        return getHibernateTemplate().execute(new HibernateCallback<Integer>() {
+
             @Override
-            public List<User> doInHibernate(Session session) throws HibernateException {
-                String hql = "from User ";//这里的表名不能直接填写表名，而是填写该表在orm元数据中的映射关系名字
-                Query query = session.createQuery(hql);
-                List<User> list3 = query.list();
-                return list3;
+            public Integer doInHibernate(Session session) throws HibernateException {
+                String hql = "select count(*)  from Relation where uid= ? and type=1 ";
+                Query query = session.createQuery(hql)
+                        .setParameter(0, uid);
+                int AttentionCount = ((Long) query.iterate().next()).intValue();
+                return AttentionCount;
             }
         });
     }
 
     @Override
-    public void updateData(User user) {
-        User OldUser = getHibernateTemplate().get(User.class,"1");
-        OldUser.setUsername(user.getUsername());
-        OldUser.setSex(user.getSex());
-        getHibernateTemplate().update(OldUser);
-    }
-
-    @Override
-    public int findAttentionCount() {
-       return getHibernateTemplate().execute(new HibernateCallback<Integer>() {
-
-           @Override
-           public Integer doInHibernate(Session session) throws HibernateException {
-               String hql = "select count(*)  from Relation where uid='3'and type=2 ";
-               Query query = session.createQuery(hql);
-               int AttentionCount = ((Long) query.iterate().next()).intValue();
-               return AttentionCount;
-           }
-       });
-    }
-
-    @Override
-    public int findFansCount() {
+    public int findFansCount(String uid) {
         return getHibernateTemplate().execute(new HibernateCallback<Integer>() {
 
             @Override
             public Integer doInHibernate(Session session) throws HibernateException {
-                String hql = "select count(*)  from Relation where uid='3'and type=1 ";
-                Query query = session.createQuery(hql);
+                String hql = "select count(*)  from Relation where uid=?and type=2 ";
+                Query query = session.createQuery(hql)
+                        .setParameter(0, uid);
                 int FansCount = ((Long) query.iterate().next()).intValue();
                 return FansCount;
             }
         });
     }
+    //查询信息发布
+    @Override
+    public User findAllData(String uid) {
+       /*return getHibernateTemplate().execute(new HibernateCallback<List<User>>() {
+            @Override
+            public List<User> doInHibernate(Session session) throws HibernateException {
+                session.get(User)
+                return list4;
+            }
+        });*/
+        return getHibernateTemplate().get(User.class, uid);
+    }
+
 
 
 }

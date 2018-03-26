@@ -11,7 +11,7 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
-    <link rel="stylesheet" href="css/enrllPage.css" />
+    <link rel="stylesheet" href="css/enrllPage.css?2" />
     <script type="text/javascript" src="js/enroll.js"></script>
     <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
     <script type="text/javascript">
@@ -37,7 +37,7 @@
                         usernameTip.style.color = "red";
                         usernameTip.innerHTML = '用户已存在';
                     } else {
-                        usernameTip.style.color = "green";
+                        usernameTip.style.color = "#238823";
                         usernameTip.innerHTML = '可以使用';
                     }
                 },
@@ -68,7 +68,7 @@
                 <span><input type="text"class="identifyCode" placeholder="请输入验证码" name="verifyCodeFromUser"/></span>
                 <span class="identify-number"><img id="verifyImg" src="${pageContext.request.contextPath}/UserAction_verifyImg" onclick="return changeVerify()"></span>
             </div>
-            <p>${msg}</p>
+            <p id="left">${msg}</p>
 
             <button class="content-enroll"/>立即注册</button>
         </form>

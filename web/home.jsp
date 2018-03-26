@@ -1,3 +1,4 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: 许晨
@@ -29,6 +30,13 @@
 
             <input type="text" class="search-text" id="search-input" name="keyword" /><button><i onclick="search()" class="icon-search"></i></button>
         </div>
+        <s:if test="#session.user==null">
+            <span id="entry"><a href="${pageContext.request.contextPath}/login.jsp">登录</a></span>
+            <span id="register"><a href="${pageContext.request.contextPath}/regist.jsp">注册</a></span>
+        </s:if>
+        <s:else>
+        <span id="entry">欢迎您: <s:property value="#session.user.username"></s:property> <a href="${pageContext.request.contextPath}/personCenter.jsp"> 个人中心</a></span>
+        </s:else>
     </div>
 
 </div>
@@ -186,22 +194,16 @@
         <div class="competition"></div>
     </div>
 </div>
-
-
-
 </body>
 <script type="text/javascript" src="js/mainPage.js"></script>
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript">
     $.get("${pageContext.request.contextPath}/Recommend_list",
         function(data){
-
             $.each( data , function(i, json){
                   j=i+1;
                 document.getElementById("text"+""+j).innerHTML=json['recommend_topic']
                 $('#img'+''+j).children("img").attr("src",json['recommend_image'])
-
-
             });
         },"json");
 
@@ -221,32 +223,7 @@
 //            while(j <= 3) {
             for(i=0;i>=0;i++){
                 var timer =  data[i].time.month + "月" + data[i].time.day + "日" + data[i].time.hours + "时" + data[i].time.minutes + "分";
-                $("#main").append('<div class="box"><div class="topicFrom"><span class="date" id="date">' + timer + '</span><span class="viewCount" id="viewCount">阅读量： ' + data[i].viewCount + '</span></div><div class="name"><div class="myPic" id="myPic"><img src="" /></div><div class="username" id="username">' + data[i + 3].username + '</div></div><div class="context"><h6 class="title" id="title"><a href="TopicAction_showTopic?tid='+data[0].tid+'" style="text-decoration:none" >' + data[i].title + '</a></h6><p class="text" id="text">' + data[i].descriptive + '</p></div><div class="other-follow "><i class="icon-star-empty" id="follow"></i><span class="like-text">关注</span></div><div class="other-like "><i class="icon-heart2" id="like"></i><span class="like-text">点赞</span></div></div>');
-                $("#main").append('<div class="box"><div class="topicFrom"><span class="date" id="date">' + timer + '</span><span class="viewCount" id="viewCount">阅读量： ' + data[i].viewCount + '</span></div><div class="name"><div class="myPic" id="myPic"><img src="" /></div><div class="username" id="username">' + data[i+3].username + '</div></div><div class="context"><h6 class="title" id="title"><a href="TopicAction_showTopic?tid='+data[0].tid+'" style="text-decoration:none" >' + data[i].title + '</a></h6><p class="text" id="text">' + data[i].descriptive + '</p></div><div class="other-follow "><i class="icon-star-empty" id="follow"></i><span class="like-text">关注</span></div><div class="other-like "><i class="icon-heart2" id="like"></i><span class="like-text">点赞</span></div></div>');
-                $("#main").append('<div class="box"><div class="topicFrom"><span class="date" id="date">' + timer + '</span><span class="viewCount" id="viewCount">阅读量： ' + data[i].viewCount + '</span></div><div class="name"><div class="myPic" id="myPic"><img src="" /></div><div class="username" id="username">' + data[i+3].username + '</div></div><div class="context"><h6 class="title" id="title"><a href="TopicAction_showTopic?tid='+data[0].tid+'" style="text-decoration:none;color:#202678;" target="_blank" >' + data[i].title + '</a></h6><p class="text" id="text">' + data[i].descriptive + '</p></div><div class="other-follow "><i class="icon-star-empty" id="follow"></i><span class="like-text">关注</span></div><div class="other-like "><i class="icon-heart2" id="like"></i><span class="like-text">点赞</span></div></div>');
-//                j++;
-//                i++;
-                var like = document.getElementsByClassName('icon-heart2');
-                for(var n = 0; n < like.length; n++) {
-                    like[n].onclick = function() {
-                        if(this.style.color == 'red') {
-                            this.style.color = 'gray';
-                        } else {
-                            this.style.color = 'red';
-                        }
-                    }
-
-                    var follow = document.getElementsByClassName('icon-star-empty');
-                    for(var m = 0; m < follow.length; m++) {
-                        follow[m].onclick = function() {
-                            if(this.style.color == 'red') {
-                                this.style.color = 'gray';
-                            } else {
-                                this.style.color = 'red';
-                            }
-                        };
-                    }
-                }
+                $("#main").append('<div class="box"><div class="topicFrom"><span class="date" id="date">' + timer + '</span><span class="viewCount" id="viewCount">阅读量： ' + data[i].viewCount + '</span></div><div class="name"><div class="myPic" id="myPic"><img src="/headPortrait/'+data[i+3].headPortrait+'"/></div><div class="username" id="username">' + data[i+3].username + '</div></div><div class="context"><h6 class="title" id="title"><a href="TopicAction_showTopic?tid='+data[i].tid+'" style="text-decoration:none;color:#202678;" target="_blank" >' + data[i].title + '</a></h6><p class="text" id="text">' + data[i].descriptive + '</p></div></div>');
             }
         });
 
@@ -269,15 +246,6 @@
     }
 
     window.onload(updataData(1, 'result_show'));
-
-
-
-
-
-
-
-
-
 
     function search() {
         var keyword = $("#search-input").val();

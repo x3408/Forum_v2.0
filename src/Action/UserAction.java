@@ -13,13 +13,12 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 import java.util.Random;
 
 public class UserAction extends ActionSupport implements ModelDriven<User>{
     private User user = new User();
-    //关注功能，得到关注用户的id值
-    private String follow_id;
     //注册时的用户输入的验证码
     private String verifyCodeFromUser;
     //查看某个用户时的用户id
@@ -77,18 +76,82 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
     public String follow() {
         //查看该用户登录状态
         User user = (User) ActionContext.getContext().getSession().get("user");
+        User topicUser = (User) ActionContext.getContext().getSession().get("topicUser");
+        PrintWriter writer = null;
+        try {
+            writer = ServletActionContext.getResponse().getWriter();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         //未登陆跳转login
         if (user == null) {
-            ActionContext.getContext().put("msg", "请登录后再尝试该操作");
+            /*ActionContext.getContext().put("msg", "请登录后再尝试该操作");
             //这里有问题   不能跳转回想要关注的用户界面中  只能回首页从而丢失关注对象(暂且跳转至首页)
-            return "login";
+            return "login";*/
+            writer.write("{\"status\":\"noUser\"}");
+            return null;
         }
 //        已登陆关注
 
         //获取关注用户id,使用set注入获取
 
         //调用service方法
-        userService.follow(user,follow_id);
+        userService.follow(user,topicUser.getUid());
+        writer.write("{\"status\":\"success\"}");
+        return null;
+    }
+
+    //取消关注用户
+    public String unFollow() {
+        //查看该用户登录状态
+        User user = (User) ActionContext.getContext().getSession().get("user");
+        User topicUser = (User) ActionContext.getContext().getSession().get("topicUser");
+
+        PrintWriter writer = null;
+        try {
+            writer = ServletActionContext.getResponse().getWriter();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        //未登陆跳转login
+        if (user == null) {
+           /* ActionContext.getContext().put("msg", "请登录后再尝试该操作");
+            //这里有问题   不能跳转回想要关注的用户界面中  只能回首页从而丢失关注对象(暂且跳转至首页)
+            return "login";*/
+
+            writer.write("{\"status\":\"noUser\"}");
+            return null;
+        }
+//        已登陆关注
+
+        //获取关注用户id,使用set注入获取
+
+        //调用service方法
+        userService.unFollow(user,topicUser.getUid());
+        writer.write("{\"status\":\"success\"}");
+        return null;
+    }
+
+    //查看某个用户是否已经关注了该用户
+    public String checkStatus() {
+        User user = (User) ActionContext.getContext().getSession().get("user");
+        User topicUser = (User) ActionContext.getContext().getSession().get("topicUser");
+        Boolean flag = false;
+        if (user != null) {
+            flag = userService.checkStatus(user.getUid(), topicUser.getUid());
+        }
+        PrintWriter writer = null;
+        try {
+            writer = ServletActionContext.getResponse().getWriter();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if (flag) {
+            writer.write("{\"status\":\"follow\"}");
+        } else {
+            writer.write("{\"status\":\"unFollow\"}");
+        }
+
         return null;
     }
 
@@ -222,10 +285,6 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
 
     public void setUserService(UserService userService) {
         this.userService = userService;
-    }
-
-    public void setFollow_id(String follow_id) {
-        this.follow_id = follow_id;
     }
 
     public String getVerifyCodeFromUser() {

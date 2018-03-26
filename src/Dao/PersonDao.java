@@ -7,17 +7,21 @@ import Bean.User;
 import java.util.List;
 
 public interface PersonDao {
-    List<Topic> findArticle();
+    List<Topic> findArticle(String uid);
 
-    List<Relation> findAttention();
+    List<Relation> findAttention(String uid);
 
-    List<Relation> findFans();
+    List<Relation> findFans(String uid);
 
-    List<User> findData();
+    User findData(String uid);
 
     void updateData(User user);
 
-    int findAttentionCount();
+    int findAttentionCount(String uid);
 
-    int findFansCount();
+    int findFansCount(String uid);
+
+    User findAllData(String uid);
+
+
 }

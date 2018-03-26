@@ -15,10 +15,22 @@ public class User {
         return comments;
     }
     private String sex;
+    private String headPortrait;
+    private String signature;
+
+
+    public String getSignature() { return signature; }
+
+    public void setSignature(String signature) { this.signature = signature; }
+
+    public String getHeadPortrait() { return headPortrait; }
+
+    public void setHeadPortrait(String headPortrait) { this.headPortrait = headPortrait; }
 
     public void setComments(Set<comment> comments) {
         this.comments = comments;
     }
+
 
     public String getUsername() {
         return username;
@@ -55,4 +67,8 @@ public class User {
     public String getSex() { return sex; }
 
     public void setSex(String sex) { this.sex = sex; }
+
+    public void save() {
+
+    }
 }

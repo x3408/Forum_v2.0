@@ -39,7 +39,7 @@ body{
 	font-size: 16px;
 	color: #FFFFFF;
 	outline: none;
-	box-shadow: 5px 5px 5px black;
+	/*box-shadow: 5px 5px 5px black;*/
 	border: 2px solid red;
 	margin-left: 80px;
 	background: transparent;
@@ -62,6 +62,7 @@ body{
 .icon-search{
 	color: red;
 	font-size: 30px;
+
 }
 /*core部分*/
 #specificWrite{
@@ -92,7 +93,7 @@ body{
 #specificWrite-right--top{
 	width:900px;
 	height:40px;
-	border:solid 1px black;
+	border-bottom:solid 1px #f5e79e;
 }
 #specificWrite-right--top p{
 	font-size:22px;
@@ -122,21 +123,41 @@ body{
 #specificWrite-left--headImg{
 	width:150px;
 	height:150px;
-	border:solid 1px black;
 	position: absolute;
 	top:20px;
 	left:20px;
 }
+#specificWrite-left-follow{
+	width: 100px;
+	height:30px;
+	line-height:30px;
+	text-align: center;
+	border: 1px solid red;
+	position: absolute;
+	top: 180px;
+	left: 40px;
+	border-radius:15px;
+}
+#specificWrite-left-follow span{
+	line-height: 20px;
+}
+
+#addfollow{
+	margin-left: 10px;
+	font-size: 24px;
+	color: red;
+	font-weight: bold;
+}
 #specificWrite-left--headImg img{
 	width:90px;
 	height:90px;
-	border:dashed 2px red;
-	margin-left:22px;
+	border:1px solid gray;
+	margin-left:25px;
 	margin-top:10px;
 }
 #specificWrite-left--headImg p{
-	font-size:18px;
-	margin-left:20px;
+	font-size:26px;
+	text-align: center;
 	margin-top:10px;
 }
 

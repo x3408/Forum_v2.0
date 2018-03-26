@@ -109,6 +109,16 @@ public class StrutsTest {
         UserBean bean = userService.findUserByKeyword("xc", 1);
 
         System.out.println(JSONArray.fromObject(bean.getList()).toString());
+    }
 
+    @Test
+    public void checkStatusTest() {
+        System.out.println(userService.checkStatus("2", "1"));
+    }
+
+    @Test
+    public void unFollowTest() {
+        User user = new User();
+        user.setUid("2");
     }
 }

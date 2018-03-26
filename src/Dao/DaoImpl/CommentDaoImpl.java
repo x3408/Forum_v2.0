@@ -10,7 +10,6 @@ import org.hibernate.Session;
 import org.springframework.orm.hibernate5.HibernateCallback;
 import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
 
-import java.util.LinkedList;
 import java.util.List;
 
 public class CommentDaoImpl extends HibernateDaoSupport implements CommentDao{

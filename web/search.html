@@ -9,10 +9,28 @@
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.js"></script>
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<style type="text/css">
+			#imgUpload{
+				width: 100px;
+				height: 100px;
+				position: relative;
+				margin: 0 auto 15px;
+				border: 1px solid #dfdfdf;
+				border-radius: 4px;
+			}
+
+		</style>
 		
 		<!--<link rel="stylesheet" type="text/css" href="css/style.css"/>-->
 	</head>
 	<body>
+
+			<div id="imgUpload">
+				<span id="imgtext">
+				   <img src=""  width="100" height="100" alt=""/>
+				</span>
+				<input id="fileupload" type="file" name="photo" class="btn">
+			</div>
 		<div class="header">
 			<div class="header-content">
 				<div class="logo"><a href=""><img src="img/logo.png"></a></div><div class="search" id="search-form">
@@ -33,6 +51,7 @@
 			   	  <div class="tab-pane" id="E">
 			   	  	 <div id="tab-content--E">
 			   	  	 	<p>你好</p>
+
 
 						 <div id="epaging">
 							 <ul class="pagination pagination-lg">
