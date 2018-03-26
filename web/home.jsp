@@ -16,8 +16,8 @@
     <title>健身首页</title>
     <link rel="stylesheet" href="css/mainPage.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" type="text/css" href="css/waterfall.css" />
-
+    <link rel="stylesheet" type="text/css" href="css/waterfall.css?1" />
+    <link rel="stylesheet" href="css/bootstrap.css">
 </head>
 
 <body>
@@ -35,7 +35,7 @@
             <span id="register"><a href="${pageContext.request.contextPath}/regist.jsp">注册</a></span>
         </s:if>
         <s:else>
-        <span id="entry">欢迎您: <s:property value="#session.user.username"></s:property> <a href="${pageContext.request.contextPath}/personCenter.jsp"> 个人中心</a></span>
+            <span id="entry">欢迎您: <s:property value="#session.user.username"></s:property> <a href="${pageContext.request.contextPath}/PersonAction_findAllData"> 个人中心</a></span>
         </s:else>
     </div>
 
@@ -197,6 +197,7 @@
 </body>
 <script type="text/javascript" src="js/mainPage.js"></script>
 <script type="text/javascript" src="js/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
 <script type="text/javascript">
     $.get("${pageContext.request.contextPath}/Recommend_list",
         function(data){
@@ -223,7 +224,7 @@
 //            while(j <= 3) {
             for(i=0;i>=0;i++){
                 var timer =  data[i].time.month + "月" + data[i].time.day + "日" + data[i].time.hours + "时" + data[i].time.minutes + "分";
-                $("#main").append('<div class="box"><div class="topicFrom"><span class="date" id="date">' + timer + '</span><span class="viewCount" id="viewCount">阅读量： ' + data[i].viewCount + '</span></div><div class="name"><div class="myPic" id="myPic"><img src="/headPortrait/'+data[i+3].headPortrait+'"/></div><div class="username" id="username">' + data[i+3].username + '</div></div><div class="context"><h6 class="title" id="title"><a href="TopicAction_showTopic?tid='+data[i].tid+'" style="text-decoration:none;color:#202678;" target="_blank" >' + data[i].title + '</a></h6><p class="text" id="text">' + data[i].descriptive + '</p></div></div>');
+                $("#main").append('<div class="box"><div class="topicFrom"><span class="date" id="date">' + timer + '</span><span class="viewCount" id="viewCount">阅读量： ' + data[i].viewCount + '</span></div><div class="name"><div class="myPic" id="myPic"><img id="imgCircle" class="img-circle" src="/headPortrait/'+data[i+3].headPortrait+'"/></div><div class="username" id="username">' + data[i+3].username + '</div></div><div class="context"><h6 class="title" id="title"><a href="TopicAction_showTopic?tid='+data[i].tid+'" style="text-decoration:none;color:#202678;" target="_blank" >' + data[i].title + '</a></h6><p class="text" id="text">' + data[i].descriptive + '</p></div></div>');
             }
         });
 
@@ -245,7 +246,7 @@
         window.location.href="${pageContext.request.contextPath}/TopicAction_showTopic?tid="+tid;
     }
 
-    window.onload(updataData(1, 'result_show'));
+    window.onload = updataData(1, 'result_show');
 
     function search() {
         var keyword = $("#search-input").val();

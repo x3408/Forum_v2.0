@@ -92,6 +92,9 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
 
                     //2、设置用户头像路径
                    user.setHeadPortrait(newFileName);
+                } else {
+                    User oldUser = (User) ActionContext.getContext().getSession().get("listData");
+                    user.setHeadPortrait(oldUser.getHeadPortrait());
                 }
 
             }

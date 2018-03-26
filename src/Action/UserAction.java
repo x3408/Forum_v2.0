@@ -182,7 +182,7 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
     //生成的验证码存放在session域中
     public String verifyImg() {
         int width = 120;
-        int height = 30;
+        int height = 60;
 
         // 步骤一 绘制一张内存中图片
         BufferedImage bufferedImage = new BufferedImage(width, height,
