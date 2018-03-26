@@ -96,7 +96,7 @@
             <div class="recommand-today">今日推荐</div>
             <ul>
                 <li>
-                    <a href="">
+                    <a href="/index1.jsp">
                         <div id="img1" class="img">
                             <img src="">
                         </div>
@@ -110,7 +110,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="/index2.jsp ">
                         <div id="img2" class="img">
                             <img src="">
                         </div>
@@ -123,7 +123,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="/index3.jsp">
                         <div id="img3" class="img">
                             <img src="">
                         </div>
@@ -137,7 +137,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="/index4.jsp" target="_blank">
                         <div id="img4" class="img">
                             <img src="">
                         </div>
@@ -150,7 +150,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="/index5.jsp">
                         <div id="img5" class="img">
                             <img src="">
                         </div>
@@ -163,7 +163,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="/index6.jsp">
                         <div id="img6" class="img">
                             <img src="">
                         </div>
@@ -176,7 +176,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="">
+                    <a href="/index7.jsp">
                         <div id="img7" class="img">
                             <img src="">
                         </div>
