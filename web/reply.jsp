@@ -42,7 +42,7 @@
             border-bottom: 1px solid #ccc;
         }
         .comment-list .comment-info header{
-            width: 10%;
+            width: 100%;
             position: absolute;
         }
         .comment-list .comment-info header img{

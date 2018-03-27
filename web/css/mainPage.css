@@ -220,7 +220,7 @@ body{
 	cursor: pointer;
 }
 .img{
-	
+	display:inline-block;
 	width: 55px;
 	height: 60px;
 	border: 1px solid darkgray;

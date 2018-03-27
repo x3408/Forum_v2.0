@@ -1,13 +1,12 @@
-<%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
-  User: 许晨
-  Date: 2018/3/16
-  Time: 21:49
+  User: daidai
+  Date: 2018/3/24
+  Time: 21:11
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!DOCTYPE html>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -87,7 +86,8 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript">
         //初始化数据
-        $.get("${pageContext.request.contextPath}/CommentAction_list?tid="+"<s:property value="#session.topic.tid"></s:property>",
+        $.get("${pageContext.request.contextPath}/CommentAction_list?tid=1001",
+
             function(data){
                 var date = new Date();
                 var seperator1 = "-";
@@ -102,10 +102,12 @@
                 }
                 var currentdate = year + seperator1 + month + seperator1 + strDate;
                 if(data==""){
+
                     var arr = [
                         {id:3,img:"./images/img.jpg",replyName:"帅大叔",beReplyName:"匿名",content:"同学聚会，看到当年追我的屌丝开着宝马车带着他老婆来了，他老婆是我隔壁宿舍的同班同学，心里后悔极了。",time:"2017-10-17 11:42:53",replyBody:[]}
                     ];
                     $(function(){
+
                         $(".comment-list").addCommentList({data:arr,add:""});
                         $("#comment").click(function(){
                             var obj = new Object();
@@ -113,70 +115,112 @@
                             obj.replyName="<s:property value="#session.user.username"></s:property>";
                             obj.content=$("#content").val();
                             obj.replyBody="";
+
                             $(".comment-list").addCommentList({data:[],add:obj});
-                            $.post("${pageContext.request.contextPath}/CommentAction_save", { replyName:"<s:property value="#session.user.username"></s:property>" , comment_content: obj.content,uid:"<s:property value="#session.user.uid"></s:property>",tid: "<s:property value="#session.topic.tid"></s:property>"}
+                            $.post("${pageContext.request.contextPath}/CommentAction_save", { replyName:"<s:property value="#session.user.username"></s:property>" , comment_content: obj.content,uid:"<s:property value="#session.user.uid"></s:property>",tid: 1001}
                             );
+
                         });
                     })
+
+
                 }
+
+
+
                 else{
-                $.each( data, function(i, json){
-                    var arr=[
-                        {id:1,img:"./images/img.jpg",replyName:json['uid_name'],beReplyName:"",content:json['comment_content'],time:currentdate,replyBody:[]}
-                    ];
-                    $(function(){
-                        $(".comment-list").addCommentList({data:arr,add:""});
-                        $("#comment").click(function(){
-                            var obj = new Object();
-                            obj.img="./images/img.jpg";
-                            obj.replyName=json['uid_name'];
-                            obj.content=$("#content").val();
-                            obj.replyBody="";
-                            if(i==0){
-                                $(".comment-list").addCommentList({data:[],add:obj});
-                                $.post("${pageContext.request.contextPath}/CommentAction_save", { replyName:"<s:property value="#session.user.username"></s:property>" , comment_content: obj.content,uid:"<s:property value="#session.user.uid"></s:property>",tid: "<s:property value="#session.topic.tid"></s:property>"}
-                                );
-                            }
-                        });
-                    })
-                });
+
+                    $.each( data, function(i, json){
+
+                        var arr=[
+                            {id:1,img:"./images/img.jpg",replyName:json['uid_name'],beReplyName:"",content:json['comment_content'],time:currentdate,replyBody:[]}
+                        ];
+                        $(function(){
+
+                            $(".comment-list").addCommentList({data:arr,add:""});
+                            $("#comment").click(function(){
+                                var obj = new Object();
+                                obj.img="./images/img.jpg";
+                                obj.replyName=json['uid_name'];
+                                obj.content=$("#content").val();
+                                obj.replyBody="";
+
+                                if(i==0){
+                                    $(".comment-list").addCommentList({data:[],add:obj});
+                                    $.post("${pageContext.request.contextPath}/CommentAction_save", { replyName:"<s:property value="#session.user.username"></s:property>" , comment_content: obj.content,uid:"<s:property value="#session.user.uid"></s:property>",tid: 1001}
+                                    );
+                                }
+
+                            });
+                        })
+                    });
                 }
+
+
+
+
             });
+
+
+
     </script>
-    <meta charset="utf-8" />
-    <title>user</title>
 
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/user.css?1">
-
+    <link rel="stylesheet" href="css/recommend2.css">
 </head>
 <body>
-<div class="header">
-    <div class="header-content">
-        <div class="logo"><a href="${pageContext.request.contextPath}/home.jsp"><img src="img/logo.png"></a></div><div class="search" id="search-form">
+<div id="recommendTwo">
+    <div id="recommendTwo-head">
+        <p>瘦腿真的这么难吗？教你一周搞定大粗腿</p>
     </div>
-    </div>
-</div>
-</div>
-<!--下面是我的代码-->
-<div id="specificWrite">
-    <div id="specificWrite-left">
-        <div id="specificWrite-left--headImg">
-            <img src="/headPortrait/${topicUser.headPortrait}" class="img-circle">
-            <p>${topicUser.username}</p>
-        </div>
-        <div id="specificWrite-left-follow"></div>
-    </div>
-    <div id="specificWrite-right">
-        <div id="specificWrite-right--top">
-            <p>${topic.title}</p>
-        </div>
-        <div id="specificWrite-right--center">
-            <jsp:include page="${topic.content}"></jsp:include>
-        </div>
-        <div id="specificWrite-right--buttom">
+    <div id="recommendTwo-main">
+        <p>你是不是总想着自己也有一双大长腿</p>
+        <p>偶尔还能大胆地放肆一回！</p>
+        <p>可真要是360度欣赏一下，</p>
+        <p>自己的腿却是另外一个样子的……</p>
+        <p>难怪小粗腿扭不过大长腿，<br/>
+            还是先乖乖地瘦腿吧！
+        </p>
+        <p>
+            今天介绍的这组动作，<br/>
+            主要锻炼腿和臀。<br/>
+            这套动作由4个动作组成，<br/>
+            来看一下吧！
+        </p>
+        <p>
+            单脚箭步蹲、跳蹲<br/>
+            左右各10-20次，<br/>
+            根据自身水平，<br/>
+            选择单脚箭步蹲或单脚箭步跳蹲
+        </p>
+        <img src="img/timg.jpeg">
+        <p>
+            一个半深蹲<br/>
+            20-30次，<br/>
+            先做一个全蹲，再做一个半蹲
 
+        </p>
+        <img src="img/jump.png">
+        <p>
+            仰卧屈膝挺髋<br/>
+            20-30次<br/>
+            挺髋至最上方时稍停，然后再慢慢还原
+        </p>
+        <img src="img/quxi.jpeg">
+        <p>
+            深蹲跳<br/>
+            10--20次
+        </p>
+        <img src="img/sdt.jpeg">
+        <p>
+            全套动作根据自身水平做1-5个循环，<br/>
+            练习的过程中尽可能的慢一点，<br/>
+            动作标准一点。<br/>
+            在练习完之后，<br/>
+            还要做一些按摩，帮助肌肉舒缓。
+        </p>
+        <br />
+        <div id="recommendTwo-evaluate">
+            <!--放评论语句-->
             <div class="container">
                 <div class="commentbox">
                     <textarea cols="80" rows="50" placeholder="来说几句吧......" class="mytextarea" id="content"></textarea>
@@ -188,13 +232,8 @@
 
                 </div>
             </div>
-
-
         </div>
     </div>
-
-
 </div>
 </body>
-<script src="js/user.js?1"></script>
 </html>

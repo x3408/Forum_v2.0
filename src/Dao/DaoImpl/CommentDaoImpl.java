@@ -16,31 +16,38 @@ public class CommentDaoImpl extends HibernateDaoSupport implements CommentDao{
     private User u;
     private Topic t;
     public void save(comment comment) {
-         u= getHibernateTemplate().execute(new HibernateCallback<User>() {
-            public User doInHibernate(Session session) throws HibernateException {
-                String hql = "from User where uid = ? ";
-                Query query = session.createQuery(hql);
-                query.setParameter(0, comment.getUid());
-                User user = (User) query.uniqueResult();
-                return user;
-            }
-        });
-        t= getHibernateTemplate().execute(new HibernateCallback<Topic>() {
-            public Topic doInHibernate(Session session) throws HibernateException {
-                String hql = "from Topic where tid = ? ";
-                Query query = session.createQuery(hql);
-                query.setParameter(0, comment.getTid());
-                Topic topic = (Topic) query.uniqueResult();
-                return topic;
-            }
-        });
-        t.getComments().add(comment);
-        comment.setTopic(t);
+        if(comment.getTid()<1000) {
+            u= getHibernateTemplate().execute(new HibernateCallback<User>() {
+                public User doInHibernate(Session session) throws HibernateException {
+                    String hql = "from User where uid = ? ";
+                    Query query = session.createQuery(hql);
+                    query.setParameter(0, comment.getUid());
+                    User user = (User) query.uniqueResult();
+                    return user;
+                }
+            });
+            t= getHibernateTemplate().execute(new HibernateCallback<Topic>() {
+                public Topic doInHibernate(Session session) throws HibernateException {
+                    String hql = "from Topic where tid = ? ";
+                    Query query = session.createQuery(hql);
+                    query.setParameter(0, comment.getTid());
+                    Topic topic = (Topic) query.uniqueResult();
+                    return topic;
+                }
+            });
+            t.getComments().add(comment);
+            comment.setTopic(t);
 
-        u.getComments().add(comment);
-        comment.setUser(u);
+            u.getComments().add(comment);
+            comment.setUser(u);
 
-        getHibernateTemplate().saveOrUpdate(comment);
+            getHibernateTemplate().saveOrUpdate(comment);
+
+        }else{
+            getHibernateTemplate().saveOrUpdate(comment);
+        }
+
+
 
     }
 

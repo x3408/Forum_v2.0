@@ -1,0 +1,36 @@
+#recommendSeven{
+	width:1100px;
+	height:5240px;
+    border:solid 1px #ccc;
+	position:relative;
+	left:50%;
+	top:50%;
+	margin-left:-550px;
+	
+}
+#recommendSeven-head{
+	width:1100px;
+	height:50px;
+	border-bottom: 1px red solid;
+	padding-top:5px;
+}
+#recommendSeven-head p{
+	font-size:23px;
+	margin-left:320px;
+	font-weight: bold;
+
+}
+#recommendSeven-main{
+	width:900px;
+	height:800px;
+	/*border:solid 1px black;*/
+	margin-left:100px;
+}
+#recommendSeven-main img{
+	margin-left:0px;
+}
+#recommendSeven-evaluate{
+	width:800px;
+	height:400px;
+	border:solid 1px red;
+}
