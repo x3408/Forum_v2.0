@@ -40,7 +40,7 @@
                 <div class="form-groupTwo--secret">
                     <img src="img/secret.png" class="icon-two">
                     <lable class="control-label" for="loginform-secret"></lable>
-                    <input type="text" id="loginform-secret" name="password" placeholder="密码"/>
+                    <input type="password" id="loginform-secret" name="password" placeholder="密码"/>
                 </div>
                 <div id="form-groupTwo--warn">
                     <img src="img/warn.png">

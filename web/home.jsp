@@ -16,7 +16,7 @@
     <title>健身首页</title>
     <link rel="stylesheet" href="css/mainPage.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" type="text/css" href="css/waterfall.css" />
+    <link rel="stylesheet" type="text/css" href="css/waterfall.css?1" />
 
 </head>
 
