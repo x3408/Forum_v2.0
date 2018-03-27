@@ -26,7 +26,7 @@
         <img src="img/QQ20180315-0.jpg">
     </div>
     <div id="personCenter-headImg">
-        <img src="/headPortrait/${listAllData.headPortrait}" class="img-rounded">
+        <img src="${basePath}/headPortrait/${listAllData.headPortrait}" class="img-rounded">
     </div>
 
          <%--<span id="personCenter-name">--%>
@@ -87,10 +87,14 @@
     $("#Myfocus").click(function(){
         $.get("${pageContext.request.contextPath}/PersonAction_findAttention",
             function(data1){
+
                 $('#attention').empty();
                 $.each( data1  , function(i, json1){
                     $("#attention").append(
-                        "<a id='addDiv' href='#'>" + json1.type + "</a>" );
+                            "<div id='topPhoto'>"+"<img src="+${basePath}/headPortrait/+json1[1]+" id='img-rounded'>" +
+                            "<a id='addDiv' href='#'>" + json1[0] + "</a>"+"</div>"
+                  );
+
                 });
             },"json");
     });
@@ -101,10 +105,13 @@
                 $('#fans').empty();
                 $.each( data2  , function(i, json2){
                     $("#fans").append(
-                        "<a id='addDiv' href='#'>" + json2.type + "</a>" );
+                        "<div id='topPhoto'  >"+"<img src="+${basePath}/headPortrait/+json2[1]+" id='img-rounded'>" +
+                        "<a id='addDiv' href='#'>" + json2[0] + "</a>"+"</div>"
+                    );
                 });
             },"json");
     });
+    //关注总数的获取
     $.get("${pageContext.request.contextPath}/PersonAction_findAttentionCount",
         function(data3){
 
@@ -113,6 +120,7 @@
                      json3 );
             });
         },"json");
+    //粉丝总数的获取
     $.get("${pageContext.request.contextPath}/PersonAction_findFansCount",
         function(data4){
 

@@ -1,6 +1,5 @@
 package Service.ServiceImpl;
 
-import Bean.Relation;
 import Bean.Topic;
 import Bean.User;
 import Dao.PersonDao;
@@ -22,14 +21,14 @@ public class PersonServiceImpl implements PersonService {
     }
     //我的关注
     @Override
-    public List<Relation> findAttention(User user) {
-        List<Relation> list1 = pd.findAttention(user.getUid());
+    public List<User> findAttention(User user) {
+        List<User> list1 = pd.findAttention(user.getUid());
         return list1;
     }
 
     @Override
-    public List<Relation> findFans(User user) {
-        List<Relation> list2 = pd.findFans(user.getUid());
+    public List<User> findFans(User user) {
+        List<User> list2 = pd.findFans(user.getUid());
         return list2;
     }
 
