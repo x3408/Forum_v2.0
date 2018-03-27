@@ -163,7 +163,7 @@
 <div id="specificWrite">
     <div id="specificWrite-left">
         <div id="specificWrite-left--headImg">
-            <img src="img/timg (1).jpeg" class="img-circle">
+            <img src="/headPortrait/${topicUser.headPortrait}" class="img-circle">
             <p>${topicUser.username}</p>
         </div>
         <div id="specificWrite-left-follow"></div>

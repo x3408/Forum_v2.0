@@ -16,7 +16,7 @@
     <title>健身首页</title>
     <link rel="stylesheet" href="css/mainPage.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" type="text/css" href="css/waterfall.css?1" />
+    <link rel="stylesheet" type="text/css" href="css/waterfall.css" />
     <link rel="stylesheet" href="css/bootstrap.css">
 </head>
 
@@ -96,41 +96,41 @@
             <div class="recommand-today">今日推荐</div>
             <ul>
                 <li>
-                    <a href="/index1.jsp">
+                    <a href="/index1.jsp" target="_blank">
                         <div id="img1" class="img">
-                            <img src="">
+                            <img src="img/yjd.png" width="55px" height="60px">
                         </div>
                         <div class="atext">
                             <span id="text1"  class="strongText"></span>
-                        <div id="text-one" class="atext">
-                            <span class="strongText"></span>
-                            <span class="detailText"></span>
-
-                        </div></div>
+                            <div id="text-one" class="atext">
+                                <span class="strongText">如何选择优质瑜伽垫</span>
+                                <span class="detailText"></span>
+                            </div>
+                        </div>
                     </a>
                 </li>
                 <li>
-                    <a href="/index2.jsp ">
+                    <a href="/index2.jsp " target="_blank">
                         <div id="img2" class="img">
-                            <img src="">
+                            <img src="img/timg.jpeg" width="55px" height="60px">
                         </div>
                         <div  class="atext">
                             <span id="text2" class="strongText"></span>
                         <div id="text-two" class="atext">
-                            <span class="strongText"></span>
+                            <span class="strongText">瘦腿真的这么难吗？教你一周搞定大粗腿</span>
                             <span class="detailText"></span>
                         </div></div>
                     </a>
                 </li>
                 <li>
-                    <a href="/index3.jsp">
+                    <a href="/index3.jsp" target="_blank">
                         <div id="img3" class="img">
-                            <img src="">
+                            <img src="img/run.jpeg" width="55px" height="60px">
                         </div>
                         <div class="atext">
                             <span id="text3"  class="strongText"></span>
                         <div id="text-three" class="atext">
-                            <span class="strongText"></span>
+                            <span class="strongText">慢跑减肥正确方法 轻松快速燃烧脂肪</span>
                             <span class="detailText"></span>
                         </div>
                         </div>
@@ -139,10 +139,10 @@
                 <li>
                     <a href="/index4.jsp" target="_blank">
                         <div id="img4" class="img">
-                            <img src="">
+                            <img src="img/water.png" width="55px" height="60px">
                         </div>
                         <div  class="atext">
-                            <span id="text4" class="strongText"></span>
+                            <span id="text4" class="strongText">一个健身爱好者最朴实的自白</span>
                         <div id="text-four" class="atext">
                             <span class="strongText"></span>
                             <span class="detailText"></span>
@@ -150,12 +150,12 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/index5.jsp">
+                    <a href="/index5.jsp" target="_blank">
                         <div id="img5" class="img">
-                            <img src="">
+                            <img src="img/room2.png" width="55px" height="60px">
                         </div>
                         <div  class="atext">
-                            <span id="text5" class="strongText"></span>
+                            <span id="text5" class="strongText">第一次去健身房的新手小白攻略！纯干货</span>
                         <div id="text-five" class="atext">
                             <span class="strongText"></span>
                             <span class="detailText"></span>
@@ -163,12 +163,12 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/index6.jsp">
+                    <a href="/index6.jsp" target="_blank">
                         <div id="img6" class="img">
-                            <img src="">
+                            <img src="img/food3.png" width="55px" height="60px">
                         </div>
                         <div  class="atext">
-                            <span id="text6" class="strongText"></span>
+                            <span id="text6" class="strongText">最快最有效减肥方法运动饮食结合</span>
                         <div id="text-six" class="atext">
                             <span class="strongText"></span>
                             <span class="detailText"></span>
@@ -176,12 +176,12 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/index7.jsp">
+                    <a href="/index7.jsp" target="_blank">
                         <div id="img7" class="img">
-                            <img src="">
+                            <img src="img/fat1.png" width="55px" height="60px">
                         </div>
                         <div  class="atext">
-                            <span id="text7" class="strongText"></span>
+                            <span id="text7" class="strongText">一篇文章，让你明白“健身”是非做不可的事</span>
                         <div id="text-seven" class="atext">
                             <span class="strongText"></span>
                             <span class="detailText"></span>
