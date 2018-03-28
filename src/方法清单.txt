@@ -1,18 +1,9 @@
-﻿初始文档
-登陆-->首页
-注册-->首页
-看文章列表
-看咨询
-关注-->异步回本页
-回复
-发表文章
-查看某个用户
-
-
-数据库文章分类
+﻿数据库文章分类
 成果展示 result_show
 训练心得 training_experience
 饮食计划 diet_plan
 器具使用 appliance_use
 动作要领 action
 健身日记 diary
+
+bug-Report

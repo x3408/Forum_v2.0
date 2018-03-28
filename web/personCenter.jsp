@@ -14,7 +14,7 @@
     <meta charset="utf-8" />
     <title>个人中心</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/personCenter.css">
+    <link rel="stylesheet" href="css/personCenter.css?1">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>
 
@@ -23,10 +23,11 @@
 <body>
 <div id="personCenter">
     <div id="personCenter-top">
+        <span><a href="">返回</a></span>
         <img src="img/QQ20180315-0.jpg">
     </div>
     <div id="personCenter-headImg">
-        <img src="/headPortrait/${listAllData.headPortrait}" class="img-rounded">
+        <img src="${basePath}/headPortrait/${listAllData.headPortrait}" class="img-rounded">
     </div>
 
          <%--<span id="personCenter-name">--%>
@@ -46,7 +47,8 @@
     <div id="personCenter-edit">
         <div id="personCenter-edit--btn">
             <form action="${pageContext.request.contextPath}/PersonAction_findData">
-                <button class="btn btn-info btn-sm">编辑个人资料</button>
+                <button class="btn btn-danger btn-sm">编辑个人资料</button>
+                <button class="btn btn-danger btn-sm">发表文章</button>
             </form>
         </div>
         <div id="personCenter-edit--follow">
@@ -87,10 +89,14 @@
     $("#Myfocus").click(function(){
         $.get("${pageContext.request.contextPath}/PersonAction_findAttention",
             function(data1){
+
                 $('#attention').empty();
                 $.each( data1  , function(i, json1){
                     $("#attention").append(
-                        "<a id='addDiv' href='#'>" + json1.type + "</a>" );
+                            "<div id='topPhoto'>"+"<img src="+${basePath}/headPortrait/+json1[1]+" id='img-rounded'>" +
+                            "<a id='addDiv' href='#'>" + json1[0] + "</a>"+"</div>"
+                  );
+
                 });
             },"json");
     });
@@ -101,10 +107,13 @@
                 $('#fans').empty();
                 $.each( data2  , function(i, json2){
                     $("#fans").append(
-                        "<a id='addDiv' href='#'>" + json2.type + "</a>" );
+                        "<div id='topPhoto'  >"+"<img src="+${basePath}/headPortrait/+json2[1]+" id='img-rounded'>" +
+                        "<a id='addDiv' href='#'>" + json2[0] + "</a>"+"</div>"
+                    );
                 });
             },"json");
     });
+    //关注总数的获取
     $.get("${pageContext.request.contextPath}/PersonAction_findAttentionCount",
         function(data3){
 
@@ -113,6 +122,7 @@
                      json3 );
             });
         },"json");
+    //粉丝总数的获取
     $.get("${pageContext.request.contextPath}/PersonAction_findFansCount",
         function(data4){
 

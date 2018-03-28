@@ -2,7 +2,7 @@
 	width:1115px;
 	height:250px;
 	margin:auto;
-	border:solid 1px black;
+	border:solid 1px #CCCCCC;
 	position: relative;
 }
 #personCenter-top{
@@ -10,6 +10,16 @@
 	height:120px;
 	overflow: hidden;
 }
+#personCenter-top span a{
+	position:absolute;
+	top:10px;
+    right:10px;
+	font-size:15px;
+	text-decoration: none;
+	color:#ff0000;
+}
+
+
 #personCenter-headImg{
 	position: absolute;
 	width:100px;
@@ -24,10 +34,10 @@
 }
 #personCenter-name{
 	position: absolute;
-	font-size:20px;
+	font-size:26px;
 	font-weight: bold;
 	color:black;
-	left:190px;
+	left:210px;
 }
 #personCenter-name a{
 	text-decoration: none;
@@ -37,12 +47,13 @@
 	width:350px;
 	height:370px;
 	position: absolute;
-	border:solid 1px #C0C0C0;
+	border:solid 1px #CCCCCC;
+	border-left:none;
 	right:0px;
 }
 #personCenter-edit--btn{
 	position: absolute;
-	margin-left:170px;
+	margin-left:150px;
 	margin-top:20px;
 }
 #personCenter-edit--follow{
@@ -69,7 +80,7 @@
 	position: absolute;
 	width:765px;
 	height:900px;
-	border:solid 1px red;
+	border:solid 1px #CCCCCC;
 	top:248px;
 	
 }
@@ -81,7 +92,6 @@
 	height:40px;
 	margin-top:10px;
 	font-size:18px;
-	font-style:italic;
 	font-weight: bold;
 	text-decoration: none;
   outline:none;
@@ -90,8 +100,27 @@
 	position: absolute;
 	font-size:15px;
 	font-weight: bold;
-	color:black;
-	top:150px;
+
+	top:160px;
 	left:210px;
 }
 
+#img-rounded{
+	height: 80px;
+	width: 80px;
+}
+#attention{
+
+}
+#topPhoto{
+	display: inline-block;
+	width:150px;
+	margin-left:33px;
+
+#personCenter-character a{
+	color:black;
+}
+a:hover{
+	text-decoration: none;
+
+}

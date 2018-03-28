@@ -34,11 +34,13 @@
         <div id="editorData-main">
             <div id="editorData-headImg">
                 <span id="imgtext">当前头像
+
                 <img src="${basePath}/headPortrait/${listData.headPortrait}">
+
                 </span>
                 <%--<input type="file" name ="headPortrait">--%>
-                <input id="fileupload" name ="photo" type="file" name="photo" onchange="imagesSelectedForHead(this.files)" class="btn">
-
+                <input id="fileupload" name ="photo" type="file"   onchange="imagesSelectedForHead(this.files)" class="btn"   />
+                <%--<input type="hidden" name="photo2"  value="${listData.headPortrait}"  />--%>
                 <a id="changeImg"><!--改变头像--></a>
             </div>
             <div id="editorData-ip" class="form-horizontal">

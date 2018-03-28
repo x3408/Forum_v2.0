@@ -1,6 +1,5 @@
 package Dao;
 
-import Bean.Relation;
 import Bean.Topic;
 import Bean.User;
 
@@ -9,9 +8,9 @@ import java.util.List;
 public interface PersonDao {
     List<Topic> findArticle(String uid);
 
-    List<Relation> findAttention(String uid);
+    List<User> findAttention(String uid);
 
-    List<Relation> findFans(String uid);
+    List<User> findFans(String uid);
 
     User findData(String uid);
 

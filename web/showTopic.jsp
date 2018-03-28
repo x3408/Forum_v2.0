@@ -103,8 +103,7 @@
                 var currentdate = year + seperator1 + month + seperator1 + strDate;
                 if(data==""){
                     var arr = [
-                        {id:3,img:"./images/img.jpg",replyName:"帅大叔",beReplyName:"匿名",content:"同学聚会，看到当年追我的屌丝开着宝马车带着他老婆来了，他老婆是我隔壁宿舍的同班同学，心里后悔极了。",time:"2017-10-17 11:42:53",replyBody:[]}
-                    ];
+                    ]; 
                     $(function(){
                         $(".comment-list").addCommentList({data:arr,add:""});
                         $("#comment").click(function(){
@@ -163,7 +162,7 @@
 <div id="specificWrite">
     <div id="specificWrite-left">
         <div id="specificWrite-left--headImg">
-            <img src="img/timg (1).jpeg" class="img-circle">
+            <img src="/headPortrait/${topicUser.headPortrait}" class="img-circle">
             <p>${topicUser.username}</p>
         </div>
         <div id="specificWrite-left-follow"></div>
