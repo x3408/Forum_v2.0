@@ -24,10 +24,10 @@
 }
 #personCenter-name{
 	position: absolute;
-	font-size:20px;
+	font-size:26px;
 	font-weight: bold;
 	color:black;
-	left:190px;
+	left:210px;
 }
 #personCenter-name a{
 	text-decoration: none;
@@ -81,7 +81,6 @@
 	height:40px;
 	margin-top:10px;
 	font-size:18px;
-	font-style:italic;
 	font-weight: bold;
 	text-decoration: none;
   outline:none;
@@ -90,8 +89,13 @@
 	position: absolute;
 	font-size:15px;
 	font-weight: bold;
-	color:black;
-	top:150px;
+
+	top:160px;
 	left:210px;
 }
-
+#personCenter-character a{
+	color:black;
+}
+a:hover{
+	text-decoration: none;
+}

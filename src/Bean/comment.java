@@ -20,6 +20,16 @@ public class comment {
     private String uid_name;
     //这是评论的内容
     private String comment_content;
+    private String headPortrait;
+
+    public String getHeadPortrait() {
+        return headPortrait;
+    }
+
+    public void setHeadPortrait(String headPortrait) {
+        this.headPortrait = headPortrait;
+    }
+
     //一对多对应 多的一方 对应用户
     @JSONField(serialize = false)
     private User user;
