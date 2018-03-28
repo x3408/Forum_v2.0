@@ -1,6 +1,5 @@
 package Action;
 
-import Bean.Relation;
 import Bean.Topic;
 import Bean.User;
 import Service.PersonService;
@@ -28,9 +27,13 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
     private String username;
     private String sex;
     private File photo;
+    //private String photo2;
     private String headPortraitContantType;
     private String photoFileName;
 
+//    public void setPhoto2(String photo2) {
+//        this.photo2 = photo2;
+//    }
 
     public void setPs(PersonService ps) {
         this.ps = ps;
@@ -50,29 +53,41 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
     public String findAttention() throws Exception{
 
         User user = (User) ActionContext.getContext().getSession().get("user");
-        List<Relation> list1 = ps.findAttention(user);
-        String json1 = JSONArray.fromObject(list1).toString();
-        out.println(json1);
+        List<User> list1 = ps.findAttention(user);
+//        String json1 =JSONArray.fromObject(list1).toString();
+        JSONArray json = JSONArray.fromObject(list1);
+        String str = json.toString();//把json转换为String
+        out.println(str);
         ServletActionContext.getResponse().setContentType("application/json;charset=UTF-8");
-        ServletActionContext.getResponse().getWriter().write(json1);
+        ServletActionContext.getResponse().getWriter().write(str);
         return null;
     }
+    //我的粉丝
     public String findFans() throws Exception{
         User user = (User) ActionContext.getContext().getSession().get("user");
-        List<Relation> list2 = ps.findFans(user);
+        List<User> list2 = ps.findFans(user);
         String json2 = JSONArray.fromObject(list2).toString();
         out.println(json2);
         ServletActionContext.getResponse().setContentType("application/json;charset=UTF-8");
         ServletActionContext.getResponse().getWriter().write(json2);
         return null;
         }
+        //编辑回显页面的信息
     public String findData() throws Exception{
         User user = (User) ActionContext.getContext().getSession().get("user");
         user = ps.findData(user);
         ActionContext.getContext().getSession().put("listData",user);
         return "data";
     }
+
+
+
+
+    //编辑页面修改信息的更新
     public String updateData() throws Exception{
+
+
+
         try {
             if(user!=null){
                 //处理头像
@@ -106,6 +121,10 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
         ActionContext.getContext().getSession().put("user",user);
         return "editor";
     }
+
+
+
+    //查询关注总数的操作
     public String  findAttentionCount() throws Exception{
         User user = (User) ActionContext.getContext().getSession().get("user");
         int AttentionCount = ps.findAttentionCount(user);
@@ -115,6 +134,7 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
         ServletActionContext.getResponse().getWriter().write(json3);
        return null;
     }
+    //查询粉丝总数的操作
     public String  findFansCount() throws Exception{
         User user = (User) ActionContext.getContext().getSession().get("user");
         int FansCount = ps.findFansCount(user);
@@ -124,6 +144,7 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
         ServletActionContext.getResponse().getWriter().write(json4);
         return null;
     }
+    //个人中心的信息回显
     public String findAllData() throws Exception{
         User user = (User) ActionContext.getContext().getSession().get("user");
         User list4 = ps.findAllData(user);

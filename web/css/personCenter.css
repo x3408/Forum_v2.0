@@ -93,6 +93,18 @@
 	top:160px;
 	left:210px;
 }
+#img-rounded{
+	height: 80px;
+	width: 80px;
+}
+#attention{
+
+}
+#topPhoto {
+	display: inline-block;
+	width: 150px;
+	margin-left: 33px;
+}
 #personCenter-character a{
 	color:black;
 }

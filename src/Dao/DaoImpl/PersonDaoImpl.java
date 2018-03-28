@@ -1,6 +1,5 @@
 package Dao.DaoImpl;
 
-import Bean.Relation;
 import Bean.Topic;
 import Bean.User;
 import Dao.PersonDao;
@@ -32,30 +31,30 @@ public class PersonDaoImpl extends HibernateDaoSupport implements PersonDao {
 
     //我的关注
     @Override
-    public List<Relation> findAttention(String uid) {
-        return getHibernateTemplate().execute(new HibernateCallback<List<Relation>>() {
+    public List<User> findAttention(String uid) {
+        return getHibernateTemplate().execute(new HibernateCallback<List<User>>() {
             @Override
-            public List<Relation> doInHibernate(Session session) throws HibernateException {
-                String hql = "from Relation where uid= ? and type = ?";//这里的表名不能直接填写表名，而是填写该表在orm元数据中的映射关系名字
-                Query query = session.createQuery(hql)
+            public List<User> doInHibernate(Session session) throws HibernateException {
+               String hql = " select username,headPortrait from user where uid in (select follow_uid from relation where uid = ? and type = ?)";//这里的表名不能直接填写表名，而是填写该表在orm元数据中的映射关系名字
+                Query query = session.createSQLQuery(hql)
                         .setParameter(0, uid)
                         .setParameter(1, 1);
-                List<Relation> list1 = query.list();
+                List<User> list1 = query.list();
                 return list1;
             }
         });
     }
 
     @Override
-    public List<Relation> findFans(String uid) {
-        return getHibernateTemplate().execute(new HibernateCallback<List<Relation>>() {
+    public List<User> findFans(String uid) {
+        return getHibernateTemplate().execute(new HibernateCallback<List<User>>() {
             @Override
-            public List<Relation> doInHibernate(Session session) throws HibernateException {
-                String hql = "from Relation where uid=? and type=?";//这里的表名不能直接填写表名，而是填写该表在orm元数据中的映射关系名字
-                Query query = session.createQuery(hql)
+            public List<User > doInHibernate(Session session) throws HibernateException {
+                String hql = "select username,headPortrait from user where uid in (select follow_uid from relation where uid = ? and type = ?)";//这里的表名不能直接填写表名，而是填写该表在orm元数据中的映射关系名字
+                Query query = session.createSQLQuery(hql)
                         .setParameter(0, uid)
                         .setParameter(1, 2);
-                List<Relation> list2 = query.list();
+                List<User > list2 = query.list();
                 return list2;
             }
         });

@@ -1,6 +1,5 @@
 package Service;
 
-import Bean.Relation;
 import Bean.Topic;
 import Bean.User;
 
@@ -9,9 +8,9 @@ import java.util.List;
 public interface PersonService {
     List<Topic> findArticle(User user);
 
-    List<Relation> findAttention(User user);
+    List<User> findAttention(User user);
 
-    List<Relation> findFans(User user);
+    List<User> findFans(User user);
 
     User findData(User user);
 
