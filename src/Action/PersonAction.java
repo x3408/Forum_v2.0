@@ -118,9 +118,7 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
             e.printStackTrace();
         }
         ps.updateData(user);
-
-
-
+        ActionContext.getContext().getSession().put("user",user);
         return "editor";
     }
 

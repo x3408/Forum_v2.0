@@ -1,4 +1,4 @@
-<%@ taglib prefix="s" uri="/struts-tags" %>
+
 <%--
   Created by IntelliJ IDEA.
   User: 许晨
@@ -7,6 +7,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -103,17 +104,17 @@
                 var currentdate = year + seperator1 + month + seperator1 + strDate;
                 if(data==""){
                     var arr = [
-                    ]; 
+                    ];
                     $(function(){
                         $(".comment-list").addCommentList({data:arr,add:""});
                         $("#comment").click(function(){
                             var obj = new Object();
-                            obj.img="./images/img.jpg";
+                            obj.img="headPortrait/<s:property value="#session.user.headPortrait"></s:property>";
                             obj.replyName="<s:property value="#session.user.username"></s:property>";
                             obj.content=$("#content").val();
                             obj.replyBody="";
                             $(".comment-list").addCommentList({data:[],add:obj});
-                            $.post("${pageContext.request.contextPath}/CommentAction_save", { replyName:"<s:property value="#session.user.username"></s:property>" , comment_content: obj.content,uid:"<s:property value="#session.user.uid"></s:property>",tid: "<s:property value="#session.topic.tid"></s:property>"}
+                            $.post("${pageContext.request.contextPath}/CommentAction_save", { replyName:"<s:property value="#session.user.username"></s:property>" , comment_content: obj.content,uid:"<s:property value="#session.user.uid"></s:property>",tid: "<s:property value="#session.topic.tid"></s:property>",headPortrait:"<s:property value="#session.user.headPortrait"></s:property>"}
                             );
                         });
                     })
@@ -121,19 +122,19 @@
                 else{
                 $.each( data, function(i, json){
                     var arr=[
-                        {id:1,img:"./images/img.jpg",replyName:json['uid_name'],beReplyName:"",content:json['comment_content'],time:currentdate,replyBody:[]}
+                        {id:1,img:"headPortrait/"+json['headPortrait'],replyName:json['uid_name'],beReplyName:"",content:json['comment_content'],time:currentdate,replyBody:[]}
                     ];
                     $(function(){
                         $(".comment-list").addCommentList({data:arr,add:""});
                         $("#comment").click(function(){
                             var obj = new Object();
-                            obj.img="./images/img.jpg";
-                            obj.replyName=json['uid_name'];
+                            obj.img="headPortrait/<s:property value="#session.user.headPortrait"></s:property>";
+                            obj.replyName="<s:property value="#session.user.username"></s:property>";
                             obj.content=$("#content").val();
                             obj.replyBody="";
                             if(i==0){
                                 $(".comment-list").addCommentList({data:[],add:obj});
-                                $.post("${pageContext.request.contextPath}/CommentAction_save", { replyName:"<s:property value="#session.user.username"></s:property>" , comment_content: obj.content,uid:"<s:property value="#session.user.uid"></s:property>",tid: "<s:property value="#session.topic.tid"></s:property>"}
+                                $.post("${pageContext.request.contextPath}/CommentAction_save", { replyName:"<s:property value="#session.user.username"></s:property>" , comment_content: obj.content,uid:"<s:property value="#session.user.uid"></s:property>",tid: "<s:property value="#session.topic.tid"></s:property>",headPortrait:"<s:property value="#session.user.headPortrait"></s:property>"}
                                 );
                             }
                         });

@@ -23,6 +23,7 @@ public class CommentAction extends ActionSupport {
         comment.setComment_content(comment_content);
         comment.setUid_name(replyName);
         comment.setTid(tid);
+        comment.setHeadPortrait(headPortrait);
         //得到参数 传递给Service 调用save 方法
         cs.save(comment);
         return null;
@@ -48,6 +49,15 @@ public class CommentAction extends ActionSupport {
     private String comment_content;
     private String uid;
     private Integer tid;
+    private String headPortrait;
+
+    public String getHeadPortrait() {
+        return headPortrait;
+    }
+
+    public void setHeadPortrait(String headPortrait) {
+        this.headPortrait = headPortrait;
+    }
 
     public Integer getTid() {
         return tid;
