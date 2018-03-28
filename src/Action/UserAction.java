@@ -177,6 +177,13 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
         return "userTopic";
     }
 
+    //注销--xc
+    public String logout() {
+        ServletActionContext.getRequest().getSession().invalidate();
+
+        return "toIndex";
+    }
+
 
     //注册页面生成验证码--xc
     //生成的验证码存放在session域中

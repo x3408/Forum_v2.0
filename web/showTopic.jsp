@@ -86,6 +86,7 @@
     <script type="text/javascript" src="js/jquery.comment.js" ></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript">
+
         //初始化数据
         $.get("${pageContext.request.contextPath}/CommentAction_list?tid="+"<s:property value="#session.topic.tid"></s:property>",
             function(data){
@@ -148,7 +149,7 @@
 
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/user.css?1">
+    <link rel="stylesheet" href="css/user.css?2 ">
 
 </head>
 <body>

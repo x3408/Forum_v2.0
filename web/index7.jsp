@@ -164,7 +164,7 @@
 
 
     </script>
-    <link rel="stylesheet" href="css/recommend7.css">
+    <link rel="stylesheet" href="css/recommend7.css?1">
 </head>
 <body>
 <div id="recommendSeven">

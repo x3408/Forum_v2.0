@@ -251,13 +251,35 @@ body{
 	right:100px;
 	top:10px;
 	font-size: 15px;
-	color:red;
+
+}
+#entry a{
+	color:#ff0000;
+}
+#entry a:hover{
+	text-decoration: none;
+	color: #fff;
+}
+#return{
+	position: absolute;
+	right:160px;
+	top:10px;
+	font-size: 15px;
+	color: #ff0000;
 }
 #register{
 	position: absolute;
 	right:60px;
 	top:10px;
 	font-size: 15px;
+
+}
+#register a{
+	color:#ff0000;
+}
+#register a:hover{
+	color: #fff;
+	text-decoration: none;
 }
 a{
 	color:red;

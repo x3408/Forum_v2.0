@@ -14,7 +14,7 @@
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.8.3.js"></script>
     <meta charset="utf-8" />
     <title>健身首页</title>
-    <link rel="stylesheet" href="css/mainPage.css" />
+    <link rel="stylesheet" href="css/mainPage.css?1" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/waterfall.css" />
     <link rel="stylesheet" href="css/bootstrap.css">
@@ -36,6 +36,7 @@
         </s:if>
         <s:else>
             <span id="entry">欢迎您: <s:property value="#session.user.username"></s:property> <a href="${pageContext.request.contextPath}/PersonAction_findAllData"> 个人中心</a></span>
+            <span id="return"><a href="${pageContext.request.contextPath}/UserAction_logout">退出</a></span>
         </s:else>
     </div>
 
