@@ -76,16 +76,13 @@ window.onload = function() {
     window.onscroll=function(){
         var scrollH=document.documentElement.scrollTop;
         var a=parseInt(scrollH);
-        var nav=document.getElementById('nav');
-        var otherNews=document.getElementById('otherNews');
+        var left=document.getElementById('specificWrite-left');
         if(a>163){
-            nav.style.cssText='position: fixed;top:0;'
-            otherNews.style.cssText='position: fixed;top: 0;'
+            left.style.cssText='position: fixed;top:0;'
 
         }
         else{
-            nav.style.position='absolute';
-            otherNews.style.position='static';
+            left.style.position='absolute';
         }
 
     }

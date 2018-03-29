@@ -14,9 +14,9 @@
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.8.3.js"></script>
     <meta charset="utf-8" />
     <title>健身首页</title>
-    <link rel="stylesheet" href="css/mainPage.css?1" />
+    <link rel="stylesheet" href="css/mainPage.css?2" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" type="text/css" href="css/waterfall.css" />
+    <link rel="stylesheet" type="text/css" href="css/waterfall.css?1" />
     <link rel="stylesheet" href="css/bootstrap.css">
 </head>
 

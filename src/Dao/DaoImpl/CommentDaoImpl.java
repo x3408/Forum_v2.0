@@ -16,7 +16,9 @@ public class CommentDaoImpl extends HibernateDaoSupport implements CommentDao{
     private User u;
     private Topic t;
     public void save(comment comment) {
+
         if(comment.getTid()<1000) {
+            if(comment.getUid()!=null){
             u= getHibernateTemplate().execute(new HibernateCallback<User>() {
                 public User doInHibernate(Session session) throws HibernateException {
                     String hql = "from User where uid = ? ";
@@ -26,6 +28,11 @@ public class CommentDaoImpl extends HibernateDaoSupport implements CommentDao{
                     return user;
                 }
             });
+                u.getComments().add(comment);
+                comment.setUser(u);
+        }
+
+            if(comment.getTid()!=null){
             t= getHibernateTemplate().execute(new HibernateCallback<Topic>() {
                 public Topic doInHibernate(Session session) throws HibernateException {
                     String hql = "from Topic where tid = ? ";
@@ -37,9 +44,9 @@ public class CommentDaoImpl extends HibernateDaoSupport implements CommentDao{
             });
             t.getComments().add(comment);
             comment.setTopic(t);
+            }
 
-            u.getComments().add(comment);
-            comment.setUser(u);
+
 
             getHibernateTemplate().saveOrUpdate(comment);
 

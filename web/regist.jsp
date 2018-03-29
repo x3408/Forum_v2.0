@@ -11,7 +11,7 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
-    <link rel="stylesheet" href="css/enrllPage.css?2" />
+    <link rel="stylesheet" href="css/enrllPage.css?3" />
     <script type="text/javascript" src="js/enroll.js"></script>
     <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
     <script type="text/javascript">
@@ -60,8 +60,6 @@
             <div ><span>设置密码</span><input type="password" name="password" class="password" placeholder="     建议至少使用两种字符组合" /></div>
             <p></p>
             <div ><span>确认密码</span><input type="password"class="certain-password"placeholder=" 请再次输入密码"/></div>
-            <p></p>
-            <div ><span>手机号码</span><input type="text"name="phoneNumber" class="number"placeholder="请输入常用手机号"/></div>
             <p></p>
             <div >
                 <span>验证码</span>

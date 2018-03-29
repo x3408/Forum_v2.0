@@ -177,10 +177,9 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
         return "userTopic";
     }
 
-    //注销--xc
+    //用户注销
     public String logout() {
         ServletActionContext.getRequest().getSession().invalidate();
-
         return "toIndex";
     }
 

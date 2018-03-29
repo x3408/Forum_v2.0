@@ -2,7 +2,7 @@
 	width:1115px;
 	height:250px;
 	margin:auto;
-	border:solid 1px black;
+	/*border:solid 1px black;*/
 	position: relative;
 }
 #personCenter-top{
@@ -93,7 +93,6 @@
 	top:160px;
 	left:210px;
 }
-<<<<<<< HEAD
 #img-rounded{
 	height: 80px;
 	width: 80px;
@@ -101,15 +100,14 @@
 #attention{
 
 }
-#topPhoto{
+#topPhoto {
 	display: inline-block;
-	width:150px;
-	margin-left:33px;
-=======
+	width: 150px;
+	margin-left: 33px;
+}
 #personCenter-character a{
 	color:black;
 }
 a:hover{
 	text-decoration: none;
->>>>>>> 1342b9f9de13f904b530310ce94a012a4b06dbdc
 }
