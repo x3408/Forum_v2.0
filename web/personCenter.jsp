@@ -23,6 +23,7 @@
 <body>
 <div id="personCenter">
     <div id="personCenter-top">
+        <span><a href="">返回</a></span>
         <img src="img/QQ20180315-0.jpg">
     </div>
     <div id="personCenter-headImg">
@@ -44,13 +45,12 @@
 			  <a href="${pageContext.request.contextPath}/PersonAction_findData">${listAllData.signature}</a>
         </span>
     <div id="personCenter-edit">
-        <s:if test="#session.listAllData.uid == #session.user.uid">
-            <div id="personCenter-edit--btn">
-                <form action="${pageContext.request.contextPath}/PersonAction_findData">
-                    <button class="btn btn-info btn-sm">编辑个人资料</button>
-                </form>
-            </div>
-        </s:if>
+        <div id="personCenter-edit--btn">
+            <form action="${pageContext.request.contextPath}/PersonAction_findData">
+                <button class="btn btn-danger btn-sm">编辑个人资料</button>
+                <button class="btn btn-danger btn-sm">发表文章</button>
+            </form>
+        </div>
         <div id="personCenter-edit--follow">
             <span class="attention">关注度</span>
             <span class="attention">粉丝</span><br/>
