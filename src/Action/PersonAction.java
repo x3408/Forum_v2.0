@@ -40,7 +40,7 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
     }
     //我的文章
     public String findArticle() throws Exception {
-        User user = (User) ActionContext.getContext().getSession().get("user");
+        User user = (User) ActionContext.getContext().getSession().get("listAllData");
         List<Topic> list = ps.findArticle(user);
         String json = JSON.toJSONString(list).toString();
             out.println(json);
@@ -52,7 +52,7 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
 
     public String findAttention() throws Exception{
 
-        User user = (User) ActionContext.getContext().getSession().get("user");
+        User user = (User) ActionContext.getContext().getSession().get("listAllData");
         List<User> list1 = ps.findAttention(user);
 //        String json1 =JSONArray.fromObject(list1).toString();
         JSONArray json = JSONArray.fromObject(list1);
@@ -64,7 +64,7 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
     }
     //我的粉丝
     public String findFans() throws Exception{
-        User user = (User) ActionContext.getContext().getSession().get("user");
+        User user = (User) ActionContext.getContext().getSession().get("listAllData");
         List<User> list2 = ps.findFans(user);
         String json2 = JSONArray.fromObject(list2).toString();
         out.println(json2);
@@ -85,9 +85,6 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
 
     //编辑页面修改信息的更新
     public String updateData() throws Exception{
-
-
-
         try {
             if(user!=null){
                 //处理头像
@@ -126,7 +123,7 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
 
     //查询关注总数的操作
     public String  findAttentionCount() throws Exception{
-        User user = (User) ActionContext.getContext().getSession().get("user");
+        User user = (User) ActionContext.getContext().getSession().get("listAllData");
         int AttentionCount = ps.findAttentionCount(user);
         String json3 = JSONArray.fromObject(AttentionCount).toString();
         out.println(json3);
@@ -136,7 +133,7 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
     }
     //查询粉丝总数的操作
     public String  findFansCount() throws Exception{
-        User user = (User) ActionContext.getContext().getSession().get("user");
+        User user = (User) ActionContext.getContext().getSession().get("listAllData");
         int FansCount = ps.findFansCount(user);
         String json4 = JSONArray.fromObject(FansCount).toString();
         out.println(json4);
@@ -151,6 +148,7 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
         ActionContext.getContext().getSession().put("listAllData",list4);
         return "list";
     }
+
 
 
     @Override

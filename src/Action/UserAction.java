@@ -61,13 +61,8 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
     //查看用户--xc
     public String showUser() {
         User user = userService.findUserById(showUserId);
-        Integer topicCount = topicService.findTopicCountByUser(user);
-        Integer fansCount = userService.findFansCount(user);
 
-        ActionContext.getContext().put("showUser", user);
-        ActionContext.getContext().put("topicCount", topicCount);
-        ActionContext.getContext().put("fansCount", fansCount);
-
+        ActionContext.getContext().getSession().put("listAllData", user);
 
         return "showUser";
     }
