@@ -71,7 +71,7 @@
                 <div id="tab-content--F">
                     <%--用户--%>
                         <s:iterator value="#userListBySearch" var="userList">
-                            <p><s:property value="#userList.username"></s:property></p>
+                            <p><a href="${pageContext.request.contextPath}/UserAction_showUser?showUserId=<s:property value="#userList.uid"></s:property> "><s:property value="#userList.username"></s:property></a></p>
                         </s:iterator>
 
 

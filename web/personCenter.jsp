@@ -23,6 +23,7 @@
 <body>
 <div id="personCenter">
     <div id="personCenter-top">
+        <span><a href="">返回</a></span>
         <img src="img/QQ20180315-0.jpg">
     </div>
     <div id="personCenter-headImg">
@@ -46,7 +47,8 @@
     <div id="personCenter-edit">
         <div id="personCenter-edit--btn">
             <form action="${pageContext.request.contextPath}/PersonAction_findData">
-                <button class="btn btn-info btn-sm">编辑个人资料</button>
+                <button class="btn btn-danger btn-sm">编辑个人资料</button>
+                <button class="btn btn-danger btn-sm">发表文章</button>
             </form>
         </div>
         <div id="personCenter-edit--follow">
