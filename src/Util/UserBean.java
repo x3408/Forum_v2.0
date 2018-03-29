@@ -49,4 +49,12 @@ public class UserBean {
     public List<User> getList() {
         return list;
     }
+
+    public Integer getPage() {
+        return page;
+    }
+
+    public Integer getTotalPage() {
+        return totalPage;
+    }
 }

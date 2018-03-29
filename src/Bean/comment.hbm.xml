@@ -8,6 +8,7 @@
             <generator class="native"></generator>
         </id>
         <property name="tid"></property>
+        <property name="headPortrait"></property>
         <property name="uid"></property>
         <property name="uid_name"></property>
         <property name="comment_content"></property>

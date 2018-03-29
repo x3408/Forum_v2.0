@@ -25,7 +25,7 @@
     <div class="header-content">
         <div class="logo"><a href="${pageContext.request.contextPath}/home.jsp"><img src="img/logo.png"></a></div>
         <div class="search" id="search-form">
-            <input type="text" class="search-text" id="search-input" value="<s:property value="#userBean.keyword"/> "/><button><i onclick="search()" class="icon-search"></i></button>
+            <input type="text" class="search-text" id="search-input" value="<s:property value="#userBean.keyword"/> "/><button onclick="search()"><i class="icon-search"></i></button>
         </div>
     </div>
 </div>
@@ -77,13 +77,13 @@
 
                         <div id="paging">
                             <ul class="pagination pagination-lg">
-                                <span class="sr-only"></span>
+                                <span class="sr-only">
                                 <s:if test="#userBean.page!=1 && #userBean.totalPage!=0">
                                 <li><a href="${pageContext.request.contextPath}/SearchAction_search?page=1&keyword=<s:property value="#userBean.keyword" />">第一页</a></li>
                                     <li><a href="${pageContext.request.contextPath}/SearchAction_search?page=<s:property value="#userBean.page-1" />&keyword=<s:property value="#userBean.keyword" /> ">上一页</a></li>
                                 </s:if>
                                 <s:iterator begin="#userBean.page-2>0?#userBean.page-2:1" var="i" end="#userBean.page+3>#userBean.totalPage?#userBean.totalPage:#userBean.page+3" step="1">
-                                    <s:if test="#topicBeanBySearch.page == #i">
+                                    <s:if test="#userBean.page == #i">
                                         <li class="active"><a><s:property value="#i"/></a></li>
                                     </s:if>
                                     <s:if test="#userBean.page != #i">
@@ -94,6 +94,7 @@
                                     <li><a href="${pageContext.request.contextPath}/SearchAction_search?page=<s:property value="#userBean.page+1" />&keyword=<s:property value="#userBean.keyword" /> ">下一页</a></li>
                                 <li><a href="${pageContext.request.contextPath}/SearchAction_search?page=<s:property value="#userBean.totalPage" />&keyword=<s:property value="#userBean.keyword" /> ">最后一页</a></li>
                                 </s:if>
+                                </span>
                             </ul>
                         </div>
                 </div>
@@ -101,11 +102,15 @@
         </div>
     </div>
 </div>
-</body>
 <script type="text/javascript">
     function search() {
         var keyword = $("#search-input").val();
-        window.location.href="${pageContext.request.contextPath}/SearchAction_search?page=1&keyword="+keyword;
+        if(keyword == "" || keyword == " ") {
+            return ;
+        } else {
+            window.location.href="${pageContext.request.contextPath}/SearchAction_search?page=1&keyword="+keyword;
+        }
     }
 </script>
+</body>
 </html>
