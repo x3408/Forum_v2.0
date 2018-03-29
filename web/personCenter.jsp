@@ -44,11 +44,13 @@
 			  <a href="${pageContext.request.contextPath}/PersonAction_findData">${listAllData.signature}</a>
         </span>
     <div id="personCenter-edit">
-        <div id="personCenter-edit--btn">
-            <form action="${pageContext.request.contextPath}/PersonAction_findData">
-                <button class="btn btn-info btn-sm">编辑个人资料</button>
-            </form>
-        </div>
+        <s:if test="#session.listAllData.uid == #session.user.uid">
+            <div id="personCenter-edit--btn">
+                <form action="${pageContext.request.contextPath}/PersonAction_findData">
+                    <button class="btn btn-info btn-sm">编辑个人资料</button>
+                </form>
+            </div>
+        </s:if>
         <div id="personCenter-edit--follow">
             <span class="attention">关注度</span>
             <span class="attention">粉丝</span><br/>
