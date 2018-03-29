@@ -87,7 +87,6 @@
     <script type="text/javascript">
         //初始化数据
         $.get("${pageContext.request.contextPath}/CommentAction_list?tid=1001",
-
             function(data){
                 var date = new Date();
                 var seperator1 = "-";
@@ -102,66 +101,45 @@
                 }
                 var currentdate = year + seperator1 + month + seperator1 + strDate;
                 if(data==""){
-
                     var arr = [
-                        {id:3,img:"./images/img.jpg",replyName:"帅大叔",beReplyName:"匿名",content:"同学聚会，看到当年追我的屌丝开着宝马车带着他老婆来了，他老婆是我隔壁宿舍的同班同学，心里后悔极了。",time:"2017-10-17 11:42:53",replyBody:[]}
                     ];
                     $(function(){
-
                         $(".comment-list").addCommentList({data:arr,add:""});
                         $("#comment").click(function(){
                             var obj = new Object();
-                            obj.img="./images/img.jpg";
+                            obj.img="headPortrait/<s:property value="#session.user.headPortrait"></s:property>";
                             obj.replyName="<s:property value="#session.user.username"></s:property>";
                             obj.content=$("#content").val();
                             obj.replyBody="";
-
                             $(".comment-list").addCommentList({data:[],add:obj});
-                            $.post("${pageContext.request.contextPath}/CommentAction_save", { replyName:"<s:property value="#session.user.username"></s:property>" , comment_content: obj.content,uid:"<s:property value="#session.user.uid"></s:property>",tid: 1001}
+                            $.post("${pageContext.request.contextPath}/CommentAction_save", { replyName:"<s:property value="#session.user.username"></s:property>" , comment_content: obj.content,uid:"<s:property value="#session.user.uid"></s:property>",tid: 1001,headPortrait:"<s:property value="#session.user.headPortrait"></s:property>"}
                             );
-
                         });
                     })
-
-
                 }
-
-
-
                 else{
-
                     $.each( data, function(i, json){
-
                         var arr=[
-                            {id:1,img:"./images/img.jpg",replyName:json['uid_name'],beReplyName:"",content:json['comment_content'],time:currentdate,replyBody:[]}
+                            {id:1,img:"headPortrait/"+json['headPortrait'],replyName:json['uid_name'],beReplyName:"",content:json['comment_content'],time:currentdate,replyBody:[]}
                         ];
                         $(function(){
-
                             $(".comment-list").addCommentList({data:arr,add:""});
                             $("#comment").click(function(){
                                 var obj = new Object();
-                                obj.img="./images/img.jpg";
-                                obj.replyName=json['uid_name'];
+                                obj.img="headPortrait/<s:property value="#session.user.headPortrait"></s:property>";
+                                obj.replyName="<s:property value="#session.user.username"></s:property>";
                                 obj.content=$("#content").val();
                                 obj.replyBody="";
-
                                 if(i==0){
                                     $(".comment-list").addCommentList({data:[],add:obj});
-                                    $.post("${pageContext.request.contextPath}/CommentAction_save", { replyName:"<s:property value="#session.user.username"></s:property>" , comment_content: obj.content,uid:"<s:property value="#session.user.uid"></s:property>",tid: 1001}
+                                    $.post("${pageContext.request.contextPath}/CommentAction_save", { replyName:"<s:property value="#session.user.username"></s:property>" , comment_content: obj.content,uid:"<s:property value="#session.user.uid"></s:property>",tid:1001,headPortrait:"<s:property value="#session.user.headPortrait"></s:property>"}
                                     );
                                 }
-
                             });
                         })
                     });
                 }
-
-
-
-
             });
-
-
 
     </script>
 

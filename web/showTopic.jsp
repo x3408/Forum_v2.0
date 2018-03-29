@@ -1,4 +1,4 @@
-<%@ taglib prefix="s" uri="/struts-tags" %>
+
 <%--
   Created by IntelliJ IDEA.
   User: 许晨
@@ -7,6 +7,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -129,7 +130,7 @@
                         $("#comment").click(function(){
                             var obj = new Object();
                             obj.img="headPortrait/<s:property value="#session.user.headPortrait"></s:property>";
-                            obj.replyName=json['uid_name'];
+                            obj.replyName="<s:property value="#session.user.username"></s:property>";
                             obj.content=$("#content").val();
                             obj.replyBody="";
                             if(i==0){

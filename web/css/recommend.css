@@ -9,7 +9,6 @@
 	position:relative;
 	left:50%;
 	margin-left:-550px;
-	
 }
 #recommend-head{
 	width:1100px;
@@ -34,8 +33,6 @@
 	font-family:webFont;
 	text-indent:2em;
 }
-
-
 #recommend-main img{
 	margin-left:0px;
 }
