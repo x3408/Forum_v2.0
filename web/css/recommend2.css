@@ -1,10 +1,13 @@
+@font-face{
+	font-family:webFont;
+	src:url('/fonts/DongQingHeiTi-1.otf')
+}
 #recommendTwo{
 	width:1100px;
-	height:2460px;
+	height:2470px;
     border:solid 1px #ccc;
 	position:relative;
 	left:50%;
-	top:50%;
 	margin-left:-550px;
 	
 }
@@ -29,10 +32,13 @@
 #recommendTwo-main p{
 	margin-top:20px;
 }
-
+#recommendTwo-main p{
+	font-size:18px;
+	font-family:webFont;
+}
 #recommendTwo-evaluate{
 	width:800px;
 	height:400px;
-	border:solid 1px red;
-   
+	/*border:solid 1px red;*/
+   margin-left:-50px;
 }

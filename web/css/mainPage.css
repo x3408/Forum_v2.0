@@ -75,6 +75,7 @@ body{
 	border: 1px solid darkgray;
 	float: left;
 	border-radius: 5px ;
+	margin-left:6px;
 	margin-right: 10px;
 	background: #FFFFFF;
 	position: absolute;
@@ -248,16 +249,49 @@ body{
 }
 #entry{
 	position: absolute;
-	right:100px;
+	right:120px;
 	top:10px;
 	font-size: 15px;
-	color:red;
+	color:#ff0000;
+	font-weight:bold;
+}
+#entry a{
+	font-weight:bold;
+	padding-left:10px;
+	color:#ff0000;
+}
+#entry a:hover{
+	text-decoration: none;
+	color: #fff;
+}
+#return{
+	position: absolute;
+	right:60px;
+	top:10px;
+	font-size: 15px;
+
+}
+#return a{
+	color: #ff0000;
+	font-weight:bold;
+}
+#return a:hover{
+	color: #ffffff;
+	text-decoration: none;
 }
 #register{
 	position: absolute;
 	right:60px;
 	top:10px;
 	font-size: 15px;
+
+}
+#register a{
+	color:#ff0000;
+}
+#register a:hover{
+	color: #fff;
+	text-decoration: none;
 }
 a{
 	color:red;

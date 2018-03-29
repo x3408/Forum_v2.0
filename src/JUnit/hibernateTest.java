@@ -169,4 +169,10 @@ public class hibernateTest {
     public void unFollowTest() {
         userDao.unFollow("2", "1");
     }
+
+    @Test
+    public void findFansTest() {
+        List<User> fans = personDao.findFans("1");
+        System.out.println(fans.size());
+    }
 }

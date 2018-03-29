@@ -14,7 +14,7 @@
     <meta charset="utf-8" />
     <title>个人中心</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/personCenter.css">
+    <link rel="stylesheet" href="css/personCenter.css?1">
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>
 
@@ -23,7 +23,7 @@
 <body>
 <div id="personCenter">
     <div id="personCenter-top">
-        <span><a href="">返回</a></span>
+        <span><a href="${pageContext.request.contextPath}/home.jsp">返回</a></span>
         <img src="img/QQ20180315-0.jpg">
     </div>
     <div id="personCenter-headImg">
@@ -45,12 +45,14 @@
 			  <a href="${pageContext.request.contextPath}/PersonAction_findData">${listAllData.signature}</a>
         </span>
     <div id="personCenter-edit">
-        <div id="personCenter-edit--btn">
-            <form action="${pageContext.request.contextPath}/PersonAction_findData">
-                <button class="btn btn-danger btn-sm">编辑个人资料</button>
-                <button class="btn btn-danger btn-sm">发表文章</button>
-            </form>
-        </div>
+        <s:if test="#session.user.uid == #session.listAllData.uid">
+            <div id="personCenter-edit--btn">
+                <form action="${pageContext.request.contextPath}/PersonAction_findData">
+                    <button class="btn btn-danger btn-sm">编辑个人资料</button>
+                    <button class="btn btn-danger btn-sm"><a href="${pageContext.request.contextPath}/addTopic.jsp" style="color: white">发表文章</a></button>
+                </form>
+            </div>
+        </s:if>
         <div id="personCenter-edit--follow">
             <span class="attention">关注度</span>
             <span class="attention">粉丝</span><br/>
@@ -75,14 +77,12 @@
 
 </body>
 <script type="text/javascript">
-    window.onload = $.get("${pageContext.request.contextPath}/PersonAction_findAllData"
-    );
     //文章的加载与遍历jQuery
     $.get("${pageContext.request.contextPath}/PersonAction_findArticle",
         function(data){
             $.each( data , function(i, json){
                 $("#article").append(
-                    "<a id='addDiv' href='#'>" + json.title + "</a>" );
+                    "<a id='addDiv' href='${pageContext.request.contextPath}/TopicAction_showTopic?tid="+json.tid+"'>" + json.title + "</a>" );
             });
         },"json");
     //我的关注的获取
@@ -94,7 +94,7 @@
                 $.each( data1  , function(i, json1){
                     $("#attention").append(
                             "<div id='topPhoto'>"+"<img src="+${basePath}/headPortrait/+json1[1]+" id='img-rounded'>" +
-                            "<a id='addDiv' href='#'>" + json1[0] + "</a>"+"</div>"
+                            "<a id='addDiv' href='UserAction_showUser?showUserId="+json1[2]+"'>" + json1[0] + "</a>"+"</div>"
                   );
 
                 });
@@ -108,7 +108,7 @@
                 $.each( data2  , function(i, json2){
                     $("#fans").append(
                         "<div id='topPhoto'  >"+"<img src="+${basePath}/headPortrait/+json2[1]+" id='img-rounded'>" +
-                        "<a id='addDiv' href='#'>" + json2[0] + "</a>"+"</div>"
+                        "<a id='addDiv' href='UserAction_showUser?showUserId="+json2[2]+"'>" + json2[0] + "</a>"+"</div>"
                     );
                 });
             },"json");

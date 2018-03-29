@@ -6,6 +6,8 @@ import com.alibaba.fastjson.JSON;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.ServletActionContext;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class CommentAction extends ActionSupport {
@@ -24,6 +26,7 @@ public class CommentAction extends ActionSupport {
         comment.setUid_name(replyName);
         comment.setTid(tid);
         comment.setHeadPortrait(headPortrait);
+        comment.setTime(time);
         //得到参数 传递给Service 调用save 方法
         cs.save(comment);
         return null;
@@ -40,6 +43,11 @@ public class CommentAction extends ActionSupport {
         ServletActionContext.getResponse().getWriter().write(json);
         return null;
     }
+    public String transfor(Date time){
+        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String newtime = sdf.format(time);
+        return newtime;
+    }
 
 
 
@@ -50,6 +58,15 @@ public class CommentAction extends ActionSupport {
     private String uid;
     private Integer tid;
     private String headPortrait;
+    private String time;
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
 
     public String getHeadPortrait() {
         return headPortrait;

@@ -141,7 +141,7 @@
                 }
             });
     </script>
-    <link rel="stylesheet" href="css/recommend3.css">
+    <link rel="stylesheet" href="css/recommend3.css?1">
 </head>
 <body>
 <div id="recommendThree">

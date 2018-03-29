@@ -142,7 +142,7 @@
             });
 
     </script>
-    <link rel="stylesheet" href="css/recommend5.css">
+    <link rel="stylesheet" href="css/recommend5.css?1">
 </head>
 <body>
 <div id="recommendFive">

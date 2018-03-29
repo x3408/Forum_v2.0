@@ -73,6 +73,18 @@ window.onload = function() {
 			}
 		}
 	}
+    window.onscroll=function(){
+        var scrollH=document.documentElement.scrollTop;
+        var a=parseInt(scrollH);
+        var left=document.getElementById('specificWrite-left');
+        if(a>163){
+            left.style.cssText='position: fixed;top:0;'
 
+        }
+        else{
+            left.style.position='absolute';
+        }
+
+    }
 
 }
