@@ -96,13 +96,22 @@
                 var year = date.getFullYear();
                 var month = date.getMonth() + 1;
                 var strDate = date.getDate();
-                if (month >= 1 && month <= 9) {
-                    month = "0" + month;
+                var hour=date.getHours();
+                if (hour >= 1 && hour <= 9) {
+                    hour = "0" + hour;
+                }
+                var minute=date.getMinutes();
+                if(minute >= 1 && minute <= 9){
+                    minute="0"+minute;
+                }
+                var second=date.getSeconds();
+                if (second >= 1 && second <= 9) {
+                    second = "0" + second;
                 }
                 if (strDate >= 0 && strDate <= 9) {
                     strDate = "0" + strDate;
                 }
-                var currentdate = year + seperator1 + month + seperator1 + strDate;
+                var currentdate = year + seperator1 + month + seperator1 + strDate+" "+hour+":"+minute+":"+second;
                 if(data==""){
                     var arr = [
                     ];
@@ -115,7 +124,7 @@
                             obj.content=$("#content").val();
                             obj.replyBody="";
                             $(".comment-list").addCommentList({data:[],add:obj});
-                            $.post("${pageContext.request.contextPath}/CommentAction_save", { replyName:"<s:property value="#session.user.username"></s:property>" , comment_content: obj.content,uid:"<s:property value="#session.user.uid"></s:property>",tid: "<s:property value="#session.topic.tid"></s:property>",headPortrait:"<s:property value="#session.user.headPortrait"></s:property>"}
+                            $.post("${pageContext.request.contextPath}/CommentAction_save", { replyName:"<s:property value="#session.user.username"></s:property>" , comment_content: obj.content,uid:"<s:property value="#session.user.uid"></s:property>",tid: "<s:property value="#session.topic.tid"></s:property>",headPortrait:"<s:property value="#session.user.headPortrait"></s:property>",time:currentdate}
                             );
                         });
                     })
@@ -123,7 +132,7 @@
                 else{
                 $.each( data, function(i, json){
                     var arr=[
-                        {id:1,img:"headPortrait/"+json['headPortrait'],replyName:json['uid_name'],beReplyName:"",content:json['comment_content'],time:currentdate,replyBody:[]}
+                        {id:1,img:"headPortrait/"+json['headPortrait'],replyName:json['uid_name'],beReplyName:"",content:json['comment_content'],time:json['time'],replyBody:[]}
                     ];
                     $(function(){
                         $(".comment-list").addCommentList({data:arr,add:""});
@@ -135,7 +144,7 @@
                             obj.replyBody="";
                             if(i==0){
                                 $(".comment-list").addCommentList({data:[],add:obj});
-                                $.post("${pageContext.request.contextPath}/CommentAction_save", { replyName:"<s:property value="#session.user.username"></s:property>" , comment_content: obj.content,uid:"<s:property value="#session.user.uid"></s:property>",tid: "<s:property value="#session.topic.tid"></s:property>",headPortrait:"<s:property value="#session.user.headPortrait"></s:property>"}
+                                $.post("${pageContext.request.contextPath}/CommentAction_save", { replyName:"<s:property value="#session.user.username"></s:property>" , comment_content: obj.content,uid:"<s:property value="#session.user.uid"></s:property>",tid: "<s:property value="#session.topic.tid"></s:property>",headPortrait:"<s:property value="#session.user.headPortrait"></s:property>",time:currentdate}
                                 );
                             }
                         });
