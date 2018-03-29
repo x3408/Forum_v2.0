@@ -54,16 +54,15 @@ body{
 	line-height: 40px;
 	
 }
-/*.myPic{*/
-	/*margin: 4px 0 10px 20px;*/
-	/*width: 30px;*/
-	/*height: 30px;*/
-	/*border: 1px dashed red;*/
-	/*border-radius: 30px;*/
-	/*overflow: hidden;*/
-	/*float: left;*/
-	/**/
-/*}*/
+.myPic{
+	margin: 4px 0 10px 20px;
+	width: 30px;
+	height: 30px;
+	border-radius: 30px;
+	overflow: hidden;
+	float: left;
+
+}
 
 .userid{
 	font-size: 8px;
@@ -77,7 +76,7 @@ body{
 	color: rgb(78,82,83);
 	float: left;
     position: relative;
-	left:70px;
+	left:10px;
 }
 .title{
 	color: rgb(31,38,117);
@@ -89,7 +88,7 @@ body{
 .text{
 	height:50px;
 	margin-top: 5px;
-	padding: 0px;
+	padding-left: 11px;
 	font-size: 8px;
 	color: rgb(102,101,108);
 	/*border: 1px solid darkseagreen;*/
@@ -134,7 +133,6 @@ body{
 #imgCircle{
 	width:40px;
 	height:40px;
-	border:dashed 1px red;
 }
 .myPic{
 	display:inline-block;
