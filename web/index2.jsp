@@ -143,7 +143,11 @@
 
     </script>
 
+<<<<<<< HEAD
     <link rel="stylesheet" href="css/recommend2.css?4">
+=======
+    <link rel="stylesheet" href="css/recommend2.css?1">
+>>>>>>> 549995a37d5b9ea4ff4c16a174e5dfb8efa263dd
 </head>
 <body>
 <div id="recommendTwo">

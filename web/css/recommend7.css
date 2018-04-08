@@ -4,7 +4,11 @@
 }
 #recommendSeven{
 	width:1100px;
+<<<<<<< HEAD
 	height:5550px;
+=======
+	height:4850px;
+>>>>>>> 549995a37d5b9ea4ff4c16a174e5dfb8efa263dd
     border:solid 1px #ccc;
 	position:relative;
 	left:50%;

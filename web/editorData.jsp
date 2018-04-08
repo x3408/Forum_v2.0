@@ -14,7 +14,11 @@
     <meta charset="utf-8" />
     <title>编辑资料</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+<<<<<<< HEAD
     <link rel="stylesheet" href="css/editorData.css?3">
+=======
+    <link rel="stylesheet" href="css/editorData.css?1">
+>>>>>>> 549995a37d5b9ea4ff4c16a174e5dfb8efa263dd
     <script src="js/jquery.min.js"></script>
     <script src="js/editorData.js"></script>
 
