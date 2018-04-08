@@ -143,7 +143,7 @@
 
     </script>
 
-    <link rel="stylesheet" href="css/recommend2.css">
+    <link rel="stylesheet" href="css/recommend2.css?4">
 </head>
 <body>
 <div id="recommendTwo">

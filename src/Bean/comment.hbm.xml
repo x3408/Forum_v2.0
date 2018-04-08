@@ -11,6 +11,7 @@
         <property name="headPortrait"></property>
         <property name="uid"></property>
         <property name="uid_name"></property>
+        <property name="time"></property>
         <property name="comment_content"></property>
         <many-to-one name="topic" column="comment_Topic_id" class="Topic" ></many-to-one>
         <many-to-one name="user" column="comment_User_id" class="User"></many-to-one>

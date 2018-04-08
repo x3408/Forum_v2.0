@@ -2,6 +2,8 @@ package Bean;
 
 import com.alibaba.fastjson.annotation.JSONField;
 
+import java.util.Date;
+
 public class comment {
     /*
     这是回复版块的评论实体
@@ -21,6 +23,15 @@ public class comment {
     //这是评论的内容
     private String comment_content;
     private String headPortrait;
+    private String time;
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
 
     public String getHeadPortrait() {
         return headPortrait;

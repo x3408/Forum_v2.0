@@ -16,7 +16,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void add(User user) {
-        user.setHeadPortrait("default.ico");
+        user.setHeadPortrait("default.jpg");
         userDao.addUser(user);
     }
 

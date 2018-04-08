@@ -26,7 +26,6 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
     //验证用户是否已经注册
     private String checkname;
 
-
     private UserService userService;
     private TopicService topicService;
 

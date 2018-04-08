@@ -105,7 +105,11 @@
 <script type="text/javascript">
     function search() {
         var keyword = $("#search-input").val();
-        window.location.href="${pageContext.request.contextPath}/SearchAction_search?page=1&keyword="+keyword;
+        if(keyword == " " || keyword == "") {
+            return ;
+        } else {
+            window.location.href="${pageContext.request.contextPath}/SearchAction_search?page=1&keyword="+keyword;
+        }
     }
 </script>
 </html>
