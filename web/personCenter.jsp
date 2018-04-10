@@ -24,11 +24,7 @@
 <div id="personCenter">
     <div id="personCenter-top">
         <span><a href="${pageContext.request.contextPath}/home.jsp">返回</a></span>
-<<<<<<< HEAD
         <img src="img/PersonCenterHead.png">
-=======
-        <img src="img/QQ20180315-0.jpg">
->>>>>>> 549995a37d5b9ea4ff4c16a174e5dfb8efa263dd
     </div>
     <div id="personCenter-headImg">
         <img src="${basePath}/headPortrait/${listAllData.headPortrait}" class="img-rounded">
@@ -86,11 +82,7 @@
         function(data){
             $.each( data , function(i, json){
                 $("#article").append(
-<<<<<<< HEAD
                     "<a id='addDiv' href='${pageContext.request.contextPath}/TopicAction_showTopic?tid="+json.tid+"' target='_blank'>" + json.title + "</a>" );
-=======
-                    "<a id='addDiv' href='${pageContext.request.contextPath}/TopicAction_showTopic?tid="+json.tid+"'>" + json.title + "</a>" );
->>>>>>> 549995a37d5b9ea4ff4c16a174e5dfb8efa263dd
             });
         },"json");
     //我的关注的获取

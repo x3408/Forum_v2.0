@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="kindeditor/themes/default/default.css">
     <script src="kindeditor/kindeditor-all.js"></script>
-    <script src="kindeditor/lang/zh-CN.js"></script>d
+    <script src="kindeditor/lang/zh-CN.js"></script>
     <script src="js/publisharticle.js"></script>
     <script src="js/jquery-1.8.3.js"></script>
 
