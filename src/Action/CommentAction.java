@@ -50,7 +50,7 @@ public class CommentAction extends ActionSupport {
     }
 
 
-
+//wagnyndan
 
 
     private String replyName;
