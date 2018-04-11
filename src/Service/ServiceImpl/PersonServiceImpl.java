@@ -4,6 +4,7 @@ import Bean.Topic;
 import Bean.User;
 import Dao.PersonDao;
 import Service.PersonService;
+import Util.Message;
 
 import java.util.List;
 
@@ -61,5 +62,9 @@ public class PersonServiceImpl implements PersonService {
         return list4;
     }
 
-
+    @Override
+    public List<Util.Message> showMessage(User user, String send_id) {
+        List<Util.Message> list = pd.showMessage(user.getUid(), send_id);
+        return list;
+    }
 }

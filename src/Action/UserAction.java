@@ -52,7 +52,8 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
     //注册用户--xc
     public String add() {
         String rightCode = (String) ActionContext.getContext().getSession().get("checkcode");
-        if (!rightCode.equals(verifyCodeFromUser)) {
+        rightCode = rightCode.toUpperCase();
+        if (!rightCode.equals(verifyCodeFromUser.toUpperCase())) {
             ActionContext.getContext().put("msg","验证码不正确");
             return "regist";
         }
@@ -184,7 +185,6 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
 
 
     //注册页面生成验证码--xc
-    //生成的验证码存放在session域中
     public String verifyImg() {
         ServletOutputStream outputStream = null;
         try {
@@ -194,7 +194,11 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
         }
         int width=110,height=40;
         String VerifyCode = setVerifyCode(4);
-        creatImage(width,height,outputStream,VerifyCode);
+        try {
+            createImage(width,height,outputStream,VerifyCode);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         return null;
     }
@@ -207,18 +211,11 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
             cha [i] = source.charAt(random.nextInt(VERIFY_CODE.length()));
         }
         String code = String.valueOf(cha);
+        //生成的验证码存放在session域中
+        ActionContext.getContext().getSession().put("checkcode", code);
         return code;
     }
-    public static void creatImage(int width,int height,ServletOutputStream outputStream,String verifyCode){
-        try{
-            creatImage(width,height,outputStream,verifyCode);
-            outputStream.close();
-        }catch(IOException e){
-            System.out.println("Wrong");
-        }
-
-    }
-    private static void creatImage(int width, int height, OutputStream os, String verifyCode) throws IOException{
+    private static void createImage(int width, int height, OutputStream os, String verifyCode) throws IOException{
         BufferedImage image = new BufferedImage(width,height,BufferedImage.TYPE_INT_RGB);
         Graphics2D g = image.createGraphics();
 

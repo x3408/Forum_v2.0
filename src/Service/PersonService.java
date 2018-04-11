@@ -2,6 +2,7 @@ package Service;
 
 import Bean.Topic;
 import Bean.User;
+import Util.Message;
 
 import java.util.List;
 
@@ -23,5 +24,5 @@ public interface PersonService {
 
     User findAllData(User user);
 
-
+    List<Message> showMessage(User user, String send_id);
 }

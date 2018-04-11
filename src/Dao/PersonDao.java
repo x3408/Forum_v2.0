@@ -22,5 +22,5 @@ public interface PersonDao {
 
     User findAllData(String uid);
 
-
+    List<Util.Message> showMessage(String uid, String send_id);
 }

@@ -149,7 +149,21 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
         return "list";
     }
 
+    //显示私信
+    public String showMessage() {
+        User user = (User) ActionContext.getContext().getSession().get("listAllData");
+//        String send_id = (String) ServletActionContext.getRequest().getAttribute("send_id");
+        String send_id = (String) ActionContext.getContext().get("send_id");
+        List<Util.Message> lists = ps.showMessage(user, send_id);
+        String message = JSONArray.fromObject(lists).toString();
 
+        try {
+            ServletActionContext.getResponse().getWriter().write(message);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
     @Override
     public User getModel() {

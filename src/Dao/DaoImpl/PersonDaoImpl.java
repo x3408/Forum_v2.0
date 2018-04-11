@@ -3,6 +3,7 @@ package Dao.DaoImpl;
 import Bean.Topic;
 import Bean.User;
 import Dao.PersonDao;
+import Util.Message;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -119,6 +120,16 @@ public class PersonDaoImpl extends HibernateDaoSupport implements PersonDao {
         return getHibernateTemplate().get(User.class, uid);
     }
 
-
-
+    @Override
+    public List<Util.Message> showMessage(String uid, String send_id) {
+        return getHibernateTemplate().execute(new HibernateCallback<List<Util.Message>>() {
+            @Override
+            public List doInHibernate(Session session) throws HibernateException {
+                return session.createQuery("select new Util.Message(content,status) from Bean.Message where uid = ? and send_id = ? order by time")
+                        .setParameter(0, uid)
+                        .setParameter(1, send_id)
+                        .list();
+            }
+        });
+    }
 }
