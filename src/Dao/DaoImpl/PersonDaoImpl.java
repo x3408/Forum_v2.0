@@ -125,10 +125,25 @@ public class PersonDaoImpl extends HibernateDaoSupport implements PersonDao {
         return getHibernateTemplate().execute(new HibernateCallback<List<Util.Message>>() {
             @Override
             public List doInHibernate(Session session) throws HibernateException {
-                return session.createQuery("select new Util.Message(content,status) from Bean.Message where uid = ? and send_id = ? order by time")
+                return session.createQuery("select new Util.Message(content,status,time) from Bean.Message where uid = ? and send_id = ? order by time")
                         .setParameter(0, uid)
                         .setParameter(1, send_id)
                         .list();
+            }
+        });
+    }
+
+    @Override
+    public List<Bean.Message> getMessageTitleByUser(int start, Integer limit, String uid) {
+        return getHibernateTemplate().execute(new HibernateCallback<List<Bean.Message>>() {
+            @Override
+            public List<Bean.Message> doInHibernate(Session session) throws HibernateException {
+                List list =  session.createQuery("from Message where uid = ? group by send_id")
+                        .setParameter(0, uid)
+                        .setFirstResult(start)
+                        .setMaxResults(limit)
+                        .list();
+                return list;
             }
         });
     }

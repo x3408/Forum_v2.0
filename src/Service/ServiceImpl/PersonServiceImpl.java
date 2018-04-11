@@ -4,7 +4,7 @@ import Bean.Topic;
 import Bean.User;
 import Dao.PersonDao;
 import Service.PersonService;
-import Util.Message;
+import Util.MessageBean;
 
 import java.util.List;
 
@@ -66,5 +66,11 @@ public class PersonServiceImpl implements PersonService {
     public List<Util.Message> showMessage(User user, String send_id) {
         List<Util.Message> list = pd.showMessage(user.getUid(), send_id);
         return list;
+    }
+
+    @Override
+    public List<Bean.Message> showMessageTitleByUser(User user, Integer page) {
+        MessageBean messageBean = new MessageBean().showMessageTitle(page, user);
+        return messageBean.getList();
     }
 }

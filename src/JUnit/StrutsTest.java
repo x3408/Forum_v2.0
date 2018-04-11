@@ -2,8 +2,10 @@ package JUnit;
 
 import Bean.Topic;
 import Bean.User;
+import Service.PersonService;
 import Service.TopicService;
 import Service.UserService;
+import Util.Message;
 import Util.TopicBean;
 import Util.TopicTypeBean;
 import Util.UserBean;
@@ -28,6 +30,8 @@ public class StrutsTest {
     private UserService userService;
     @Resource(name = "topicService")
     private TopicService topicService;
+    @Resource(name = "personService")
+    private PersonService personService;
 
     @Test
     public void serviceTest() {
@@ -120,5 +124,14 @@ public class StrutsTest {
     public void unFollowTest() {
         User user = new User();
         user.setUid("2");
+    }
+
+    @Test
+    public void showMessageTest() {
+        User user = new User();
+        user.setUid("52addfd6626fa9d201626fabce720000");
+        List<Message> messages = personService.showMessage(user, "52addfd6626fc1b701626fd6110e0001");
+        String message = JSONArray.fromObject(messages).toString();
+        System.out.println(message);
     }
 }

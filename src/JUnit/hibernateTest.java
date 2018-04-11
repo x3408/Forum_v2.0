@@ -181,4 +181,8 @@ public class hibernateTest {
         List messages = personDao.showMessage("52addfd6626fa9d201626fabce720000", "52addfd6626fc1b701626fd6110e0001");
         System.out.println(messages);
     }
+
+    @Test
+    public void getMessageTitleByUserTest() {
+    }
 }
