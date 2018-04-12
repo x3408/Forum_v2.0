@@ -37,4 +37,8 @@ public class MessageBean {
     public void setList(List<Message> list) {
         this.list = list;
     }
+
+    public void setPersonDao(PersonDao personDao) {
+        this.personDao = personDao;
+    }
 }

@@ -11,6 +11,9 @@ import java.util.List;
 public class PersonServiceImpl implements PersonService {
 
     private PersonDao pd;
+    private MessageBean messageBean;
+
+
     public void setPd(PersonDao pd) {
         this.pd = pd;
     }
@@ -70,7 +73,10 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     public List<Bean.Message> showMessageTitleByUser(User user, Integer page) {
-        MessageBean messageBean = new MessageBean().showMessageTitle(page, user);
-        return messageBean.getList();
+        return this.messageBean.showMessageTitle(page, user).getList();
+    }
+
+    public void setMessageBean(MessageBean messageBean) {
+        this.messageBean = messageBean;
     }
 }

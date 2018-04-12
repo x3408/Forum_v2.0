@@ -134,4 +134,33 @@ public class StrutsTest {
         String message = JSONArray.fromObject(messages).toString();
         System.out.println(message);
     }
+
+    @Test
+    public void getMessageTitleByUserTest() {
+        JsonConfig config = new JsonConfig();
+        config.setJsonPropertyFilter(new PropertyFilter() {
+            public boolean apply(Object source, String name, Object value) {
+                if (name.equals("comments"))
+                    return true;
+                return false;
+            }
+        });
+
+
+        User user = new User();
+        user.setUid("52addfd6626fa9d201626fabce720000");
+        List<Bean.Message> messages = personService.showMessageTitleByUser(user, 1);
+        List<User> userList = new ArrayList<>();
+        User temp = new User();
+        for (int i=0;i < messages.size(); i++) {
+            temp.setUid(messages.get(i).getSend_id());
+            User send_id = personService.findAllData(temp);
+            userList.add(send_id);
+        }
+        String messageTitle = JSONArray.fromObject(messages).toString();
+        String userInfo = JSONArray.fromObject(userList,config).toString();
+
+        String data = messageTitle.substring(0, messageTitle.length()-1) + "," + userInfo.substring(1,userInfo.length());
+        System.out.println(data);
+    }
 }

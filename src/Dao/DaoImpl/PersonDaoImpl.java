@@ -138,7 +138,7 @@ public class PersonDaoImpl extends HibernateDaoSupport implements PersonDao {
         return getHibernateTemplate().execute(new HibernateCallback<List<Bean.Message>>() {
             @Override
             public List<Bean.Message> doInHibernate(Session session) throws HibernateException {
-                List list =  session.createQuery("from Message where uid = ? group by send_id")
+                List list =  session.createQuery("from Message where uid = ? and id in (select max(id) from Message GROUP BY send_id) ORDER BY time desc")
                         .setParameter(0, uid)
                         .setFirstResult(start)
                         .setMaxResults(limit)

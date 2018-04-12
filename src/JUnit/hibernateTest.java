@@ -1,5 +1,6 @@
 package JUnit;
 
+import Bean.Message;
 import Bean.Topic;
 import Bean.User;
 import Dao.PersonDao;
@@ -184,5 +185,8 @@ public class hibernateTest {
 
     @Test
     public void getMessageTitleByUserTest() {
+        List<Message> messageTitleByUser = personDao.getMessageTitleByUser(0,3,"52addfd6626fa9d201626fabce720000");
+        System.out.println(messageTitleByUser);
+
     }
 }
