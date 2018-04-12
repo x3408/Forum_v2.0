@@ -1,5 +1,6 @@
 package JUnit;
 
+import Bean.Message;
 import Bean.Topic;
 import Bean.User;
 import Dao.PersonDao;
@@ -174,5 +175,18 @@ public class hibernateTest {
     public void findFansTest() {
         List<User> fans = personDao.findFans("1");
         System.out.println(fans.size());
+    }
+
+    @Test
+    public void showMessageTest() {
+        List messages = personDao.showMessage("52addfd6626fa9d201626fabce720000", "52addfd6626fc1b701626fd6110e0001");
+        System.out.println(messages);
+    }
+
+    @Test
+    public void getMessageTitleByUserTest() {
+        List<Message> messageTitleByUser = personDao.getMessageTitleByUser(0,3,"52addfd6626fa9d201626fabce720000");
+        System.out.println(messageTitleByUser);
+
     }
 }

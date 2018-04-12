@@ -1,5 +1,6 @@
 package Action;
 
+import Bean.Message;
 import Bean.Topic;
 import Bean.User;
 import Service.PersonService;
@@ -14,10 +15,7 @@ import org.apache.struts2.ServletActionContext;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
-import java.util.Random;
-import java.util.UUID;
+import java.util.*;
 
 import static java.lang.System.out;
 
@@ -30,7 +28,8 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
     //private String photo2;
     private String headPortraitContantType;
     private String photoFileName;
-
+    //显示私信摘要
+    private Integer page;
 //    public void setPhoto2(String photo2) {
 //        this.photo2 = photo2;
 //    }
@@ -111,7 +110,6 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
 
             }
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         ps.updateData(user);
@@ -149,7 +147,45 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
         return "list";
     }
 
+    //显示私信具体内容
+    public String showMessage() {
+        User user = (User) ActionContext.getContext().getSession().get("listAllData");
+//        String send_id = (String) ServletActionContext.getRequest().getParameter("send_id");
+        String send_id = (String) ActionContext.getContext().get("send_id");
+        List<Util.Message> lists = ps.showMessage(user, send_id);
+        String message = JSONArray.fromObject(lists).toString();
 
+        try {
+            ServletActionContext.getResponse().getWriter().write(message);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    //显示私信摘要
+    public String showMessageTitle() {
+        User user = (User) ActionContext.getContext().getSession().get("listAllData");
+        List<Message> list = ps.showMessageTitleByUser(user, page);
+        List<User> userList = new ArrayList<>();
+        User temp = new User();
+        for (int i=0;i < list.size(); i++) {
+            temp.setUid(list.get(i).getSend_id());
+            User send_id = ps.findAllData(temp);
+            userList.add(send_id);
+        }
+        String messageTitle = JSONArray.fromObject(list).toString();
+        String userInfo = JSONArray.fromObject(userList).toString();
+
+        String data = messageTitle.substring(0, messageTitle.length()-1) + "," + userInfo.substring(1,userInfo.length());
+        System.out.println(data);
+        try {
+            ServletActionContext.getResponse().getWriter().write(data);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
     @Override
     public User getModel() {

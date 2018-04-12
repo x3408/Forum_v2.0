@@ -1,5 +1,6 @@
 package Dao;
 
+import Bean.Message;
 import Bean.Topic;
 import Bean.User;
 
@@ -22,5 +23,7 @@ public interface PersonDao {
 
     User findAllData(String uid);
 
+    List<Util.Message> showMessage(String uid, String send_id);
 
+    List<Message> getMessageTitleByUser(int start, Integer limit, String uid);
 }
