@@ -89,7 +89,7 @@ window.onload = function() {
 	}
 
 	//回车实现提交功能
-	/*var btn = document.getElementById('btn2');
+	var btn = document.getElementById('btn2');
 	btn.keydown = function(evt) {
 		e = evt || window.event;
 		if(keyCode == 13) {
@@ -100,7 +100,7 @@ window.onload = function() {
 	$('#rightnow').click(function(e){
 		$('.bgImg').addClass('flip');
 	})
-	$('#btn2').click(function(e){
+	/*$('#btn2').click(function(e){
 		e.preventDefault();
 		$('.bgImg').removeClass('flip');
 	})*/

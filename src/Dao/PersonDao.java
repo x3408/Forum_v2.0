@@ -9,7 +9,6 @@ import java.util.List;
 public interface PersonDao {
     List<Topic> findArticle(String uid);
 
-
     List<User> findFans(String uid);
 
     User findData(String uid);

@@ -250,11 +250,7 @@
 
     function search() {
         var keyword = $("#search-input").val();
-<<<<<<< HEAD
-        if (keyword == "") {
-=======
         if(keyword == " " || keyword == "") {
->>>>>>> b012a2738d3a12d5c57b976ac76dae34eaee69b0
             return ;
         } else {
             window.location.href="${pageContext.request.contextPath}/SearchAction_search?page=1&keyword="+keyword;
