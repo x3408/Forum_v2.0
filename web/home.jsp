@@ -223,7 +223,7 @@
         }, function(data) {
 //            var j = 1;
 //            while(j <= 3) {
-            for(i=0;i>=0;i++){
+            for(i=0;i<3;i++){
                 var timer =  data[i].time.month + "月" + data[i].time.day + "日" + data[i].time.hours + "时" + data[i].time.minutes + "分";
                 $("#main").append('<div class="box"><div class="topicFrom"><span class="date" id="date">' + timer + '</span><span class="viewCount" id="viewCount">阅读量： ' + data[i].viewCount + '</span></div><div class="name"><div class="myPic" id="myPic"><img id="imgCircle" class="img-circle" src="/headPortrait/'+data[i+3].headPortrait+'"/></div><div class="username" id="username">' + data[i+3].username + '</div></div><div class="context"><h6 class="title" id="title"><a href="TopicAction_showTopic?tid='+data[i].tid+'" style="text-decoration:none;color:#202678;" target="_blank" >' + data[i].title + '</a></h6><p class="text" id="text">' + data[i].descriptive + '</p></div></div>');
             }
@@ -234,12 +234,11 @@
         var scrollTop = $(this).scrollTop(); //滚动条距离顶部的高度
         var scrollHeight = $(document).height(); //当前页面的总高度
         var clientHeight = $(this).height(); //当前可视的页面高度
-
-        if(scrollTop + clientHeight >= scrollHeight) { //距离顶部+当前高度 >=文档总高度 即代表滑动到底部 count++;         //每次滑动count加1
-            // 							filterData(serviceTypeId,industryId,cityId,count); //调用筛选方法，count为当前分页数
-            updataData(page+1, type);
+        if(scrollTop + clientHeight > scrollHeight-1) { //距离顶部+当前高度 >=文档总高度 即代表滑动到底部 count++;         //每次滑动count加1
+            updataData(page+1, type); // 							filterData(serviceTypeId,industryId,cityId,count); //调用筛选方法，count为当前分页数
         } else if(scrollTop <= 0) {
             //滚动条距离顶部的高度小于等于0
+
 
         }
     });
@@ -251,7 +250,11 @@
 
     function search() {
         var keyword = $("#search-input").val();
+<<<<<<< HEAD
         if (keyword == "") {
+=======
+        if(keyword == " " || keyword == "") {
+>>>>>>> b012a2738d3a12d5c57b976ac76dae34eaee69b0
             return ;
         } else {
             window.location.href="${pageContext.request.contextPath}/SearchAction_search?page=1&keyword="+keyword;

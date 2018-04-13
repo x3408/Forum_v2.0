@@ -29,8 +29,7 @@
             <span>写文章</span>
         </div>
         <div id="publishArticle-top--user">
-            <img src="img/timg (1).jpeg" class="img-circle">
-            <span>一个好听的名字</span>
+            <img src="/headPortrait/${listAllData.headPortrait}" class="img-circle">
             <a class="btn btn-danger" role="button">退出登录</a>
         </div>
     </div>
@@ -52,7 +51,7 @@
         <div id="publishArticle-main--btn">
             <button class="btn btn-danger btn-lg" type="submit">发布文章</button>
             <button class="btn btn-danger btn-lg"><a href="">保存草稿</a></button>
-            <button class="btn btn-danger btn-lg"><a href="">返回</a></button>
+            <button class="btn btn-danger btn-lg"><a href="/personCenter.jsp">返回</a></button>
         </div>
 
         <div id="publishArticle-main--warn">${msg}</div>

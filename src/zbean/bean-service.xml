@@ -18,12 +18,6 @@
         <property name="topicBean" ref="topicBean"></property>
         <property name="topicDao" ref="topicDao"></property>
     </bean>
-    <bean name="topicBean" class="Util.TopicBean">
-        <property name="topicDao" ref="topicDao"></property>
-    </bean>
-    <bean name="userBean" class="Util.UserBean">
-        <property name="userDao" ref="userDao"></property>
-    </bean>
     <bean name="RecommendService" class="Service.ServiceImpl.RecommendServiceImpl">
         <property name="rd" ref="RecommendDao"></property>
     </bean>
@@ -31,7 +25,18 @@
         <property name="cd" ref="CommentDao"></property>
     </bean>
     <bean name="personService" class="Service.ServiceImpl.PersonServiceImpl">
+        <property name="messageBean" ref="messageBean"></property>
         <property name="pd" ref="PersonDao"></property>
+    </bean>
+
+    <bean name="topicBean" class="Util.TopicBean">
+        <property name="topicDao" ref="topicDao"></property>
+    </bean>
+    <bean name="userBean" class="Util.UserBean">
+        <property name="userDao" ref="userDao"></property>
+    </bean>
+    <bean name="messageBean" class="Util.MessageBean">
+        <property name="personDao" ref="PersonDao"></property>
     </bean>
 
 </beans>

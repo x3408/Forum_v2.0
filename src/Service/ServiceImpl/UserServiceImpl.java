@@ -3,7 +3,6 @@ package Service.ServiceImpl;
 import Bean.User;
 import Dao.UserDao;
 import Service.UserService;
-import Util.TopicBean;
 import Util.UserBean;
 
 public class UserServiceImpl implements UserService {
@@ -16,7 +15,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void add(User user) {
-        user.setHeadPortrait("default.ico");
+        user.setHeadPortrait("default.jpg");
         userDao.addUser(user);
     }
 

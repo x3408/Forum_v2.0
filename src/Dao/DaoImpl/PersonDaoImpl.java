@@ -3,6 +3,7 @@ package Dao.DaoImpl;
 import Bean.Topic;
 import Bean.User;
 import Dao.PersonDao;
+import Util.Message;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -120,15 +121,41 @@ public class PersonDaoImpl extends HibernateDaoSupport implements PersonDao {
 
     @Override
     public int getTotalCount(String uid) {
-      return getHibernateTemplate().execute(new HibernateCallback<Integer>() {
-           @Override
-           public Integer doInHibernate(Session session) throws HibernateException {
-               String hql = "select count(*)  from Relation where uid= ? and type=1 ";
-               Query query = session.createQuery(hql)
-                       .setParameter(0, uid);
-               int totalCount = ((Long) query.iterate().next()).intValue();
-               return totalCount;
-           }
-       });
+        return getHibernateTemplate().execute(new HibernateCallback<Integer>() {
+            @Override
+            public Integer doInHibernate(Session session) throws HibernateException {
+                String hql = "select count(*)  from Relation where uid= ? and type=1 ";
+                Query query = session.createQuery(hql)
+                        .setParameter(0, uid);
+                int totalCount = ((Long) query.iterate().next()).intValue();
+                return totalCount;
+            }
+        });
+    }
+    public List<Util.Message> showMessage(String uid, String send_id) {
+        return getHibernateTemplate().execute(new HibernateCallback<List<Util.Message>>() {
+            @Override
+            public List doInHibernate(Session session) throws HibernateException {
+                return session.createQuery("select new Util.Message(content,status,time) from Bean.Message where uid = ? and send_id = ? order by time")
+                        .setParameter(0, uid)
+                        .setParameter(1, send_id)
+                        .list();
+            }
+        });
+    }
+
+    @Override
+    public List<Bean.Message> getMessageTitleByUser(int start, Integer limit, String uid) {
+        return getHibernateTemplate().execute(new HibernateCallback<List<Bean.Message>>() {
+            @Override
+            public List<Bean.Message> doInHibernate(Session session) throws HibernateException {
+                List list =  session.createQuery("from Message where uid = ? and id in (select max(id) from Message GROUP BY send_id) ORDER BY time desc")
+                        .setParameter(0, uid)
+                        .setFirstResult(start)
+                        .setMaxResults(limit)
+                        .list();
+                return list;
+            }
+        });
     }
 }

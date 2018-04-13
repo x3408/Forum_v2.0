@@ -4,7 +4,7 @@
 }
 #recommendThree{
 	width:1100px;
-	height:1660px;
+	height:2060px;
     border:solid 1px #ccc;
 	position:relative;
 	left:50%;
@@ -39,5 +39,5 @@
 #recommendThree-evaluate{
 	width:800px;
 	height:400px;
-	border:solid 1px red;
+	margin-left:-70px;
 }

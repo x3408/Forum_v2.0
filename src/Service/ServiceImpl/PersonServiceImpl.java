@@ -5,12 +5,16 @@ import Bean.Topic;
 import Bean.User;
 import Dao.PersonDao;
 import Service.PersonService;
+import Util.MessageBean;
 
 import java.util.List;
 
 public class PersonServiceImpl implements PersonService {
 
     private PersonDao pd;
+    private MessageBean messageBean;
+
+
     public void setPd(PersonDao pd) {
         this.pd = pd;
     }
@@ -64,14 +68,21 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     public List<User> findAttention(User user) {
-
-
         List <User> list1 = pd.findAttention(user.getUid());
-
-
         return list1;
-
     }
 
+    public List<Util.Message> showMessage(User user, String send_id) {
+        List<Util.Message> list = pd.showMessage(user.getUid(), send_id);
+        return list;
+    }
 
+    @Override
+    public List<Bean.Message> showMessageTitleByUser(User user, Integer page) {
+        return this.messageBean.showMessageTitle(page, user).getList();
+    }
+
+    public void setMessageBean(MessageBean messageBean) {
+        this.messageBean = messageBean;
+    }
 }

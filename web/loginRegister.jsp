@@ -23,7 +23,7 @@
         }
 
         function checkUser() {
-            var username = document.getElementById("name").value;
+            var username = document.getElementById("username").value;
             $.post(
 //                请求地址
                 "${pageContext.request.contextPath}/UserAction_checkUser",
@@ -61,15 +61,15 @@
             </div>
         </div>
         <div id="toSignUp">
-            <a id="rightnow" target="_blank" href="javascript:;">立即注册</a>
+            <a id="rightnow" href="javascript:;">立即注册</a>
         </div>
         <!--下面是表单的部分-->
-        <form id="myForm" action="">
+        <form  action="${pageContext.request.contextPath}/UserAction_login" id="myForm" method="post">
             <div class="form-group">
                 <div class="form-group--user">
                     <img src="img1/user.png">
                     <lable class="control-label" for="loginform-username"></lable>
-                    <input type="text" id="loginform-username" placeholder="用户名/邮箱"/>
+                    <input type="text" id="loginform-username" name="username" placeholder="用户名/邮箱"/>
                 </div>
                 <div id="form-group--warn">
                     <span id="userNotNull">账户不能为空</span>
@@ -80,14 +80,14 @@
                 <div class="form-groupTwo--secret">
                     <img src="img1/psw.png">
                     <lable class="control-label" for="loginform-secret"></lable>
-                    <input type="password" id="loginform-secret" placeholder="密码"/>
+                    <input type="password" id="loginform-secret" name="password" placeholder="密码"/>
                 </div>
                 <div id="form-groupTwo--warn">
                     <span id="pswNotNull">密码不能为空</span>
                 </div>
             </div>
             <div class="signBtn">
-                <input type="button" id="btn" value="登&nbsp;录" name="按钮" class="btn-block">
+                <input type="submit" id="btn" value="登&nbsp;录" name="按钮" class="btn-block">
             </div>
             <div class="autoSign">
                 <div id="autoSign-box">
@@ -110,7 +110,7 @@
             <form action="${pageContext.request.contextPath}/UserAction_add" name="reg"method="post" id="content-form">
                 <div class="control">
                     <lable>用户名</lable>
-                    <input class="ip" type="text" name="name" id="name"placeholder="您的昵称" value="" onblur="checkUser()"/>
+                    <input class="ip" type="text" name="username" id="username" placeholder="您的昵称" value="" onblur="checkUser()"/>
                 </div>
                 <p></p>
                 <div class="control">
@@ -120,7 +120,7 @@
                 <p></p>
                 <div class="control">
                     <lable>确认密码</lable>
-                    <input class="ip" type="password" name="certain" id="certain"placeholder="您的昵称" value="" />
+                    <input class="ip" type="password" name="certain" id="certain"placeholder="请确认密码" value="" />
 
                 </div>
                 <p></p>
@@ -131,7 +131,7 @@
                     <span id="identityNumber"><img id="verifyImg" src="${pageContext.request.contextPath}/UserAction_verifyImg" onclick="return changeVerify()"></span>
                 </div>
                 <p></p>
-                <button id="btn2">立即注册</button>
+                <input type="submit" id="btn2" value="立即注册" name="按钮" class="btn-block">
             </form>
         </div>
     </div>

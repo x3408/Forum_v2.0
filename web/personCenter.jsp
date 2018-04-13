@@ -24,7 +24,7 @@
 <div id="personCenter">
     <div id="personCenter-top">
         <span><a href="${pageContext.request.contextPath}/home.jsp">返回</a></span>
-        <img src="img/QQ20180315-0.jpg">
+        <img src="img/PersonCenterHead.png">
     </div>
     <div id="personCenter-headImg">
         <img src="${basePath}/headPortrait/${listAllData.headPortrait}" class="img-rounded">
@@ -82,7 +82,7 @@
         function(data){
             $.each( data , function(i, json){
                 $("#article").append(
-                    "<a id='addDiv' href='${pageContext.request.contextPath}/TopicAction_showTopic?tid="+json.tid+"'>" + json.title + "</a>" );
+                    "<a id='addDiv' href='${pageContext.request.contextPath}/TopicAction_showTopic?tid="+json.tid+"' target='_blank'>" + json.title + "</a>" );
             });
         },"json");
     //我的关注的获取
