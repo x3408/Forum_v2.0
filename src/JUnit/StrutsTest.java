@@ -129,8 +129,8 @@ public class StrutsTest {
     @Test
     public void showMessageTest() {
         User user = new User();
-        user.setUid("52addfd6626fa9d201626fabce720000");
-        List<Message> messages = personService.showMessage(user, "52addfd6626fc1b701626fd6110e0001");
+        user.setUid("297e9494627185010162719571510000");
+        List<Message> messages = personService.showMessage(user, "297e949462718501016271d4a2ea0001");
         String message = JSONArray.fromObject(messages).toString();
         System.out.println(message);
     }
@@ -148,7 +148,7 @@ public class StrutsTest {
 
 
         User user = new User();
-        user.setUid("52addfd6626fa9d201626fabce720000");
+        user.setUid("297e9494627185010162719571510000");
         List<Bean.Message> messages = personService.showMessageTitleByUser(user, 1);
         List<User> userList = new ArrayList<>();
         User temp = new User();
