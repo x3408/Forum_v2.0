@@ -9,7 +9,7 @@ import java.util.List;
 public interface PersonService {
     List<Topic> findArticle(User user);
 
-    List<User> findAttention(User user);
+
 
     List<User> findFans(User user);
 
@@ -26,5 +26,8 @@ public interface PersonService {
 
     List<Message> showMessage(User user, String send_id);
 
+   List <User> findAttention(User user);
     List<Bean.Message> showMessageTitleByUser(User user, Integer page);
+
 }
+

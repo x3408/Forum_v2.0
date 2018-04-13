@@ -29,7 +29,6 @@ public class PersonDaoImpl extends HibernateDaoSupport implements PersonDao {
         });
 
     }
-
     //我的关注
     @Override
     public List<User> findAttention(String uid) {
@@ -121,6 +120,18 @@ public class PersonDaoImpl extends HibernateDaoSupport implements PersonDao {
     }
 
     @Override
+    public int getTotalCount(String uid) {
+        return getHibernateTemplate().execute(new HibernateCallback<Integer>() {
+            @Override
+            public Integer doInHibernate(Session session) throws HibernateException {
+                String hql = "select count(*)  from Relation where uid= ? and type=1 ";
+                Query query = session.createQuery(hql)
+                        .setParameter(0, uid);
+                int totalCount = ((Long) query.iterate().next()).intValue();
+                return totalCount;
+            }
+        });
+    }
     public List<Util.Message> showMessage(String uid, String send_id) {
         return getHibernateTemplate().execute(new HibernateCallback<List<Util.Message>>() {
             @Override

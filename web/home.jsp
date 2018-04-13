@@ -31,8 +31,8 @@
             <input type="text" class="search-text" id="search-input" name="keyword" /><button><i onclick="search()" class="icon-search"></i></button>
         </div>
         <s:if test="#session.user==null">
-            <span id="entry"><a href="${pageContext.request.contextPath}/login.jsp">登录</a></span>
-            <span id="register"><a href="${pageContext.request.contextPath}/regist.jsp">注册</a></span>
+            <span id="entry"><a href="${pageContext.request.contextPath}/loginRegister.jsp">登录</a></span>
+            <span id="register"><a href="${pageContext.request.contextPath}/loginRegister.jsp">注册</a></span>
         </s:if>
         <s:else>
             <span id="entry">欢迎您: <s:property value="#session.user.username"></s:property> <a href="${pageContext.request.contextPath}/PersonAction_findAllData"> 个人中心</a></span>
@@ -250,7 +250,11 @@
 
     function search() {
         var keyword = $("#search-input").val();
+<<<<<<< HEAD
+        if (keyword == "") {
+=======
         if(keyword == " " || keyword == "") {
+>>>>>>> b012a2738d3a12d5c57b976ac76dae34eaee69b0
             return ;
         } else {
             window.location.href="${pageContext.request.contextPath}/SearchAction_search?page=1&keyword="+keyword;

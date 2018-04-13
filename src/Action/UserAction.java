@@ -45,7 +45,7 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
         }
         //或者可以采用转发到login页面 ActionContext.getContext().put("msg", "用户名或密码不正确");
         ActionContext.getContext().put("msg", "用户名或密码不正确");
-        return "login";
+        return "loginRegister";
     }
 
     //注册用户--xc
@@ -54,7 +54,7 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
         rightCode = rightCode.toUpperCase();
         if (!rightCode.equals(verifyCodeFromUser.toUpperCase())) {
             ActionContext.getContext().put("msg","验证码不正确");
-            return "regist";
+            return "loginRegister";
         }
          userService.add(user);
 

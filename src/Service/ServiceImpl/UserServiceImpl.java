@@ -3,7 +3,6 @@ package Service.ServiceImpl;
 import Bean.User;
 import Dao.UserDao;
 import Service.UserService;
-import Util.TopicBean;
 import Util.UserBean;
 
 public class UserServiceImpl implements UserService {

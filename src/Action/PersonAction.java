@@ -56,11 +56,11 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
 //        String json1 =JSONArray.fromObject(list1).toString();
         JSONArray json = JSONArray.fromObject(list1);
         String str = json.toString();//把json转换为String
-        out.println(str);
         ServletActionContext.getResponse().setContentType("application/json;charset=UTF-8");
         ServletActionContext.getResponse().getWriter().write(str);
         return null;
     }
+
     //我的粉丝
     public String findFans() throws Exception{
         User user = (User) ActionContext.getContext().getSession().get("listAllData");
