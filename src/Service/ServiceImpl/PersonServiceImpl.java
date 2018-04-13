@@ -1,5 +1,6 @@
 package Service.ServiceImpl;
 
+import Bean.Pagebean;
 import Bean.Topic;
 import Bean.User;
 import Dao.PersonDao;
@@ -20,11 +21,11 @@ public class PersonServiceImpl implements PersonService {
         return list ;
     }
     //我的关注
-    @Override
-    public List<User> findAttention(User user) {
-        List<User> list1 = pd.findAttention(user.getUid());
-        return list1;
-    }
+//    @Override
+//    public List<User> findAttention(User user) {
+//        List<User> list1 = pd.findAttention(user.getUid());
+//        return list1;
+//    }
 
     @Override
     public List<User> findFans(User user) {
@@ -59,6 +60,17 @@ public class PersonServiceImpl implements PersonService {
     public User findAllData(User user) {
         User list4 = pd.findAllData(user.getUid());
         return list4;
+    }
+
+    @Override
+    public List<User> findAttention(User user) {
+
+
+        List <User> list1 = pd.findAttention(user.getUid());
+
+
+        return list1;
+
     }
 
 

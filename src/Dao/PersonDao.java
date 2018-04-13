@@ -8,7 +8,6 @@ import java.util.List;
 public interface PersonDao {
     List<Topic> findArticle(String uid);
 
-    List<User> findAttention(String uid);
 
     List<User> findFans(String uid);
 
@@ -23,4 +22,8 @@ public interface PersonDao {
     User findAllData(String uid);
 
 
+    int getTotalCount(String uid);
+
+    List<User> findAttention(String uid);
 }
+

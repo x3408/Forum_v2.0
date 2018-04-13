@@ -8,7 +8,7 @@ import java.util.List;
 public interface PersonService {
     List<Topic> findArticle(User user);
 
-    List<User> findAttention(User user);
+
 
     List<User> findFans(User user);
 
@@ -24,4 +24,6 @@ public interface PersonService {
     User findAllData(User user);
 
 
+   List <User> findAttention(User user);
 }
+
