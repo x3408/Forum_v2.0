@@ -81,12 +81,12 @@
             color: #aaa;
         }
     </style>
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/jquery.comment.js" ></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.comment.js" ></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
     <script type="text/javascript">
         //初始化数据
-        $.get("${pageContext.request.contextPath}/CommentAction_list?tid=1004",
+        $.get("${pageContext.request.contextPath}/CommentAction_list?tid=1006",
             function(data){
                 var date = new Date();
                 var seperator1 = "-";
@@ -112,7 +112,7 @@
                             obj.content=$("#content").val();
                             obj.replyBody="";
                             $(".comment-list").addCommentList({data:[],add:obj});
-                            $.post("${pageContext.request.contextPath}/CommentAction_save", { replyName:"<s:property value="#session.user.username"></s:property>" , comment_content: obj.content,uid:"<s:property value="#session.user.uid"></s:property>",tid:1004,headPortrait:"<s:property value="#session.user.headPortrait"></s:property>"}
+                            $.post("${pageContext.request.contextPath}/CommentAction_save", { replyName:"<s:property value="#session.user.username"></s:property>" , comment_content: obj.content,uid:"<s:property value="#session.user.uid"></s:property>",tid:1006,headPortrait:"<s:property value="#session.user.headPortrait"></s:property>"}
                             );
                         });
                     })
@@ -132,7 +132,7 @@
                                 obj.replyBody="";
                                 if(i==0){
                                     $(".comment-list").addCommentList({data:[],add:obj});
-                                    $.post("${pageContext.request.contextPath}/CommentAction_save", { replyName:"<s:property value="#session.user.username"></s:property>" , comment_content: obj.content,uid:"<s:property value="#session.user.uid"></s:property>",tid: 1004,headPortrait:"<s:property value="#session.user.headPortrait"></s:property>"}
+                                    $.post("${pageContext.request.contextPath}/CommentAction_save", { replyName:"<s:property value="#session.user.username"></s:property>" , comment_content: obj.content,uid:"<s:property value="#session.user.uid"></s:property>",tid: 1006,headPortrait:"<s:property value="#session.user.headPortrait"></s:property>"}
                                     );
                                 }
                             });
@@ -140,74 +140,81 @@
                     });
                 }
             });
-
     </script>
 <<<<<<< HEAD
-    <link rel="stylesheet" href="css/recommend5.css?3">
+    <link rel="stylesheet" href="../css/recommend7.css?3">
 =======
-    <link rel="stylesheet" href="css/recommend5.css?1">
+    <link rel="stylesheet" href="../css/recommend7.css?1">
 >>>>>>> 549995a37d5b9ea4ff4c16a174e5dfb8efa263dd
 </head>
 <body>
-<div id="recommendFive">
-    <div id="recommendFive-head">
-        <p>第一次去健身房的新手小白攻略！纯干货</p>
+<div id="recommendSeven">
+    <div id="recommendSeven-head">
+        <p>一篇文章，让你明白“健身”是非做不可的事</p>
+
     </div>
-    <div id="recommendFive-main">
-        <p>
-            求助！只认识跑步机的健身菜鸟，怎么才能第一天去健身房不被嚯嚯哈嘿练的肌肉男吓到，
-            不被香汗淋漓的美女们鄙视呢？！
-        </p>
-        <p>听说很多人第一次去健身房，不是瞎练一通就是羞涩的跑走。</p>
-        <p>今天就说说第一次去健身房到底要练什么？怎么练！</p>
-        <p>菜鸟去健身房练什么</p>
-        <p>菜鸟只所以叫菜鸟，是因为不认识器械，不知道技术，没有力量。</p>
-        <p>
-            那么可以先做有氧运动，去跑步机上跑跑步，记得热身哦！有人会说了，既然到健身房只是跑
-            步的话，自己也可以到外面夜跑啊，小风吹着多惬意！这里科普一个小常识，体脂高、体重基数大、
-            没有运动习惯的亲，要跑步最好是在跑步机上跑步。简单来说，就是胖子跑步特外伤膝盖，跑步机
-            可以缓冲减震！
-        </p>
-        <img src="img/room1.png">
-        <p>错误示范↑</p>
-        <p>
-            如果看到美女在运动，不要恬不知耻的一直围观或者不停搭讪！乖乖在后面排队等位，或者等
-            运动完再出手，当然如果你帅的话当我没说！
-        </p>
-        <img src="img/room2.png">
-        <p>
-            除了跑步机，你还可以去跳操、瑜伽什么的，很多亲们觉得动感单车很带感，运动难度不高，而且
-            减脂效果奇佳，非常适合新手，但是请不要久骑。图上还是错误示范，这种花式单车的骑法，非常
-            伤膝盖和腰椎。而RPM课程这种高冷的方法又需要专业指导，很明显不适合新手。
-        </p>
-        <p>
-            那么有氧练完了，练无氧就需要上器械了！上手快、难度小、强度低的器械有哪些呢？！练胸的除了
-            卧推哑铃、杠铃之外，入门级的还是以坐姿为主的器械，有推胸的有夹胸的，而且还可以练手臂。
-        </p>
-        <p>夹胸</p>
-        <p>
-            练完胸还可以练背，练背方式有很多，引体向上、杠铃然而难度太高。所以还是以坐姿为主，可以练坐
-            姿下拉和坐姿划船，当然也可以练手臂，对肩周炎非常有疗效。
-        </p>
-        <img src="img/room3.png">
-        <p>练了胸和背，那么接着练练腿!练腿的器械不用说，大多都是坐姿了，有蹬腿的、有外展和内展的，还有屈伸的。</p>
-        <img src="img/room4.png">
-        <p>蹬腿</p>
-        <img src="img/room5.png">
-        <p>内展</p>
-        <p>
-            无氧运动一次一般在45分钟左右，所以如果连完这几个部位还有那么一点时间和气力，可以用一下史密斯机练一下深蹲或者硬拉。
-            史密斯机的杠铃是有轨道的，所以是有安全防护的，新手可以试试感觉。
-        </p>
-        <img src="img/room6.png">
-        <p>硬拉</p>
-        <p>深蹲</p>
-        <p>
-            如果第一次到健身房，先从今天介绍的这些固定器械开始练习吧！他们有固定的轨道，非常安全，而且可以帮助我们找到肌肉正确发
-            力的感觉，非常适合新入健身房的小白们。
-        </p>
-        <p>妈妈再也不用担心我去健身房丢脸加浪费钱啦！</p>
-        <div id="recommendFive-evaluate">
+    <div id="recommendSeven-main">
+        <p>健身是一种习惯</p>
+        <p>如果你从不运动</p>
+        <p>如果你毕业很多年</p>
+        <p>你的身体轨迹大概是这样的：</p>
+        <p>刚毕业，身体脂肪含量10%-13%</p>
+        <img src="../img/fat1.png">
+        <p>毕业2年，身体脂肪含量14%-18%</p>
+        <img src="../img/fat2.png">
+        <p>毕业4年，身体脂肪含量19%-22%</p>
+        <img src="../img/fat3.png">
+        <p>毕业8年，身体脂肪含量23%-26%</p>
+        <img src="../img/fat4.png">
+        <p>毕业10年以上，身体脂肪含量30%以上</p>
+        <p>而毕业10年以上</p>
+        <p>身体的脂肪量超过30%后</p>
+        <p>你的身体也就开始走下坡路了</p>
+        <p>一胖生百病，你的噩梦就开始了</p>
+        <img src="../img/fat.png">
+        <p>运动是维持身体的基本条件</p>
+        <p>看书是升华思想的必备课程</p>
+        <p>这是绝对值得投资的两件事</p>
+        <img src="../img/fat6.png">
+        <p>不运动</p>
+        <p>你也可以活下去</p>
+        <p>拖着臃肿和虚弱的身体走在路上</p>
+        <p>但，那真的是你想要的生活吗？</p>
+        <p>年轻时</p>
+        <p>我们喜欢三五成群的打篮球</p>
+        <p>踢足球，游泳，跑步，跳绳等</p>
+        <img src="../img/fat7.png">
+        <p>这期间我们几乎很少往医院跑</p>
+        <p>长大后</p>
+        <p>我们渐渐的忙碌于生存交际中</p>
+        <p>却忘记了曾经热衷的运动</p>
+        <p>路过大学球场，你会想起</p>
+        <p>曾经我也喜欢这些运动啊</p>
+        <p>但也只是感慨而已...</p>
+        <img src="../img/fat9.png">
+        <p>回到家中</p>
+        <p>脱掉外套，坐在沙发上</p>
+        <p>要么打开电视，要么打开手机</p>
+        <p>开始刷朋友圈，刷微博，刷社交软件</p>
+        <img src="../img/fat0.png">
+        <p>久而久之你会会发现</p>
+        <p>自己的体能在下降</p>
+        <p>接下来就是忙碌于各大医院</p>
+        <p>买保险，检查身体</p>
+        <p>确诊，治疗</p>
+        <p>...</p>
+        <p>所以，健身</p>
+        <p>是你工作后必须坚持的一件事</p>
+        <p>哪怕从30岁开始健身</p>
+        <img src="../img/fat8.png">
+        <p>十年后，你还会在健身房举铁</p>
+        <p>而不运动的同龄人身体已经开始虚弱了</p>
+        <p>二十年后，别人依旧能听见你与铁片对抗的声音</p>
+        <p>而不运动的同龄人隔三差五的就要进一次医院</p>
+        <p>健身和不健身</p>
+        <p>完全两种生活，两种人生</p>
+        <p>你，会选择哪种？</p>
+        <div id="recommendSeven-evaluate">
             <!--放评论语句-->
             <div class="container">
                 <div class="commentbox">

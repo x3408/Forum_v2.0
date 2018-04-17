@@ -83,9 +83,9 @@
             color: #aaa;
         }
     </style>
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/jquery.comment.js" ></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.comment.js" ></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
     <script type="text/javascript">
 
         //初始化数据
@@ -156,15 +156,15 @@
     <meta charset="utf-8" />
     <title>user</title>
 
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/user.css?5 ">
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/user.css?5 ">
 
 </head>
 <body>
 <div class="header">
     <div class="header-content">
-        <div class="logo"><a href="${pageContext.request.contextPath}/home.jsp"><img src="img/logo.png"></a></div><div class="search" id="search-form">
+        <div class="logo"><a href="${pageContext.request.contextPath}/OldPage/home.jsp"><img src="../img/logo.png"></a></div><div class="search" id="search-form">
     </div>
     </div>
 </div>
@@ -206,5 +206,5 @@
 
 </div>
 </body>
-<script src="js/user.js?2"></script>
+<script src="../js/user.js?2"></script>
 </html>

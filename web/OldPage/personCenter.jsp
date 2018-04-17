@@ -13,18 +13,18 @@
 <head>
     <meta charset="utf-8" />
     <title>个人中心</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/personCenter.css?1">
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/personCenter.css?1">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
 
 </head>
 
 <body>
 <div id="personCenter">
     <div id="personCenter-top">
-        <span><a href="${pageContext.request.contextPath}/home.jsp">返回</a></span>
-        <img src="img/PersonCenterHead.png">
+        <span><a href="${pageContext.request.contextPath}/OldPage/home.jsphome.jsp">返回</a></span>
+        <img src="../img/PersonCenterHead.png">
     </div>
     <div id="personCenter-headImg">
         <img src="${basePath}/headPortrait/${listAllData.headPortrait}" class="img-rounded">
@@ -49,7 +49,7 @@
             <div id="personCenter-edit--btn">
                 <form action="${pageContext.request.contextPath}/PersonAction_findData">
                     <button class="btn btn-danger btn-sm">编辑个人资料</button>
-                    <button class="btn btn-danger btn-sm"><a href="${pageContext.request.contextPath}/addTopic.jsp" style="color: white">发表文章</a></button>
+                    <button class="btn btn-danger btn-sm"><a href="${pageContext.request.contextPath}/OldPage/addTopic.jspopic.jsp" style="color: white">发表文章</a></button>
                 </form>
             </div>
         </s:if>

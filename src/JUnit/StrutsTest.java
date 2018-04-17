@@ -46,7 +46,7 @@ public class StrutsTest {
         JsonConfig config = new JsonConfig();
         config.setJsonPropertyFilter(new PropertyFilter() {
             public boolean apply(Object source, String name, Object value) {
-                if (name.equals("reverts")) {
+                if (name.equals("comments")) {
                     return true;
                 } else {
                     return false;
@@ -54,7 +54,7 @@ public class StrutsTest {
             }
         });
 
-        TopicBean topicBean = topicService.showTopicByType(1, "result_show");
+        TopicBean topicBean = topicService.showTopicByType(1, "result_show", 5);
         List<Topic> topicList = topicBean.getList();
         List<User> userList = new ArrayList<>();
         for (int i=0;i < topicList.size(); i++) {
@@ -63,7 +63,7 @@ public class StrutsTest {
         }
 
         String s1 = JSONArray.fromObject(topicList,config).toString();
-        String s2 = JSONArray.fromObject(userList).toString();
+        String s2 = JSONArray.fromObject(userList,config).toString();
 
         String data = s1.substring(0, s1.length()-1) + "," + s2.substring(1,s2.length());
 

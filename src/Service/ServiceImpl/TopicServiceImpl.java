@@ -21,8 +21,8 @@ public class TopicServiceImpl implements TopicService{
     private TopicBean topicBean;
     private TopicDao topicDao;
     @Override
-    public TopicBean showTopicByType(Integer page, String type) {
-        return this.topicBean.showTopicByType(page, type);
+    public TopicBean showTopicByType(Integer page, String type,Integer limit) {
+        return this.topicBean.showTopicByType(page, type, limit);
     }
 
     @Override
@@ -49,9 +49,11 @@ public class TopicServiceImpl implements TopicService{
 
         //调用方法获取摘要
         Document doc = Jsoup.parse(topic.getContent());
-        Elements element = doc.getElementsByTag("p");
+        Elements contents = doc.getElementsByTag("p");
+        Elements img = doc.getElementsByTag("img");
         //获得所有p标签的内容
-        String content = element.text();
+        String content = contents.text();
+        String image = img.attr("abs:src");
         //截取内容作为摘要
         if (content.length() > 50) {
             topic.setDescriptive(content.substring(0, 50));
@@ -62,6 +64,7 @@ public class TopicServiceImpl implements TopicService{
 
         //设置文章内容的文件地址
         topic.setContent(address);
+        topic.setShowImg(image);
 
         //设置文章用户
         //测试使用代码

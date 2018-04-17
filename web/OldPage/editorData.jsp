@@ -13,10 +13,10 @@
 <head>
     <meta charset="utf-8" />
     <title>编辑资料</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/editorData.css?3">
-    <script src="js/jquery.min.js"></script>
-    <script src="js/editorData.js"></script>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/editorData.css?3">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/editorData.js"></script>
 
 </head>
 <body>

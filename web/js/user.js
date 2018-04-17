@@ -19,7 +19,7 @@ window.onload = function() {
                         function (data) {
                             if(data.status == "noUser") {
                                 alert("请登录后再尝试该操作");
-                                window.location.href = "login.jsp";
+                                window.location.href = "../OldPage/login.jsp";
                                 return;
                             }
                         },
@@ -47,7 +47,7 @@ window.onload = function() {
 				function (data) {
 					if(data.status == "noUser") {
                         alert("请登录后再尝试该操作");
-                        window.location.href = "login.jsp";
+                        window.location.href = "../OldPage/login.jsp";
                         return;
 					}
                 },

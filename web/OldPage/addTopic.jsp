@@ -11,21 +11,21 @@
 <head>
     <meta charset="utf-8" />
     <title>publish article</title>
-    <link rel="stylesheet" href="css/publishacticle.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="kindeditor/themes/default/default.css">
-    <script src="kindeditor/kindeditor-all.js"></script>
-    <script src="kindeditor/lang/zh-CN.js"></script>
-    <script src="js/publisharticle.js"></script>
-    <script src="js/jquery-1.8.3.js"></script>
+    <link rel="stylesheet" href="../css/publishacticle.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../kindeditor/themes/default/default.css">
+    <script src="../kindeditor/kindeditor-all.js"></script>
+    <script src="../kindeditor/lang/zh-CN.js"></script>
+    <script src="../js/publisharticle.js"></script>
+    <script src="../js/jquery-1.8.3.js"></script>
 
 </head>
 <body>
 <div id="publishArticle">
     <div id="publishArticle-top">
-        <img src="img/article.png">
+        <img src="../img/article.png">
         <div id="publishArticle-top--logo" class="btn">
-            <img src="img/article1.png">
+            <img src="../img/article1.png">
             <span>写文章</span>
         </div>
         <div id="publishArticle-top--user">
@@ -51,7 +51,7 @@
         <div id="publishArticle-main--btn">
             <button class="btn btn-danger btn-lg" type="submit">发布文章</button>
             <button class="btn btn-danger btn-lg"><a href="">保存草稿</a></button>
-            <button class="btn btn-danger btn-lg"><a href="/personCenter.jsp">返回</a></button>
+            <button class="btn btn-danger btn-lg"><a href="/OldPage/personCenter.jsp">返回</a></button>
         </div>
 
         <div id="publishArticle-main--warn">${msg}</div>

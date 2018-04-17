@@ -13,7 +13,7 @@
 <head>
     <meta charset="utf-8" />
     <title>try try try</title>
-    <link rel="stylesheet" href="css/try.css">
+    <link rel="stylesheet" href="../css/try.css">
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.8.3.js"></script>
     <script type="text/javascript">
     $.get("${pageContext.request.contextPath}/Recommend_list",

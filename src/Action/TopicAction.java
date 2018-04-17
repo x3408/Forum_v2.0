@@ -35,7 +35,7 @@ public class TopicAction extends ActionSupport implements ModelDriven<Topic>{
     private UserService userService;
 
 
-    //查看某一个分类的所有文章--xc
+    //查看某一个分类的所有文章(首页文章显示)--xc
     public String showTopicByType() throws IOException {
         //过滤一对多实体对象
         JsonConfig config = new JsonConfig();
@@ -48,7 +48,7 @@ public class TopicAction extends ActionSupport implements ModelDriven<Topic>{
                                      });
 
         //找Service要文章分页对象
-        TopicBean topicBean = topicService.showTopicByType(page, topic.getType());
+        TopicBean topicBean = topicService.showTopicByType(page, topic.getType(), 5);
 
         //json格式回写
         List<Topic> list = topicBean.getList();

@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: daidai
   Date: 2018/3/24
-  Time: 21:12
+  Time: 21:11
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -81,12 +81,12 @@
             color: #aaa;
         }
     </style>
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/jquery.comment.js" ></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.comment.js" ></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
     <script type="text/javascript">
         //初始化数据
-        $.get("${pageContext.request.contextPath}/CommentAction_list?tid=1002",
+        $.get("${pageContext.request.contextPath}/CommentAction_list?tid=1000",
             function(data){
                 var date = new Date();
                 var seperator1 = "-";
@@ -112,7 +112,7 @@
                             obj.content=$("#content").val();
                             obj.replyBody="";
                             $(".comment-list").addCommentList({data:[],add:obj});
-                            $.post("${pageContext.request.contextPath}/CommentAction_save", { replyName:"<s:property value="#session.user.username"></s:property>" , comment_content: obj.content,uid:"<s:property value="#session.user.uid"></s:property>",tid: 1002,headPortrait:"<s:property value="#session.user.headPortrait"></s:property>"}
+                            $.post("${pageContext.request.contextPath}/CommentAction_save", { replyName:"<s:property value="#session.user.username"></s:property>" , comment_content: obj.content,uid:"<s:property value="#session.user.uid"></s:property>",tid: 1000,headPortrait:"<s:property value="#session.user.headPortrait"></s:property>"}
                             );
                         });
                     })
@@ -132,7 +132,7 @@
                                 obj.replyBody="";
                                 if(i==0){
                                     $(".comment-list").addCommentList({data:[],add:obj});
-                                    $.post("${pageContext.request.contextPath}/CommentAction_save", { replyName:"<s:property value="#session.user.username"></s:property>" , comment_content: obj.content,uid:"<s:property value="#session.user.uid"></s:property>",tid:1002,headPortrait:"<s:property value="#session.user.headPortrait"></s:property>"}
+                                    $.post("${pageContext.request.contextPath}/CommentAction_save", { replyName:"<s:property value="#session.user.username"></s:property>" , comment_content: obj.content,uid:"<s:property value="#session.user.uid"></s:property>",tid:1000,headPortrait:"<s:property value="#session.user.headPortrait"></s:property>"}
                                     );
                                 }
                             });
@@ -141,50 +141,41 @@
                 }
             });
     </script>
-<<<<<<< HEAD
-    <link rel="stylesheet" href="css/recommend3.css?3">
-=======
-    <link rel="stylesheet" href="css/recommend3.css?1">
->>>>>>> 549995a37d5b9ea4ff4c16a174e5dfb8efa263dd
+
+    <link rel="stylesheet" href="../css/recommend.css">
 </head>
 <body>
-<div id="recommendThree">
-    <div id="recommendThree-head">
-        <p>慢跑减肥正确方法 轻松快速燃烧脂肪</p>
+<div id="recommend">
+    <div id="recommend-head">
+        <p>如何选择优质瑜伽垫</p>
     </div>
-    <div id="recommendThree-main">
-        <p>1.慢跑多久可以减肥</p>
+    <div id="recommend-main">
+        <p>一.正位线条</p>
         <p>
-            慢跑要取得减肥的效果，需要跑多远和跑多久呢。由于每个人的步幅和跑步的速度都不同。
-            因此慢跑减肥在时间上并没有明确的要求。但是在路程上却要求达到5000米，跑步的速度也不能太慢哦。
+            这是目前瑜伽人选择垫子最重要的一个细节标准。垫面上的正位线条可以引导辅助练习者习炼更正确、更精准的瑜伽体式。正位线条的选择基本上抓住两点就可以了：
+            首先要看线条的设计原理（即系统的正宗性），其次是否与你的身高相符（正位线条的宽度与长度与你的身体各部位相契合才更精准）。
         </p>
+        <img src="../img/yjd.png">
+        <p>二.材质</p>
         <p>
-            5000米结束后，双腿已经处于紧绷和僵硬的状态。因此这个时候你需要对小腿和大腿进行拉伸运动。
-            拉伸运动可以选择压腿、捶打小腿和大腿外侧等。拉伸运动的时间为15分钟。慢跑后的拉伸运动很重要哦，
-            它可以预防小腿长出肌肉。
+            目前市面上的主流瑜伽垫材质一般分为PVC，TPE，天然橡胶，软木，棉麻和混合材质瑜伽垫。如果对于乳胶过敏，要注意甄别标签中是否注明不含乳胶（latex-free）。
+            <br/> 1.PVC<br/>优点：耐用性好，原材料成本低，因此价格比较亲民，也是目前使用相对较普遍的瑜伽垫；不含乳胶，适合对乳胶过敏的伽人；材料吸收性差，所以，容易清洁。
         </p>
-        <img src="img/run.jpeg">
-        <p>2.慢跑前的准备动作</p>
-        <p>
-            知道了慢跑的路程后，接下来就开始慢跑减肥吧。慢跑前先来做热身运动，
-            让肌肉变得柔软，避免拉伤。转动脚踝和手腕多次。
-        </p>
-        <p>3.慢跑减肥的正确方法</p>
-        <p>
-            热身运动后就开始正式的慢跑。慢跑的姿势决定了跑步的时间和速度。肌肉达到有氧阶段
-            的时间为20-30分钟。时间太长并不一定减肥效果越好。反而会造成肌肉疲劳。
-        </p>
-        <img src="img/run2.jpeg">
-        <p>4.慢跑的姿势很重要</p>
-        <p>
-            慢跑时两脚交替太高，活动髋关节，太高速度，让膝盖尽可能触及上腹部，手臂前后摆动即可。
-            跑步的时候前脚掌先着地，然后过渡到全脚掌着地。
-        </p>
-        <p>5.慢跑减肥的速度不能过快</p>
-        <p>
-            将有氧心率控制在60%-80%最好，这样可以避免无效运动。练习慢跑的最佳时间为清晨或者傍晚。
-        </p><br/>
-        <div id="recommendThree-evaluate">
+        <img src="../img/yjd1.png">
+        <p>不足：因为材料吸收性差，所以干燥情况下防滑性好，但对于流汗多的伽人来说，防湿滑性较差；塑料制品无法自然降解。</p>
+        <p>2.天然橡胶</p>
+        <p>优点：原材料来源天然，环保；表面的天然纹理和开孔结构，帮助吸收水分，因此，不论防干滑或湿滑效果都很好。</p>
+        <img src="../img/trxj.png">
+        <p>不足：刚买回来时气味较重；开孔结构容易吸收污渍，需要市场清洗。</p>
+        <p>3.软木</p>
+        <p>优点：环保无毒，几乎没有异味；木质更有回归自然的感觉；防干滑和湿滑效果都极佳</p>
+        <img src="../img/软木.png">
+        <p>不足：价格相对昂贵；木质结构吸收性好，不易清洗。</p>
+        <p>4.棉麻</p>
+        <p>优点：亲肤温和不刺激，是热爱传统编制工艺者的首选；容易清洗。</p>
+        <img src="../img/mm.png">
+        <p>不足：抓地效果差，仅限于动作少的瑜伽课程或者冥想练习，比较较小众。</p>
+        <div id="recommend-evaluate">
             <!--放评论语句-->
             <div class="container">
                 <div class="commentbox">

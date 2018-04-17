@@ -12,18 +12,18 @@
 <head>
     <meta charset="utf-8"/>
     <title>search</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="css/search.css">
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" href="../css/search.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
 
 </head>
 <body>
 <div class="header">
     <div class="header-content">
-        <div class="logo"><a href="${pageContext.request.contextPath}/home.jsp"><img src="img/logo.png"></a></div>
+        <div class="logo"><a href="${pageContext.request.contextPath}/OldPage/home.jsphome.jsp"><img src="../img/logo.png"></a></div>
         <div class="search" id="search-form">
             <input type="text" class="search-text" id="search-input" value="<s:property value="#userBean.keyword"/> "/><button onclick="search()"><i class="icon-search"></i></button>
         </div>

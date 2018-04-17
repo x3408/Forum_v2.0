@@ -11,9 +11,9 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
-    <link rel="stylesheet" href="css/enrllPage.css?3" />
-    <script type="text/javascript" src="js/enroll.js"></script>
-    <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+    <link rel="stylesheet" href="../css/enrllPage.css?3" />
+    <script type="text/javascript" src="../js/enroll.js"></script>
+    <script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
     <script type="text/javascript">
         function changeVerify() {
             var verifyImg = document.getElementById("verifyImg");

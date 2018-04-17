@@ -14,21 +14,22 @@
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.8.3.js"></script>
     <meta charset="utf-8" />
     <title>健身首页</title>
-    <link rel="stylesheet" href="css/mainPage.css?2" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" type="text/css" href="css/waterfall.css" />
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="../css/mainPage.css?2" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/waterfall.css" />
+    <link rel="stylesheet" href="../css/bootstrap.css">
 </head>
 
 <body>
 <div class="header">
     <div class="header-content">
         <div class="logo">
-            <a href=""><img src="img/logo.png"></a>
+            <a href=""><img src="../img/logo.png"></a>
         </div>
         <div class="search" id="search-form">
 
-            <input type="text" class="search-text" id="search-input" name="keyword" /><button><i onclick="search()" class="icon-search"></i></button>
+            <input type="text" class="search-text" id="search-input" name="keyword" />
+            <button><i onclick="search()" class="icon-search"></i></button>
         </div>
         <s:if test="#session.user==null">
             <span id="entry"><a href="${pageContext.request.contextPath}/loginRegister.jsp">登录</a></span>
@@ -69,12 +70,12 @@
     <div class="contain">
         <div id="banner">
             <div id="list" style="left:-723px">
-                <img src="img/4.jpg">
-                <img src="img/1.jpg">
-                <img src="img/2.png">
-                <img src="img/3.jpg">
-                <img src="img/4.jpg">
-                <img src="img/1.jpg">
+                <img src="../img/4.jpg">
+                <img src="../img/1.jpg">
+                <img src="../img/2.png">
+                <img src="../img/3.jpg">
+                <img src="../img/4.jpg">
+                <img src="../img/1.jpg">
             </div>
             <div id="buttons">
                 <span index="1" class="on"></span>
@@ -97,9 +98,9 @@
             <div class="recommand-today">今日推荐</div>
             <ul>
                 <li>
-                    <a href="/index1.jsp" target="_blank">
+                    <a href="/OldPage/index1.jsp" target="_blank">
                         <div id="img1" class="img">
-                            <img src="img/yjd.png" width="55px" height="60px">
+                            <img src="../img/yjd.png" width="55px" height="60px">
                         </div>
                         <div class="atext">
                             <span id="text1"  class="strongText"></span>
@@ -111,9 +112,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/index2.jsp " target="_blank">
+                    <a href="/OldPage/index2.jspdex2.jsp " target="_blank">
                         <div id="img2" class="img">
-                            <img src="img/timg.jpeg" width="55px" height="60px">
+                            <img src="../img/timg.jpeg" width="55px" height="60px">
                         </div>
                         <div  class="atext">
                             <span id="text2" class="strongText"></span>
@@ -124,9 +125,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/index3.jsp" target="_blank">
+                    <a href="/OldPage/index3.jsp" target="_blank">
                         <div id="img3" class="img">
-                            <img src="img/run.jpeg" width="55px" height="60px">
+                            <img src="../img/run.jpeg" width="55px" height="60px">
                         </div>
                         <div class="atext">
                             <span id="text3"  class="strongText"></span>
@@ -138,9 +139,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/index4.jsp" target="_blank">
+                    <a href="/OldPage/index4.jsp" target="_blank">
                         <div id="img4" class="img">
-                            <img src="img/water.png" width="55px" height="60px">
+                            <img src="../img/water.png" width="55px" height="60px">
                         </div>
                         <div  class="atext">
                             <span id="text4" class="strongText">一个健身爱好者最朴实的自白</span>
@@ -151,9 +152,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/index5.jsp" target="_blank">
+                    <a href="/OldPage/index5.jsp" target="_blank">
                         <div id="img5" class="img">
-                            <img src="img/room2.png" width="55px" height="60px">
+                            <img src="../img/room2.png" width="55px" height="60px">
                         </div>
                         <div  class="atext">
                             <span id="text5" class="strongText">第一次去健身房的新手小白攻略！纯干货</span>
@@ -164,9 +165,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/index6.jsp" target="_blank">
+                    <a href="/OldPage/index6.jsp" target="_blank">
                         <div id="img6" class="img">
-                            <img src="img/food3.png" width="55px" height="60px">
+                            <img src="../img/food3.png" width="55px" height="60px">
                         </div>
                         <div  class="atext">
                             <span id="text6" class="strongText">最快最有效减肥方法运动饮食结合</span>
@@ -177,9 +178,9 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/index7.jsp" target="_blank">
+                    <a href="/OldPage/index7.jsp" target="_blank">
                         <div id="img7" class="img">
-                            <img src="img/fat1.png" width="55px" height="60px">
+                            <img src="../img/fat1.png" width="55px" height="60px">
                         </div>
                         <div  class="atext">
                             <span id="text7" class="strongText">一篇文章，让你明白“健身”是非做不可的事</span>
@@ -196,9 +197,9 @@
     </div>
 </div>
 </body>
-<script type="text/javascript" src="js/mainPage.js"></script>
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script src="js/bootstrap.js"></script>
+<script type="text/javascript" src="../js/mainPage.js"></script>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script src="../js/bootstrap.js"></script>
 <script type="text/javascript">
     $.get("${pageContext.request.contextPath}/Recommend_list",
         function(data){
@@ -223,9 +224,9 @@
         }, function(data) {
 //            var j = 1;
 //            while(j <= 3) {
-            for(i=0;i<3;i++){
+            for(i=0;i<data.length;i++){
                 var timer =  data[i].time.month + "月" + data[i].time.day + "日" + data[i].time.hours + "时" + data[i].time.minutes + "分";
-                $("#main").append('<div class="box"><div class="topicFrom"><span class="date" id="date">' + timer + '</span><span class="viewCount" id="viewCount">阅读量： ' + data[i].viewCount + '</span></div><div class="name"><div class="myPic" id="myPic"><img id="imgCircle" class="img-circle" src="/headPortrait/'+data[i+3].headPortrait+'"/></div><div class="username" id="username">' + data[i+3].username + '</div></div><div class="context"><h6 class="title" id="title"><a href="TopicAction_showTopic?tid='+data[i].tid+'" style="text-decoration:none;color:#202678;" target="_blank" >' + data[i].title + '</a></h6><p class="text" id="text">' + data[i].descriptive + '</p></div></div>');
+                $("#main").append('<div class="box"><div class="topicFrom"><span class="date" id="date">' + timer + '</span><span class="viewCount" id="viewCount">阅读量： ' + data[i].viewCount + '</span></div><div class="name"><div class="myPic" id="myPic"><img id="imgCircle" class="img-circle" src="/headPortrait/'+data[data.length/2+i].headPortrait+'"/></div><div class="username" id="username">' + data[data.length/2+i].username + '</div></div><div class="context"><h6 class="title" id="title"><a href="TopicAction_showTopic?tid='+data[i].tid+'" style="text-decoration:none;color:#202678;" target="_blank" >' + data[i].title + '</a></h6><p class="text" id="text">' + data[i].descriptive + '</p></div></div>');
             }
         });
 

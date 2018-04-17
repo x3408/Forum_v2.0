@@ -2,15 +2,15 @@
   Created by IntelliJ IDEA.
   User: daidai
   Date: 2018/3/24
-  Time: 21:11
+  Time: 21:12
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>评论插件</title>
+    <meta charset="utf-8" />
+    <title></title>
     <link rel="stylesheet" type="text/css" href="http://www.jq22.com/jquery/bootstrap-3.3.4.css">
     <style>
         .container{
@@ -81,12 +81,12 @@
             color: #aaa;
         }
     </style>
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/jquery.comment.js" ></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.comment.js" ></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
     <script type="text/javascript">
         //初始化数据
-        $.get("${pageContext.request.contextPath}/CommentAction_list?tid=1000",
+        $.get("${pageContext.request.contextPath}/CommentAction_list?tid=1004",
             function(data){
                 var date = new Date();
                 var seperator1 = "-";
@@ -112,7 +112,7 @@
                             obj.content=$("#content").val();
                             obj.replyBody="";
                             $(".comment-list").addCommentList({data:[],add:obj});
-                            $.post("${pageContext.request.contextPath}/CommentAction_save", { replyName:"<s:property value="#session.user.username"></s:property>" , comment_content: obj.content,uid:"<s:property value="#session.user.uid"></s:property>",tid: 1000,headPortrait:"<s:property value="#session.user.headPortrait"></s:property>"}
+                            $.post("${pageContext.request.contextPath}/CommentAction_save", { replyName:"<s:property value="#session.user.username"></s:property>" , comment_content: obj.content,uid:"<s:property value="#session.user.uid"></s:property>",tid:1004,headPortrait:"<s:property value="#session.user.headPortrait"></s:property>"}
                             );
                         });
                     })
@@ -132,7 +132,7 @@
                                 obj.replyBody="";
                                 if(i==0){
                                     $(".comment-list").addCommentList({data:[],add:obj});
-                                    $.post("${pageContext.request.contextPath}/CommentAction_save", { replyName:"<s:property value="#session.user.username"></s:property>" , comment_content: obj.content,uid:"<s:property value="#session.user.uid"></s:property>",tid:1000,headPortrait:"<s:property value="#session.user.headPortrait"></s:property>"}
+                                    $.post("${pageContext.request.contextPath}/CommentAction_save", { replyName:"<s:property value="#session.user.username"></s:property>" , comment_content: obj.content,uid:"<s:property value="#session.user.uid"></s:property>",tid: 1004,headPortrait:"<s:property value="#session.user.headPortrait"></s:property>"}
                                     );
                                 }
                             });
@@ -140,42 +140,74 @@
                     });
                 }
             });
-    </script>
 
-    <link rel="stylesheet" href="css/recommend.css">
+    </script>
+<<<<<<< HEAD
+    <link rel="stylesheet" href="../css/recommend5.css?3">
+=======
+    <link rel="stylesheet" href="../css/recommend5.css?1">
+>>>>>>> 549995a37d5b9ea4ff4c16a174e5dfb8efa263dd
 </head>
 <body>
-<div id="recommend">
-    <div id="recommend-head">
-        <p>如何选择优质瑜伽垫</p>
+<div id="recommendFive">
+    <div id="recommendFive-head">
+        <p>第一次去健身房的新手小白攻略！纯干货</p>
     </div>
-    <div id="recommend-main">
-        <p>一.正位线条</p>
+    <div id="recommendFive-main">
         <p>
-            这是目前瑜伽人选择垫子最重要的一个细节标准。垫面上的正位线条可以引导辅助练习者习炼更正确、更精准的瑜伽体式。正位线条的选择基本上抓住两点就可以了：
-            首先要看线条的设计原理（即系统的正宗性），其次是否与你的身高相符（正位线条的宽度与长度与你的身体各部位相契合才更精准）。
+            求助！只认识跑步机的健身菜鸟，怎么才能第一天去健身房不被嚯嚯哈嘿练的肌肉男吓到，
+            不被香汗淋漓的美女们鄙视呢？！
         </p>
-        <img src="img/yjd.png">
-        <p>二.材质</p>
+        <p>听说很多人第一次去健身房，不是瞎练一通就是羞涩的跑走。</p>
+        <p>今天就说说第一次去健身房到底要练什么？怎么练！</p>
+        <p>菜鸟去健身房练什么</p>
+        <p>菜鸟只所以叫菜鸟，是因为不认识器械，不知道技术，没有力量。</p>
         <p>
-            目前市面上的主流瑜伽垫材质一般分为PVC，TPE，天然橡胶，软木，棉麻和混合材质瑜伽垫。如果对于乳胶过敏，要注意甄别标签中是否注明不含乳胶（latex-free）。
-            <br/> 1.PVC<br/>优点：耐用性好，原材料成本低，因此价格比较亲民，也是目前使用相对较普遍的瑜伽垫；不含乳胶，适合对乳胶过敏的伽人；材料吸收性差，所以，容易清洁。
+            那么可以先做有氧运动，去跑步机上跑跑步，记得热身哦！有人会说了，既然到健身房只是跑
+            步的话，自己也可以到外面夜跑啊，小风吹着多惬意！这里科普一个小常识，体脂高、体重基数大、
+            没有运动习惯的亲，要跑步最好是在跑步机上跑步。简单来说，就是胖子跑步特外伤膝盖，跑步机
+            可以缓冲减震！
         </p>
-        <img src="img/yjd1.png">
-        <p>不足：因为材料吸收性差，所以干燥情况下防滑性好，但对于流汗多的伽人来说，防湿滑性较差；塑料制品无法自然降解。</p>
-        <p>2.天然橡胶</p>
-        <p>优点：原材料来源天然，环保；表面的天然纹理和开孔结构，帮助吸收水分，因此，不论防干滑或湿滑效果都很好。</p>
-        <img src="img/trxj.png">
-        <p>不足：刚买回来时气味较重；开孔结构容易吸收污渍，需要市场清洗。</p>
-        <p>3.软木</p>
-        <p>优点：环保无毒，几乎没有异味；木质更有回归自然的感觉；防干滑和湿滑效果都极佳</p>
-        <img src="img/软木.png">
-        <p>不足：价格相对昂贵；木质结构吸收性好，不易清洗。</p>
-        <p>4.棉麻</p>
-        <p>优点：亲肤温和不刺激，是热爱传统编制工艺者的首选；容易清洗。</p>
-        <img src="img/mm.png">
-        <p>不足：抓地效果差，仅限于动作少的瑜伽课程或者冥想练习，比较较小众。</p>
-        <div id="recommend-evaluate">
+        <img src="../img/room1.png">
+        <p>错误示范↑</p>
+        <p>
+            如果看到美女在运动，不要恬不知耻的一直围观或者不停搭讪！乖乖在后面排队等位，或者等
+            运动完再出手，当然如果你帅的话当我没说！
+        </p>
+        <img src="../img/room2.png">
+        <p>
+            除了跑步机，你还可以去跳操、瑜伽什么的，很多亲们觉得动感单车很带感，运动难度不高，而且
+            减脂效果奇佳，非常适合新手，但是请不要久骑。图上还是错误示范，这种花式单车的骑法，非常
+            伤膝盖和腰椎。而RPM课程这种高冷的方法又需要专业指导，很明显不适合新手。
+        </p>
+        <p>
+            那么有氧练完了，练无氧就需要上器械了！上手快、难度小、强度低的器械有哪些呢？！练胸的除了
+            卧推哑铃、杠铃之外，入门级的还是以坐姿为主的器械，有推胸的有夹胸的，而且还可以练手臂。
+        </p>
+        <p>夹胸</p>
+        <p>
+            练完胸还可以练背，练背方式有很多，引体向上、杠铃然而难度太高。所以还是以坐姿为主，可以练坐
+            姿下拉和坐姿划船，当然也可以练手臂，对肩周炎非常有疗效。
+        </p>
+        <img src="../img/room3.png">
+        <p>练了胸和背，那么接着练练腿!练腿的器械不用说，大多都是坐姿了，有蹬腿的、有外展和内展的，还有屈伸的。</p>
+        <img src="../img/room4.png">
+        <p>蹬腿</p>
+        <img src="../img/room5.png">
+        <p>内展</p>
+        <p>
+            无氧运动一次一般在45分钟左右，所以如果连完这几个部位还有那么一点时间和气力，可以用一下史密斯机练一下深蹲或者硬拉。
+            史密斯机的杠铃是有轨道的，所以是有安全防护的，新手可以试试感觉。
+        </p>
+        <img src="../img/room6.png">
+        <p>硬拉</p>
+        <p>深蹲</p>
+        <p>
+            如果第一次到健身房，先从今天介绍的这些固定器械开始练习吧！他们有固定的轨道，非常安全，而且可以帮助我们找到肌肉正确发
+            力的感觉，非常适合新入健身房的小白们。
+        </p>
+        <p>妈妈再也不用担心我去健身房丢脸加浪费钱啦！</p>
+        <div id="recommendFive-evaluate">
             <!--放评论语句-->
             <div class="container">
                 <div class="commentbox">

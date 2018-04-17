@@ -81,9 +81,9 @@
             color: #aaa;
         }
     </style>
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/jquery.comment.js" ></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.comment.js" ></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
     <script type="text/javascript">
         //初始化数据
         $.get("${pageContext.request.contextPath}/CommentAction_list?tid=1005",
@@ -143,9 +143,9 @@
 
     </script>
 <<<<<<< HEAD
-    <link rel="stylesheet" href="css/recommend6.css?3">
+    <link rel="stylesheet" href="../css/recommend6.css?3">
 =======
-    <link rel="stylesheet" href="css/recommend6.css?1">
+    <link rel="stylesheet" href="../css/recommend6.css?1">
 >>>>>>> 549995a37d5b9ea4ff4c16a174e5dfb8efa263dd
 </head>
 <body>
@@ -163,7 +163,7 @@
             以蔬菜为主，相应的减少主食量，至于吃肉，就吃精瘦肉;晚餐可以提前吃，但是一
             定不要吃得太多，主要以清淡为主，多喝汤，吃海鲜食物。
         </p>
-        <img src="img/food1.png">
+        <img src="../img/food1.png">
         <p>2.睡前三小时禁食</p>
         <p>
             减肥最大的忌讳就是晚上吃东西，尤其是有一些减肥mm习惯在看电视的时候吃零食。
@@ -171,7 +171,7 @@
             西全部会被身体吸收变成脂肪囤积起来。所以最好不要在吃东西，实在想吃的话，最好
             给自己身边多准备一些水果之类的，这是完全可以的。
         </p>
-        <img src="img/food2.png">
+        <img src="../img/food2.png">
         <p>3.吸收适合身体生长的能量</p>
         <p>
             对于减肥，吃合适的食物是很重要的。然而，与之同样重要的是，吃适当的食物数量吸收
@@ -182,21 +182,21 @@
             吃1200卡路里左右。这数字听起来不多，但请相信，1200卡路里的健康食品比起1200卡路里
             的不健康的食物会让你觉得更加充满了精力，去完成一天繁重的工作。
         </p>
-        <img src="img/food3.png">
+        <img src="../img/food3.png">
         <p>4.多喝水，喝够水</p>
         <p>
             水乃生命之源。也是减肥的最重要物质之一，每天喝够八杯水才是我们正常的喝水量。具体的饮水必须是
             1800ml-2000ml。夏天减肥的话，那就要每天至少喝3000ml方可正常。多喝水能帮助你排除体内的多余
             毒素、清理肠道、增加饱腹感，是减肥瘦身的佳品。所以说减肥的mm们一定要记得多喝水哦!
         </p>
-        <img src="img/food4.png">
+        <img src="../img/food4.png">
         <p>二.运动方面</p>
         <p>1.爱上运动，并且坚持</p>
         <p>
             在运动减肥的道路上或许你应该明显的能感觉到，即使是最好的运动减肥方式，如果你不坚持的话，减后肯定
             会反弹。原因很简单，就是因为你没有坚持去做。推荐运动：慢跑、游泳、慢跑、骑自行车等。
         </p>
-        <img src="img/play1.png">
+        <img src="../img/play1.png">
         <p>2.举重训练</p>
         <p>燃烧脂肪的，有氧运动是方便易行的活动，但你也应该做做举重训练，每周两次就可以了。</p>
         <p>
@@ -207,7 +207,7 @@
             举重训练不仅帮助你燃烧卡路里，加快你的新陈代谢，而且有益保持健康，增加免疫力。所以不管多繁忙，
             都不要错过一周两次的举重锻炼。
         </p>
-        <img src="img/play2.png">
+        <img src="../img/play2.png">
         <p>3.有氧运动</p>
         <p>
             要尽快减肥，你应该坚持每星期的有氧锻炼。每天锻炼至少半个小时，逐渐增加到每天一个小时。
@@ -217,7 +217,7 @@
             至于做什么有氧运动并没有真正规定你具体做哪些运动，只要和运动有关都可以。你可以去跑跑步，
             踢踢球，郊游远足等等。只要你迈出运动的第一步，并且积极去参与，坚持下去，那么很快你就减肥成功了。
         </p>
-        <img src="img/play3.png">
+        <img src="../img/play3.png">
         <p>注意事项</p>
         <p>
             有很多朋友说运动减肥坚持不下来，这也是许多肥胖者的共同特点，运动减肥确实比较辛苦，怎样简单轻松的减肥呢？
