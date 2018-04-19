@@ -107,7 +107,7 @@
                 <span id="logo"><img src="img1/logo.png"/></span>
                 <span id="welcome">欢迎注册</span>
             </div>
-            <form action="${pageContext.request.contextPath}/UserAction_add" name="reg"method="post" id="content-form">
+            <form action="${pageContext.request.contextPath}/UserAction_add" name="reg" method="post" id="content-form">
                 <div class="control">
                     <lable>用户名</lable>
                     <input class="ip" type="text" name="username" id="username" placeholder="您的昵称" value="" onblur="checkUser()"/>
