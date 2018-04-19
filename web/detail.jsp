@@ -1,4 +1,4 @@
-<%--
+/>    <%--
   Created by IntelliJ IDEA.
   User: x3408
   Date: 2018/4/17
@@ -114,7 +114,7 @@
                 } else {
                     for(var i =0; i < data.length; i++) {
                         var timer = data[i].time.month + "月" + data[i].time.day + "日 " + data[i].time.hours + ":" + data[i].time.minutes;
-                        $('.main-center').append('<div class="box"><div class="topicFrom"><span class="userid" id="userid">来自话题: '+data[data.length/2+i].uid+'</span><span class="date" id="date">' + timer + '</span><span class="viewCount" id="viewCount">阅读量： ' + data[i].viewCount + '</span></div><div class="name"><div class="myPic" id="myPic"><img src="/headPortrait/'+data[data.length/2+i].headPortrait+'" /></div><div class="username" id="username">' + data[data.length/2+i].username + '</div></div><div class="context"><div class="title" id="title">' + data[i].title + '</div><p class="content" id="content">' + data[i].descriptive + '</p></div></div>');
+                        $('.main-center').append('<div class="box"><div class="topicFrom"><span class="userid" id="userid">来自话题: '+data[data.length/2+i].uid+'</span><span class="date" id="date">' + timer + '</span><span class="viewCount" id="viewCount">阅读量： ' + data[i].viewCount + '</span></div><div class="name"><div class="myPic" id="myPic"><img src="/headPortrait/'+data[data.length/2+i].headPortrait+'" class="img-cicle"width="50px"height="50px"/></div><div class="username" id="username">' + data[data.length/2+i].username + '</div></div><div class="context"><div class="title" id="title">' + data[i].title + '</div><p class="content" id="content">' + data[i].descriptive + '</p></div></div>');
                     }
                 }
             })

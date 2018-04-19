@@ -99,7 +99,7 @@
                 <span>忘记密码</span>
             </div>
         </form>
-        <p>${msg}</p>
+        <p style="margin-top: -40px;">${msg}</p>
     </div>
     <!--//我的登录界面结束下面开始注册界面-->
     <div id="register" class="back">
@@ -121,14 +121,13 @@
                 <p></p>
                 <div class="control">
                     <lable>确认密码</lable>
-                    <input class="ip" type="password" name="certain" id="certain"placeholder="请确认密码" value="" />
+                   <span><input class="ip" type="password" name="verifyCodeFromUser" id="identifyCode"placeholder="请确认密码" value="" /></span> 
 
                 </div>
                 <p></p>
                 <div class="control">
                     <lable>验证码</lable>
                     <input class="ip" type="text" name="identifyCode"value="" />
-                    <span><input type="text"class="ip"  id="identifyCode" placeholder="请输入验证码" name="verifyCodeFromUser"/></span>
                     <span id="identityNumber"><img id="verifyImg" src="${pageContext.request.contextPath}/UserAction_verifyImg" onclick="return changeVerify()"></span>
                 </div>
                 <p>${msg}</p>
