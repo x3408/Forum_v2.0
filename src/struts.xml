@@ -3,6 +3,7 @@
         "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
+    <constant name="struts.i18n.encoding" value="utf-8"/>
     <!--将Action交给Spring创建-->
     <constant name="struts.objectFactory" value="spring"></constant>
 
@@ -20,7 +21,7 @@
         <action name="TopicAction_*" class="topicAction" method="{1}">
             <result name="toHome" type="redirect">/home.jsp</result>
             <result name="login">/loginRegister.jsp</result>
-            <result name="showTopic">/showTopic.jsp</result>
+            <result name="showTopic">/OldPage/showTopic.jsp</result>
         </action>
         <action name="Recommend_*" class="RecommendAction" method="{1}"></action>
         <action name="KindEditorAction_uploadImg" class="kindeditor" method="uploadImg"></action>
