@@ -5,6 +5,7 @@
 		<title>首页</title>
 		<link rel="stylesheet" href="css/bootstrap.min.css">
 		<link rel="stylesheet" href="css/newMain.css">
+		<link rel="stylesheet" href="css/mainPage.css">
 		<script src="js/jquery.min.js"></script>
 		<script src="js/newMain.js"></script>
 		<script src="js/NewWeb-Main.js"></script>
@@ -23,6 +24,10 @@
 				<li class="nav-li"><a href="javascript:;"  class="index3" data-to="go3">经验分享</a></li>
 				<li class="nav-li"><a href="javascript:;"  class="index4" data-to="go4">课程教育</a></li>
 			</ul>
+			<div id="sign">
+				<button class="btn">登录</button>
+				<button class="btn">注册</button>
+			</div>
 		  </div>
 		  <div class="newCenter">
 		  	 <img src="img/main1.png">
@@ -46,11 +51,20 @@
 		  	 				</p>
 		  	 			</div>
 		  	 		  </a>
-		  	 		   <div class="goOne-center--right">
-		  	 		   	 
-		  	 		   </div>
+		  	 		   <div class="goOne-center--right" id="banner">
+		  	 		   	   <div id="list" style="left:-462px">
+		  	 		        <a href=""><img src="img/scroll5.png"></a>
+					        <a href=""><img src="img/scroll2.png"></a>
+						    <a href=""><img src="img/scroll3.png"></a>
+						    <a href=""><img src="img/scroll4.png"></a>
+						    <a href=""><img src="img/scroll5.png"></a>
+						    <a href=""><img src="img/scroll2.png"></a>
+					      </div>
+					   </div>
+		  	 		<a href="javascript:;" class="arrow" id="prev">&lt;</a>
+					<a href="javascript:;" class="arrow" id="next">&gt;</a>
 		  	 		</div>
-		  	 		<!--//开始-->
+		  	 		<!--//开始
 		  	 		
 	                 <!--//结束-->
 		  	 		<div class="goOne-buttom">
@@ -93,37 +107,52 @@
 		  	 		<!--//json部分-->
 		  	 		<div class="goThree-Center">
 		  	 			<div class="goThree-leftTop">
-		  	 				<img id="loadOne" src="img/edu1.png"/>
+		  	 				<img id="loadOne" src=""/>
 		  	 				<div class="goThreeShade">
-		  	 				 <a id="title" href="http://www.baidu.com">文章标题</a>
+		  	 				 <a id="title" href="http://www.baidu.com">
+		  	 				 	<p id="title1">标题</p>
+		  	 				 	<p id="contentOne" style="width:200px;height:80px;">文章简介</p>
+		  	 				 </a>
 		  	 			    </div>
 		  	 			</div>
 		  	 			<div class="goThree-rightTop">
 		  	 				<img id="loadTwo" src=""/>
 		  	 				<div class="goThreeShadeTwo">
-		  	 				 <a id="titleTwo" href="http://www.baidu.com">文章标题</a>
+		  	 				 <a id="titleTwo" href="http://www.baidu.com">
+		  	 				 	<p id="title2">标题</p>
+		  	 				 	<p id="contentTwo" style="width:200px;height:80px">文章简介</p>
+		  	 				 </a>
 		  	 			    </div>
 		  	 			</div>
 		  	 			<div class="goThree-leftCenter">
 		  	 				<img id="loadThree" src=""/>
 		  	 				<div class="goThreeShadeThree">
-		  	 				 <a id="titleThree" href="http://www.baidu.com">文章标题</a>
+		  	 				 <a id="titleThree" href="http://www.baidu.com">
+		  	 				 	<p id="title3">标题</p>
+		  	 				 	<p id="contentThree" style="width:400px;height:80px;">文章简介</p>
+		  	 				 </a>
 		  	 			    </div>
 		  	 			</div>
 		  	 			<div class="goThree-leftButtom">
 		  	 				<img id="loadFour" src=""/>
 		  	 				<div class="goThreeShadeFour">
-		  	 				 <a id="titleFour" href="http://www.baidu.com">文章标题</a>
+		  	 				 <a id="titleFour" href="http://www.baidu.com">
+		  	 				 	<p id="title4">标题</p>
+		  	 				 	<p id="contentFour" style="width:200px;height:80px">文章简介</p>
+		  	 				 </a>
 		  	 			    </div>
 		  	 			</div>
 		  	 			<div class="goThree-rightButtom">
 		  	 				<img id="loadFive" src=""/>
 		  	 				<div class="goThreeShadeFive">
-		  	 				 <a id="titleFive" href="http://www.baidu.com">文章标题</a>
+		  	 				 <a id="titleFive" href="http://www.baidu.com">
+		  	 				 	<p id="title5">标题</p>
+		  	 				 	<p id="contentFive" style="width:200px;height:80px">文章简介</p>
+		  	 				 </a>
 		  	 			    </div>
 		  	 			</div>
 		  	 			<div id="oldSay">
-		  	 				<h3>2018</h3>
+		  	 				<h1>2018</h1>
 		  	 				<p>如果杠铃没弯，你就在装样子</p>
 		  	 				<p class="oldSayTwo">If the barbell is not bent,you are looking for it</p>
 		  	 			</div>
@@ -175,12 +204,9 @@
 		  	 	</div>
 		  	</div>
 		  </div>
-		  <br />
-		  <br />
-		  <br />
-		  <br />
-		  <br />
-		  <br /><br /><br /><br /><br /><br /><br />
+		  <div id="newEnd">
+		  	 <img src="img/end3.png">
+		  </div>
 		</div>
 		
 	</body>
