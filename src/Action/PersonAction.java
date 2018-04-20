@@ -9,6 +9,8 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import net.sf.json.JSONArray;
+import net.sf.json.JsonConfig;
+import net.sf.json.util.PropertyFilter;
 import org.apache.commons.io.FileUtils;
 import org.apache.struts2.ServletActionContext;
 
@@ -28,6 +30,9 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
     //private String photo2;
     private String headPortraitContantType;
     private String photoFileName;
+    private String send_id;
+    //私信内容
+    private String content;
     //显示私信摘要
     private Integer page;
 //    public void setPhoto2(String photo2) {
@@ -151,10 +156,10 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
     public String showMessage() {
         User user = (User) ActionContext.getContext().getSession().get("listAllData");
 //        String send_id = (String) ServletActionContext.getRequest().getParameter("send_id");
-        String send_id = (String) ActionContext.getContext().get("send_id");
+//        String send_id = (String) ActionContext.getContext().get("send_id");
         List<Util.Message> lists = ps.showMessage(user, send_id);
         String message = JSONArray.fromObject(lists).toString();
-
+        System.out.println(message);
         try {
             ServletActionContext.getResponse().getWriter().write(message);
         } catch (IOException e) {
@@ -174,8 +179,17 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
             User send_id = ps.findAllData(temp);
             userList.add(send_id);
         }
+        //过滤一对多实体对象
+        JsonConfig config = new JsonConfig();
+        config.setJsonPropertyFilter(new PropertyFilter() {
+            public boolean apply(Object source, String name, Object value) {
+                if (name.equals("comments"))
+                    return true;
+                return false;
+            }
+        });
         String messageTitle = JSONArray.fromObject(list).toString();
-        String userInfo = JSONArray.fromObject(userList).toString();
+        String userInfo = JSONArray.fromObject(userList,config).toString();
 
         String data = messageTitle.substring(0, messageTitle.length()-1) + "," + userInfo.substring(1,userInfo.length());
         System.out.println(data);
@@ -184,6 +198,12 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return null;
+    }
+
+    //发送私信
+    public String addMessage() {
+
         return null;
     }
 
@@ -210,5 +230,9 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
 
     public void setPhotoFileName(String photoFileName) {
         this.photoFileName = photoFileName;
+    }
+
+    public void setSend_id(String send_id) {
+        this.send_id = send_id;
     }
 }
