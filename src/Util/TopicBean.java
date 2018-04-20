@@ -29,9 +29,11 @@ public class TopicBean {
 
     public TopicBean showTopicByType(Integer page, String type,Integer limit) {
         this.page = page;
+        if(page == null)
+            page = 1;
 
         if (limit == null) {
-            this.limit = 3;
+            this.limit = 5;
         }
 
         int start = (page - 1) * limit;

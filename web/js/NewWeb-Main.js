@@ -1,23 +1,25 @@
 $(function(){
 	
-	$.get("new_file.json", {}, function(data, textStatus) {
-		$(".goThree-leftTop img").attr("src", data[0].pictu);
-		$(".goThree-rightTop img").attr("src",data[1].pictu);
-		$(".goThree-leftCenter img").attr("src",data[2].pictu);
-		$(".goThree-leftButtom img").attr("src",data[3].showImg);
-		$(".goThree-rightButtom img").attr("src",data[4].showImg);
-		$("#title1").html(data[0].title);
-		$("#contentOne").html(data[0].descriptive);
-		$("#title2").html(data[0].title);
-		$("#contentTwo").html(data[0].descriptive);
-		$("#title3").html(data[0].title);
-		$("#contentThree").html(data[0].descriptive);
-		$("#title4").html(data[0].title);
-		$("#contentFour").html(data[0].descriptive);
-		$("#title5").html(data[0].title);
-		$("#contentFive").html(data[0].descriptive);
-		
-	})
+	$.get("${pageContext.request.contextPath}/TopicAction_showTopicByType",
+		{page:1, type:'result_show'},
+		function(data) {
+			$(".goThree-leftTop img").attr("src", data[0].showImg);
+			$(".goThree-rightTop img").attr("src",data[1].showImg);
+			$(".goThree-leftCenter img").attr("src",data[2].showImg);
+			$(".goThree-leftButtom img").attr("src",data[3].showImg);
+			$(".goThree-rightButtom img").attr("src",data[4].showImg);
+			$("#title1").html(data[0].title);
+			$("#contentOne").html(data[0].descriptive);
+			$("#title2").html(data[1].title);
+			$("#contentTwo").html(data[1].descriptive);
+			$("#title3").html(data[2].title);
+			$("#contentThree").html(data[2].descriptive);
+			$("#title4").html(data[3].title);
+			$("#contentFour").html(data[3].descriptive);
+			$("#title5").html(data[4].title);
+			$("#contentFive").html(data[4].descriptive);
+	},
+	"json")
 	$(".goThree-Center img").addClass("carousel-inner img-responsive img-rounded");
 	$(".goThree-leftTop").mouseover(function() {
 		$(".goThreeShade").show();
