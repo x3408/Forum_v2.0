@@ -31,6 +31,8 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
     private String headPortraitContantType;
     private String photoFileName;
     private String send_id;
+    //私信内容
+    private String content;
     //显示私信摘要
     private Integer page;
 //    public void setPhoto2(String photo2) {
@@ -196,6 +198,12 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return null;
+    }
+
+    //发送私信
+    public String addMessage() {
+
         return null;
     }
 

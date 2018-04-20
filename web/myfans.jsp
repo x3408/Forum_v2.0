@@ -21,20 +21,20 @@
 <div class="head">
     <div class="main">
         <div class="house">
-            <a href=""><img src="img/house.png" width="30px" /></a>
+            <a href="${pageContext.request.contextPath}/index.jsp"><img src="img/house.png" width="30px" /></a>
 
         </div>
         <div class="headimg">
-            <img class="img-circle" src="img/xiaobai 8.jpg" width="80px" height="80px" />
-            <p>@DChyw</p>
+            <img class="img-circle" src="/headPortrait/${listAllData.headPortrait}" width="80px" height="80px" />
+            <p>${listAllData.username}</p>
         </div>
         <div class="nav">
             <ul class="nav-one">
                 <li>
-                    <a href="personCenter.html">我的关注</a>
+                    <a href="personCenter.jsp">我的关注</a>
                 </li>
                 <li>
-                    <a href="mycontext.html">我的文章</a>
+                    <a href="mycontext.jsp">我的文章</a>
                 </li>
             </ul>
             <ul class="nav-two">
@@ -42,7 +42,7 @@
                     <a href="">我的粉丝</a>
                 </li>
                 <li>
-                    <a href="myletter.html">我的私信</a>
+                    <a href="myletter.jsp">我的私信</a>
                     <span id="news">new</span>
                 </li>
             </ul>

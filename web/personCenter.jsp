@@ -21,12 +21,12 @@
 <div class="head">
     <div class="main">
         <div class="house">
-            <a href=""><img src="img/house.png" width="30px" /></a>
+            <a href="${pageContext.request.contextPath}/index.jsp"><img src="img/house.png" width="30px" /></a>
 
         </div>
         <div class="headimg">
-            <img class="img-circle" src="img/xiaobai 8.jpg" width="80px" height="80px" />
-            <p>@DChyw</p>
+            <img class="img-circle" src="/headPortrait/${listAllData.headPortrait}" width="80px" height="80px" />
+            <p>${listAllData.username}</p>
         </div>
         <div class="nav">
             <ul class="nav-one">

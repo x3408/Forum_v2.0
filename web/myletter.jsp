@@ -23,13 +23,13 @@
 <div class="head">
     <div class="main">
         <div class="house">
-            <a href=""><img src="img/house.png" width="30px" /></a>
+            <a href="${pageContext.request.contextPath}/index.jsp"><img src="img/house.png" width="30px" /></a>
 
         </div>
         <div class="headimg">
             <%--点击头像 转到编辑资料页--%>
-            <img class="img-circle" src="img/xiaobai 8.jpg" width="80px" height="80px" />
-            <p>用户名</p>
+                <img class="img-circle" src="/headPortrait/${listAllData.headPortrait}" width="80px" height="80px" />
+                <p>${listAllData.username}</p>
         </div>
         <div class="nav">
             <ul class="nav-one">
