@@ -1,0 +1,43 @@
+@font-face{
+	font-family:webFont;
+	src:url('/fonts/DongQingHeiTi-1.otf')
+}
+#recommendThree{
+	width:1100px;
+	height:2060px;
+    border:solid 1px #ccc;
+	position:relative;
+	left:50%;
+	margin-left:-550px;
+	
+}
+#recommendThree-head{
+	width:1100px;
+	height:50px;
+	border-bottom: 1px red solid;
+	padding-top:5px;
+}
+#recommendThree-head p{
+	font-size:23px;
+	margin-left:320px;
+	font-weight: bold;
+
+}
+#recommendThree-main{
+	width:900px;
+	height:800px;
+	/*border:solid 1px black;*/
+	margin-left:100px;
+}
+#recommendThree-main p{
+	font-size:18px;
+   font-family:webFont;
+}
+#recommendThree-main img{
+	margin-left:0px;
+}
+#recommendThree-evaluate{
+	width:800px;
+	height:400px;
+	margin-left:-70px;
+}

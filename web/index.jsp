@@ -1,3 +1,4 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: x3408
@@ -22,20 +23,29 @@
 	<body>
 		<div id="newMain">
 		  <div class="container mainTop">
-		  	<span><a href="">首页</a></span>
-			<ol class="nav nav-pills">
-				<li class="nav-li" ><a href="javascript:;" class="index1" data-to="go1">发现精选</a></li>
-				<li class="nav-li" ><a href="javascript:;" class="index2" data-to="go2">新闻中心</a></li>
-			</ol>
-			<img src="img/main2.png">
-			<ul class="nav nav-pills">
-				<li class="nav-li"><a href="javascript:;"  class="index3" data-to="go3">经验分享</a></li>
-				<li class="nav-li"><a href="javascript:;"  class="index4" data-to="go4">课程教育</a></li>
-			</ul>
-			<div id="sign">
-				<button class="btn">登录</button>
-				<button class="btn">注册</button>
-			</div>
+				<span><a href="">首页</a></span>
+				<ol class="nav nav-pills">
+					<li class="nav-li" ><a href="javascript:;" class="index1" data-to="go1">发现精选</a></li>
+					<li class="nav-li" ><a href="javascript:;" class="index2" data-to="go2">新闻中心</a></li>
+				</ol>
+				<img src="img/main2.png">
+				<ul class="nav nav-pills">
+					<li class="nav-li"><a href="javascript:;"  class="index3" data-to="go3">经验分享</a></li>
+					<li class="nav-li"><a href="javascript:;"  class="index4" data-to="go4">课程教育</a></li>
+				</ul>
+			  <s:if test="#session.user == null">
+				<div id="sign">
+					<a class="btn btn-info" href="${pageContext.request.contextPath}/loginRegister.jsp">登陆</a>
+				</div>
+			  </s:if>
+			  <s:else>
+				  <div id="person-img">
+					  <a href="${pageContext.request.contextPath}/PersonAction_findAllData">
+						  <img src="/headPortrait/${user.headPortrait}" class="img-circle">
+					  </a>
+					  <a class="btn btn-info" href="${pageContext.request.contextPath}/UserAction_logout">注销</a>
+				  </div>
+			  </s:else>
 		  </div>
 		  <div class="newCenter">
 		  	 <img src="img/main1.png">
@@ -135,7 +145,7 @@
 		  	 			<div class="goThree-leftCenter">
 		  	 				<img id="loadThree" src=""/>
 		  	 				<div class="goThreeShadeThree">
-		  	 				 <a id="titleThree" href="http://www.baidu.com">
+		  	 				 <a id="titleThree" href="">
 		  	 				 	<p id="title3">标题</p>
 		  	 				 	<p id="contentThree" style="width:400px;height:80px;">文章简介</p>
 		  	 				 </a>
@@ -167,7 +177,7 @@
 		  	 		</div>
 		  	 		<!--json部分结束-->
 		  	 		<div class="goOne-buttom">
-		  	 			<a href="">MORE</a>
+		  	 			<a href="${pageContext.request.contextPath}/detail.jsp	">MORE</a>
 		  	 		</div>
 		  	 	</div>
 		  	 </div>

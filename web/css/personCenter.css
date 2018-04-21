@@ -1,0 +1,147 @@
+* {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.head {
+	width: 100%;
+	height: 300px;
+	background: url(../img/bg-pers.png) no-repeat;
+	background-size: 100%;
+	min-width: 1905px;
+}
+
+.main {
+	width: 1500px;
+	height: 300px;
+	margin: auto;
+}
+
+.house {
+	width: 1500px;
+	height: 50px;
+	line-height: 50px;
+}
+
+.headimg {
+	width: 200px;
+	height: 150px;
+	margin: auto;
+	position: relative;
+}
+.headimg p{
+	
+	text-align: center;
+	position: absolute;
+	left:45px;
+	top: 90px;
+	
+}
+.headimg img{
+	position: absolute;
+	left: 45px;
+}
+.nav {
+	width: 713px;
+	height: 55px;
+	line-height: 55px;
+	margin: auto;
+	padding-top: 45px;
+	position: relative;
+}
+
+.nav-one {
+	width: 340px;
+	height: 40px;
+	margin: auto;
+	float: left;
+	
+}
+.nav-two{
+	width: 350px;
+	height: 40px;
+	float: left;
+	margin-left:23px;
+}
+.nav a {
+	text-decoration: none;
+	color: #000;
+	font-size: 14px;
+}
+
+.nav li {
+	width: 100px;
+	height: 35px;
+	line-height: 35px;
+	float: left;
+	text-align: center;
+	position: relative;
+	margin-left:40px;
+}
+
+.nav li:hover {
+	border: 1px solid #FFFFFF;
+	border-radius: 20px;
+}
+#news{
+	color: red;
+	font-size: 10px;
+	position: absolute;
+	top: -10px;
+	left: 75px;
+	display: none;
+}
+
+.content{
+	width: 100%;
+	min-width: 1905px;
+}
+.content-main{
+	width: 1500px;
+	height: 100%;
+	margin: auto;
+	/*border: 1px darkolivegreen solid;*/
+}
+.content-text{
+	width: 800px;
+	height: 500px;
+	margin: auto;
+	
+}
+.conversation{
+	width: 500px;
+	height: 100px;
+	border: 1px solid lightslategray;
+	margin-top: 20px;
+	position: relative;
+}
+.conversation img{
+	margin: 15px;
+	float: left;
+}
+.right{
+	width: 400px;
+	height: 100px;
+	float: right;
+	padding: 10px;
+	cursor: pointer;
+}
+#userName{
+	width: 100%;
+	height: 50px;
+	
+	color: #000000;
+	font-size: 14px;
+	line-height: 50px;
+}
+#userName span{
+	font-size: 12px;
+	color: gray;
+	float: right;
+	margin-right: 20px;
+}
+#message{
+	color: gray;
+	font-size: 12px;
+}

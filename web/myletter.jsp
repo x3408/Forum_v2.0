@@ -61,15 +61,7 @@
                 <label for="" class="aside-menu" title="按住拖动">菜单</label>
 
                 <a href="javascript:void(0)" title="签到" class="menu-item menu-first">签到</a>
-                <s:if test="#session.user.uid == #session.listAllData.uid">
-                    <%--<a href="${pageContext.request.contextPath}/OldPage/addTopic.jsp" title="发表文章" class="menu-item menu-second">发表文章</a>--%>
-                    <a onclick="sendMessage()" title="发送私信" class="menu-item menu-second">发送私信</a>
-                </s:if>
-                <s:else>
-                    <a onclick="sendMessage()" title="发送私信" class="menu-item menu-second">发送私信</a>
-                </s:else>
-                <!--<a href="javascript:void(0)" title="个人中心" class="menu-item menu-third">个人中心</a>
-                            <a href="javascript:void(0)" title="微信公众号" class="menu-item menu-line menu-fourth">关注<br>微信</a> <!-- *跳到商家微信推广* -->-->
+                <a href="${pageContext.request.contextPath}/OldPage/addTopic.jsp" title="发表文章" class="menu-item menu-second">发表文章</a>
             </div>
 
         </div>
@@ -166,13 +158,13 @@
     $('#btn').click(function() {
 
         $('#content').append('<div class="ourbox"><div class="me">' + talk.value + '</div></div>');
-        $('#talk').val("");
         var send_id = $('#send_id').val();
         $.post(
             "${pageContext.request.contextPath}/PersonAction_addMessage",
-            {content: talk.value, send_id: send_id},
+            {message: talk.value, send_id: send_id},
             function (data) {}
         )
+        $('#talk').val("");
     })
     //移动窗口代码
 </script>

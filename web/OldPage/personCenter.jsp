@@ -49,7 +49,7 @@
             <div id="personCenter-edit--btn">
                 <form action="${pageContext.request.contextPath}/PersonAction_findData">
                     <button class="btn btn-danger btn-sm">编辑个人资料</button>
-                    <button class="btn btn-danger btn-sm"><a href="${pageContext.request.contextPath}/OldPage/addTopic.jspopic.jsp" style="color: white">发表文章</a></button>
+                    <button class="btn btn-danger btn-sm"><a href="${pageContext.request.contextPath}/OldPage/addTopic.jsp" style="color: white">发表文章</a></button>
                 </form>
             </div>
         </s:if>
@@ -68,7 +68,7 @@
         </ul>
         <br />
         <div class="tab-content">
-            <div class="tab-pane active" id="article"</div>
+            <div class="tab-pane active" id="article"></div>
             <div class="tab-pane" id="attention" ></div>
             <div class="tab-pane" id="fans"></div>
         </div>

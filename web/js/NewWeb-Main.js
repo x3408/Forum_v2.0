@@ -8,15 +8,25 @@ $(function(){
 			$(".goThree-leftCenter img").attr("src",data[2].showImg);
 			$(".goThree-leftButtom img").attr("src",data[3].showImg);
 			$(".goThree-rightButtom img").attr("src",data[4].showImg);
+
 			$("#title1").html(data[0].title);
+			$("#title").attr("href", '${pageContext.request.contextPath}/TopicAction_showTopic?tid='+data[0].tid);
 			$("#contentOne").html(data[0].descriptive);
-			$("#title2").html(data[1].title);
+
+            $("#titleTwo").attr("href", '${pageContext.request.contextPath}/TopicAction_showTopic?tid='+data[1].tid);
+            $("#title2").html(data[1].title);
 			$("#contentTwo").html(data[1].descriptive);
-			$("#title3").html(data[2].title);
+
+            $("#titleThree").attr("href", '${pageContext.request.contextPath}/TopicAction_showTopic?tid='+data[2].tid);
+            $("#title3").html(data[2].title);
 			$("#contentThree").html(data[2].descriptive);
-			$("#title4").html(data[3].title);
+
+            $("#titleFour").attr("href", '${pageContext.request.contextPath}/TopicAction_showTopic?tid='+data[3].tid);
+            $("#title4").html(data[3].title);
 			$("#contentFour").html(data[3].descriptive);
-			$("#title5").html(data[4].title);
+
+            $("#titleFive").attr("href", '${pageContext.request.contextPath}/TopicAction_showTopic?tid='+data[4].tid);
+            $("#title5").html(data[4].title);
 			$("#contentFive").html(data[4].descriptive);
 	},
 	"json")

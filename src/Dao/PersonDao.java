@@ -25,5 +25,7 @@ public interface PersonDao {
 
     List<User> findAttention(String uid);
     List<Message> getMessageTitleByUser(int start, Integer limit, String uid);
+
+    void addMessage(Message message);
 }
 

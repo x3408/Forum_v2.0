@@ -32,7 +32,7 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
     private String photoFileName;
     private String send_id;
     //私信内容
-    private String content;
+    private String message;
     //显示私信摘要
     private Integer page;
 //    public void setPhoto2(String photo2) {
@@ -171,6 +171,8 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
     //显示私信摘要
     public String showMessageTitle() {
         User user = (User) ActionContext.getContext().getSession().get("listAllData");
+        user.setStatus(0);
+        ps.updateData(user);
         List<Message> list = ps.showMessageTitleByUser(user, page);
         List<User> userList = new ArrayList<>();
         User temp = new User();
@@ -203,10 +205,33 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
 
     //发送私信
     public String addMessage() {
+        //修改用户状态为1
+        User user = (User) ActionContext.getContext().getSession().get("listAllData");
+        ps.addMessage(user, send_id, message);
+
+        User receiveUser = new User();
+        receiveUser.setUid(send_id);
+        receiveUser = ps.findAllData(receiveUser);
+        receiveUser.setStatus(1);
+        ps.updateData(receiveUser);
 
         return null;
     }
 
+    public String checkMessageStatus() {
+        User user = (User) ActionContext.getContext().getSession().get("listAllData");
+        user = ps.findAllData(user);
+        int msg = 0;
+        if(user.getStatus() == 1) {
+          msg = 1;
+        }
+        try {
+            ServletActionContext.getResponse().getWriter().write("{\"msg\":"+ msg +"}");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
     @Override
     public User getModel() {
         return user ;
@@ -234,5 +259,9 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
 
     public void setSend_id(String send_id) {
         this.send_id = send_id;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 }

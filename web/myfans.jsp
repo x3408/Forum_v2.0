@@ -1,3 +1,4 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: x3408
@@ -42,8 +43,13 @@
                     <a href="">我的粉丝</a>
                 </li>
                 <li>
-                    <a href="myletter.jsp">我的私信</a>
-                    <span id="news">new</span>
+                    <s:if test="#session.user.uid == #session.listAllData.uid">
+                        <a href="myletter.jsp">我的私信</a>
+                        <span id="news">new</span>
+                    </s:if>
+                    <s:else>
+                        <a onclick="">发送私信</a>
+                    </s:else>
                 </li>
             </ul>
             <svg width="0" height="0">
@@ -59,9 +65,12 @@
                 <label for="" class="aside-menu" title="按住拖动">菜单</label>
 
                 <a href="javascript:void(0)" title="签到" class="menu-item menu-first">签到</a>
-                <a href="javascript:void(0)" title="发表文章" class="menu-item menu-second">发表文章</a>
-                <!--<a href="javascript:void(0)" title="个人中心" class="menu-item menu-third">个人中心</a>
-                            <a href="javascript:void(0)" title="微信公众号" class="menu-item menu-line menu-fourth">关注<br>微信</a> <!-- *跳到商家微信推广* -->-->
+                <s:if test="#session.user.uid == #session.listAllData.uid">
+                    <a href="${pageContext.request.contextPath}/OldPage/addTopic.jsp" title="发表文章" class="menu-item menu-second">发表文章</a>
+                </s:if>
+                <s:else>
+                    <a onclick="" title="发送私信" class="menu-item menu-second">发送私信</a>
+                </s:else>
             </div>
 
         </div>

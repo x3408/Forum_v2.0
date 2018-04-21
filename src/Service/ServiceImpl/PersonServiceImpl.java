@@ -1,5 +1,6 @@
 package Service.ServiceImpl;
 
+import Bean.Message;
 import Bean.Pagebean;
 import Bean.Topic;
 import Bean.User;
@@ -7,6 +8,7 @@ import Dao.PersonDao;
 import Service.PersonService;
 import Util.MessageBean;
 
+import java.util.Date;
 import java.util.List;
 
 public class PersonServiceImpl implements PersonService {
@@ -80,6 +82,21 @@ public class PersonServiceImpl implements PersonService {
     @Override
     public List<Bean.Message> showMessageTitleByUser(User user, Integer page) {
         return this.messageBean.showMessageTitle(page, user).getList();
+    }
+
+    @Override
+    public void addMessage(User user, String send_id, String content) {
+        Message message = new Message();
+        message.setContent(content);
+        message.setSend_id(send_id);
+        message.setStatus(1);
+        message.setUid(user.getUid());
+        message.setTime(new Date());
+        pd.addMessage(message);
+        message.setUid(send_id);
+        message.setSend_id(user.getUid());
+        message.setStatus(0);
+        pd.addMessage(message);
     }
 
     public void setMessageBean(MessageBean messageBean) {

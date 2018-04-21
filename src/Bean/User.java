@@ -17,6 +17,7 @@ public class User {
     private String sex;
     private String headPortrait;
     private String signature;
+    private Integer status;
 
 
     public String getSignature() { return signature; }
@@ -70,5 +71,13 @@ public class User {
 
     public void save() {
 
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 }

@@ -163,4 +163,10 @@ public class StrutsTest {
         String data = messageTitle.substring(0, messageTitle.length()-1) + "," + userInfo.substring(1,userInfo.length());
         System.out.println(data);
     }
+    @Test
+    public void addMessageTest() {
+        User user = new User();
+        user.setUid("297e9494627185010162719571510000");
+        personService.addMessage(user, "297e949462718501016271d4a2ea0001","测试");
+    }
 }

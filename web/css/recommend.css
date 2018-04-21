@@ -1,0 +1,44 @@
+@font-face{
+	font-family:webFont;
+	src:url('/fonts/DongQingHeiTi-1.otf')
+}
+#recommend{
+	width:1100px;
+	height:2830px;
+    border:solid 1px #ccc;
+	position:relative;
+	left:50%;
+	margin-left:-550px;
+}
+#recommend-head{
+	width:1100px;
+	height:50px;
+	border-bottom: 1px red solid;
+	padding-top:5px;
+}
+#recommend-head p{
+	font-size:23px;
+	margin-left:400px;
+	font-weight: bold;
+
+}
+#recommend-main{
+	width:900px;
+	height:800px;
+	/*border:solid 1px black;*/
+	margin-left:100px;
+}
+#recommend-main p{
+	font-size:18px;
+	font-family:webFont;
+	text-indent:2em;
+}
+#recommend-main img{
+	margin-left:0px;
+}
+#recommend-evaluate{
+	width:800px;
+	height:400px;
+	/*border:solid 1px red;*/
+	margin-left:-50px;
+}

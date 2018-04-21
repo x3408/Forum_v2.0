@@ -1,0 +1,306 @@
+*{
+	margin:0px;
+
+}
+/*body {background:url(../img/bgImg.jpg) no-repeat; background-size:auto auto;}*/
+.bgImg{
+	width:100%;
+	height:1006px;
+	position: relative;
+	background-color:#f9f8f8;
+	min-width:1800px;
+	
+}
+.bg-img{
+	position: absolute;
+	width:100%;
+	height:100%;
+}
+#mainSignIn{
+	position: absolute;
+	background-color:#fff;
+	width:400px;
+	height:430px;
+	left:1120px;
+	top:285px;
+	/*margin-left:1120px;*/
+	border:solid 1px #aaaaaa;
+	border-radius:15px;
+}
+#loginTip{
+	position: relative;
+	width:200px;
+	height:40px;
+	/*border:solid 1px red;*/
+	margin-left:45px;
+	margin-top:45px;
+}
+#login-logo span{
+	position: absolute;
+	font-size:25px;
+	margin-left:8px;
+	top:4px;
+}
+/*立即注ce*/
+#toSignUp{
+	position: absolute;
+	top:55px;
+	right:45px;
+	display: inline-block;
+}
+#toSignUp a{
+	color:#fd2f2d;
+	text-decoration: none;
+}
+#toSignUp a:hover{
+	text-decoration: none;
+}
+/*下面是form表单*/
+#myForm{
+	width:312px;
+	height:300px;
+	/*border:solid 1px red;*/
+	margin-left:45px;
+	margin-top:30px;
+}
+.form-group .form-group--user{
+	width:310px;
+    height:40px;
+    border:solid 1px #ccc;
+    position: relative;
+    
+}
+.form-group .form-group--user img{
+	position: absolute;
+	top:10px;
+	left:15px;
+}
+.msg{
+	display: none;
+}
+#loginform-username,#loginform-secret{
+	position: absolute;
+	left:45px;
+	top:10px;
+	width:250px;
+	font-size: 15px;
+	border:none;
+	outline:none;
+}
+.form-groupTwo .form-groupTwo--secret{
+	width:310px;
+    height:40px;
+    border:solid 1px #ccc;
+    position: relative;
+    /*margin-top:30px;*/
+    top:-10px;
+}
+.form-groupTwo--secret{
+	margin-top:10px;
+}
+.form-groupTwo .form-groupTwo--secret img{
+	position: absolute;
+	top:10px;
+	left:15px;
+}
+.signBtn{
+	width:310px;
+    height:40px;
+   
+ }
+.signBtn input{
+	border:none;
+	font-size:20px;
+	color:white;
+	width:310px;
+	height:40px;
+	border-radius: 12px;
+	outline:none;
+	background-color:#0285db;
+}
+.autoSign{
+	width:200px;
+	height:100px;
+/*	border:solid 1px red;*/
+	font-size:15px;
+	margin-top:30px;
+	position: relative;
+	margin-left:4px;
+}
+/*#autoSign-box{
+	width:15px;
+	height:15px;
+	display: inline-block;
+	border:solid 1px black;
+	position: relative;
+	
+}*/
+#autoSign-box input{
+	position: absolute;
+	top:5px;
+ 
+}
+.autoSign span{
+	/*top:-2px;*/
+	/*position: absolute;*/
+	margin-left:15px;
+}
+.forgetSecert span{
+	position: absolute;
+	bottom:68px;
+	color:#8d8c8c;
+	right:47px;
+}
+/*提示信息*/
+#form-group--warn,#form-groupTwo--warn{
+	width:310px;
+	height:30px;
+	/*border:solid 1px black;*/
+	visibility: hidden;
+	/*display: none;*/
+	position: relative;
+}
+#form-groupTwo--warn{
+	margin-top:-9px;
+}
+#userNotNull,#pswNotNull{
+	position: absolute;left:15px;top:5px;color:red;
+}
+/*下面是注册界面*/
+#register{
+	width: 400px;
+	height: 520px;
+	border: 1px solid rgba(223, 223, 225, 0.8);
+	position: absolute;
+	left:1120px;
+	top:285px;
+	z-index: 10;
+	position: absolute;
+	background: #f9f8f8;
+	border-radius: 10px;
+
+}
+
+.main {
+	width: 300px;
+	height: 400px;
+	margin: 30px 50px 35px 50px;
+}
+
+.header {
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
+	position: relative;
+}
+
+#welcome {
+	position: absolute;
+	top: -5px;
+	font-size: 20px;
+	font-weight: bold;
+	color: #858585;
+}
+
+.header span {
+	display: inline-block;
+	height: 60px;
+	margin-right: 10px;
+	line-height: 60px;
+}
+
+.control {
+	width: 300px;
+	height: 40px;
+	border: 1px solid #c3c2c2;
+	background: #fff;
+	position:relative;
+	border-radius: 4px;
+}
+
+#register p {
+	width: 300px;
+	height:20px;
+	position:relative;
+	font-size: 12px;
+	margin-top:10px;
+	margin-bottom: 10px;
+	color: darkseagreen;
+}
+
+.control lable{
+	width: 70px;
+	height: 40px;
+	line-height: 40px;
+	display: inline-block;
+	padding: 0 15px 0 15px;
+	font-size: 16px;
+	color: #656565;
+}
+
+.control input{
+	border: none;
+	outline: none;
+	width: 185px;
+	height: 35px;
+	line-height: 35px;
+}
+
+#identityNumber{
+	width: 110px;
+	height: 40px;
+	/*border: 1px solid red;*/
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+#btn2{
+	width: 300px;
+	height: 40px;
+	outline: none;
+	border: none;
+	font-size:18px;
+	background: #0285db;
+	color:white;
+	border-radius: 10px;
+}
+
+#text{
+	width: 300px;
+	height: 40px;
+	background: #fff;
+	position: relative;
+	border-radius: 4px;
+	-webkit-transition: border linear .2s;
+	border-color: #0285db;
+}
+/*翻转效果*/
+.bgImg .front{
+	-webkit-transform: rotateX(0deg) rotateY(0deg);
+	   -moz-transform: rotateX(0deg) rotateY(0deg);
+	-webkit-transform-style: preserve-3d;
+	  /*-moz-transform-style: preserve-3d;*/
+	-webkit-backface-visibility: hidden;
+	   /*-moz-backface-visibility: hidden;*/
+	-webkit-transition: all .7s ease-in-out;
+}
+.bgImg .back{
+	-webkit-transform: rotateY(-180deg);
+	  /* -moz-transform: rotateY(-180deg);*/
+	-webkit-transform-style: preserve-3d;
+	   /*-moz-transform-style: preserve-3d;*/
+	-webkit-backface-visibility: hidden;
+	   -moz-backface-visibility: hidden;
+	-webkit-transition: all .7s ease-in-out;
+}
+.bgImg.flip .front{
+	z-index: 900;
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+}
+.bgImg.flip .back{
+	z-index: 1000;
+	-webkit-transform: rotateX(0deg) rotateY(0deg);
+	-moz-transform: rotateX(0deg) rotateY(0deg);
+}

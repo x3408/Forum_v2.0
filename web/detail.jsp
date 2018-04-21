@@ -45,8 +45,8 @@
                 <span id="login"><a href="${pageContext.request.contextPath}/loginRegister.jsp">登录</a></span>
             </s:if>
             <s:else>
-                <span id="entry">欢迎您: <s:property value="#session.user.username"></s:property> <a href="${pageContext.request.contextPath}/PersonAction_findAllData"> 个人中心</a></span>
-                <span id="return"><a href="${pageContext.request.contextPath}/UserAction_logout">退出</a></span>
+                <span id="entry"><a href="${pageContext.request.contextPath}/PersonAction_findAllData"><img src="/headPortrait/${user.headPortrait}" class="img-circle"></a></span>
+                <span id="return"><a href="${pageContext.request.contextPath}/UserAction_logout">注销</a></span>
             </s:else>
 
         </div>
@@ -98,7 +98,7 @@
         }, function(data) {
             for(var i =0; i < data.length; i++) {
                 var timer = data[i].time.month + "月" + data[i].time.day + "日 " + data[i].time.hours + ":" + data[i].time.minutes;
-                $('.main-center').append('<div class="box"><div class="topicFrom"><span class="userid" id="userid">来自话题: '+data[data.length/2+i].uid+'</span><span class="date" id="date">' + timer + '</span><span class="viewCount" id="viewCount">阅读量： ' + data[i].viewCount + '</span></div><div class="name"><div class="myPic" id="myPic"><img class="img-circle" src="/headPortrait/'+data[data.length/2+i].headPortrait+'" /></div><div class="username" id="username">' + data[data.length/2+i].username + '</div></div><div class="context"><div class="title" id="title">' + data[i].title + '</div><p class="content" id="content">' + data[i].descriptive + '</p></div></div>');
+                $('.main-center').append('<div class="box"><div class="topicFrom"><span class="date" id="date">' + timer + '</span><span class="viewCount" id="viewCount">阅读量： ' + data[i].viewCount + '</span></div><div class="name"><div class="myPic" id="myPic"><img class="img-circle" src="/headPortrait/'+data[data.length/2+i].headPortrait+'" /></div><div class="username" id="username">' + data[data.length/2+i].username + '</div></div><div class="context"><div class="title" id="title">' + data[i].title + '</div><p class="content" id="content">' + data[i].descriptive + '</p></div></div>');
 
             }
         })
@@ -123,7 +123,8 @@
                 } else {
                     for(var i =0; i < data.length; i++) {
                         var timer = data[i].time.month + "月" + data[i].time.day + "日 " + data[i].time.hours + ":" + data[i].time.minutes;
-                        $('.main-center').append('<div class="box"><div class="topicFrom"><span class="userid" id="userid">来自话题: '+data[data.length/2+i].uid+'</span><span class="date" id="date">' + timer + '</span><span class="viewCount" id="viewCount">阅读量： ' + data[i].viewCount + '</span></div><div class="name"><div class="myPic" id="myPic"><img class="img-circle" src="/headPortrait/'+data[data.length/2+i].headPortrait+'" /></div><div class="username" id="username">' + data[data.length/2+i].username + '</div></div><div class="context"><div class="title" id="title">' + data[i].title + '</div><p class="content" id="content">' + data[i].descriptive + '</p></div></div>');
+                        $('.main-center').append('<div class="box"><div class="topicFrom"><span class="date" id="date">' + timer + '</span><span class="viewCount" id="viewCount">阅读量： ' + data[i].viewCount + '</span></div><div class="name"><div class="myPic" id="myPic"><img class="img-circle" src="/headPortrait/'+data[data.length/2+i].headPortrait+'" /></div><div class="username" id="username">' + data[data.length/2+i].username + '</div></div><div class="context"><div class="title" id="title">' + data[i].title + '</div><p class="content" id="content">' + data[i].descriptive + '</p></div></div>');
+
                     }
                 }
             })

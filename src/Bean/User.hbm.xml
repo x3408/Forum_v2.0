@@ -18,5 +18,6 @@
         <property name="sex"></property>
         <property name="headPortrait"></property>
         <property name="signature"></property>
+        <property name="status"></property>
     </class>
 </hibernate-mapping>

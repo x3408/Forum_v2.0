@@ -144,4 +144,9 @@ public class PersonDaoImpl extends HibernateDaoSupport implements PersonDao {
             }
         });
     }
+
+    @Override
+    public void addMessage(Bean.Message message) {
+        getHibernateTemplate().save(message);
+    }
 }

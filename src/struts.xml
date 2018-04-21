@@ -14,7 +14,7 @@
     <!--全局视图-->
     <package name="Action" namespace="/" extends="struts-default">
         <action name="UserAction_*" class="userAction" method="{1}">
-            <result name="toIndex" type="redirect">/home.jsp</result>
+            <result name="toIndex" type="redirect">/index.jsp</result>
             <result name="loginRegister">/loginRegister.jsp</result>
             <result name="showUser">/personCenter.jsp</result>
         </action>

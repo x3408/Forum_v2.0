@@ -29,5 +29,6 @@ public interface PersonService {
    List <User> findAttention(User user);
     List<Bean.Message> showMessageTitleByUser(User user, Integer page);
 
+    void addMessage(User user, String send_id, String content);
 }
 

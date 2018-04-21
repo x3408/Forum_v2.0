@@ -1,0 +1,50 @@
+@font-face{
+	font-family:webFont;
+	src:url('/fonts/DongQingHeiTi-1.otf')
+}
+#recommendFive{
+	width:1100px;
+<<<<<<< HEAD
+	height:3300px;
+=======
+	height:2700px;
+>>>>>>> 549995a37d5b9ea4ff4c16a174e5dfb8efa263dd
+    border:solid 1px #ccc;
+	position:relative;
+	left:50%;
+	margin-left:-550px;
+	
+}
+#recommendFive-head{
+	width:1100px;
+	height:50px;
+	border-bottom: 1px red solid;
+	padding-top:5px;
+}
+#recommendFive-head p{
+	font-size:23px;
+	margin-left:330px;
+	font-weight: bold;
+
+}
+#recommendFive-main{
+	width:900px;
+	height:800px;
+	/*border:solid 1px black;*/
+	margin-left:100px;
+}
+#recommendFive-main p{
+	text-indent: 2em;
+	font-size:18px;
+	font-family:webFont;
+}
+#recommendFive-main img{
+	margin-left:0px;
+}
+#recommendFive-evaluate{
+	width:800px;
+	height:400px;
+	/*border:solid 1px red;*/
+	margin-left:-50px;
+
+}
