@@ -14,6 +14,7 @@
         <property name="content"></property>
         <property name="time"></property>
         <property name="viewCount"></property>
+        <property name="showImg"></property>
 
         <set name="comments" >
             <key column="comment_Topic_id"></key>

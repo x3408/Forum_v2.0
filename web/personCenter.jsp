@@ -1,136 +1,85 @@
 <%--
   Created by IntelliJ IDEA.
   User: dell3020mt-62-p
-  Date: 2018/3/16
-  Time: 14:11
+  Date: 2018/4/19
+  Time: 21:20
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="s" uri="/struts-tags" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <title>个人中心</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/personCenter.css?1">
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.js"></script>
-
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/asidenav.css" />
+    <link rel="stylesheet" type="text/css" href="css/personCenter.css" />
 </head>
 
 <body>
-<div id="personCenter">
-    <div id="personCenter-top">
-        <span><a href="${pageContext.request.contextPath}/home.jsp">返回</a></span>
-        <img src="img/PersonCenterHead.png">
-    </div>
-    <div id="personCenter-headImg">
-        <img src="${basePath}/headPortrait/${listAllData.headPortrait}" class="img-rounded">
-    </div>
+<div class="head">
+    <div class="main">
+        <div class="house">
+            <a href=""><img src="img/house.png" width="30px" /></a>
 
-         <%--<span id="personCenter-name">--%>
-                <%--<s:property value="#listAllData[0].username" />--%>
-         <%--</span>--%>
-        <%--<span id="personCenter-character">--%>
-			  <%--<a href="${pageContext.request.contextPath}/PersonAction_findData"><s:property value="#listAllData[0].signature" /></a>--%>
-        <%--</span>--%>
-
-
-        <span id="personCenter-name">
-    <a href="${pageContext.request.contextPath}/PersonAction_findData">${listAllData.username}</a>
-        </span>
-        <span id="personCenter-character">
-			  <a href="${pageContext.request.contextPath}/PersonAction_findData">${listAllData.signature}</a>
-        </span>
-    <div id="personCenter-edit">
-        <s:if test="#session.user.uid == #session.listAllData.uid">
-            <div id="personCenter-edit--btn">
-                <form action="${pageContext.request.contextPath}/PersonAction_findData">
-                    <button class="btn btn-danger btn-sm">编辑个人资料</button>
-                    <button class="btn btn-danger btn-sm"><a href="${pageContext.request.contextPath}/addTopic.jsp" style="color: white">发表文章</a></button>
-                </form>
-            </div>
-        </s:if>
-        <div id="personCenter-edit--follow">
-            <span class="attention">关注度</span>
-            <span class="attention">粉丝</span><br/>
-            <span class="number" id ="attentionCount"></span>
-            <span class="number"id="fansCount"></span>
         </div>
-    </div>
-    <div id="personMain" class="container">
-        <ul class="nav nav-tabs">
-            <li class="active"><a href="#article" data-toggle="tab">我的文章</a></li>
-            <li><a href="#attention" id="Myfocus" data-toggle="tab">我的关注</a></li>
-            <li><a href="#fans" id="Myfans" data-toggle="tab">我的粉丝</a></li>
-        </ul>
-        <br />
-        <div class="tab-content">
-            <div class="tab-pane active" id="article"</div>
-            <div class="tab-pane" id="attention" ></div>
-            <div class="tab-pane" id="fans"></div>
+        <div class="headimg">
+            <img class="img-circle" src="img/xiaobai 8.jpg" width="80px" height="80px" />
+            <p>@DChyw</p>
+        </div>
+        <div class="nav">
+            <ul class="nav-one">
+                <li>
+                    <a href="javascript:0">我的关注</a>
+                </li>
+                <li>
+                    <a href="mycontext.html">我的文章</a>
+                </li>
+            </ul>
+            <ul class="nav-two">
+                <li>
+                    <a href="myfans.html">我的粉丝</a>
+                </li>
+                <li>
+                    <a href="myletter.html">我的私信</a>
+                    <span id="news">new</span>
+                </li>
+            </ul>
+            <svg width="0" height="0">
+                <defs>
+                    <filter id="goo">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo"></feColorMatrix>
+                        <feComposite in="SourceGraphic" in2="goo" operator="atop"></feComposite>
+                    </filter>
+                </defs>
+            </svg>
+            <div class="aside-nav  animated" id="aside-nav">
+                <label for="" class="aside-menu" title="按住拖动">菜单</label>
+
+                <a href="javascript:void(0)" title="签到" class="menu-item menu-first">签到</a>
+                <a href="javascript:void(0)" title="发表文章" class="menu-item menu-second">发表文章</a>
+                <!--<a href="javascript:void(0)" title="个人中心" class="menu-item menu-third">个人中心</a>
+                            <a href="javascript:void(0)" title="微信公众号" class="menu-item menu-line menu-fourth">关注<br>微信</a> <!-- *跳到商家微信推广* -->-->
+            </div>
+
         </div>
     </div>
 </div>
-
-</body>
+<div class="content">
+    <div class="content-main">
+        <div class="content-text"></div>
+    </div>
+</div>
+<script type="text/javascript"src="js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript"src="js/new.js"></script>
 <script type="text/javascript">
-    //文章的加载与遍历jQuery
-    $.get("${pageContext.request.contextPath}/PersonAction_findArticle",
-        function(data){
-            $.each( data , function(i, json){
-                $("#article").append(
-                    "<a id='addDiv' href='${pageContext.request.contextPath}/TopicAction_showTopic?tid="+json.tid+"' target='_blank'>" + json.title + "</a>" );
-            });
-        },"json");
-    //我的关注的获取
-    $("#Myfocus").click(function(){
-        $.get("${pageContext.request.contextPath}/PersonAction_findAttention",
-            function(data1){
-
-                $('#attention').empty();
-                $.each( data1  , function(i, json1){
-                    $("#attention").append(
-                            "<div id='topPhoto'>"+"<img src="+${basePath}/headPortrait/+json1[1]+" id='img-rounded'>" +
-                            "<a id='addDiv' href='UserAction_showUser?showUserId="+json1[2]+"'>" + json1[0] + "</a>"+"</div>"
-                  );
-
-                });
-            },"json");
-    });
-    //我的粉丝的获取
-    $("#Myfans").click(function(){
-        $.get("${pageContext.request.contextPath}/PersonAction_findFans",
-            function(data2){
-                $('#fans').empty();
-                $.each( data2  , function(i, json2){
-                    $("#fans").append(
-                        "<div id='topPhoto'  >"+"<img src="+${basePath}/headPortrait/+json2[1]+" id='img-rounded'>" +
-                        "<a id='addDiv' href='UserAction_showUser?showUserId="+json2[2]+"'>" + json2[0] + "</a>"+"</div>"
-                    );
-                });
-            },"json");
-    });
-    //关注总数的获取
-    $.get("${pageContext.request.contextPath}/PersonAction_findAttentionCount",
-        function(data3){
-
-            $.each( data3 , function(i, json3){
-                $("#attentionCount").append(
-                     json3 );
-            });
-        },"json");
-    //粉丝总数的获取
-    $.get("${pageContext.request.contextPath}/PersonAction_findFansCount",
-        function(data4){
-
-            $.each( data4 , function(i, json4){
-                $("#fansCount").append(
-                    json4 );
-            });
-        },"json");
+    var oli = document.getElementsByTagName('li');
+    oli[0].style.border = "1px solid #fff";
+    oli[0].style.borderRadius = "20px";
 
 </script>
+</body>
+
 </html>

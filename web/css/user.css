@@ -8,11 +8,16 @@ body{
 	height: 163px;
 	border-bottom: 1px solid orangered;
 	min-width:1115px ;
+    position: relative;
+}
+#headerImg{
+    position: absolute;
+    width:100%;
+    height:100%;
 }
 .header-content{
-	width:1115px;
+	width:1111px;
 	height: 163px;
-	background:url(../img/navPic.png) no-repeat;
 	margin: auto;
 
 }
@@ -20,55 +25,55 @@ body{
 	width: 196px;
 	height: 84px;
 	float: left;
+    position: absolute;
+    z-index:2;
 	margin: 50px 0 0 80px ;
 }
-.search{
-	position: absolute;
-	top: 70px;
-	left: 30%;
-	width: 450px;
-	height: 45px;
-	line-height: 45px;
-}
-.search-text{
-	width: 300px;
-	height: 43px;
-	font-size: 16px;
-	color: #FFFFFF;
-	outline: none;
-	/*box-shadow: 5px 5px 5px black;*/
-	border: 2px solid red;
-	margin-left: 80px;
-	background: transparent;
-	border-radius:20px;
-}
-.search button{
-	width: 48px;
-	height: 48px;
-	border: none;
-	outline: none;
-	text-align: center;
-	line-height: 40px;
-	border-radius:40px;
-	position: absolute;
-	left:320px;
-	top: 8px;
-	/*box-shadow: 5px 5px 5px black;*/
-	background: transparent;
-}
-.icon-search{
-	color: red;
-	font-size: 30px;
+/*.search{*/
+	/*position: absolute;*/
+	/*top: 70px;*/
+	/*left: 30%;*/
+	/*width: 450px;*/
+	/*height: 45px;*/
+	/*line-height: 45px;*/
+/*}*/
+/*.search-text{*/
+	/*width: 300px;*/
+	/*height: 43px;*/
+	/*font-size: 16px;*/
+	/*color: #FFFFFF;*/
+	/*outline: none;*/
+	/*!*box-shadow: 5px 5px 5px black;*!*/
+	/*border: 2px solid red;*/
+	/*margin-left: 80px;*/
+	/*background: transparent;*/
+	/*border-radius:20px;*/
+/*}*/
+/*.search button{*/
+	/*width: 48px;*/
+	/*height: 48px;*/
+	/*border: none;*/
+	/*outline: none;*/
+	/*text-align: center;*/
+	/*line-height: 40px;*/
+	/*border-radius:40px;*/
+	/*position: absolute;*/
+	/*left:320px;*/
+	/*top: 8px;*/
+	/*!*box-shadow: 5px 5px 5px black;*!*/
+	/*background: transparent;*/
+/*}*/
+/*.icon-search{*/
+	/*color: red;*/
+	/*font-size: 30px;*/
 
-}
+/*}*/
 /*core部分*/
 #specificWrite{
-	position: absolute;
 	width:1113px;
 	height:980px;
 	/*border:solid 1px black;*/
-	margin-left:203px;
-	top:170px;
+	margin: auto;
 }
 #specificWrite-left{
 	width:180px;

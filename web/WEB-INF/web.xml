@@ -23,6 +23,7 @@
         <filter-name>struts2</filter-name>
         <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
     </filter>
+
     <filter-mapping>
         <filter-name>openSessionInView</filter-name>
         <url-pattern>/*</url-pattern>
@@ -34,6 +35,6 @@
 
 
     <welcome-file-list>
-        <welcome-file>/home.jsp</welcome-file>
+        <welcome-file>/OldPage/home.jsp</welcome-file>
     </welcome-file-list>
 </web-app>

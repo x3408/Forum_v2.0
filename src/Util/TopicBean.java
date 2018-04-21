@@ -27,7 +27,7 @@ public class TopicBean {
     private String keyword;
 
 
-    public TopicBean showTopicByType(Integer page, String type) {
+    public TopicBean showTopicByType(Integer page, String type,Integer limit) {
         this.page = page;
 
         if (limit == null) {
@@ -47,6 +47,8 @@ public class TopicBean {
 
         return this;
     }
+
+
 
     public TopicBean showTopicByKeyword(Integer page, String keyword) {
         this.page = page;

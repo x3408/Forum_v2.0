@@ -99,6 +99,7 @@
                 <span>忘记密码</span>
             </div>
         </form>
+        <p>${msg}</p>
     </div>
     <!--//我的登录界面结束下面开始注册界面-->
     <div id="register" class="back">
@@ -130,7 +131,7 @@
                     <span><input type="text"class="ip"  id="identifyCode" placeholder="请输入验证码" name="verifyCodeFromUser"/></span>
                     <span id="identityNumber"><img id="verifyImg" src="${pageContext.request.contextPath}/UserAction_verifyImg" onclick="return changeVerify()"></span>
                 </div>
-                <p></p>
+                <p>${msg}</p>
                 <input type="submit" id="btn2" value="立即注册" name="按钮" class="btn-block">
             </form>
         </div>

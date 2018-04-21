@@ -9,7 +9,6 @@ import java.util.List;
 public interface PersonDao {
     List<Topic> findArticle(String uid);
 
-
     List<User> findFans(String uid);
 
     User findData(String uid);
@@ -23,8 +22,6 @@ public interface PersonDao {
     User findAllData(String uid);
 
     List<Util.Message> showMessage(String uid, String send_id);
-
-    int getTotalCount(String uid);
 
     List<User> findAttention(String uid);
     List<Message> getMessageTitleByUser(int start, Integer limit, String uid);

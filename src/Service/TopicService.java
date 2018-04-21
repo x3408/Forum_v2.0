@@ -9,7 +9,7 @@ import java.util.List;
 
 
 public interface TopicService {
-    TopicBean showTopicByType(Integer page, String type);
+    TopicBean showTopicByType(Integer page, String type,Integer limit);
 
     Integer findTopicCountByUser(User user);
 

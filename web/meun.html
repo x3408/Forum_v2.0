@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-hans-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Author" content="Rin">
+    <title>右侧边栏圆形弹性按钮</title>
+    <link rel="stylesheet" href="asidenav.css">
+</head>
+<body >
+<div>
+    <svg width="0" height="0">
+        <defs>
+            <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo"></feColorMatrix>
+                <feComposite in="SourceGraphic" in2="goo" operator="atop"></feComposite>
+            </filter>
+        </defs>
+    </svg>
+    <div class="aside-nav  animated" id="aside-nav">
+        <label for="" class="aside-menu" title="按住拖动">菜单</label>
+
+        <a href="javascript:void(0)" title="签到" class="menu-item menu-first">签到</a>
+        <a href="javascript:void(0)" title="发表文章" class="menu-item menu-second">发表文章</a>
+        <!--<a href="javascript:void(0)" title="个人中心" class="menu-item menu-third">个人中心</a>
+        <a href="javascript:void(0)" title="微信公众号" class="menu-item menu-line menu-fourth">关注<br>微信</a> <!-- *跳到商家微信推广* -->-->
+    </div>
+</div>    
+</script>
+</body>
+</html>

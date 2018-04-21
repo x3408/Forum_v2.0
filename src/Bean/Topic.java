@@ -9,6 +9,7 @@ public class Topic {
     private String type;
     private String uid;
     private String title;
+    private String showImg;
     private String descriptive;
     private String content;
     private Date time;
@@ -99,5 +100,13 @@ public class Topic {
                 ", content='" + content + '\'' +
                 ", time=" + time +
                 '}';
+    }
+
+    public String getShowImg() {
+        return showImg;
+    }
+
+    public void setShowImg(String showImg) {
+        this.showImg = showImg;
     }
 }

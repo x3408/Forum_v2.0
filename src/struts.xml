@@ -3,6 +3,7 @@
         "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
+    <constant name="struts.i18n.encoding" value="utf-8"/>
     <!--将Action交给Spring创建-->
     <constant name="struts.objectFactory" value="spring"></constant>
 
@@ -13,26 +14,26 @@
     <!--全局视图-->
     <package name="Action" namespace="/" extends="struts-default">
         <action name="UserAction_*" class="userAction" method="{1}">
-            <result name="toIndex" type="redirect">/home.jsp</result>
+            <result name="toIndex" type="redirect">/OldPage/home.jsp</result>
             <result name="loginRegister">/loginRegister.jsp</result>
-            <result name="showUser">/personCenter.jsp</result>
+            <result name="showUser">/OldPage/personCenter.jsp</result>
         </action>
         <action name="TopicAction_*" class="topicAction" method="{1}">
-            <result name="toHome" type="redirect">/home.jsp</result>
+            <result name="toHome" type="redirect">/OldPage/home.jsp</result>
             <result name="login">/loginRegister.jsp</result>
-            <result name="showTopic">/showTopic.jsp</result>
+            <result name="showTopic">/OldPage/showTopic.jsp</result>
         </action>
         <action name="Recommend_*" class="RecommendAction" method="{1}"></action>
         <action name="KindEditorAction_uploadImg" class="kindeditor" method="uploadImg"></action>
         <action name="CommentAction_*" class="CommentAction" method="{1}">
-            <result name="success">/reply.jsp</result>
+            <result name="success">/OldPage/reply.jsp</result>
         </action>
         <action name="SearchAction_*" class="searchAction" method="{1}">
-            <result name="search">/search.jsp</result>
+            <result name="search">/OldPage/search.jsp</result>
         </action>
         <action name="PersonAction_*" class="personAction" method="{1}">
-            <result name="list">/personCenter.jsp</result>
-            <result name="data">/editorData.jsp</result>
+            <result name="list">/OldPage/personCenter.jsp</result>
+            <result name="data">/OldPage/editorData.jsp</result>
             <result name="editor" type="chain">
                  <param name="actionName">PersonAction_findData</param>
                 <param name="namespace">/</param>
