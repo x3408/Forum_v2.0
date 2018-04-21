@@ -161,6 +161,7 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
         String message = JSONArray.fromObject(lists).toString();
         System.out.println(message);
         try {
+            ServletActionContext.getResponse().setContentType("application/json;charset=utf-8");
             ServletActionContext.getResponse().getWriter().write(message);
         } catch (IOException e) {
             e.printStackTrace();
@@ -196,6 +197,7 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
         String data = messageTitle.substring(0, messageTitle.length()-1) + "," + userInfo.substring(1,userInfo.length());
         System.out.println(data);
         try {
+            ServletActionContext.getResponse().setContentType("application/json;charset=utf-8");
             ServletActionContext.getResponse().getWriter().write(data);
         } catch (IOException e) {
             e.printStackTrace();

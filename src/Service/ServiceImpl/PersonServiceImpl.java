@@ -86,17 +86,21 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     public void addMessage(User user, String send_id, String content) {
-        Message message = new Message();
-        message.setContent(content);
-        message.setSend_id(send_id);
-        message.setStatus(1);
-        message.setUid(user.getUid());
-        message.setTime(new Date());
-        pd.addMessage(message);
-        message.setUid(send_id);
-        message.setSend_id(user.getUid());
-        message.setStatus(0);
-        pd.addMessage(message);
+        Message send = new Message();
+        send.setContent(content);
+        send.setSend_id(send_id);
+        send.setStatus(1);
+        send.setUid(user.getUid());
+        send.setTime(new Date());
+        pd.addMessage(send);
+
+        Message receive = new Message();
+        receive.setContent(content);
+        receive.setUid(send_id);
+        receive.setSend_id(user.getUid());
+        receive.setStatus(0);
+        receive.setTime(new Date());
+        pd.addMessage(receive);
     }
 
     public void setMessageBean(MessageBean messageBean) {

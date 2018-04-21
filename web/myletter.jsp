@@ -116,6 +116,7 @@
                     var send_id = $('#send_id').val();
                     $.post(
                         "${pageContext.request.contextPath}/PersonAction_showMessage",
+//                        "new_file1.json",
                         {send_id: send_id},
                         function (data) {
                             for(var i=0;i<data.length;i++) {
