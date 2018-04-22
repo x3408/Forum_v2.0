@@ -17,7 +17,7 @@
 
             <result name="toIndex" type="redirect">/index.jsp</result>
             <result name="loginRegister">/loginRegister.jsp</result>
-            <result name="showUser">/OldPage/personCenter.jsp</result>
+            <result name="showUser">/personCenter.jsp</result>
         </action>
         <action name="TopicAction_*" class="topicAction" method="{1}">
             <result name="toHome" type="redirect">/OldPage/home.jsp</result>

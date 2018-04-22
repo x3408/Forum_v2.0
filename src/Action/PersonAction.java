@@ -154,7 +154,7 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
 
     //显示私信具体内容
     public String showMessage() {
-        User user = (User) ActionContext.getContext().getSession().get("listAllData");
+        User user = (User) ActionContext.getContext().getSession().get("user");
 //        String send_id = (String) ServletActionContext.getRequest().getParameter("send_id");
 //        String send_id = (String) ActionContext.getContext().get("send_id");
         List<Util.Message> lists = ps.showMessage(user, send_id);
