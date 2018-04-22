@@ -3,6 +3,7 @@
 	height: 500px;
 	border: 1px solid gray;
 	position: absolute;
+
 	left: 800px;
 	top: 330px;
 	background: #FFFFFF;
@@ -23,11 +24,10 @@
 	border-bottom: 1px solid red;
 	color: #ffffff;
 	overflow-y: scroll;
-	overflow-style: ;
 }
 
 #bigTalk-main::-webkit-scrollbar {
-	display: none
+	display: none;
 }
 
 #content {

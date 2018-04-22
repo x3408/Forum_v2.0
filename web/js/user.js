@@ -82,7 +82,7 @@ window.onload = function() {
 
         }
         else{
-            left.style.position='absolute';
+            left.style.cssText='position:absolute;top:163;'
         }
 
     }
