@@ -20,6 +20,11 @@ function showMessage(send_id) {
         "${pageContext.request.contextPath}/PersonAction_showMessage",
         {send_id: send_id},
         function (data) {
+            if(data.status == "noUser") {
+                alert("请登录后再尝试该操作");
+                window.location.href = "./loginRegister.jsp";
+                return;
+            }
             for(var i=0;i<data.length;i++) {
                 if(data[i].status == 0) {
                     $('#content').append('<div class="theybox"><div class="they">' + data[i].content + '</div></div>');
@@ -40,7 +45,15 @@ $('#btn').click(function() {
     $.post(
         "${pageContext.request.contextPath}/PersonAction_addMessage",
         {message: talk.value, send_id: send_id},
-        function (data) {}
+        function (data) {
+            alert(data)
+            if(data.status == "noUser") {
+                alert("请登录后再尝试该操作");
+                window.location.href = "./loginRegister.jsp";
+                return;
+            }
+        },
+        "json"
     )
     $('#talk').val("");
 })

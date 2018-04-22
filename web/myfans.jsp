@@ -69,7 +69,7 @@
 
                 <a href="javascript:void(0)" title="签到" class="menu-item menu-first">签到</a>
                 <s:if test="#session.user.uid == #session.listAllData.uid">
-                    <a href="${pageContext.request.contextPath}/OldPage/addTopic.jsp" title="发表文章" class="menu-item menu-second">发表文章</a>
+                    <a href="${pageContext.request.contextPath}/addTopic.jsp" title="发表文章" class="menu-item menu-second">发表文章</a>
                 </s:if>
                 <s:else>
                     <a onclick="showMessage('${listAllData.uid}')" title="发送私信" class="menu-item menu-second">发送私信</a>

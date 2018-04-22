@@ -51,7 +51,7 @@
         <div id="publishArticle-main--btn">
             <button class="btn btn-danger btn-lg" type="submit">发布文章</button>
             <button class="btn btn-danger btn-lg"><a href="">保存草稿</a></button>
-            <button class="btn btn-danger btn-lg"><a href="/OldPage/personCenter.jsp">返回</a></button>
+            <button class="btn btn-danger btn-lg"><a href="/personCenter.jsp">返回</a></button>
         </div>
 
         <div id="publishArticle-main--warn">${msg}</div>
