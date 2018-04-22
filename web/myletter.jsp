@@ -102,7 +102,7 @@
         function(data) {
         for(var i = 0; i < data.length / 2; i++) {
             var timer = data[i].time.month + "月" + data[i].time.day + "日 " + data[i].time.hours + ":" + data[i].time.minutes + ":" + data[i].time.seconds;
-            $('.content-text').append('<div class="conversation"><img src="/headPortrait/'+data[(data.length / 2) + i].headPortrait+'" class="img-circle"width="60px"height="60px"><div class="right"><input id="send_id" type="hidden" value="'+data[i].send_id+'" style="display: none;"><div id="userName">' + data[(data.length / 2) + i].username + '<span >' + timer + '</span></div><div id="message">' + data[i].content + '</div></div></div>');
+            $('.content-text').append('<div class="conversation"><img src="/headPortrait/'+data[(data.length / 2) + i].headPortrait+'" class="img-circle"width="60px"height="60px"><div class="right"><input type="hidden" value="'+data[i].send_id+'" style="display: none;"><div id="userName">' + data[(data.length / 2) + i].username + '<span >' + timer + '</span></div><div id="message">' + data[i].content + '</div></div></div>');
 
             //弹出对话框或者隐藏
             $(function() {
@@ -113,7 +113,7 @@
                 $(".right").click(function() {
                     $('#content').empty();
                     $(".bigTalk").fadeIn(300);
-                    var send_id = $('#send_id').val();
+                    var send_id = $('input').val();
                     $.post(
                         "${pageContext.request.contextPath}/PersonAction_showMessage",
 //                        "new_file1.json",
