@@ -106,6 +106,32 @@
             $('.content-text').append('<div class="conversation"><img src="/headPortrait/'+data[(data.length / 2) + i].headPortrait+'" class="img-circle"width="60px"height="60px"><div class="right" onclick="showMessage(\''+data[i].send_id+'\')"><input type="hidden" value="'+data[i].send_id+'" style="display: none;"><div id="userName">' + data[(data.length / 2) + i].username + '<span >' + timer + '</span></div><div id="message">' + data[i].content + '</div></div></div>');
 
 
+            //弹出对话框或者隐藏
+            $(function() {
+                $(".bigTalk").hide();
+                $("#return").click(function() {
+                    $(".bigTalk").fadeOut(200);
+                })
+                $(".right").click(function() {
+                    $('#content').empty();
+                    $(".bigTalk").fadeIn(300);
+                    var send_id = $('input').val();
+                    $.post(
+                        "${pageContext.request.contextPath}/PersonAction_showMessage",
+//                        "new_file1.json",
+                        {send_id: send_id},
+                        function (data) {
+                            for(var i=0;i<data.length;i++) {
+                                if(data[i].status == 0) {
+                                    $('#content').append('<div class="theybox"><div class="they">' + data[i].content + '</div></div>');
+                                } else {
+                                    $('#content').append('<div class="ourbox"><div class="me">' + data[i].content + '</div></div>');
+                                }
+                            }
+                        },
+                        "json"
+                    );
+
             //移动窗口代码
             $("#top").mousedown(function(event) {
                 var isMove = true;

@@ -84,6 +84,10 @@
 	float: right;
 	margin-right: 50px;
 }
+#return{
+	float: right;
+	margin-left:-35px;
+}
 .nav span a{
 	text-decoration: none;
 	color: #FFFFFF;
@@ -103,7 +107,7 @@
 }
 .search{
 	width: 700px;
-	height: 35s0px;
+	height: 35px;
 	margin: auto;
 	position: relative;
 }
@@ -190,8 +194,14 @@ input::-webkit-input-placeholder{
 	border-radius: 10px;
 	cursor: pointer;
 }
+
+
 .box:hover{
 	box-shadow: 5px 5px 10px #d7d7d7,-5px -5px 15px rgba(215,215,215,0.5);
+
+}
+.box a:hover{
+	text-decoration: none;
 }
 .topicFrom{
 	width: 550px;
