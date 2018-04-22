@@ -1,3 +1,4 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: x3408
@@ -14,6 +15,7 @@
     <title>详情页</title>
     <link rel="stylesheet" type="text/css" href="css/detail.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
 </head>
 
 <body>
@@ -26,20 +28,27 @@
                     <a href="${pageContext.request.contextPath}/OldPage/home.jsp">首页</a>
                 </li>
                 <li class="select">
-                    <a href="javascript:void(0);" onclick="fall(1, 'result_show')">成果展示</a>
+                    <a href="javascript:void(0);" >成果展示</a>
                 </li>
                 <li>
-                    <a href="javascript:void(0);" onclick="fall(1, 'training_experience')">训练心得</a>
+                    <a href="javascript:void(0);" >训练心得</a>
                 </li>
                 <li>
-                    <a href="javascript:void(0);" onclick="fall(1, 'diet_plan')">饮食计划</a>
+                    <a href="javascript:void(0);" >饮食计划</a>
                 </li>
                 <li>
-                    <a href="javascript:void(0);" onclick="fall(1, 'diary')">健身日记</a>
+                    <a href="javascript:void(0);" >健身日记</a>
                 </li>
             </ul>
-            <span id="register"><a href="${pageContext.request.contextPath}/loginRegister.jsp">注册</a></span>
-            <span id="login"><a href="${pageContext.request.contextPath}/loginRegister.jsp">登录</a></span>
+            <s:if test="#session.user==null">
+                <span id="register"><a href="${pageContext.request.contextPath}/loginRegister.jsp">注册</a></span>
+                <span id="login"><a href="${pageContext.request.contextPath}/loginRegister.jsp">登录</a></span>
+            </s:if>
+            <s:else>
+                <span id="entry"><a href="${pageContext.request.contextPath}/PersonAction_findAllData"><img src="/headPortrait/${user.headPortrait}" class="img-circle"></a></span>
+                <span id="return"><a href="${pageContext.request.contextPath}/UserAction_logout">注销</a></span>
+            </s:else>
+
         </div>
         <div class="search">
             <div class="search-text" >健身，让你精致生活</div>
@@ -59,7 +68,7 @@
 
 </body>
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="js/detail.js"></script>
+<script type="text/javascript" src="js/detail.js?1"></script>
 <script type="text/javascript">
     //		alert($(document).height());		//浏览器总高度
     //		alert($(window).height());		//窗口可视区高度
@@ -89,7 +98,7 @@
         }, function(data) {
             for(var i =0; i < data.length; i++) {
                 var timer = data[i].time.month + "月" + data[i].time.day + "日 " + data[i].time.hours + ":" + data[i].time.minutes;
-                $('.main-center').append('<div class="box"><div class="topicFrom"><span class="userid" id="userid">来自话题: '+data[data.length/2+i].uid+'</span><span class="date" id="date">' + timer + '</span><span class="viewCount" id="viewCount">阅读量： ' + data[i].viewCount + '</span></div><div class="name"><div class="myPic" id="myPic"><img src="/headPortrait/'+data[data.length/2+i].headPortrait+'" /></div><div class="username" id="username">' + data[data.length/2+i].username + '</div></div><div class="context"><div class="title" id="title">' + data[i].title + '</div><p class="content" id="content">' + data[i].descriptive + '</p></div></div>');
+                $('.main-center').append('<div class="box"><div class="topicFrom"><span class="date" id="date">' + timer + '</span><span class="viewCount" id="viewCount">阅读量： ' + data[i].viewCount + '</span></div><div class="name"><div class="myPic" id="myPic"><img class="img-circle" src="/headPortrait/'+data[data.length/2+i].headPortrait+'" /></div><div class="username" id="username">' + data[data.length/2+i].username + '</div></div><div class="context"><div class="title" id="title">' + data[i].title + '</div><p class="content" id="content">' + data[i].descriptive + '</p></div></div>');
 
             }
         })
@@ -114,7 +123,8 @@
                 } else {
                     for(var i =0; i < data.length; i++) {
                         var timer = data[i].time.month + "月" + data[i].time.day + "日 " + data[i].time.hours + ":" + data[i].time.minutes;
-                        $('.main-center').append('<div class="box"><div class="topicFrom"><span class="userid" id="userid">来自话题: '+data[data.length/2+i].uid+'</span><span class="date" id="date">' + timer + '</span><span class="viewCount" id="viewCount">阅读量： ' + data[i].viewCount + '</span></div><div class="name"><div class="myPic" id="myPic"><img src="/headPortrait/'+data[data.length/2+i].headPortrait+'" /></div><div class="username" id="username">' + data[data.length/2+i].username + '</div></div><div class="context"><div class="title" id="title">' + data[i].title + '</div><p class="content" id="content">' + data[i].descriptive + '</p></div></div>');
+                        $('.main-center').append('<div class="box"><div class="topicFrom"><span class="date" id="date">' + timer + '</span><span class="viewCount" id="viewCount">阅读量： ' + data[i].viewCount + '</span></div><div class="name"><div class="myPic" id="myPic"><img class="img-circle" src="/headPortrait/'+data[data.length/2+i].headPortrait+'" /></div><div class="username" id="username">' + data[data.length/2+i].username + '</div></div><div class="context"><div class="title" id="title">' + data[i].title + '</div><p class="content" id="content">' + data[i].descriptive + '</p></div></div>');
+
                     }
                 }
             })

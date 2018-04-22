@@ -12,14 +12,12 @@ import Util.UserBean;
 import net.sf.json.JSONArray;
 import net.sf.json.JsonConfig;
 import net.sf.json.util.PropertyFilter;
-import org.apache.struts2.ServletActionContext;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -162,5 +160,11 @@ public class StrutsTest {
 
         String data = messageTitle.substring(0, messageTitle.length()-1) + "," + userInfo.substring(1,userInfo.length());
         System.out.println(data);
+    }
+    @Test
+    public void addMessageTest() {
+        User user = new User();
+        user.setUid("297e9494627185010162719571510000");
+        personService.addMessage(user, "297e949462718501016271d4a2ea0001","测试");
     }
 }

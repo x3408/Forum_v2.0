@@ -9,6 +9,8 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import net.sf.json.JSONArray;
+import net.sf.json.JsonConfig;
+import net.sf.json.util.PropertyFilter;
 import org.apache.commons.io.FileUtils;
 import org.apache.struts2.ServletActionContext;
 
@@ -28,6 +30,9 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
     //private String photo2;
     private String headPortraitContantType;
     private String photoFileName;
+    private String send_id;
+    //私信内容
+    private String message;
     //显示私信摘要
     private Integer page;
 //    public void setPhoto2(String photo2) {
@@ -151,11 +156,12 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
     public String showMessage() {
         User user = (User) ActionContext.getContext().getSession().get("listAllData");
 //        String send_id = (String) ServletActionContext.getRequest().getParameter("send_id");
-        String send_id = (String) ActionContext.getContext().get("send_id");
+//        String send_id = (String) ActionContext.getContext().get("send_id");
         List<Util.Message> lists = ps.showMessage(user, send_id);
         String message = JSONArray.fromObject(lists).toString();
-
+        System.out.println(message);
         try {
+            ServletActionContext.getResponse().setContentType("application/json;charset=utf-8");
             ServletActionContext.getResponse().getWriter().write(message);
         } catch (IOException e) {
             e.printStackTrace();
@@ -166,6 +172,8 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
     //显示私信摘要
     public String showMessageTitle() {
         User user = (User) ActionContext.getContext().getSession().get("listAllData");
+        user.setStatus(0);
+        ps.updateData(user);
         List<Message> list = ps.showMessageTitleByUser(user, page);
         List<User> userList = new ArrayList<>();
         User temp = new User();
@@ -174,12 +182,22 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
             User send_id = ps.findAllData(temp);
             userList.add(send_id);
         }
+        //过滤一对多实体对象
+        JsonConfig config = new JsonConfig();
+        config.setJsonPropertyFilter(new PropertyFilter() {
+            public boolean apply(Object source, String name, Object value) {
+                if (name.equals("comments"))
+                    return true;
+                return false;
+            }
+        });
         String messageTitle = JSONArray.fromObject(list).toString();
-        String userInfo = JSONArray.fromObject(userList).toString();
+        String userInfo = JSONArray.fromObject(userList,config).toString();
 
         String data = messageTitle.substring(0, messageTitle.length()-1) + "," + userInfo.substring(1,userInfo.length());
         System.out.println(data);
         try {
+            ServletActionContext.getResponse().setContentType("application/json;charset=utf-8");
             ServletActionContext.getResponse().getWriter().write(data);
         } catch (IOException e) {
             e.printStackTrace();
@@ -187,6 +205,35 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
         return null;
     }
 
+    //发送私信
+    public String addMessage() {
+        //修改用户状态为1
+        User user = (User) ActionContext.getContext().getSession().get("listAllData");
+        ps.addMessage(user, send_id, message);
+
+        User receiveUser = new User();
+        receiveUser.setUid(send_id);
+        receiveUser = ps.findAllData(receiveUser);
+        receiveUser.setStatus(1);
+        ps.updateData(receiveUser);
+
+        return null;
+    }
+
+    public String checkMessageStatus() {
+        User user = (User) ActionContext.getContext().getSession().get("listAllData");
+        user = ps.findAllData(user);
+        int msg = 0;
+        if(user.getStatus() == 1) {
+          msg = 1;
+        }
+        try {
+            ServletActionContext.getResponse().getWriter().write("{\"msg\":"+ msg +"}");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
     @Override
     public User getModel() {
         return user ;
@@ -210,5 +257,13 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
 
     public void setPhotoFileName(String photoFileName) {
         this.photoFileName = photoFileName;
+    }
+
+    public void setSend_id(String send_id) {
+        this.send_id = send_id;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 }

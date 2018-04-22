@@ -4,6 +4,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>详情页</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
 		<link rel="stylesheet" type="text/css" href="css/detail.css" />
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 	</head>
@@ -54,7 +55,10 @@
 						<span class="viewCount" id="viewCount">阅读量：500</span>
 					</div>
 					<div class="name">
-						<div class="myPic" id="myPic"></div>
+						<div class="myPic" id="myPic">
+							<img class="img-circle" src="img/xiaobai 8.jpg"width="50px"height="50px" />
+							
+						</div>
 						<div class="username" id="username">@DC</div>
 					</div>
 					<div class="context">
@@ -69,7 +73,11 @@
 						<span class="viewCount" id="viewCount">阅读量：500</span>
 					</div>
 					<div class="name">
-						<div class="myPic" id="myPic"></div>
+
+						<div class="myPic" id="myPic">
+							<img class="img-circle" src="img/xiaobai 8.jpg"width="50px"height="50px" />
+							
+						</div>
 						<div class="username" id="username">@DC</div>
 					</div>
 					<div class="context">
@@ -84,7 +92,9 @@
 						<span class="viewCount" id="viewCount">阅读量：500</span>
 					</div>
 					<div class="name">
-						<div class="myPic" id="myPic"></div>
+						<div class="myPic" id="myPic">
+							<img class="img-circle" src="img/xiaobai 8.jpg"width="50px"height="50px" />
+						</div>
 						<div class="username" id="username">@DC</div>
 					</div>
 					<div class="context">
@@ -99,7 +109,10 @@
 						<span class="viewCount" id="viewCount">阅读量：500</span>
 					</div>
 					<div class="name">
-						<div class="myPic" id="myPic"></div>
+						<div class="myPic" id="myPic">
+							<img class="img-circle" src="img/xiaobai 8.jpg"width="50px"height="50px" />
+							
+						</div>
 						<div class="username" id="username">@DC</div>
 					</div>
 					<div class="context">
@@ -114,7 +127,10 @@
 						<span class="viewCount" id="viewCount">阅读量：500</span>
 					</div>
 					<div class="name">
-						<div class="myPic" id="myPic"></div>
+						<div class="myPic" id="myPic">
+							<img class="img-circle" src="img/xiaobai 8.jpg"width="50px"height="50px" />
+							
+						</div>
 						<div class="username" id="username">@DC</div>
 					</div>
 					<div class="context">
@@ -129,7 +145,10 @@
 						<span class="viewCount" id="viewCount">阅读量：500</span>
 					</div>
 					<div class="name">
-						<div class="myPic" id="myPic"></div>
+						<div class="myPic" id="myPic">
+							<img class="img-circle" src="img/xiaobai 8.jpg"width="50px"height="50px" />
+							
+						</div>
 						<div class="username" id="username">@DC</div>
 					</div>
 					<div class="context">
@@ -171,7 +190,7 @@
 					for(var i =flag; i < (flag+2); i++) {
 
 						var timer = data[i].time.month + "-" + data[i].time.day + "-" + data[i].time.hours + "-" + data[i].time.minutes;
-						$('.main-center').append('<div class="box"><div class="topicFrom"><span class="userid" id="userid">来自话题: '+data[i+3].uid+'</span><span class="date" id="date">' + timer + '</span><span class="viewCount" id="viewCount">阅读量： ' + data[i].viewCount + '</span></div><div class="name"><div class="myPic" id="myPic"><img src="" /></div><div class="username" id="username">' + data[i + 3].username + '</div></div><div class="context"><div class="title" id="title">' + data[i].title + '</div><p class="content" id="content">' + data[i].descriptive + '</p></div></div>');
+						$('.main-center').append('<div class="box"><div class="topicFrom"><span class="userid" id="userid">来自话题: '+data[i+3].uid+'</span><span class="date" id="date">' + timer + '</span><span class="viewCount" id="viewCount">阅读量： ' + data[i].viewCount + '</span></div><div class="name"><div class="myPic" id="myPic"><img class="img-circle" src="img/xiaobai 8.jpg"width="50px"height="50px" /></div><div class="username" id="username">' + data[i + 3].username + '</div></div><div class="context"><div class="title" id="title">' + data[i].title + '</div><p class="content" id="content">' + data[i].descriptive + '</p></div></div>');
 						
 					}
 			

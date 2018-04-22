@@ -68,7 +68,7 @@
         </ul>
         <br />
         <div class="tab-content">
-            <div class="tab-pane active" id="article"</div>
+            <div class="tab-pane active" id="article"></div>
             <div class="tab-pane" id="attention" ></div>
             <div class="tab-pane" id="fans"></div>
         </div>

@@ -81,14 +81,14 @@
 				<p></p>
 				<div class="control">
 					<lable>确认密码</lable>
-					<input class="ip" type="password" name="certain" id="certain"placeholder="您的昵称" value="" />
+					<span><input type="password"class="ip"  id="identifyCode" placeholder="确认密码" name="verifyCodeFromUser"/></span>
+
 
 				</div>
 				<p></p>
 				<div class="control">
 					<lable>验证码</lable>
 					<input class="ip" type="text" name="identifyCode"value="" />
-					<span><input type="text"class="ip"  id="identifyCode" placeholder="请输入验证码" name="verifyCodeFromUser"/></span>
 					<span id="identityNumber"><img id="verifyImg" src="${pageContext.request.contextPath}/UserAction_verifyImg" onclick="return changeVerify()"></span>
 				</div>
 				<p></p>

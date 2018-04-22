@@ -18,9 +18,11 @@ public class MessageBean {
 
     public MessageBean showMessageTitle(Integer page, User user) {
         this.page = page;
+        if(page == null)
+            page = 0;
 
         if (limit == null) {
-            this.limit = 3;
+            this.limit = 10;
         }
 
         int start = (page - 1) * limit;

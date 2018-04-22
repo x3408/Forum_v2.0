@@ -86,31 +86,32 @@
 					<div class="theybox">
 						<div class="they">
 							<span>我是小工，很高兴认识你</span>
-						</div>
-					</div>
-					<div class="ourbox">
-						<div class="me">
-							<span>enen,你好，我是小林</span>
-						</div>
-					</div>
-					<div class="theybox">
-						<div class="they">
-							<span>我看了你写的文章，很喜欢你文章的笔锋，而且你写的健身的方法我也很有兴趣，有机会的我们聊一下</span>
-						</div>
-					</div>
-					<div class="ourbox">
-						<div class="me">
-							<span>好的，我很荣幸，那我关注一下你</span>
-						</div>
-					</div>
-				</span>
+
 			</div>
-			<div class="send">
-				<textarea name="text" rows="4" cols="40" id="talk"></textarea>
-				<input type="button" value="发送" id="btn" />
+		</div>
+		<div class="ourbox">
+			<div class="me">
+				<span>enen,你好，我是小林</span>
+			</div>
+		</div>
+		<div class="theybox">
+			<div class="they">
+				<span>我看了你写的文章，很喜欢你文章的笔锋，而且你写的健身的方法我也很有兴趣，有机会的我们聊一下</span>
+			</div>
+		</div>
+		<div class="ourbox">
+			<div class="me">
+				<span>好的，我很荣幸，那我关注一下你</span>
+			</div>
+		</div>
+		</span>
+		</div>
+		<div class="send">
+			<textarea name="text" rows="4" cols="40" id="talk"></textarea>
+			<input type="button" value="发送" id="btn" />
 		</div>
 		</div>
-		
+
 		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 		<script type="text/javascript">
 			var oli = document.getElementsByTagName('li');
@@ -123,20 +124,44 @@
 					$('.content-text').append('<div class="conversation"><img src="+ data[(data.length / 2) + i].headPortrait+"class="img-cicle"width="60px"height="60px"></img><div class="right"><input type="text" value="+data[i].send_id+"style="display: none;"><div id="userName">' + data[(data.length / 2) + i].username + '<span >' + timer + '</span></div><div id="message">' + data[(data.length / 2) + i].signature + '</div></div></div>');
 
 					//弹出对话框或者隐藏
-					$('.right').click(function() {
-						$('.bigTalk').css("display", "block")
+					$(function() {
+						$(".bigTalk").hide();
+						$(".right").click(function() {
+							$(".bigTalk").fadeIn(300);
+							$("#return").click(function() {
+								$(".bigTalk").fadeOut(200);
+							})
+						})
 					})
-					$('#return').click(function() {
-						$('.bigTalk').css("display", "none")
-					})
+					//移动窗口代码
+					$("#top").mousedown(function(event) {
+						var isMove = true;
+						var abs_x = event.pageX - $('div.bigTalk').offset().left;
+						var abs_y = event.pageY - $('div.bigTalk').offset().top;
+						$(document).mousemove(function(event) {
+							if(isMove) {
+								var obj = $('div.bigTalk');
+								var left_x = event.pageX - abs_x;
+								var top_y = event.pageY - abs_y;
+								obj.css({
+									'left': left_x,
+									'top': top_y
+								});
+							}
+						}).mouseup(function() {
+							isMove = false;
+						});
+					});
 				}
 			})
+			//获取填写数据并填写
 			var talk = document.getElementById('talk');
 			$('#btn').click(function() {
 
 				$('#content').append('<div class="theybox"><div class="they">' + talk.value + '</div></div>');
 				$('#talk').val("");
 			})
+			//移动窗口代码
 		</script>
 	</body>
 

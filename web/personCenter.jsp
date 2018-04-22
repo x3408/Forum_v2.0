@@ -1,8 +1,9 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
-  User: dell3020mt-62-p
-  Date: 2018/4/19
-  Time: 21:20
+  User: x3408
+  Date: 2018/4/20
+  Time: 10:25
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -21,12 +22,12 @@
 <div class="head">
     <div class="main">
         <div class="house">
-            <a href=""><img src="img/house.png" width="30px" /></a>
+            <a href="${pageContext.request.contextPath}/index.jsp"><img src="img/house.png" width="30px" /></a>
 
         </div>
         <div class="headimg">
-            <img class="img-circle" src="img/xiaobai 8.jpg" width="80px" height="80px" />
-            <p>@DChyw</p>
+            <img class="img-circle" src="/headPortrait/${listAllData.headPortrait}" width="80px" height="80px" />
+            <p>${listAllData.username}</p>
         </div>
         <div class="nav">
             <ul class="nav-one">
@@ -34,16 +35,21 @@
                     <a href="javascript:0">我的关注</a>
                 </li>
                 <li>
-                    <a href="mycontext.html">我的文章</a>
+                    <a href="mycontext.jsp">我的文章</a>
                 </li>
             </ul>
             <ul class="nav-two">
                 <li>
-                    <a href="myfans.html">我的粉丝</a>
+                    <a href="myfans.jsp">我的粉丝</a>
                 </li>
                 <li>
-                    <a href="myletter.html">我的私信</a>
-                    <span id="news">new</span>
+                    <s:if test="#session.user.uid == #session.listAllData.uid">
+                        <a href="myletter.jsp">我的私信</a>
+                        <span id="news">new</span>
+                    </s:if>
+                    <s:else>
+                        <a onclick="">发送私信</a>
+                    </s:else>
                 </li>
             </ul>
             <svg width="0" height="0">
@@ -56,12 +62,15 @@
                 </defs>
             </svg>
             <div class="aside-nav  animated" id="aside-nav">
-                <label for="" class="aside-menu" title="按住拖动">菜单</label>
+                <label class="aside-menu" title="按住拖动">菜单</label>
 
                 <a href="javascript:void(0)" title="签到" class="menu-item menu-first">签到</a>
-                <a href="javascript:void(0)" title="发表文章" class="menu-item menu-second">发表文章</a>
-                <!--<a href="javascript:void(0)" title="个人中心" class="menu-item menu-third">个人中心</a>
-                            <a href="javascript:void(0)" title="微信公众号" class="menu-item menu-line menu-fourth">关注<br>微信</a> <!-- *跳到商家微信推广* -->-->
+                <s:if test="#session.user.uid == #session.listAllData.uid">
+                    <a href="${pageContext.request.contextPath}/OldPage/addTopic.jsp" title="发表文章" class="menu-item menu-second">发表文章</a>
+                </s:if>
+                <s:else>
+                    <a onclick="" title="发送私信" class="menu-item menu-second">发送私信</a>
+                </s:else>
             </div>
 
         </div>
