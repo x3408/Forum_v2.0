@@ -208,7 +208,7 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
     //发送私信
     public String addMessage() {
         //修改用户状态为1
-        User user = (User) ActionContext.getContext().getSession().get("listAllData");
+        User user = (User) ActionContext.getContext().getSession().get("user");
         ps.addMessage(user, send_id, message);
 
         User receiveUser = new User();

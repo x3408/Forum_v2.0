@@ -49,7 +49,7 @@
                         <span id="news">new</span>
                     </s:if>
                     <s:else>
-                        <a onclick="">发送私信</a>
+                        <a onclick="showMessage('${listAllData.uid}')">发送私信</a>
                     </s:else>
                 </li>
             </ul>
@@ -70,11 +70,28 @@
                     <a href="${pageContext.request.contextPath}/OldPage/addTopic.jsp" title="发表文章" class="menu-item menu-second">发表文章</a>
                 </s:if>
                 <s:else>
-                    <a onclick="" title="发送私信" class="menu-item menu-second">发送私信</a>
+                    <a onclick="showMessage('${listAllData.uid}')" title="发送私信" class="menu-item menu-second">发送私信</a>
                 </s:else>
             </div>
 
         </div>
+    </div>
+</div>
+<!--弹出对话框-->
+<div class="bigTalk">
+    <div id="top">
+        <span id="conversation">对话窗口</span>
+        <span id="return">&times;</span>
+    </div>
+    <div id="bigTalk-main">
+        <span id="content">
+            <%--私信具体内容--%>
+        </span>
+    </div>
+    <div class="send">
+        <textarea name="text" rows="4" cols="40" id="talk"></textarea>
+        <input id="sendId" type="hidden" value="">
+        <input type="button" value="发送" id="btn" />
     </div>
 </div>
 <script type="text/javascript"src="js/jquery-3.3.1.min.js"></script>
