@@ -16,7 +16,7 @@
     <title>个人中心</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="css/asidenav.css" />
-    <link rel="stylesheet" type="text/css" href="css/personCenter.css" />
+    <link rel="stylesheet" type="text/css" href="css/personCenter.css?1" />
     <link rel="stylesheet" type="text/css" href="css/bigTalk.css" />
 
 </head>

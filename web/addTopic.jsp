@@ -30,7 +30,7 @@
         </div>
         <div id="publishArticle-top--user">
             <img src="/headPortrait/${listAllData.headPortrait}" class="img-circle">
-            <a class="btn btn-danger" role="button"style="background:#04c1f1;border: none">退出登录</a>
+            <a class="btn btn-danger" role="button"style="background:#04c1f1;border: none" href="${pageContext.request.contextPath}/UserAction_logout">退出登录</a>
         </div>
     </div>
     <div id="publishArticle-main">
