@@ -115,8 +115,8 @@
 	width: 500px;
 	height: 100px;
 	background-color: rgb(249,249,249);
-	-webkit-transition: background-color 1s;
-	transition: background-color 1s;
+	-webkit-transition: background-color 0.4s;
+	transition: background-color 0.4s;
 	margin:auto;
 	margin-top:55px;
 	position: relative;
@@ -175,15 +175,17 @@
 	width: 700px;
 	height: 70px;
 	line-height: 70px;
-	border: 1px solid lightgray;
 	margin-top: 20px;
 	border-radius: 10px;
 	padding-left: 20px;
-
+	background-color: rgb(249,249,249);
+	-webkit-transition: background-color,.4s;
+	transition: background-color,.4s;
 }
 #addDiv:hover{
-	box-shadow: 5px 5px 5px lightgray;
+	background-color: #ffffff;
 }
+
 #content-text{
 	width:800px;
 	margin: auto;

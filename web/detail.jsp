@@ -99,7 +99,7 @@
         }, function(data) {
             for(var i =0; i < data.length; i++) {
                 var timer = data[i].time.month + "月" + data[i].time.day + "日 " + data[i].time.hours + ":" + data[i].time.minutes;
-                $('.main-center').append('<div class="box"><a href="${pageContext.request.contextPath}/TopicAction_showTopic?tid='+data[i].tid+'"><div class="topicFrom"><span class="date" id="date">' + timer + '</span><span class="viewCount" id="viewCount">阅读量： ' + data[i].viewCount + '</span></div><div class="name"><div class="myPic" id="myPic"><img class="img-circle" src="/headPortrait/'+data[data.length/2+i].headPortrait+'" /></div><div class="username" id="username">' + data[data.length/2+i].username + '</div></div><div class="context"><div class="title" id="title">' + data[i].title + '</div><p class="content" id="content">' + data[i].descriptive + '</p></div></a></div>');
+                $('.main-center').append('<div class="box"><a href="${pageContext.request.contextPath}/TopicAction_showTopic?tid='+data[i].tid+'" target="_blank" style="text-decoration:none"><div class="topicFrom"><span class="date" id="date">' + timer + '</span><span class="viewCount" id="viewCount">阅读量： ' + data[i].viewCount + '</span></div><div class="name"><div class="myPic" id="myPic"><img class="img-circle" src="/headPortrait/'+data[data.length/2+i].headPortrait+'" /></div><div class="username" id="username">' + data[data.length/2+i].username + '</div></div><div class="context"><div class="title" id="title">' + data[i].title + '</div><p class="content" id="content">' + data[i].descriptive + '</p></div></a></div>');
 
             }
         },"json")
@@ -124,7 +124,7 @@
                 } else {
                     for(var i =0; i < data.length; i++) {
                         var timer = data[i].time.month + "月" + data[i].time.day + "日 " + data[i].time.hours + ":" + data[i].time.minutes;
-                        $('.main-center').append('<div class="box"><a href="${pageContext.request.contextPath}/TopicAction_showTopic?tid=\'+data[i].tid+\'"><div class="topicFrom"><span class="date" id="date">' + timer + '</span><span class="viewCount" id="viewCount">阅读量： ' + data[i].viewCount + '</span></div><div class="name"><div class="myPic" id="myPic"><img class="img-circle" src="/headPortrait/'+data[data.length/2+i].headPortrait+'" /></div><div class="username" id="username">' + data[data.length/2+i].username + '</div></div><div class="context"><div class="title" id="title">' + data[i].title + '</div><p class="content" id="content">' + data[i].descriptive + '</p></div></a></div>');
+                        $('.main-center').append('<div class="box"><a href="${pageContext.request.contextPath}/TopicAction_showTopic?tid=\'+data[i].tid+\'" target="_blank"><div class="topicFrom"><span class="date" id="date">' + timer + '</span><span class="viewCount" id="viewCount">阅读量： ' + data[i].viewCount + '</span></div><div class="name"><div class="myPic" id="myPic"><img class="img-circle" src="/headPortrait/'+data[data.length/2+i].headPortrait+'" /></div><div class="username" id="username">' + data[data.length/2+i].username + '</div></div><div class="context"><div class="title" id="title">' + data[i].title + '</div><p class="content" id="content">' + data[i].descriptive + '</p></div></a></div>');
 
                     }
                 }
