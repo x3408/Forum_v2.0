@@ -29,7 +29,13 @@
 
         </div>
         <div class="headimg">
-            <img class="img-circle" src="/headPortrait/${listAllData.headPortrait}" width="80px" height="80px" />
+            <s:if test="#session.user.uid == #session.listAllData.uid">
+            <a href="${pageContext.request.contextPath}/PersonAction_findData">
+                </s:if>
+                <img class="img-circle" src="${pageContext.request.contextPath}/headPortrait/${listAllData.headPortrait}" width="80px" height="80px" />
+                <s:if test="#session.user.uid == #session.listAllData.uid">
+            </a>
+            </s:if>
             <p>${listAllData.username}</p>
         </div>
         <div class="nav">
@@ -122,7 +128,7 @@
             $('#content-text').empty();
             $.each( data2  , function(i, json2){
                 $("#content-text").append(
-                    "<div id='topPhoto'  >"+"<img src="+${basePath}/headPortrait/+json2[1]+" class='img-circle'>" +
+                    "<div id='topPhoto'  >"+"<a href='UserAction_showUser?showUserId="+json2[2]+"'><img src="+${pageContext.request.contextPath}/headPortrait/+json2[1]+" class='img-circle'></a>" +
                     "<a id='addDiv1' href='UserAction_showUser?showUserId="+json2[2]+"'>" + json2[0] + "</a>"+"</div>"
                 );
             });

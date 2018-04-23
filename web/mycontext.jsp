@@ -25,10 +25,15 @@
     <div class="main">
         <div class="house">
             <a href="${pageContext.request.contextPath}/index.jsp"><img src="img/house.png" width="30px" /></a>
-
         </div>
         <div class="headimg">
-            <img class="img-circle" src="/headPortrait/${listAllData.headPortrait}" width="80px" height="80px" />
+            <s:if test="#session.user.uid == #session.listAllData.uid">
+            <a href="${pageContext.request.contextPath}/PersonAction_findData">
+                </s:if>
+                <img class="img-circle" src="${pageContext.request.contextPath}/headPortrait/${listAllData.headPortrait}" width="80px" height="80px" />
+                <s:if test="#session.user.uid == #session.listAllData.uid">
+            </a>
+            </s:if>
             <p>${listAllData.username}</p>
         </div>
         <div class="nav">
@@ -116,7 +121,7 @@
             $('#content-text').empty();
             $.each( data1  , function(i, json1){
                 $("#content-text").append(
-                    "<div id='topPhoto'  >"+"<img src="+${basePath}/headPortrait/+json1[1]+" class='img-circle'>" +
+                    "<div id='topPhoto'  >"+"<a href='UserAction_showUser?showUserId="+json1[2]+"'><img src="+${pageContext.request.contextPath}/headPortrait/+json1[1]+" class='img-circle'></a>" +
                     "<a id='addDiv1' href='UserAction_showUser?showUserId="+json1[2]+"'>" + json1[0] + "</a>"+"</div>"
                 );
             });

@@ -27,9 +27,13 @@
 
         </div>
         <div class="headimg">
+        <s:if test="#session.user.uid == #session.listAllData.uid">
             <a href="${pageContext.request.contextPath}/PersonAction_findData">
-                <img class="img-circle" src="${basePath}/headPortrait/${listAllData.headPortrait}" width="80px" height="80px" />
+        </s:if>
+                <img class="img-circle" src="${pageContext.request.contextPath}/headPortrait/${listAllData.headPortrait}" width="80px" height="80px" />
+        <s:if test="#session.user.uid == #session.listAllData.uid">
             </a>
+        </s:if>
             <p>${listAllData.username}</p>
         </div>
         <div class="nav">

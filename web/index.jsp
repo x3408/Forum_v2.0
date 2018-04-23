@@ -41,7 +41,7 @@
 			  <s:else>
 				  <div id="person-img">
 					  <a href="${pageContext.request.contextPath}/PersonAction_findAllData">
-						  <img src="/headPortrait/${user.headPortrait}" class="img-circle">
+						  <img src="${pageContext.request.contextPath}/headPortrait/${user.headPortrait}" class="img-circle">
 					  </a>
 					  <a class="btn btn-info" href="${pageContext.request.contextPath}/UserAction_logout">注销</a>
 				  </div>
