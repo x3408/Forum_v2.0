@@ -15,12 +15,31 @@
     <title>个人中心</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="css/asidenav.css" />
-    <link rel="stylesheet" type="text/css" href="css/personCenter.css" />
+    <link rel="stylesheet" href="css/sign2.css">
+    <link rel="stylesheet" type="text/css" href="css/personCenter.css?3" />
     <link rel="stylesheet" type="text/css" href="css/bigTalk.css">
+    <script type="text/javascript" src="js/jquery-1.8.1.min.js"></script>
+    <script type="text/javascript" src="js/calendar2.js"></script>
+    <script src="js/jquery-1.8.3.js"></script>
 </head>
 
+
 <body>
+<input type="hidden" id="arr" value="">
 <div class="head">
+    <div id="signIn">
+        <button class="btn btn-info">关闭</button>
+
+        <div id="calendar">
+            <div class="sign" id="sign_cal">
+
+
+            </div>
+        </div>
+
+    </div>
+
+
     <div class="main">
         <div class="house">
             <a href="${pageContext.request.contextPath}/index.jsp"><img src="img/house.png" width="30px" /></a>
@@ -65,7 +84,7 @@
             <div class="aside-nav  animated" id="aside-nav">
                 <label class="aside-menu" title="按住拖动">菜单</label>
 
-                <a href="javascript:void(0)" title="签到" class="menu-item menu-first">签到</a>
+                <a href="javascript:;" title="签到" class="menu-item menu-first" id="sign">签到</a>
                 <s:if test="#session.user.uid == #session.listAllData.uid">
                     <a href="${pageContext.request.contextPath}/addTopic.jsp" title="发表文章" class="menu-item menu-second">发表文章</a>
                 </s:if>
@@ -101,12 +120,31 @@
 </div>
 <script type="text/javascript"src="js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript"src="js/new.js"></script>
+<script>
+    $(function(){
+       $("#sign").click(function(){
+           $("#signIn").show();
+       })
+        $(".btn").click(function(){
+            $("#signIn").hide();
+        })
+        //ajax获取日历json数据
+
+        $.get("/SignAction_get",
+            function(data){
+
+                calUtil.init(data);
+            },"json");
+    })
+
+</script>
 <script type="text/javascript">
     var oli = document.getElementsByTagName('li');
     oli[0].style.border = "1px solid #fff";
     oli[0].style.borderRadius = "20px";
 
 </script>
+
 </body>
 
 </html>

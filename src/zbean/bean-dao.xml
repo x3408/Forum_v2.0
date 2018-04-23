@@ -25,4 +25,7 @@
     <bean name="PersonDao" class="Dao.DaoImpl.PersonDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"></property>
     </bean>
+    <bean name="SignDao" class="Dao.DaoImpl.SignDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"></property>
+    </bean>
 </beans>

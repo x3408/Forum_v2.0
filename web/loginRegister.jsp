@@ -12,10 +12,10 @@
     <meta charset="utf-8" />
     <title>登录注册页面</title>
     <script src="js/jquery.min.js"></script>
-    <link rel="stylesheet" href="css/NewWeb-Sign.css">
+    <link rel="stylesheet" href="css/NewWeb-Sign.css?7">
     <!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
     <!--<script src="js/register.js"></script>-->
-    <script src="js/NewWeb-Sign.js"></script>
+    <script src="js/NewWeb-Sign.js?3"></script>
     <script type="text/javascript">
         function changeVerify() {
             var verifyImg = document.getElementById("verifyImg");
@@ -99,7 +99,7 @@
                 <span>忘记密码</span>
             </div>
         </form>
-        <p style="margin-top: -40px;">${msg}</p>
+        <p style="margin-top: -40px;" id="error">${msg}</p>
     </div>
     <!--//我的登录界面结束下面开始注册界面-->
     <div id="register" class="back">
@@ -108,6 +108,7 @@
                 <span id="logo"><img src="img1/logo.png"/></span>
                 <span id="welcome">欢迎注册</span>
             </div>
+            <div id="turnTo">转去登陆</div>
             <form action="${pageContext.request.contextPath}/UserAction_add" name="reg" method="post" id="content-form">
                 <div class="control">
                     <lable>用户名</lable>
@@ -130,7 +131,7 @@
                     <input class="ip" type="text" name="identifyCode"value="" />
                     <span id="identityNumber"><img id="verifyImg" src="${pageContext.request.contextPath}/UserAction_verifyImg" onclick="return changeVerify()"></span>
                 </div>
-                <p>${msg}</p>
+                <p id="error">${msg}</p>
                 <input type="submit" id="btn2" value="立即注册" name="按钮" class="btn-block">
             </form>
         </div>

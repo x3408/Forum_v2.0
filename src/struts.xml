@@ -41,5 +41,8 @@
                 <param name="namespace">/</param>
             </result>
         </action>
+    <action name="SignAction_*" class="SignAction" method="{1}">
+    </action>
+
     </package>
 </struts>

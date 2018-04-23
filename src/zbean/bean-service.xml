@@ -38,5 +38,8 @@
     <bean name="messageBean" class="Util.MessageBean">
         <property name="personDao" ref="PersonDao"></property>
     </bean>
+    <bean name="SignService" class="Service.ServiceImpl.SignServiceImpl">
+        <property name="sd" ref="SignDao"></property>
+    </bean>
 
 </beans>

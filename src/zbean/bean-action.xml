@@ -30,4 +30,7 @@
     <bean name="personAction" class="Action.PersonAction" scope="prototype">
         <property name="ps" ref="personService"></property>
     </bean>
+    <bean name="SignAction" class="Action.SignAction" scope="prototype">
+        <property name="ss" ref="SignService"></property>
+    </bean>
 </beans>

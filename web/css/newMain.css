@@ -10,16 +10,10 @@ a{
 	min-width:1900px;
 	position:relative;
 }
-#newMain #sign{
-	display:inline-block;
-	position: absolute;
-	top:20px;
-	margin-left:170px;
 
-}
 #newMain .mainTop{
 	width:100%;
-	height:100px;
+	height:93px;
 	background:#010101;
 	font-size: 25px;
 	color:#05c1f1;
@@ -32,9 +26,9 @@ a{
 	margin-left:359px;
 	font-size:25px;
 	position: absolute;
-	top:37px;
+	top:35px;
 	color:#05c1f1;
-	text-decoration: none;
+	text-decoration:none;
 }
 #newMain .mainTop ol{
 	margin-left:450px;
@@ -70,7 +64,7 @@ a{
 	position:relative;
 	height:700px;
 	display: inline-block;
-	margin-top:100px;
+	margin-top:93px;
 
 }
 .newCenter img{
@@ -135,9 +129,6 @@ a{
 	position:absolute;
 	left:300px;
 	height:400px;
-}
-#goOne .goOne-center .goOne-center--left:hover{
-	box-shadow: 6px 6px 14px #d7d7d7;
 }
 #goOne .goOne-center .goOne-center--right{
 	width:462px;
@@ -260,7 +251,7 @@ a{
 #go3 .goThree-Center .goThreeShade a,#go3 .goThree-Center .goThreeShadeTwo a,#go3 .goThree-Center .goThreeShadeThree a
 ,#go3 .goThree-Center .goThreeShadeFour a,#go3 .goThree-Center .goThreeShadeFive a
 {
-	color:#ffffff;
+	color:#1b6d85;
 	width:80px;
 	height:50px;
 	font-size:20px;
@@ -268,7 +259,7 @@ a{
 	z-index:10;
 	display: inline-block;
 	left:30px;
-	top:20px;
+	top:50px;
 	text-decoration: none;
 }
 #go3 .goThree-Center .goThree-rightTop{
@@ -374,12 +365,13 @@ a{
 
 }
 #go2 #goOne .goTwo-center .shade{
-	box-shadow: 6px 6px 14px #d7d7d7;}
+	border-radius:15px;
+	box-shadow: 5px 5px 10px #d7d7d7,-5px -5px 15px rgba(215,215,215,0.5);}
 /*轮播图*/
 #newMain #newEnd{
 	width:100%;
 	position:relative;
-	height:300px;
+	height:160px;
 	/*display: inline-block;*/
 	min-width: 1800px;
 	/*border:solid 1px red;*/
@@ -393,8 +385,22 @@ a{
 	height:100%;
 
 }
+#newMain #sign{
+	display:inline-block;
+	position: absolute;
+	top:28px;
+	margin-left:220px;
+
+}
+#newMain #sign a{
+	font-size:20px;
+	text-decoration: none;
+}
+#newMain #sign a:hover{
+	text-decoration: none;
+}
 #person-img{
-	width:150px;
+	width:300px;
 	height:70px;
 	position:relative;
 	left:1500px;
@@ -406,8 +412,208 @@ a{
 	position: absolute;
 	left:-41px;
 }
-#person-img .btn{
-	position: absolute;
+#person-img #zx{
+	position:absolute;
 	left:120px;
 	top:15px;
+	font-size:20px;
+}
+#person-img a:hover{
+	text-decoration: none;
+}
+/*下面是课程教育*/
+#newMain #go4 #addCourse{
+	width:1200px;
+	height:500px;
+	position:absolute;
+	z-index:20;
+	background:white;
+	/*border:solid 1px #d7d7d7;*/
+	left:400px;
+	top:-20px;
+	display: none;
+}
+#newMain #go4 #addCourse #addCourseLeft,#newMain #go4 #addCourse #addCourseRight{
+	width:400px;
+	height:350px;
+	display:inline-block;
+	left:130px;
+	position: absolute;
+	top:0px;
+}
+#newMain #go4 #addCourse #addCourseRight{
+	left:450px;
+	width:500px;
+	margin-left:100px;
+	font-size:18px;
+}
+#newMain #go4 #addCourse #addCourseLeft #addCourseLeft-title,#newMain #go4 #addCourse #addCourseRight #addCourseRight-title{
+	font-size:20px;
+	display: inline-block;
+	position: absolute;
+	top:70px;
+}
+#newMain #go4 #addCourse #addCourseLeft img{
+	position: absolute;
+	top:120px;
+	box-shadow: 3px 3px 10px #CCCCCC;
+	border-radius: 5px;
+}
+#newMain #go4 #addCourse #addCourseRight #addCourseRight-content{
+	position: absolute;
+	top:120px;
+	border-bottom:solid 1px #ccc;
+	padding-bottom: 20px;
+}
+#newMain #go4 #addCourse #addCourseRight button{
+	position: absolute;
+	top:280px;
+}
+#newMain #go4 #addCourse #addCourseRight #two{
+	left:150px;
+}
+#newMain #go4 #addCourse #addCourseRight img{
+	position: absolute;
+	top:210px;
+}
+#newMain #go4 #addCourse #addCourseRight #price{
+	position: absolute;
+	top:215px;
+	font-size:27px;
+	color:#fd9a26;
+	left:60px;
+}
+#newMain #go4 #addCourse #error{
+	position: absolute;
+	right:10px;
+	font-size:15px;
+}
+#newMain #go4 #addCourse #error:hover{
+	cursor: pointer;
+}
+#addCourse #buySuccess{
+	width:400px;
+	height:200px;
+	border:solid 1px #d7d7d7;
+	border-radius: 15px;
+	position: absolute;
+	color:green;
+	background:white;
+	padding:70px 77px;
+	display:none;
+	left:400px;
+	top:150px;
+}
+#buySuccess #buyerror{
+	position: absolute;
+	right:10px;
+	top:0px;
+	font-size:15px;
+}
+#buySuccess #buyerror:hover{
+	cursor: pointer;
+}
+/*下面是课程教育*/
+#newMain #go4 #addCourse{
+	width:1200px;
+	height:500px;
+	position:absolute;
+	z-index:20;
+	background:white;
+	/*border:solid 1px #d7d7d7;*/
+	left:400px;
+	top:-20px;
+	display: none;
+}
+#newMain #go4 #addCourse #addCourseLeft,#newMain #go4 #addCourse #addCourseRight{
+	width:400px;
+	height:350px;
+	display:inline-block;
+	left:130px;
+	position: absolute;
+	top:0px;
+}
+#newMain #go4 #addCourse #addCourseRight{
+	left:450px;
+	width:500px;
+	margin-left:100px;
+	font-size:18px;
+}
+#newMain #go4 #addCourse #addCourseLeft #addCourseLeft-title,#newMain #go4 #addCourse #addCourseRight #addCourseRight-title{
+	font-size:20px;
+	display: inline-block;
+	position: absolute;
+	top:70px;
+}
+#newMain #go4 #addCourse #addCourseLeft img{
+	position: absolute;
+	top:120px;
+	box-shadow: 3px 3px 10px #CCCCCC;
+	border-radius: 5px;
+}
+#newMain #go4 #addCourse #addCourseRight #addCourseRight-content{
+	position: absolute;
+	top:120px;
+	border-bottom:solid 1px #ccc;
+	padding-bottom: 20px;
+}
+#newMain #go4 #addCourse #addCourseRight button{
+	position: absolute;
+	top:280px;
+}
+#newMain #go4 #addCourse #addCourseRight #two{
+	left:150px;
+}
+#newMain #go4 #addCourse #addCourseRight img{
+	position: absolute;
+	top:210px;
+}
+#newMain #go4 #addCourse #addCourseRight #price{
+	position: absolute;
+	top:215px;
+	font-size:27px;
+	color:#fd9a26;
+	left:60px;
+}
+#newMain #go4 #addCourse #error{
+	position: absolute;
+	right:10px;
+	font-size:15px;
+}
+#newMain #go4 #addCourse #error:hover{
+	cursor: pointer;
+}
+#addCourse #buySuccess{
+	width:400px;
+	height:200px;
+	border:solid 1px #d7d7d7;
+	border-radius: 15px;
+	position: absolute;
+	color:green;
+	background:white;
+	padding:70px 77px;
+	display:none;
+	left:400px;
+	top:150px;
+}
+#buySuccess #buyerror{
+	position: absolute;
+	right:10px;
+	top:0px;
+	font-size:15px;
+}
+#buySuccess #buyerror:hover{
+	cursor: pointer;
+}
+#title1,#title2,#title5,#title3,#title4{
+	top:30px;
+	left:50px;
+	width:220px;
+	height:30px;
+}
+#contentOne,#contentTwo,#contentThree,#contentFour,#contentFive{
+	margin-top:10px;
+	left:50px;
+	width:220px;
+	height:30px;
 }

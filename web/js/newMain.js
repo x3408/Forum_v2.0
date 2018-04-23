@@ -2,14 +2,14 @@ $(function(){
 	  
 	    $('.mainTop').on('click','a',function(e){
          var id = $(this).attr("data-to");
-         alert($('#'+id).offset().top);
+
          $(this).css("color","red");
           $('html,body').animate({scrollTop:$('#'+id).offset().top-100+'px'}, 800);
       
         });
        //页面刷新时重新回到顶部
        
-//$(window).scrollTop(0);
+// $(window).scrollTop(0);
         $(window).scroll(function(){
   	    if($(window).scrollTop()<=648){
          $(".nav a").css("color","white");

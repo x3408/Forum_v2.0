@@ -100,8 +100,8 @@ window.onload = function() {
 	$('#rightnow').click(function(e){
 		$('.bgImg').addClass('flip');
 	})
-	/*$('#btn2').click(function(e){
-		e.preventDefault();
+	$('#turnTo').click(function(e){
+		// e.preventDefault();
 		$('.bgImg').removeClass('flip');
-	})*/
+	})
 }

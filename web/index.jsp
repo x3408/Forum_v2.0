@@ -13,11 +13,11 @@
 		<meta charset="utf-8" />
 		<title>首页</title>
 		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/newMain.css">
+		<link rel="stylesheet" href="css/newMain.css?1">
 		<link rel="stylesheet" href="css/mainPage.css">
 		<script src="js/jquery.min.js"></script>
 		<script src="js/newMain.js"></script>
-		<script src="js/NewWeb-Main.js"></script>
+		<script src="js/NewWeb-Main.js?1"></script>
 		
 	</head>
 	<body>
@@ -28,14 +28,14 @@
 					<li class="nav-li" ><a href="javascript:;" class="index1" data-to="go1">发现精选</a></li>
 					<li class="nav-li" ><a href="javascript:;" class="index2" data-to="go2">新闻中心</a></li>
 				</ol>
-				<img src="img/main2.png">
+				<img src="img/main.png">
 				<ul class="nav nav-pills">
 					<li class="nav-li"><a href="javascript:;"  class="index3" data-to="go3">经验分享</a></li>
 					<li class="nav-li"><a href="javascript:;"  class="index4" data-to="go4">课程教育</a></li>
 				</ul>
 			  <s:if test="#session.user == null">
 				<div id="sign">
-					<a class="btn btn-info" href="${pageContext.request.contextPath}/loginRegister.jsp">登陆</a>
+					<a href="${pageContext.request.contextPath}/loginRegister.jsp">登陆</a>
 				</div>
 			  </s:if>
 			  <s:else>
@@ -43,7 +43,7 @@
 					  <a href="${pageContext.request.contextPath}/PersonAction_findAllData">
 						  <img src="/headPortrait/${user.headPortrait}" class="img-circle">
 					  </a>
-					  <a class="btn btn-info" href="${pageContext.request.contextPath}/UserAction_logout">注销</a>
+					  <a id="zx" href="${pageContext.request.contextPath}/UserAction_logout">注销</a>
 				  </div>
 			  </s:else>
 		  </div>
@@ -187,38 +187,58 @@
 		  	 		<p class="goOne-find">课程教育</p>
 		  	 		<p class="goOne-p">ABOUT&nbsp;&nbsp;COMPANY</p>
 		  	 		<div class="goFour-Center">
-		  	 			<a href="">
+						<div id="addCourse">
+							<div id="addCourseLeft">
+								<div id="addCourseLeft-title">瑜伽基础：清晨十分钟瑜伽练习</div>
+								<div>
+									<img src="img/course1.png">
+								</div>
+							</div>
+							<div id="addCourseRight">
+								<div id="addCourseRight-title">课程描述:</div>
+								<div id="addCourseRight-content">
+									清晨十分钟瘦身瑜伽练习，现代人的瑜伽是一系列的修养身心方法。在此就介绍一下练瑜伽有什么好处
+								</div>
+								<img src="img/course3.png">
+								<div id="price">99.00</div>
+								<button id="one" class="btn btn-info">免费学习</button>
+								<button id="two" class="btn btn-info">购买课程</button>
+							</div>
+							<div id="error">x</div>
+							<div id="buySuccess">
+								恭喜你购买成功！
+								<div id="buyerror">x</div>
+							</div>
+						</div>
+
+
 		  	 				<div class="goFour-CenterLeft">
 		  	 				<img src="img/edu1.png">
 		  	 				<p>科学训练计划</p>
 		  	 			    </div> 
-		  	 			</a>
+
 		  	 			
-		  	 			<a href="">
+
 		  	 				<div class="goFour-CenterLc">
 		  	 				<img src="img/edu2.png">
 		  	 				<p>女神线条必备</p>
 		  	 			</div>
-		  	 			</a>
-		  	 			
-		  	 			<a href="">
+
+
 		  	 				<div class="goFour-CenterRc">
 		  	 				<img src="img/edu3.png">
 		  	 				<p>热爱运动我们一起</p>
 		  	 			</div>
-		  	 			</a>
+
 		  	 			
-		  	 			<a href="">
+
 		  	 				<div class="goFour-CenterRight">
 		  	 				<img src="img/edu4.png">
 		  	 				<p>踏青旅游好时光</p>
 		  	 			</div>
-		  	 			</a>
-		  	 			
+
 		  	 		</div>   
-		  	 		<div class="goOne-buttom">
-		  	 			<a href="">MORE</a>
-		  	 		</div>
+
 		  	 	</div>
 		  	</div>
 		  </div>

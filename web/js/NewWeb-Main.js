@@ -30,6 +30,19 @@ $(function(){
 			$("#contentFive").html(data[4].descriptive);
 	},
 	"json")
+    window.onload=function(){
+    var realH=$("#loadOne").height()+"px";
+    $(".goThreeShade").css("height",realH);
+    var realHT=$("#loadTwo").height()+"px";
+    $(".goThreeShadeTwo").css("height",realHT);
+    var realHTr=$("#loadThree").height()+"px";
+
+    $(".goThreeShadeThree").css("height",realHTr);
+    var realHTlb=$("#loadFour").height()+"px";
+    $(".goThreeShadeFour").css("height",realHTlb);
+    var realHTrb=$("#loadFive").height()+"px";
+    $(".goThreeShadeFive").css("height",realHTrb);
+    }
 	$(".goThree-Center img").addClass("carousel-inner img-responsive img-rounded");
 	$(".goThree-leftTop").mouseover(function() {
 		$(".goThreeShade").show();
@@ -67,19 +80,7 @@ $(function(){
 	$(".addShade").mouseout(function(){
 		$(this).removeClass("shade");
 	})
-window.onload=function(){
-		var realH=$("#loadOne").height()+"px";
-		$(".goThreeShade").css("height",realH);
-		var realHT=$("#loadTwo").height()+"px";
-        $(".goThreeShadeTwo").css("height",realHT);
-	    var realHTr=$("#loadThree").height()+"px";
-//		alert(realHTr);
-		$(".goThreeShadeThree").css("height",realHTr);
-		var realHTlb=$("#loadFour").height()+"px";
-		$(".goThreeShadeFour").css("height",realHTlb);
-		var realHTrb=$("#loadFive").height()+"px";
-		$(".goThreeShadeFive").css("height",realHTrb);
-	}
+
     var banner=document.getElementById('banner');
 //  alert(banner);
 	var list=document.getElementById('list');
@@ -127,7 +128,42 @@ window.onload=function(){
 		animate(462);
 	}
 	var index=1;
-	
+    //下面是课程教育
+    $(".goFour-CenterLc").click(function(){
+        $("#addCourseLeft-title").html("瑜伽基础：清晨十分钟瑜伽练习");
+        $("#addCourseLeft img").attr("src","img/course1.png");
+        $("#addCourseRight-content").html("清晨十分钟瘦身瑜伽练习，现代人的瑜伽是一系列的修养身心方法。在此就介绍一下练瑜伽有什么好处");
+        $("#addCourse").fadeIn(500);
+    })
+    $(".goFour-CenterLeft").click(function(){
+        $("#addCourseLeft-title").html("杠铃基础：每天坚持练习杠铃");
+        $("#addCourseLeft img").attr("src","img/course2.png");
+        $("#addCourseRight-content").html("每天进行适当的杠铃练习对身体有很大的好处，在此就介绍一下练习杠铃有什么好处");
+        $("#addCourse").fadeIn(500);
+    })
+    $(".goFour-CenterRc").click(function(){
+        $("#addCourseLeft-title").html("篮球运动：与朋友一起打篮球");
+        $("#addCourseLeft img").attr("src","img/course5.png");
+        $("#addCourseRight-content").html("每天空闲的时候可以和朋友去室外打打篮球，在此就介绍一下打篮球有什么好处");
+        $("#addCourse").fadeIn(500);
+    })
+    $(".goFour-CenterRight").click(function(){
+        $("#addCourseLeft-title").html("踏青运动：最舒适的运动");
+        $("#addCourseLeft img").attr("src","img/course6.png");
+        $("#addCourseRight-content").html("春天是适合踏青的最好时机，让我们一起把握时机。让我们看看有关于踏青的项目");
+        $("#addCourse").fadeIn(500);
+    })
+    $("#two").click(function(){
+        $("#buySuccess").fadeIn(500);
+    })
+    $("#buyerror").click(function(){
+        $("#buySuccess").fadeOut(500);
+    })
+    $("#error").click(function(){
+        $("#addCourse").fadeOut(500);
+    })
+
+
 })
 	
 
