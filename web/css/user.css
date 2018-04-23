@@ -9,6 +9,8 @@ body{
 	min-width:1115px ;
     position: relative;
 	z-index:1;
+	background: url("../img/cimg.png");
+	background-size: 100%;
 }
 .header ul{
 	height: 163px;
