@@ -102,7 +102,7 @@
                 $('.main-center').append('<div class="box"><a href="${pageContext.request.contextPath}/TopicAction_showTopic?tid='+data[i].tid+'"><div class="topicFrom"><span class="date" id="date">' + timer + '</span><span class="viewCount" id="viewCount">阅读量： ' + data[i].viewCount + '</span></div><div class="name"><div class="myPic" id="myPic"><img class="img-circle" src="/headPortrait/'+data[data.length/2+i].headPortrait+'" /></div><div class="username" id="username">' + data[data.length/2+i].username + '</div></div><div class="context"><div class="title" id="title">' + data[i].title + '</div><p class="content" id="content">' + data[i].descriptive + '</p></div></a></div>');
 
             }
-        })
+        },"json")
     }
 
 //    搜索

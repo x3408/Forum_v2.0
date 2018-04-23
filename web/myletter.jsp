@@ -14,7 +14,7 @@
     <meta charset="utf-8" />
     <title>个人中心</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/asidenav.css?1" />
+    <link rel="stylesheet" type="text/css" href="css/asidenav.css" />
     <link rel="stylesheet" type="text/css" href="css/personCenter.css" />
     <link rel="stylesheet" type="text/css" href="css/bigTalk.css" />
 </head>
@@ -61,7 +61,7 @@
                 <label for="" class="aside-menu" title="按住拖动">菜单</label>
 
                 <a href="javascript:void(0)" title="签到" class="menu-item menu-first">签到</a>
-                <a href="${pageContext.request.contextPath}/OldPage/addTopic.jsp" title="发表文章" class="menu-item menu-second">发表文章</a>
+                <a href="${pageContext.request.contextPath}/addTopic.jsp" title="发表文章" class="menu-item menu-second">发表文章</a>
             </div>
 
         </div>
@@ -87,6 +87,7 @@
     </div>
     <div class="send">
         <textarea name="text" rows="4" cols="40" id="talk"></textarea>
+        <input id="sendId" type="hidden" value="">
         <input type="button" value="发送" id="btn" />
     </div>
 </div>
@@ -102,36 +103,8 @@
         function(data) {
         for(var i = 0; i < data.length / 2; i++) {
             var timer = data[i].time.month + "月" + data[i].time.day + "日 " + data[i].time.hours + ":" + data[i].time.minutes + ":" + data[i].time.seconds;
-            $('.content-text').append('<div class="conversation"><img src="/headPortrait/'+data[(data.length / 2) + i].headPortrait+'" class="img-circle"width="60px"height="60px"><div class="right"><input type="hidden" value="'+data[i].send_id+'" style="display: none;"><div id="userName">' + data[(data.length / 2) + i].username + '<span >' + timer + '</span></div><div id="message">' + data[i].content + '</div></div></div>');
+            $('.content-text').append('<div class="conversation"><img src="/headPortrait/'+data[(data.length / 2) + i].headPortrait+'" class="img-circle"width="60px"height="60px"><div class="right" onclick="showMessage(\''+data[i].send_id+'\')"><input type="hidden" value="'+data[i].send_id+'" style="display: none;"><div id="userName">' + data[(data.length / 2) + i].username + '<span >' + timer + '</span></div><div id="message">' + data[i].content + '</div></div></div>');
 
-            //弹出对话框或者隐藏
-            $(function() {
-                $(".bigTalk").hide();
-                $("#return").click(function() {
-                    $(".bigTalk").fadeOut(200);
-                })
-                $(".right").click(function() {
-                    $('#content').empty();
-                    $(".bigTalk").fadeIn(300);
-                    var send_id = $('input').val();
-                    $.post(
-                        "${pageContext.request.contextPath}/PersonAction_showMessage",
-//                        "new_file1.json",
-                        {send_id: send_id},
-                        function (data) {
-                            for(var i=0;i<data.length;i++) {
-                                if(data[i].status == 0) {
-                                    $('#content').append('<div class="theybox"><div class="they">' + data[i].content + '</div></div>');
-                                } else {
-                                    $('#content').append('<div class="ourbox"><div class="me">' + data[i].content + '</div></div>');
-                                }
-                            }
-                        },
-                        "json"
-                    );
-
-                })
-            })
             //移动窗口代码
             $("#top").mousedown(function(event) {
                 var isMove = true;
@@ -154,12 +127,37 @@
         }
     },
     "json")
+
+    function showMessage(send_id) {
+        $('#content').empty();
+        $(".bigTalk").fadeIn(300);
+        $("#return").click(function() {
+            $(".bigTalk").fadeOut(200);
+        })
+        $('#sendId').val(send_id);
+
+        $.post(
+            "${pageContext.request.contextPath}/PersonAction_showMessage",
+            {send_id: send_id},
+            function (data) {
+                for(var i=0;i<data.length;i++) {
+                    if(data[i].status == 0) {
+                        $('#content').append('<div class="theybox"><div class="they">' + data[i].content + '</div></div>');
+                    } else {
+                        $('#content').append('<div class="ourbox"><div class="me">' + data[i].content + '</div></div>');
+                    }
+                }
+            },
+            "json"
+        );
+    }
+
     //获取填写数据并填写
     var talk = document.getElementById('talk');
     $('#btn').click(function() {
 
         $('#content').append('<div class="ourbox"><div class="me">' + talk.value + '</div></div>');
-        var send_id = $('#send_id').val();
+        var send_id = $('#sendId').val();
         $.post(
             "${pageContext.request.contextPath}/PersonAction_addMessage",
             {message: talk.value, send_id: send_id},

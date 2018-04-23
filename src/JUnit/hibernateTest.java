@@ -179,13 +179,13 @@ public class hibernateTest {
 
     @Test
     public void showMessageTest() {
-        List messages = personDao.showMessage("297e949462718501016271d4a2ea0001", "297e9494627185010162719571510000");
+        List messages = personDao.showMessage("52addfd6626fc1b701626fd6110e0001", "52addfd6626fa9d201626fabce720000");
         System.out.println(messages);
     }
 
     @Test
     public void getMessageTitleByUserTest() {
-        List<Message> messageTitleByUser = personDao.getMessageTitleByUser(0,3,"52addfd6626fa9d201626fabce720000");
+        List<Message> messageTitleByUser = personDao.getMessageTitleByUser(0,3,"52addfd6626fc1b701626fd6110e0001");
         System.out.println(messageTitleByUser);
 
     }

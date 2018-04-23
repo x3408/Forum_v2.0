@@ -16,6 +16,7 @@ import org.apache.struts2.ServletActionContext;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -153,25 +154,29 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
     }
 
     //显示私信具体内容
-    public String showMessage() {
-        User user = (User) ActionContext.getContext().getSession().get("listAllData");
+    public String showMessage() throws IOException {
+        User user = (User) ActionContext.getContext().getSession().get("user");
+        if (user == null) {
+            ServletActionContext.getResponse().getWriter().write("{\"status\":\"noUser\"}");
+            return null;
+        }
 //        String send_id = (String) ServletActionContext.getRequest().getParameter("send_id");
 //        String send_id = (String) ActionContext.getContext().get("send_id");
         List<Util.Message> lists = ps.showMessage(user, send_id);
         String message = JSONArray.fromObject(lists).toString();
         System.out.println(message);
-        try {
-            ServletActionContext.getResponse().setContentType("application/json;charset=utf-8");
-            ServletActionContext.getResponse().getWriter().write(message);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        ServletActionContext.getResponse().setContentType("application/json;charset=utf-8");
+        ServletActionContext.getResponse().getWriter().write(message);
         return null;
     }
 
     //显示私信摘要
-    public String showMessageTitle() {
+    public String showMessageTitle() throws IOException {
         User user = (User) ActionContext.getContext().getSession().get("listAllData");
+        if (user == null) {
+            ServletActionContext.getResponse().getWriter().write("{\"status\":\"noUser\"}");
+            return null;
+        }
         user.setStatus(0);
         ps.updateData(user);
         List<Message> list = ps.showMessageTitleByUser(user, page);
@@ -196,19 +201,23 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
 
         String data = messageTitle.substring(0, messageTitle.length()-1) + "," + userInfo.substring(1,userInfo.length());
         System.out.println(data);
-        try {
-            ServletActionContext.getResponse().setContentType("application/json;charset=utf-8");
-            ServletActionContext.getResponse().getWriter().write(data);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        ServletActionContext.getResponse().setContentType("application/json;charset=utf-8");
+        ServletActionContext.getResponse().getWriter().write(data);
         return null;
     }
 
     //发送私信
     public String addMessage() {
         //修改用户状态为1
-        User user = (User) ActionContext.getContext().getSession().get("listAllData");
+        User user = (User) ActionContext.getContext().getSession().get("user");
+        if (user == null) {
+            try {
+                ServletActionContext.getResponse().getWriter().write("{\"status\":\"noUser\"}");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
         ps.addMessage(user, send_id, message);
 
         User receiveUser = new User();
@@ -228,7 +237,7 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
           msg = 1;
         }
         try {
-            ServletActionContext.getResponse().getWriter().write("{\"msg\":"+ msg +"}");
+            ServletActionContext.getResponse().getWriter().write("{\"msg\":\""+ msg +"\"}");
         } catch (IOException e) {
             e.printStackTrace();
         }

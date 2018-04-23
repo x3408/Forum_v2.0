@@ -17,6 +17,7 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="css/asidenav.css" />
     <link rel="stylesheet" type="text/css" href="css/personCenter.css" />
+    <link rel="stylesheet" type="text/css" href="css/bigTalk.css" />
 </head>
 
 <body>
@@ -49,7 +50,7 @@
                         <span id="news">new</span>
                     </s:if>
                     <s:else>
-                        <a onclick="">发送私信</a>
+                        <a onclick="showMessage('${listAllData.uid}')">发送私信</a>
                     </s:else>
                 </li>
             </ul>
@@ -67,10 +68,10 @@
 
                 <a href="javascript:void(0)" title="签到" class="menu-item menu-first">签到</a>
                 <s:if test="#session.user.uid == #session.listAllData.uid">
-                    <a href="${pageContext.request.contextPath}/OldPage/addTopic.jsp" title="发表文章" class="menu-item menu-second">发表文章</a>
+                    <a href="${pageContext.request.contextPath}/addTopic.jsp" title="发表文章" class="menu-item menu-second">发表文章</a>
                 </s:if>
                 <s:else>
-                    <a onclick="" title="发送私信" class="menu-item menu-second">发送私信</a>
+                    <a onclick="showMessage('${listAllData.uid}')" title="发送私信" class="menu-item menu-second">发送私信</a>
                 </s:else>
             </div>
 
@@ -81,6 +82,23 @@
     <div class="content-main">
         <div class="content-text">
 
+        </div>
+    </div>
+    <!--弹出对话框-->
+    <div class="bigTalk">
+        <div id="top">
+            <span id="conversation">对话窗口</span>
+            <span id="return">&times;</span>
+        </div>
+        <div id="bigTalk-main">
+        <span id="content">
+            <%--私信具体内容--%>
+        </span>
+        </div>
+        <div class="send">
+            <textarea name="text" rows="4" cols="40" id="talk"></textarea>
+            <input id="sendId" type="hidden" value="">
+            <input type="button" value="发送" id="btn" />
         </div>
     </div>
 </div>
