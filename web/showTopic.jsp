@@ -163,17 +163,8 @@
 </head>
 <body>
 <div class="header">
-    <img id="headerImg" src="img/commitImg.png">
-    <div class="header-content">
-        <a href="${pageContext.request.contextPath}/index.jsp"><img src="img/logo.png"></a>
-        <ul>
-            <li><a href="">首页</a></li>
-            <li><a href="">成果展示</a></li>
-            <li><a href="">训练心得</a></li>
-            <li><a href="">饮食计划</a></li>
-            <li><a href="">健身日记</a></li>
-        </ul>
-    </div>
+    <img id="headerImg" src="img/showTopicHead.png">
+
 
 
 </div>
