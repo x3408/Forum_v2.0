@@ -13,11 +13,11 @@
 		<meta charset="utf-8" />
 		<title>首页</title>
 		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/newMain.css?1">
+		<link rel="stylesheet" href="css/newMain.css?3">
 		<link rel="stylesheet" href="css/mainPage.css">
 		<script src="js/jquery.min.js"></script>
 		<script src="js/newMain.js"></script>
-		<script src="js/NewWeb-Main.js?1"></script>
+		<script src="js/NewWeb-Main.js"></script>
 		
 	</head>
 	<body>
@@ -28,7 +28,7 @@
 					<li class="nav-li" ><a href="javascript:;" class="index1" data-to="go1">发现精选</a></li>
 					<li class="nav-li" ><a href="javascript:;" class="index2" data-to="go2">新闻中心</a></li>
 				</ol>
-				<img src="img/main.png">
+				<img id="toTop" src="img/main.png">
 				<ul class="nav nav-pills">
 					<li class="nav-li"><a href="javascript:;"  class="index3" data-to="go3">经验分享</a></li>
 					<li class="nav-li"><a href="javascript:;"  class="index4" data-to="go4">课程教育</a></li>
@@ -41,7 +41,7 @@
 			  <s:else>
 				  <div id="person-img">
 					  <a href="${pageContext.request.contextPath}/PersonAction_findAllData">
-						  <img src="/headPortrait/${user.headPortrait}" class="img-circle">
+						  <img src="${pageContext.request.contextPath}/headPortrait/${user.headPortrait}" class="img-circle">
 					  </a>
 					  <a id="zx" href="${pageContext.request.contextPath}/UserAction_logout">注销</a>
 				  </div>
@@ -57,7 +57,7 @@
 		  	 		<p class="goOne-find">发现精选</p>
 		  	 		<p class="goOne-p">FOUR&nbsp;&nbsp;COMPANY</p>
 		  	 		<div class="goOne-center">
-		  	 		  <a href="">
+		  	 		  <a href="${pageContext.request.contextPath}/newNewSix.html" target="_blank">
 		  	 			<div class="goOne-center--left">
 		  	 				<h2>要么健身，要么读书</h2>
 		  	 				<h3>要么健身，要么读书，身体和灵魂，必须有一个在路上</h3>
@@ -71,12 +71,12 @@
 		  	 		  </a>
 		  	 		   <div class="goOne-center--right" id="banner">
 		  	 		   	   <div id="list" style="left:-462px">
-		  	 		        <a href=""><img src="img/scroll5.png"></a>
-					        <a href=""><img src="img/scroll2.png"></a>
-						    <a href=""><img src="img/scroll3.png"></a>
-						    <a href=""><img src="img/scroll4.png"></a>
-						    <a href=""><img src="img/scroll5.png"></a>
-						    <a href=""><img src="img/scroll2.png"></a>
+		  	 		        <a href="${pageContext.request.contextPath}/newNewSix.html" target="_blank"><img src="img/scroll5.png"></a>
+					        <a href="${pageContext.request.contextPath}/newNewSix.html" target="_blank"><img src="img/scroll2.png"></a>
+						    <a href="${pageContext.request.contextPath}/newNewSix.html" target="_blank"><img src="img/scroll3.png"></a>
+						    <a href="${pageContext.request.contextPath}/newNewSix.html" target="_blank"><img src="img/scroll4.png"></a>
+						    <a href="${pageContext.request.contextPath}/newNewSix.html" target="_blank"><img src="img/scroll5.png"></a>
+						    <a href="${pageContext.request.contextPath}/newNewSix.html" target="_blank"><img src="img/scroll2.png"></a>
 					      </div>
 					   </div>
 		  	 		<a href="javascript:;" class="arrow" id="prev">&lt;</a>
@@ -85,9 +85,9 @@
 		  	 		<!--//开始
 		  	 		
 	                 <!--//结束-->
-		  	 		<div class="goOne-buttom">
-		  	 			<a href="">MORE</a>
-		  	 		</div>
+		  	 		<%--<div class="goOne-buttom">--%>
+		  	 			<%--<a href="">MORE</a>--%>
+		  	 		<%--</div>--%>
 		  	 	</div>
 		  	 </div>
 		  	 <div id="go2">
@@ -96,24 +96,34 @@
 		  	 		<p class="goOne-find">新闻中心</p>
 		  	 		<p class="goOne-p">ABOUT&nbsp;&nbsp;COMPANY</p>
 		  	 		<div class="goTwo-center">
-		  	 			<a href="">
+		  	 			<a href="${pageContext.request.contextPath}/newNewOne.html" target="_blank">
 		  	 				<div class="goTwo-leftTop addShade">
-		  	 		   	     nihaoshijie
+								<h3 style="margin-left:30px;"><b>青岛全民健身登山节</b></h3>
+								<p style="margin-left:30px;margin-right:30px;" class="newCenterOne">4月21日-22日，2018年全国群众登山健身大会开幕式的暨“体彩杯”青岛市全民健身登山节活动在青岛市全面展开，这是全国群众登山健身大会开幕式第九次落户青岛，青岛也成为该项节庆活动创办以来承办开幕式最多的城市。</p>
 		  	 		        </div>
 		  	 			</a>
-		  	 		    <a>
-		  	 		    	    <div class="goTwo-rightTop addShade">右上</div>
+		  	 		    <a href="${pageContext.request.contextPath}/newNewTwo.html" target="_blank">
+		  	 		    	    <div class="goTwo-rightTop addShade">
+									<h3 style="margin-left:30px;"><b>为什么说健身是必不可做的事情？</b></h3>
+									<p style="margin-left:30px;margin-right:30px;" class="newCenterOne">健身是一种习惯,如果你从不运动，如果你毕业很多年，你的身体轨迹大概是这样的：刚毕业，身体脂肪含量达到了10%-13%。</p>
+								</div>
 		  	 		    </a>
-		  	 		    <a>
-		  	 		    	     <div class="goTwo-leftButtom addShade">左下</div>
+		  	 		    <a href="${pageContext.request.contextPath}/newNewthree.html" target="_blank">
+		  	 		    	     <div class="goTwo-leftButtom addShade">
+									 <h3 style="margin-left:30px;"><b>慢跑减肥正确方法 轻松快速燃烧脂肪</b></h3>
+									 <p style="margin-left:30px;margin-right:30px;" class="newCenterOne">慢跑要取得减肥的效果，需要跑多远和跑多久呢。由于每个人步幅和跑步的速度都不同。因此慢跑减肥在时间上并没有明确的要求。但是在路程上却要求达到5000米，跑步的速度也不能太慢哦。</p>
+								 </div>
 		  	 		    </a>
-		  	 		    <a>
-		  	 		    	    <div class="goTwo-rightButtom addShade">右下</div>
+		  	 		    <a href="${pageContext.request.contextPath}/newNewFour.html" target="_blank">
+		  	 		    	    <div class="goTwo-rightButtom addShade">
+									<h3 style="margin-left:30px;"><b>第一次去健身房的新手小白攻略！</b></h3>
+									<p style="margin-left:30px;margin-right:30px;" class="newCenterOne">那么可以先做有氧运动，去跑步机上跑跑步，记得热身哦！有人会说了，既然到健身房只是跑步的话，自己也可以到外面夜跑啊，小风吹着多惬意！</p>
+								</div>
 		  	 		    </a>
 		  	 		</div>
-		  	 		<div class="goOne-buttom">
-		  	 			<a href="">MORE</a>
-		  	 		</div>
+		  	 		<%--<div class="goOne-buttom">--%>
+		  	 			<%--<a href="">MORE</a>--%>
+		  	 		<%--</div>--%>
 		  	 	</div>
 		  	 </div>
 		  	 <div id="go3">

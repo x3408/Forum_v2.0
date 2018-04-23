@@ -11,26 +11,26 @@
 <head>
     <meta charset="utf-8" />
     <title>publish article</title>
-    <link rel="stylesheet" href="../css/publishacticle.css">
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../kindeditor/themes/default/default.css">
-    <script src="../kindeditor/kindeditor-all.js"></script>
-    <script src="../kindeditor/lang/zh-CN.js"></script>
-    <script src="../js/publisharticle.js"></script>
-    <script src="../js/jquery-1.8.3.js"></script>
+    <link rel="stylesheet" href="css/publishacticle.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="kindeditor/themes/default/default.css">
+    <script src="kindeditor/kindeditor-all.js"></script>
+    <script src="kindeditor/lang/zh-CN.js"></script>
+    <script src="js/publisharticle.js"></script>
+    <script src="js/jquery-1.8.3.js"></script>
 
 </head>
 <body>
 <div id="publishArticle">
     <div id="publishArticle-top">
-        <img src="../img/logo.png"width="50px"height="50px">
+        <img src="img/logo.png"width="50px"height="50px">
         <div id="publishArticle-top--logo" class="btn">
-            <img src="../img/article1.png">
+            <img src="img/article1.png">
             <span >写文章</span>
         </div>
         <div id="publishArticle-top--user">
-            <img src="/headPortrait/${listAllData.headPortrait}" class="img-circle">
-            <a class="btn btn-danger" role="button"style="background:#04c1f1;border: none">退出登录</a>
+            <img src="${pageContext.request.contextPath}/headPortrait/${listAllData.headPortrait}" class="img-circle">
+            <a class="btn btn-danger" role="button"style="background:#04c1f1;border: none" href="${pageContext.request.contextPath}/UserAction_logout">退出登录</a>
         </div>
     </div>
     <div id="publishArticle-main">

@@ -158,12 +158,11 @@
 
     <link rel="stylesheet" type="text/css" href="../css/style.css"/>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/user.css?5 ">
+    <link rel="stylesheet" href="../css/user.css?6 ">
 
 </head>
 <body>
 <div class="header">
-    <img id="headerImg" src="../img/commitImg.png">
     <div class="header-content">
         <a href="${pageContext.request.contextPath}/OldPage/home.jsp"><img src="../img/logo.png"></a>
         <ul>

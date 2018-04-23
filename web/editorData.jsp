@@ -13,10 +13,10 @@
 <head>
     <meta charset="utf-8"/>
     <title>编辑资料</title>
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/editorData.css?4">
-    <script src="../js/jquery.min.js"></script>
-    <script src="../js/editorData.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/editorData.css?4">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/editorData.js"></script>
 
 </head>
 <body>
@@ -36,7 +36,7 @@
             <div id="editorData-headImg">
                 <span id="imgtext">当前头像
 
-                <img src="${basePath}/headPortrait/${listData.headPortrait}">
+                <img src="${pageContext.request.contextPath}/headPortrait/${listData.headPortrait}">
 
                 </span>
                 <%--<input type="file" name ="headPortrait">--%>

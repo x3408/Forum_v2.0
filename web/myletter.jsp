@@ -28,16 +28,22 @@
         </div>
         <div class="headimg">
             <%--点击头像 转到编辑资料页--%>
-                <img class="img-circle" src="/headPortrait/${listAllData.headPortrait}" width="80px" height="80px" />
+                <s:if test="#session.user.uid == #session.listAllData.uid">
+                <a href="${pageContext.request.contextPath}/PersonAction_findData">
+                    </s:if>
+                    <img class="img-circle" src="${pageContext.request.contextPath}/headPortrait/${listAllData.headPortrait}" width="80px" height="80px" />
+                    <s:if test="#session.user.uid == #session.listAllData.uid">
+                </a>
+                </s:if>
                 <p>${listAllData.username}</p>
         </div>
         <div class="nav">
             <ul class="nav-one">
                 <li>
-                    <a href="personCenter.jsp">我的关注</a>
+                    <a href="personCenter.jsp">我的文章</a>
                 </li>
                 <li>
-                    <a href="mycontext.jsp">我的文章</a>
+                    <a href="mycontext.jsp">我的关注</a>
                 </li>
             </ul>
             <ul class="nav-two">
@@ -103,7 +109,7 @@
         function(data) {
         for(var i = 0; i < data.length / 2; i++) {
             var timer = data[i].time.month + "月" + data[i].time.day + "日 " + data[i].time.hours + ":" + data[i].time.minutes + ":" + data[i].time.seconds;
-            $('.content-text').append('<div class="conversation"><img src="/headPortrait/'+data[(data.length / 2) + i].headPortrait+'" class="img-circle"width="60px"height="60px"><div class="right" onclick="showMessage(\''+data[i].send_id+'\')"><input type="hidden" value="'+data[i].send_id+'" style="display: none;"><div id="userName">' + data[(data.length / 2) + i].username + '<span >' + timer + '</span></div><div id="message">' + data[i].content + '</div></div></div>');
+            $('.content-text').append('<div class="conversation"><img src="${pageContext.request.contextPath}/headPortrait/'+data[(data.length / 2) + i].headPortrait+'" class="img-circle"width="60px"height="60px"><div class="right" onclick="showMessage(\''+data[i].send_id+'\')"><input type="hidden" value="'+data[i].send_id+'" style="display: none;"><div id="userName">' + data[(data.length / 2) + i].username + '<span >' + timer + '</span></div><div id="message">' + data[i].content + '</div></div></div>');
 
             //移动窗口代码
             $("#top").mousedown(function(event) {

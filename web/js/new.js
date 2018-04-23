@@ -7,7 +7,7 @@ $.get("PersonAction_checkMessageStatus", function(data) {
 		//无变化
 		$('#news').css("display", "none");
 	}
-})
+},"json")
 function showMessage(send_id) {
     $('#content').empty();
     $(".bigTalk").fadeIn(300);

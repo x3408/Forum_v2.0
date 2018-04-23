@@ -83,9 +83,9 @@
             color: #aaa;
         }
     </style>
-    <script type="text/javascript" src="/js/jquery.min.js"></script>
-    <script type="text/javascript" src="/js/jquery.comment.js" ></script>
-    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.comment.js" ></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript">
 
         //初始化数据
@@ -156,16 +156,16 @@
     <meta charset="utf-8" />
     <title>user</title>
 
-    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/user.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/user.css">
 
 </head>
 <body>
 <div class="header">
-    <img id="headerImg" src="../img/commitImg.png">
+    <img id="headerImg" src="img/commitImg.png">
     <div class="header-content">
-        <a href="${pageContext.request.contextPath}/index.jsp"><img src="../img/logo.png"></a>
+        <a href="${pageContext.request.contextPath}/index.jsp"><img src="img/logo.png"></a>
         <ul>
             <li><a href="">首页</a></li>
             <li><a href="">成果展示</a></li>
@@ -182,7 +182,7 @@
 <div id="specificWrite">
     <div id="specificWrite-left">
         <div id="specificWrite-left--headImg">
-            <a href="${pageContext.request.contextPath}/UserAction_showUser?showUserId=${topicUser.uid}"><img src="/headPortrait/${topicUser.headPortrait}" class="img-circle"></a>
+            <a href="${pageContext.request.contextPath}/UserAction_showUser?showUserId=${topicUser.uid}"><img src="${pageContext.request.contextPath}/headPortrait/${topicUser.headPortrait}" class="img-circle"></a>
             <p>${topicUser.username}</p>
         </div>
         <div id="specificWrite-left-follow"></div>
@@ -215,5 +215,5 @@
 
 </div>
 </body>
-<script src="/js/user.js"></script>
+<script src="js/user.js"></script>
 </html>

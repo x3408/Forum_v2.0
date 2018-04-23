@@ -3,7 +3,6 @@ package Dao.DaoImpl;
 import Bean.Topic;
 import Bean.User;
 import Dao.PersonDao;
-import Util.Message;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -20,7 +19,7 @@ public class PersonDaoImpl extends HibernateDaoSupport implements PersonDao {
 
             @Override
             public List<Topic> doInHibernate(Session session) throws HibernateException {
-                String hql = "from Topic where uid = ?";//这里的表名不能直接填写表名，而是填写该表在orm元数据中的映射关系名字
+                String hql = "from Topic where uid = ? order by time desc";//这里的表名不能直接填写表名，而是填写该表在orm元数据中的映射关系名字
                 Query query = session.createQuery(hql)
                         .setParameter(0, uid);
                 List<Topic> list = query.list();

@@ -9,6 +9,8 @@ body{
 	min-width:1115px ;
     position: relative;
 	z-index:1;
+	background: url("../img/cimg.png");
+	background-size: 100%;
 }
 .header ul{
 	height: 163px;
@@ -130,7 +132,6 @@ body{
 	/*border:solid 1px black;*/
 }
 #specificWrite-right--center{
-	height: 800px;
 	overflow: hidden;
 	width:860px;
 	margin-top:20px;
@@ -184,8 +185,7 @@ body{
 }
 
 #specificWrite-right--center img{
-	width:80%;
-	hieght:80%;
+	max-width: 100%;
 }
 #specificWrite-right--buttom{
 	width:900px;

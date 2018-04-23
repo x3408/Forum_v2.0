@@ -35,7 +35,10 @@
         <action name="PersonAction_*" class="personAction" method="{1}">
             <result name="list">/personCenter.jsp</result>
             <result name="data">/editorData.jsp</result>
+
+
             <result name="login">/loginRegister.jsp</result>
+
             <result name="editor" type="chain">
                  <param name="actionName">PersonAction_findData</param>
                 <param name="namespace">/</param>

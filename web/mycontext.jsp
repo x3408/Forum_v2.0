@@ -25,19 +25,24 @@
     <div class="main">
         <div class="house">
             <a href="${pageContext.request.contextPath}/index.jsp"><img src="img/house.png" width="30px" /></a>
-
         </div>
         <div class="headimg">
-            <img class="img-circle" src="/headPortrait/${listAllData.headPortrait}" width="80px" height="80px" />
+            <s:if test="#session.user.uid == #session.listAllData.uid">
+            <a href="${pageContext.request.contextPath}/PersonAction_findData">
+                </s:if>
+                <img class="img-circle" src="${pageContext.request.contextPath}/headPortrait/${listAllData.headPortrait}" width="80px" height="80px" />
+                <s:if test="#session.user.uid == #session.listAllData.uid">
+            </a>
+            </s:if>
             <p>${listAllData.username}</p>
         </div>
         <div class="nav">
             <ul class="nav-one">
                 <li>
-                    <a href="personCenter.jsp">我的关注</a>
+                    <a href="personCenter.jsp">我的文章</a>
                 </li>
                 <li>
-                    <a href="">我的文章</a>
+                    <a href="">我的关注</a>
                 </li>
             </ul>
             <ul class="nav-two">
@@ -80,7 +85,7 @@
 </div>
 <div class="content">
     <div class="content-main">
-        <div class="content-text">
+        <div id ="content-text">
 
         </div>
     </div>
@@ -108,6 +113,19 @@
     var oli = document.getElementsByTagName('li');
     oli[1].style.border="1px solid #fff";
     oli[1].style.borderRadius="20px";
+</script>
+<script>
+    //异步加载我的关注信息
+    $.get("${pageContext.request.contextPath}/PersonAction_findAttention",
+        function(data1){
+            $('#content-text').empty();
+            $.each( data1  , function(i, json1){
+                $("#content-text").append(
+                    "<div id='topPhoto'  >"+"<a href='UserAction_showUser?showUserId="+json1[2]+"'><img src="+${pageContext.request.contextPath}/headPortrait/+json1[1]+" class='img-circle'></a>" +
+                    "<a id='addDiv1' href='UserAction_showUser?showUserId="+json1[2]+"'>" + json1[0] + "</a>"+"</div>"
+                );
+            });
+        },"json");
 </script>
 </body>
 
