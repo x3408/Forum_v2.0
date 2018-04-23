@@ -17,10 +17,10 @@
 
             <result name="toIndex" type="redirect">/index.jsp</result>
             <result name="loginRegister">/loginRegister.jsp</result>
-            <result name="showUser">/OldPage/personCenter.jsp</result>
+            <result name="showUser">/personCenter.jsp</result>
         </action>
         <action name="TopicAction_*" class="topicAction" method="{1}">
-            <result name="toHome" type="redirect">/OldPage/home.jsp</result>
+            <result name="toHome" type="redirect">/index.jsp</result>
             <result name="login">/loginRegister.jsp</result>
             <result name="showTopic">/showTopic.jsp</result>
         </action>
@@ -35,6 +35,10 @@
         <action name="PersonAction_*" class="personAction" method="{1}">
             <result name="list">/personCenter.jsp</result>
             <result name="data">/editorData.jsp</result>
+
+
+            <result name="login">/loginRegister.jsp</result>
+
             <result name="editor" type="chain">
                  <param name="actionName">PersonAction_findData</param>
                 <param name="namespace">/</param>

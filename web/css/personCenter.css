@@ -145,6 +145,21 @@
 	color: gray;
 	font-size: 12px;
 }
+#content-text #topPhoto{
+	display:inline-block;
+
+}
+#content-text #topPhoto img{
+	width:90px;
+	height:90px;
+	margin-top:80px;
+	margin-left:20px;
+}
+#content-text #topPhoto #addDiv1{
+	position: relative;
+	top:100px;
+	left:-80px;
+}
 #addDiv{
 	display: block;
 	width: 700px;
@@ -160,7 +175,7 @@
 	box-shadow: 5px 5px 5px lightgray;
 }
 #content-text{
-	width: 800px;
+	width:800px;
 	margin: auto;
 }
 .content a{
