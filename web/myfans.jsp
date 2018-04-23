@@ -35,19 +35,19 @@
         <div class="nav">
             <ul class="nav-one">
                 <li>
-                    <a href="personCenter.jsp">我的关注</a>
+                    <a href="personCenter.jsp">我的文章</a>
                 </li>
                 <li>
-                    <a href="mycontext.jsp">我的文章</a>
+                    <a href="mycontext.jsp">我的关注</a>
                 </li>
             </ul>
             <ul class="nav-two">
                 <li>
-                    <a href="">我的粉丝</a>
+                    <a href="" id="Myfans">我的粉丝</a>
                 </li>
                 <li>
                     <s:if test="#session.user.uid == #session.listAllData.uid">
-                        <a href="myletter.jsp">我的私信</a>
+                        <a href="myletter.jsp" >我的私信</a>
                         <span id="news">new</span>
                     </s:if>
                     <s:else>
@@ -79,6 +79,16 @@
         </div>
     </div>
 </div>
+
+<div class="content">
+    <div class="content-main">
+        <div id ="content-text">
+
+        </div>
+    </div>
+</div>
+
+
 <!--弹出对话框-->
 <div class="bigTalk">
     <div id="top">
@@ -96,12 +106,27 @@
         <input type="button" value="发送" id="btn" />
     </div>
 </div>
+
+
 <script type="text/javascript"src="js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript"src="js/new.js"></script>
 <script type="text/javascript">
     var oli = document.getElementsByTagName('li');
     oli[2].style.border="1px solid #fff";
     oli[2].style.borderRadius="20px";
+</script>
+<script>
+   //异步加载我的粉丝信息
+    $.get("${pageContext.request.contextPath}/PersonAction_findFans",
+        function(data2){
+            $('#content-text').empty();
+            $.each( data2  , function(i, json2){
+                $("#content-text").append(
+                    "<div id='topPhoto'  >"+"<img src="+${basePath}/headPortrait/+json2[1]+" class='img-circle'>" +
+                    "<a id='addDiv1' href='UserAction_showUser?showUserId="+json2[2]+"'>" + json2[0] + "</a>"+"</div>"
+                );
+            });
+        },"json");
 </script>
 </body>
 

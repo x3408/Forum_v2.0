@@ -34,10 +34,10 @@
         <div class="nav">
             <ul class="nav-one">
                 <li>
-                    <a href="personCenter.jsp">我的关注</a>
+                    <a href="personCenter.jsp">我的文章</a>
                 </li>
                 <li>
-                    <a href="">我的文章</a>
+                    <a href="">我的关注</a>
                 </li>
             </ul>
             <ul class="nav-two">
@@ -80,7 +80,7 @@
 </div>
 <div class="content">
     <div class="content-main">
-        <div class="content-text">
+        <div id ="content-text">
 
         </div>
     </div>
@@ -108,6 +108,19 @@
     var oli = document.getElementsByTagName('li');
     oli[1].style.border="1px solid #fff";
     oli[1].style.borderRadius="20px";
+</script>
+<script>
+    //异步加载我的关注信息
+    $.get("${pageContext.request.contextPath}/PersonAction_findAttention",
+        function(data1){
+            $('#content-text').empty();
+            $.each( data1  , function(i, json1){
+                $("#content-text").append(
+                    "<div id='topPhoto'  >"+"<img src="+${basePath}/headPortrait/+json1[1]+" class='img-circle'>" +
+                    "<a id='addDiv1' href='UserAction_showUser?showUserId="+json1[2]+"'>" + json1[0] + "</a>"+"</div>"
+                );
+            });
+        },"json");
 </script>
 </body>
 

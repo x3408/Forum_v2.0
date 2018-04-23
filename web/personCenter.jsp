@@ -27,16 +27,18 @@
 
         </div>
         <div class="headimg">
-            <img class="img-circle" src="/headPortrait/${listAllData.headPortrait}" width="80px" height="80px" />
+            <a href="${pageContext.request.contextPath}/PersonAction_findData">
+                <img class="img-circle" src="${basePath}/headPortrait/${listAllData.headPortrait}" width="80px" height="80px" />
+            </a>
             <p>${listAllData.username}</p>
         </div>
         <div class="nav">
             <ul class="nav-one">
                 <li>
-                    <a href="javascript:0">我的关注</a>
+                    <a href="javascript:0">我的文章</a>
                 </li>
                 <li>
-                    <a href="mycontext.jsp">我的文章</a>
+                    <a href="mycontext.jsp">我的关注</a>
                 </li>
             </ul>
             <ul class="nav-two">
@@ -79,7 +81,7 @@
 </div>
 <div class="content">
     <div class="content-main">
-        <div class="content-text"></div>
+        <div id="content-text"></div>
     </div>
     <!--弹出对话框-->
     <div class="bigTalk">
@@ -105,6 +107,19 @@
     var oli = document.getElementsByTagName('li');
     oli[0].style.border = "1px solid #fff";
     oli[0].style.borderRadius = "20px";
+
+</script>
+<script type="text/javascript">
+
+    //文章的加载与遍历jQuery
+    $.get("${pageContext.request.contextPath}/PersonAction_findArticle",
+        function(data){
+            $.each( data , function(i, json){
+                $("#content-text").append(
+                    "<a id='addDiv' href='${pageContext.request.contextPath}/TopicAction_showTopic?tid="+json.tid+"' target='_blank'>" + json.title + "</a>" );
+            });
+        },"json");
+
 
 </script>
 </body>

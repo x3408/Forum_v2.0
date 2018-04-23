@@ -34,10 +34,10 @@
         <div class="nav">
             <ul class="nav-one">
                 <li>
-                    <a href="personCenter.jsp">我的关注</a>
+                    <a href="personCenter.jsp">我的文章</a>
                 </li>
                 <li>
-                    <a href="mycontext.jsp">我的文章</a>
+                    <a href="mycontext.jsp">我的关注</a>
                 </li>
             </ul>
             <ul class="nav-two">
