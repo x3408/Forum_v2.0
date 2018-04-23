@@ -36,6 +36,7 @@
                 </a>
                 </s:if>
                 <p>${listAllData.username}</p>
+                <p id="personsentence">${listAllData.signature}</p>
         </div>
         <div class="nav">
             <ul class="nav-one">
@@ -44,11 +45,13 @@
                 </li>
                 <li>
                     <a href="mycontext.jsp">我的关注</a>
+                    <div> <span class="number" id ="attentionCount"></span></div>
                 </li>
             </ul>
             <ul class="nav-two">
                 <li>
                     <a href="myfans.jsp">我的粉丝</a>
+                    <div> <span class="number"id="fansCount"></span></div>
                 </li>
                 <li>
                     <a href="">我的私信</a>
@@ -172,6 +175,26 @@
         $('#talk').val("");
     })
     //移动窗口代码
+    //关注总数的获取
+    $.get("${pageContext.request.contextPath}/PersonAction_findAttentionCount",
+        function(data3){
+
+            $.each( data3 , function(i, json3){
+                $("#attentionCount").append(
+                    json3 );
+            });
+        },"json");
+    //粉丝总数的获取
+    $.get("${pageContext.request.contextPath}/PersonAction_findFansCount",
+        function(data4){
+
+            $.each( data4 , function(i, json4){
+                $("#fansCount").append(
+                    json4 );
+            });
+        },"json");
+
+
 </script>
 </body>
 
