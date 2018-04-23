@@ -145,3 +145,27 @@
 	color: gray;
 	font-size: 12px;
 }
+#addDiv{
+	display: block;
+	width: 700px;
+	height: 70px;
+	line-height: 70px;
+	border: 1px solid lightgray;
+	margin-top: 20px;
+	border-radius: 10px;
+	padding-left: 20px;
+
+}
+#addDiv:hover{
+	box-shadow: 5px 5px 5px lightgray;
+}
+#content-text{
+	width: 800px;
+	margin: auto;
+}
+.content a{
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: bold;
+
+}

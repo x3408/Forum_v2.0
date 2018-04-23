@@ -59,10 +59,10 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
         User user = (User) ActionContext.getContext().getSession().get("listAllData");
         List<User> list1 = ps.findAttention(user);
 //        String json1 =JSONArray.fromObject(list1).toString();
-        JSONArray json = JSONArray.fromObject(list1);
-        String str = json.toString();//把json转换为String
+        String json1 = JSONArray.fromObject(list1).toString();//把json转换为String;
+
         ServletActionContext.getResponse().setContentType("application/json;charset=UTF-8");
-        ServletActionContext.getResponse().getWriter().write(str);
+        ServletActionContext.getResponse().getWriter().write(json1);
         return null;
     }
 
