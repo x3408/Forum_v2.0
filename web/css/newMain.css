@@ -35,10 +35,10 @@ a{
 	text-decoration:none;
 }
  .mainTop ol{
-	float:left;
-	margin-left:80px;
-	margin-top:20px;
-	display: inline-block;
+	 float: left;
+	 margin-left: 110px;
+	 margin-top: 24px;
+	 display: inline-block;
 }
  .mainTop img{
      margin-left:70px;
@@ -267,6 +267,7 @@ float:left;
 #go3 .goThree-Center .goThree-leftTop{
 	float:left;
 	position: relative;
+	margin-top:50px;
 }
 #go3 .goThree-Center .goThree-leftCenter{
 	width:400px;
@@ -376,7 +377,7 @@ float:left;
  #sign{
 	display:inline-block;
 	float:right;
-	margin-right:150px;
+	margin-right:40px;
 	 margin-top:29px;
 
 }
@@ -392,11 +393,11 @@ float:left;
 	text-decoration: none;
 }
 #person-img{
-	width:200px;
-	height:70px;
-	float:right;
-	margin-right:130px;
-    margin-top:14px;
+	width: 200px;
+	height: 70px;
+	float: right;
+	margin-right: 30px;
+	margin-top: 14px;
 
 }
 #person-img img{
@@ -415,15 +416,14 @@ float:left;
 }
 /*下面是课程教育*/
 #newMain #go4 #addCourse{
-	width:1200px;
-	height:500px;
-	position:absolute;
-	z-index:20;
-	background:white;
-	/*border:solid 1px #d7d7d7;*/
-	left:400px;
-	top:-20px;
+	width: 1200px;
+	height: 500px;
+
+	z-index: 20;
+	background: white;
+
 	display: none;
+	margin-left: -200px;
 }
 #newMain #go4 #addCourse #addCourseLeft,#newMain #go4 #addCourse #addCourseRight{
 	width:400px;
@@ -601,5 +601,6 @@ float:left;
 	position: absolute;
 	top:40px;
 	/*display:none;*/
+	 color:#d7d7d7;
 	left:50px;
 }

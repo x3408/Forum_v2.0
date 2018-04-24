@@ -13,7 +13,7 @@
 		<meta charset="utf-8" />
 		<title>首页</title>
 		<link rel="stylesheet" href="css/bootstrap.css?1">
-		<link rel="stylesheet" href="css/newMain.css?7">
+		<link rel="stylesheet" href="css/newMain.css?8">
 		<link rel="stylesheet" href="css/mainPage.css?2">
 		<script src="js/jquery.min.js"></script>
 		<script src="js/newMain.js"></script>
@@ -23,7 +23,7 @@
 	<body>
 
 		  <div class="container mainTop">
-				<span><a href="">首页</a></span>
+				<span><a href=""></a></span>
 				<ol class="nav nav-pills">
 					<li class="nav-li" ><a href="javascript:;" class="index1" data-to="go1">发现精选</a></li>
 					<li class="nav-li" ><a href="javascript:;" class="index2" data-to="go2">新闻中心</a></li>
@@ -136,24 +136,34 @@
 		  	 		<!--//json部分-->
 		  	 		<div class="goThree-Center">
 		  	 			<div class="goThree-leftTop">
+							<a id="title" href="http://www.baidu.com" target="_blank">
 		  	 				<img id="loadOne" src=""/>
                             <p id="title1">标题</p>
+							</a>
 		  	 			</div>
 		  	 			<div class="goThree-rightTop">
-		  	 				<img id="loadTwo" src=""/>
-							<p id="title2">标题</p>
+							<a id="titleTwo" href="http://www.baidu.com" target="_blank">
+								<img id="loadTwo" src=""/>
+							    <p id="title2">标题</p>
+							</a>
 		  	 			</div>
 		  	 			<div class="goThree-leftCenter">
+							<a id="titleThree" href="" target="_blank">
 		  	 				<img id="loadThree" src=""/>
 							<p id="title3">标题</p>
+							</a>
 		  	 			</div>
 		  	 			<div class="goThree-leftButtom">
+							<a id="titleFour" href="http://www.baidu.com" target="_blank">
 		  	 				<img id="loadFour" src=""/>
 							<p id="title4">标题</p>
+							</a>
 		  	 			</div>
 		  	 			<div class="goThree-rightButtom">
+							<a id="titleFive" href="http://www.baidu.com" target="_blank">
 		  	 				<img id="loadFive" src=""/>
 							<p id="title5">标题</p>
+							</a>
 		  	 			</div>
 		  	 			<div id="oldSay">
 		  	 				<h1>2018</h1>
