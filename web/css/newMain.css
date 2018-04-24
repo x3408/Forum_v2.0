@@ -3,52 +3,57 @@
 	margin:0px;
 	padding:0px;
 }
+body{
+	background-color:rgb(249,249,249);
+}
 a{
 	text-decoration: none;
 }
 #newMain{
-	min-width:1900px;
+	min-width:1200px;
 	position:relative;
 }
 
-#newMain .mainTop{
+.mainTop{
 	width:100%;
 	height:93px;
 	background:#010101;
-	font-size: 25px;
+	font-size:20px;
 	color:#05c1f1;
 	position:fixed;
 	z-index:10;
-	opacity: 0.8;
-	min-width:1900px;
+	opacity:0.8;
+	min-width:1070px;
 }
-#newMain .mainTop span a{
-	margin-left:359px;
-	font-size:25px;
-	position: absolute;
-	top:35px;
+.mainTop span a{
+
+	font-size:20px;
+	float:left;
 	color:#05c1f1;
+	margin-left:180px;
+	margin-top:25px;
 	text-decoration:none;
 }
-#newMain .mainTop ol{
-	margin-left:450px;
-	margin-top:25px;
+ .mainTop ol{
+	float:left;
+	margin-left:80px;
+	margin-top:20px;
 	display: inline-block;
 }
-#newMain .mainTop img{
-	position: absolute;
-	top:0px;
-	margin-left:70px;
+ .mainTop img{
+     margin-left:70px;
+
 }
-#newMain .mainTop ul{
-	margin-left:300px;
-	margin-top:25px;
+ .mainTop ul{
+	margin-left:30px;
+	 position: relative;
+	 top:-20px;
 	display: inline-block;
 }
-#newMain .mainTop ol li{
+ .mainTop ol li{
 	margin-left:30px;
 }
-#newMain .mainTop ul li{
+.mainTop ul li{
 	margin-left:30px;
 }
 .nav-li a{
@@ -59,20 +64,20 @@ a{
 }
 /*center*/
 .newCenter{
-	position: absolute;
-	width:100%;
-	position:relative;
-	height:700px;
+	min-width:1170px;
+    width:100%;
+	height:580px;
 	display: inline-block;
-	margin-top:93px;
-
+    background:url("../img/main1.png") no-repeat;
+	background-size:100%;
+	margin-top:0px;
 }
-.newCenter img{
-	width:100%;
-	height:700px;
-	min-width:1905px;
-	position:absolute;
-}
+/*.newCenter img{*/
+	/*width:100%;*/
+	/*height:700px;*/
+	/*min-width:1905px;*/
+	/*position:absolute;*/
+/*}*/
 #newMainButtom{
 	background-color:rgb(249,249,249);
 }
@@ -80,13 +85,13 @@ a{
 	position: absolute;
 	width:100%;
 	height:750px;
-	min-width:1905px;
+	min-width:1170px;
 	/*border:solid 1px red;*/
 	font-size:30px;
 	position:relative;
 }
 #go2,#go3,#go4{
-	margin-top:30px;
+
 }
 #goOne span{
 	font-size:65px;
@@ -94,7 +99,7 @@ a{
 	position: absolute;
 	top:60px;
 	z-index:2;
-	margin-left:810px;
+	margin-left:650px;
 	color:#e7e7e7;
 }
 #goOne  .goOne-find{
@@ -102,7 +107,7 @@ a{
 	position: absolute;
 	z-index:3;
 	margin-top:61px;
-	margin-left:885px;
+	margin-left:725px;
 	display:inline-block;
 
 }
@@ -111,7 +116,7 @@ a{
 	font-size:23px;
 	z-index:2;
 	top:110px;
-	margin-left:850px;
+	margin-left:690px;
 }
 #goOne a {
 	color:black;
@@ -125,18 +130,18 @@ a{
 #goOne .goOne-center div{
 	display: inline-block;
 }
-#goOne .goOne-center .goOne-center--left,#goOne .goOne-center .goOne-center--right{
+#goOne .goOne-center .goOne-center--left{
 	display:inline-block;
 	width:600px;
-	position:absolute;
-	left:300px;
+	margin-left:100px;
+	float:left;
 	height:400px;
 }
 #goOne .goOne-center .goOne-center--right{
 	width:462px;
 	height:311px;
-	left:1050px;
-	top:30px;
+	float:right;
+	margin-right:120px;
 	overflow: hidden;
 	box-shadow:-30px 0 20px #d7d7d7,0 0 0,0 0 0,30px 0 20px #D7D7D7;
 }
@@ -179,22 +184,31 @@ a{
 	display: inline-block;
 
 }
-#go2 .goTwo-center .goTwo-leftTop,#go2 .goTwo-center .goTwo-rightTop
-,#go2 .goTwo-center .goTwo-leftButtom,#go2 .goTwo-center .goTwo-rightButtom
-{
+#go2 .goTwo-center .goTwo-leftTop{
 	width:600px;
-	height:200px;
+   height:200px;
+float:left;
+	margin-left:100px;
+
 	/*border:solid 1px orchid;*/
-	position: absolute;
-	left:280px;
+
+
 
 }
 #go2 .goTwo-center .goTwo-rightTop,#go2 .goTwo-center .goTwo-rightButtom{
-	left:950px;
-	margin-left:50px;
+	width:600px;
+	height:200px;
+	float:right;
+	margin-right:100px;
 }
 #go2 .goTwo-center .goTwo-leftButtom,#go2 .goTwo-center .goTwo-rightButtom{
-	margin-top:230px;
+	margin-top:20px;
+	width:600px;
+	height:200px;
+	margin-left:100px;
+}
+#go2 .goTwo-center .goTwo-rightButtom{
+	margin-right:100px;
 }
 /*分享经验*/
 #go3{
@@ -205,7 +219,7 @@ a{
 	position:absolute;
 	width:100%;
 	height:750px;
-	min-width:1905px;
+	min-width:1200px;
 }
 #go3 #goOne span{
 	z-index:1;
@@ -224,11 +238,11 @@ a{
 #go3 .goThree-Center{
 	width:1200px;
 	margin-right:380px;
-	margin-left:400px;
 	margin-top:155px;
 	position: absolute;
 	/*border:solid 1px green;*/
 	height:590px;
+	margin-left:300px;
 
 }
 /*//动画图片*/
@@ -237,87 +251,45 @@ a{
 	width:250px;
 	height:180px;
 	/*border:solid 3px black;*/
-	position: absolute;
+	/*position: absolute;*/
 	display:inline-block;
-	z-index:1;
-	margin-right:30px;
-	top:70px;
 }
-#go3 .goThree-Center .goThreeShade{
-	width:250px;
-	background: black;
-	opacity:0.7;
-	display: inline-block;
-	position: absolute;
-	z-index:2;
-	display: none;
-	top:0px;
-}
-#go3 .goThree-Center .goThreeShade a,#go3 .goThree-Center .goThreeShadeTwo a,#go3 .goThree-Center .goThreeShadeThree a
-,#go3 .goThree-Center .goThreeShadeFour a,#go3 .goThree-Center .goThreeShadeFive a
-{
-	color:white;
-	font-weight: bold;
-	width:80px;
-	height:50px;
-	font-size:25px;
-	position:absolute;
-	z-index:10;
-	display: inline-block;
-	left:60px;
-	top:40px;
-	text-decoration: none;
-	letter-spacing:2px;
-}
-#go3 .goThree-Center .goThreeShade #contentOne,#go3 .goThree-Center .goThreeShadeTwo #contentTwo,#go3 .goThree-Center .goThreeShadeThree #contentThree
-,#go3 .goThree-Center .goThreeShadeFour #contentFour,#go3 .goThree-Center .goThreeShadeFive #contentFive{
-	font-size:18px;
 
-}
 #go3 .goThree-Center .goThree-rightTop{
-	top:290px;
+	float:left;
+   margin-left:-250px;
+	margin-top: 300px;
+	display:inline-block;
+	position: relative;
 
 }
-#go3 .goThree-Center .goThreeShadeTwo{
-	width:250px;
-	background: black;
-	opacity:0.7;
-	display: inline-block;
-	position: absolute;
-	z-index:2;
-	left:0px;
-	top:0px;
-	display: none;
-}
-#go3 .goThree-Center .goThreeShadeThree,#go3 .goThree-Center .goThreeShadeFour,#go3 .goThree-Center .goThreeShadeFive{
-	width:400px;
-	background: black;
-	opacity:0.7;
-	display: inline-block;
-	position: absolute;
-	z-index:2;
-	left:0px;
-	top:0px;
-	display: none;
 
+#go3 .goThree-Center .goThree-leftTop{
+	float:left;
+	position: relative;
 }
 #go3 .goThree-Center .goThree-leftCenter{
 	width:400px;
 	height:180px;
-	margin-left:342px;
-	top:180px;
+	margin-right:2px;
+	margin-top:180px;
+	margin-left:30px;
+	position: relative;
 	/*border:solid 3px black;*/
 }
 #go3 .goThree-Center .goThree-leftButtom{
-	left:820px;
+	float:right;
+	margin-right: 200px;
+	position: relative;
+	margin-top: 50px;
 }
 #go3 .goThree-Center .goThree-rightButtom{
-	left:820px;
-	top:290px;
+	margin-right: 200px;
+	float: right;
+	position: relative;
+	margin-top: -90px;
 }
-#go3 .goThree-Center .goThreeShadeFour,#go3 .goThree-Center .goThreeShadeFive{
-	width:250px;
-}
+
 #oldSay{
 	width:320px;
 	height:200px;
@@ -337,8 +309,9 @@ a{
 	position: absolute;
 	top:290px;
 	z-index:40;
-	margin-left:140px;
+	margin-left:20px;
 	background:#a4ddf9;
+
 
 }
 #go3 .goOne-buttom a{
@@ -356,7 +329,7 @@ a{
 	height:350px;
 	/*border:solid 3px black;*/
 	/*position: absolute;*/
-	margin-left:400px;
+	margin-left:270px;
 	display: inline-block;
 }
 #go4 .goFour-Center .goFour-CenterLc,#go4 .goFour-Center .goFour-CenterRc,#go4 .goFour-Center .goFour-CenterRight{
@@ -388,7 +361,7 @@ a{
 	position:relative;
 	height:160px;
 	/*display: inline-block;*/
-	min-width: 1800px;
+	min-width: 1200px;
 	/*border:solid 1px red;*/
 	margin-bottom:0px;
 
@@ -396,46 +369,46 @@ a{
 #newMain #newEnd img{
 	position:absolute;
 	width:100%;
-	min-width:1900px;
+	min-width:1200px;
 	height:100%;
 
 }
-#newMain #sign{
+ #sign{
 	display:inline-block;
-	position: absolute;
-	top:28px;
-	margin-left:220px;
+	float:right;
+	margin-right:150px;
+	 margin-top:29px;
 
 }
 #go2 #goOne .goTwo-center .newCenterOne{
 	font-size:20px;
 	text-indent: 2em;
 }
-#newMain #sign a{
+ #sign a{
 	font-size:20px;
 	text-decoration: none;
 }
-#newMain #sign a:hover{
+ #sign a:hover{
 	text-decoration: none;
 }
 #person-img{
-	width:300px;
+	width:200px;
 	height:70px;
-	position:relative;
-	left:1500px;
-	top:-70px;
+	float:right;
+	margin-right:130px;
+    margin-top:14px;
+
 }
 #person-img img{
 	width:60px;
 	height:60px;
-	position: absolute;
-	left:-41px;
+
 }
 #person-img #zx{
-	position:absolute;
-	left:120px;
-	top:15px;
 	font-size:20px;
+	position: relative;
+	left:30px;
+	top:-20px;
 }
 #person-img a:hover{
 	text-decoration: none;
@@ -624,15 +597,9 @@ a{
 #buySuccess #buyerror:hover{
 	cursor: pointer;
 }
-#title1,#title2,#title5,#title3,#title4{
-	top:30px;
+ #go3 #goOne .goThree-Center #title1,#go3 #goOne .goThree-Center #title2,#go3 #goOne .goThree-Center #title3,#go3 #goOne .goThree-Center #title4,#go3 #goOne .goThree-Center #title5{
+	position: absolute;
+	top:40px;
+	/*display:none;*/
 	left:50px;
-	width:220px;
-	height:30px;
-}
-#contentOne,#contentTwo,#contentThree,#contentFour,#contentFive{
-	margin-top:10px;
-	left:50px;
-	width:220px;
-	height:30px;
 }

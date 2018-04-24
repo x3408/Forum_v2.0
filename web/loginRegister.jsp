@@ -12,7 +12,7 @@
     <meta charset="utf-8" />
     <title>登录注册页面</title>
     <script src="js/jquery.min.js"></script>
-    <link rel="stylesheet" href="css/NewWeb-Sign.css?7">
+    <link rel="stylesheet" href="css/NewWeb-Sign.css?8">
     <!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
     <!--<script src="js/register.js"></script>-->
     <script src="js/NewWeb-Sign.js?3"></script>

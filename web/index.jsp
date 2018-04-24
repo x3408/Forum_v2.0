@@ -12,16 +12,16 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>首页</title>
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/newMain.css">
-		<link rel="stylesheet" href="css/mainPage.css">
+		<link rel="stylesheet" href="css/bootstrap.css?1">
+		<link rel="stylesheet" href="css/newMain.css?7">
+		<link rel="stylesheet" href="css/mainPage.css?2">
 		<script src="js/jquery.min.js"></script>
 		<script src="js/newMain.js"></script>
 		<script src="js/NewWeb-Main.js"></script>
 		
 	</head>
 	<body>
-		<div id="newMain">
+
 		  <div class="container mainTop">
 				<span><a href="">首页</a></span>
 				<ol class="nav nav-pills">
@@ -47,8 +47,9 @@
 				  </div>
 			  </s:else>
 		  </div>
+		  <div id="newMain">
 		  <div class="newCenter">
-		  	 <img src="img/main1.png">
+
 		  </div>
 		  <div id="newMainButtom">
 		  	 <div id="go1">
@@ -136,48 +137,23 @@
 		  	 		<div class="goThree-Center">
 		  	 			<div class="goThree-leftTop">
 		  	 				<img id="loadOne" src=""/>
-		  	 				<div class="goThreeShade">
-		  	 				 <a id="title" href="http://www.baidu.com" target="_blank">
-		  	 				 	<p id="title1">标题</p>
-		  	 				 	<p id="contentOne" style="width:200px;height:80px;">文章简介</p>
-		  	 				 </a>
-		  	 			    </div>
+                            <p id="title1">标题</p>
 		  	 			</div>
 		  	 			<div class="goThree-rightTop">
 		  	 				<img id="loadTwo" src=""/>
-		  	 				<div class="goThreeShadeTwo">
-		  	 				 <a id="titleTwo" href="http://www.baidu.com" target="_blank">
-		  	 				 	<p id="title2">标题</p>
-		  	 				 	<p id="contentTwo" style="width:200px;height:80px">文章简介</p>
-		  	 				 </a>
-		  	 			    </div>
+							<p id="title2">标题</p>
 		  	 			</div>
 		  	 			<div class="goThree-leftCenter">
 		  	 				<img id="loadThree" src=""/>
-		  	 				<div class="goThreeShadeThree">
-		  	 				 <a id="titleThree" href="" target="_blank">
-		  	 				 	<p id="title3">标题</p>
-		  	 				 	<p id="contentThree" style="width:400px;height:80px;">文章简介</p>
-		  	 				 </a>
-		  	 			    </div>
+							<p id="title3">标题</p>
 		  	 			</div>
 		  	 			<div class="goThree-leftButtom">
 		  	 				<img id="loadFour" src=""/>
-		  	 				<div class="goThreeShadeFour">
-		  	 				 <a id="titleFour" href="http://www.baidu.com" target="_blank">
-		  	 				 	<p id="title4">标题</p>
-		  	 				 	<p id="contentFour" style="width:200px;height:80px">文章简介</p>
-		  	 				 </a>
-		  	 			    </div>
+							<p id="title4">标题</p>
 		  	 			</div>
 		  	 			<div class="goThree-rightButtom">
 		  	 				<img id="loadFive" src=""/>
-		  	 				<div class="goThreeShadeFive">
-		  	 				 <a id="titleFive" href="http://www.baidu.com" target="_blank">
-		  	 				 	<p id="title5">标题</p>
-		  	 				 	<p id="contentFive" style="width:200px;height:80px">文章简介</p>
-		  	 				 </a>
-		  	 			    </div>
+							<p id="title5">标题</p>
 		  	 			</div>
 		  	 			<div id="oldSay">
 		  	 				<h1>2018</h1>

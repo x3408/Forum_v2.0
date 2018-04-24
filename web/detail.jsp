@@ -13,7 +13,7 @@
 <head>
     <meta charset="utf-8" />
     <title>详情页</title>
-    <link rel="stylesheet" type="text/css" href="css/detail.css?1" />
+    <link rel="stylesheet" type="text/css" href="css/detail.css?2" />
     <link rel="stylesheet" type="text/css" href="css/style1.css" />
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
 </head>

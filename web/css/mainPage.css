@@ -39,11 +39,11 @@ body{
 .arrow:hover{text-decoration: none;}
 #goOne .goOne-center  #prev{
 	color:#FFFFFF;
-	left:1010px;
+	left:900px;
 	top:150px;
 }
 #goOne .goOne-center #next{
 	color:#04c2ef;
 	top:150px;
-	right:360px;
+	right:83px;
 }
