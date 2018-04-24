@@ -246,7 +246,7 @@ a{
 #go3 .goThree-Center .goThreeShade{
 	width:250px;
 	background: black;
-	opacity:0.3;
+	opacity:0.7;
 	display: inline-block;
 	position: absolute;
 	z-index:2;
@@ -256,16 +256,23 @@ a{
 #go3 .goThree-Center .goThreeShade a,#go3 .goThree-Center .goThreeShadeTwo a,#go3 .goThree-Center .goThreeShadeThree a
 ,#go3 .goThree-Center .goThreeShadeFour a,#go3 .goThree-Center .goThreeShadeFive a
 {
-	color:#1b6d85;
+	color:white;
+	font-weight: bold;
 	width:80px;
 	height:50px;
-	font-size:20px;
+	font-size:25px;
 	position:absolute;
 	z-index:10;
 	display: inline-block;
-	left:30px;
-	top:50px;
+	left:60px;
+	top:40px;
 	text-decoration: none;
+	letter-spacing:2px;
+}
+#go3 .goThree-Center .goThreeShade #contentOne,#go3 .goThree-Center .goThreeShadeTwo #contentTwo,#go3 .goThree-Center .goThreeShadeThree #contentThree
+,#go3 .goThree-Center .goThreeShadeFour #contentFour,#go3 .goThree-Center .goThreeShadeFive #contentFive{
+	font-size:18px;
+
 }
 #go3 .goThree-Center .goThree-rightTop{
 	top:290px;
@@ -274,7 +281,7 @@ a{
 #go3 .goThree-Center .goThreeShadeTwo{
 	width:250px;
 	background: black;
-	opacity:0.3;
+	opacity:0.7;
 	display: inline-block;
 	position: absolute;
 	z-index:2;
@@ -285,7 +292,7 @@ a{
 #go3 .goThree-Center .goThreeShadeThree,#go3 .goThree-Center .goThreeShadeFour,#go3 .goThree-Center .goThreeShadeFive{
 	width:400px;
 	background: black;
-	opacity:0.3;
+	opacity:0.7;
 	display: inline-block;
 	position: absolute;
 	z-index:2;
