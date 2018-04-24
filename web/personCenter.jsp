@@ -15,12 +15,13 @@
     <title>个人中心</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="css/asidenav.css" />
-    <link rel="stylesheet" href="css/sign2.css">
     <link rel="stylesheet" type="text/css" href="css/personCenter.css?3" />
     <link rel="stylesheet" type="text/css" href="css/bigTalk.css">
+
     <script type="text/javascript" src="js/jquery-1.8.1.min.js"></script>
     <script type="text/javascript" src="js/calendar2.js"></script>
     <script src="js/jquery-1.8.3.js"></script>
+    <link rel="stylesheet" href="css/sign2.css">
 </head>
 
 
@@ -32,7 +33,6 @@
 
         <div id="calendar">
             <div class="sign" id="sign_cal">
-
 
             </div>
         </div>
@@ -141,9 +141,8 @@
         })
         //ajax获取日历json数据
 
-        $.get("/SignAction_get",
+        $.get("${pageContext.request.contextPath}/SignAction_get",
             function(data){
-
                 calUtil.init(data);
             },"json");
     })

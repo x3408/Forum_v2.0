@@ -1,31 +1,33 @@
 $(function(){
-	
+
+    var pathName = window.document.location.pathname;
+    var projectName = pathName.substring(0, pathName.substr(1).indexOf('/') + 1);
 	$.get("${pageContext.request.contextPath}/TopicAction_showTopicByType",
 		{page:1, type:'result_show'},
 		function(data) {
-			$(".goThree-leftTop img").attr("src", data[0].showImg);
-			$(".goThree-rightTop img").attr("src",data[1].showImg);
-			$(".goThree-leftCenter img").attr("src",data[2].showImg);
-			$(".goThree-leftButtom img").attr("src",data[3].showImg);
-			$(".goThree-rightButtom img").attr("src",data[4].showImg);
+			$(".goThree-leftTop img").attr("src", projectName + "/img/women.jpg");
+			$(".goThree-rightTop img").attr("src",projectName + "/img/two-man.jpg");
+			$(".goThree-leftCenter img").attr("src",projectName + "/img/longleg.jpg");
+			$(".goThree-leftButtom img").attr("src",projectName + "/img/women2.jpg");
+			$(".goThree-rightButtom img").attr("src",projectName + "/img/women3.jpg");
 
 			$("#title1").html(data[0].title);
-			$("#title").attr("href", '/TopicAction_showTopic?tid='+data[0].tid);
+			$("#title").attr("href", projectName + '/TopicAction_showTopic?tid='+data[0].tid);
 			$("#contentOne").html(data[0].descriptive);
 
-            $("#titleTwo").attr("href", '/TopicAction_showTopic?tid='+data[1].tid);
+            $("#titleTwo").attr("href", projectName + '/TopicAction_showTopic?tid='+data[1].tid);
             $("#title2").html(data[1].title);
 			$("#contentTwo").html(data[1].descriptive);
 
-            $("#titleThree").attr("href", '/TopicAction_showTopic?tid='+data[2].tid);
+            $("#titleThree").attr("href", projectName + '/TopicAction_showTopic?tid='+data[2].tid);
             $("#title3").html(data[2].title);
 			$("#contentThree").html(data[2].descriptive);
 
-            $("#titleFour").attr("href", '/TopicAction_showTopic?tid='+data[3].tid);
+            $("#titleFour").attr("href", projectName + '/TopicAction_showTopic?tid='+data[3].tid);
             $("#title4").html(data[3].title);
 			$("#contentFour").html(data[3].descriptive);
 
-            $("#titleFive").attr("href", '/TopicAction_showTopic?tid='+data[4].tid);
+            $("#titleFive").attr("href", projectName + '/TopicAction_showTopic?tid='+data[4].tid);
             $("#title5").html(data[4].title);
 			$("#contentFive").html(data[4].descriptive);
 	},
