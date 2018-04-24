@@ -49,9 +49,6 @@ public class SearchAction extends ActionSupport {
                 return false;
             }
         });
-
-        keyword = new String(keyword.getBytes("iso-8859-1"), "UTF-8");
-
         TopicBean topicBean = topicService.findTopicByKeyword(keyword, page);
 
         //json格式回写

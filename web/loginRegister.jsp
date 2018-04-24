@@ -117,18 +117,18 @@
                 <p></p>
                 <div class="control">
                     <lable>设置密码</lable>
-                    <input class="ip" type="password" name="password" id="password"placeholder="建议至少使用两种字符组合" value="" />
+                    <input class="ip" type="password" name="password" id="password" placeholder="建议至少使用两种字符组合" value="" />
                 </div>
                 <p></p>
                 <div class="control">
                     <lable>确认密码</lable>
-                   <span><input class="ip" type="password" name="verifyCodeFromUser" id="identifyCode"placeholder="请确认密码" value="" /></span> 
+                   <span><input class="ip" type="password" name="confirmPassword" id="identifyCode"placeholder="请确认密码" value="" /></span>
 
                 </div>
                 <p></p>
                 <div class="control">
                     <lable>验证码</lable>
-                    <input class="ip" type="text" name="identifyCode"value="" />
+                    <input class="ip" type="text" name="verifyCodeFromUser"value="" />
                     <span id="identityNumber"><img id="verifyImg" src="${pageContext.request.contextPath}/UserAction_verifyImg" onclick="return changeVerify()"></span>
                 </div>
                 <p id="error">${msg}</p>

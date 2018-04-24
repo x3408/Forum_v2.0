@@ -116,7 +116,7 @@
         } else {
             if(page == 1)
                 $("#main").empty();
-            $.get("${pageContext.request.contextPath}/SearchAction_search",{
+            $.post("${pageContext.request.contextPath}/SearchAction_search",{
                 page:page,keyword:keyword
             }, function (data) {
                 if(data == null) {

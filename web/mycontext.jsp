@@ -18,10 +18,23 @@
     <link rel="stylesheet" type="text/css" href="css/asidenav.css" />
     <link rel="stylesheet" type="text/css" href="css/personCenter.css" />
     <link rel="stylesheet" type="text/css" href="css/bigTalk.css" />
+    <link rel="stylesheet" href="css/sign2.css">
+    <script type="text/javascript" src="js/jquery-1.8.1.min.js"></script>
+    <script type="text/javascript" src="js/calendar2.js"></script>
 </head>
 
 <body>
 <div class="head">
+    <div id="signIn">
+        <button class="btn btn-info">关闭</button>
+
+        <div id="calendar">
+            <div class="sign" id="sign_cal">
+
+            </div>
+        </div>
+
+    </div>
     <div class="main">
         <div class="house">
             <a href="${pageContext.request.contextPath}/index.jsp"><img src="img/house.png" width="30px" /></a>
@@ -74,7 +87,7 @@
             <div class="aside-nav  animated" id="aside-nav">
                 <label for="" class="aside-menu" title="按住拖动">菜单</label>
 
-                <a href="javascript:void(0)" title="签到" class="menu-item menu-first">签到</a>
+                <a href="javascript:void(0)" title="签到" id="signContent" class="menu-item menu-first">签到</a>
                 <s:if test="#session.user.uid == #session.listAllData.uid">
                     <a href="${pageContext.request.contextPath}/addTopic.jsp" title="发表文章" class="menu-item menu-second">发表文章</a>
                 </s:if>
@@ -110,9 +123,27 @@
         </div>
     </div>
 </div>
+
 <script type="text/javascript"src="js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript"src="js/new.js"></script>
+
 <script type="text/javascript">
+    $(function(){
+        $("#signContent").click(function(){
+            $("#signIn").show();
+        })
+        $(".btn").click(function(){
+            $("#signIn").hide();
+        })
+        //ajax获取日历json数据
+
+        $.get("${pageContext.request.contextPath}/SignAction_get",
+            function(data){
+                calUtil.init(data);
+            },"json");
+    })
+
+
     var oli = document.getElementsByTagName('li');
     oli[1].style.border="1px solid #fff";
     oli[1].style.borderRadius="20px";
@@ -124,7 +155,7 @@
             $('#content-text').empty();
             $.each( data1  , function(i, json1){
                 $("#content-text").append(
-                    "<div id='topPhoto'  >"+"<a href='UserAction_showUser?showUserId="+json1[2]+"'><img src="+${pageContext.request.contextPath}/headPortrait/+json1[1]+" class='img-circle'></a>" +
+                    "<div id='topPhoto'  >"+"<a href='UserAction_showUser?showUserId="+json1[2]+"'><img src='${pageContext.request.contextPath}/headPortrait/"+json1[1]+"' class='img-circle'></a>" +
                     "<a id='addDiv1' href='UserAction_showUser?showUserId="+json1[2]+"'>" + json1[0] + "</a>"+"</div>"
                 );
             });
