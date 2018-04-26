@@ -49,7 +49,7 @@ public class PersonDaoImpl extends HibernateDaoSupport implements PersonDao {
         return getHibernateTemplate().execute(new HibernateCallback<List<User>>() {
             @Override
             public List<User > doInHibernate(Session session) throws HibernateException {
-                String hql = "select username,headPortrait,uid from User where uid in (select follow_uid from Relation where uid = ? and type = ?)";//这里的表名不能直接填写表名，而是填写该表在orm元数据中的映射关系名字
+                String hql = "select username,headPortrait,uid from user where uid in (select follow_uid from relation where uid = ? and type = ?)";//这里的表名不能直接填写表名，而是填写该表在orm元数据中的映射关系名字
                 Query query = session.createSQLQuery(hql)
                         .setParameter(0, uid)
                         .setParameter(1, 2);

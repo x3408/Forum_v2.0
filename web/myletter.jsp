@@ -15,7 +15,7 @@
     <title>个人中心</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="css/asidenav.css" />
-    <link rel="stylesheet" type="text/css" href="css/personCenter.css" />
+    <link rel="stylesheet" type="text/css" href="css/personCenter.css?3" />
     <link rel="stylesheet" type="text/css" href="css/bigTalk.css" />
     <script type="text/javascript" src="js/calendar2.js"></script>
     <script src="js/jquery-1.8.3.js"></script>

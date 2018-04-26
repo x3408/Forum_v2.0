@@ -9,19 +9,18 @@
 	height: 300px;
 	background: url(../img/bg-pers.png) no-repeat;
 	background-size: 100%;
-	min-width: 1905px;
+	min-width: 1170px;
 	position: relative;
  
 }
 .head #signIn{
-	width:100%;
-	height:984px;
-	background:black;
+	width: 100%;
+	height: 100%;
+	background: black;
 	opacity: 0.5;
-
-	position: absolute;
-   display: none;
- z-index:10;
+	position: fixed;
+	display: none;
+	z-index: 10;
 }
 .head #signIn .btn{
 	position:absolute;
@@ -30,13 +29,13 @@
 	z-index:11;
 }
 .main {
-	width: 1500px;
+	width: 1170px;
 	height: 300px;
 	margin: auto;
 }
 
 .house {
-	width: 1500px;
+	width: 1170px;
 	height: 50px;
 	line-height: 50px;
 	z-index:12;
@@ -122,10 +121,10 @@
 
 .content{
 	width: 100%;
-	min-width: 1905px;
+	min-width: 1170px;
 }
 .content-main{
-	width: 1500px;
+	width: 1170px;
 	height: 100%;
 	margin: auto;
 	/*border: 1px darkolivegreen solid;*/

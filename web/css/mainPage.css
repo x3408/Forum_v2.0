@@ -38,12 +38,16 @@ body{
 }
 .arrow:hover{text-decoration: none;}
 #goOne .goOne-center  #prev{
-	color:#FFFFFF;
-	left:900px;
-	top:150px;
+	color: #FFFFFF;
+	/* left: 900px; */
+	top: 150px;
+	margin-left: 108px;
 }
 #goOne .goOne-center #next{
-	color:#04c2ef;
-	top:150px;
-	right:83px;
+	color: #04c2ef;
+	top: 150px;
+	/* float: right; */
+	/* margin-right: 30px; */
+	margin-left: 600px;
+
 }

@@ -5,6 +5,7 @@
 }
 body{
 	background-color:rgb(249,249,249);
+	min-width:1170px;
 }
 a{
 	text-decoration: none;
@@ -30,18 +31,15 @@ a{
 	font-size:20px;
 	float:left;
 	color:#05c1f1;
-	margin-left:180px;
-	margin-top:25px;
 	text-decoration:none;
 }
  .mainTop ol{
 	 float: left;
-	 margin-left: 110px;
 	 margin-top: 24px;
 	 display: inline-block;
 }
  .mainTop img{
-     margin-left:70px;
+     margin-left:30px;
 
 }
  .mainTop ul{
@@ -54,7 +52,7 @@ a{
 	margin-left:30px;
 }
 .mainTop ul li{
-	margin-left:30px;
+	/*margin-left:30px;*/
 }
 .nav-li a{
 	color:white;
@@ -87,7 +85,7 @@ a{
 	height:750px;
 	min-width:1170px;
 	/*border:solid 1px red;*/
-	font-size:30px;
+	font-size:19px;
 	position:relative;
 }
 #go2,#go3,#go4{
@@ -99,7 +97,7 @@ a{
 	position: absolute;
 	top:60px;
 	z-index:2;
-	margin-left:650px;
+
 	color:#e7e7e7;
 }
 #goOne  .goOne-find{
@@ -107,7 +105,7 @@ a{
 	position: absolute;
 	z-index:3;
 	margin-top:61px;
-	margin-left:725px;
+
 	display:inline-block;
 
 }
@@ -116,7 +114,6 @@ a{
 	font-size:23px;
 	z-index:2;
 	top:110px;
-	margin-left:690px;
 }
 #goOne a {
 	color:black;
@@ -124,15 +121,14 @@ a{
 #goOne .goOne-center{
 	width:100%;
 	margin-top:195px;
+	/*position:relative;*/
 	position: absolute;
 	height:400px;
-}
-#goOne .goOne-center div{
-	display: inline-block;
+	min-width:1170px;
 }
 #goOne .goOne-center .goOne-center--left{
 	display:inline-block;
-	width:600px;
+	width:400px;
 	margin-left:100px;
 	float:left;
 	height:400px;
@@ -141,7 +137,7 @@ a{
 	width:462px;
 	height:311px;
 	float:right;
-	margin-right:120px;
+	margin-right:65px;
 	overflow: hidden;
 	box-shadow:-30px 0 20px #d7d7d7,0 0 0,0 0 0,30px 0 20px #D7D7D7;
 }
@@ -152,14 +148,13 @@ a{
 	font-size:18px;
 }
 #goOne .goOne-buttom{
-	width:90px;
-	height:30px;
-	background:#05c1f1;
+	width: 90px;
+	height: 30px;
+	background: #05c1f1;
 	position: absolute;
-	left:905px;
-	top:630px;
-	border-radius:15px;
-
+	top: 630px;
+	margin-left: 690px;
+	border-radius: 15px;
 }
 #goOne .goOne-buttom a{
 	text-decoration: none;
@@ -179,13 +174,11 @@ a{
 	position: absolute;
 	/*border:solid 1px green;*/
 	height:500px;
+	min-width:1170px;
 }
-#go2 .goTwo-center div{
-	display: inline-block;
 
-}
 #go2 .goTwo-center .goTwo-leftTop{
-	width:600px;
+	width:400px;
    height:200px;
 float:left;
 	margin-left:100px;
@@ -196,19 +189,23 @@ float:left;
 
 }
 #go2 .goTwo-center .goTwo-rightTop,#go2 .goTwo-center .goTwo-rightButtom{
-	width:600px;
+	width:400px;
 	height:200px;
 	float:right;
 	margin-right:100px;
 }
 #go2 .goTwo-center .goTwo-leftButtom,#go2 .goTwo-center .goTwo-rightButtom{
-	margin-top:20px;
-	width:600px;
-	height:200px;
-	margin-left:100px;
+	width: 400px;
+	height: 200px;
+	float: left;
+	margin-left: 100px;
+	/* position: absolute; */
+	top: 200px;
 }
 #go2 .goTwo-center .goTwo-rightButtom{
+	float:right;
 	margin-right:100px;
+	margin-left:0px;
 }
 /*分享经验*/
 #go3{
@@ -236,13 +233,13 @@ float:left;
 	color:#f9f6f7;
 }
 #go3 .goThree-Center{
-	width:1200px;
+	min-width:1170px;
+	width:1170px;
 	margin-right:380px;
 	margin-top:155px;
 	position: absolute;
 	/*border:solid 1px green;*/
 	height:590px;
-	margin-left:300px;
 
 }
 /*//动画图片*/
@@ -274,33 +271,32 @@ float:left;
 	height:180px;
 	margin-right:2px;
 	margin-top:180px;
-	margin-left:30px;
+	margin-left:130px;
 	position: relative;
 	/*border:solid 3px black;*/
 }
 #go3 .goThree-Center .goThree-leftButtom{
 	float:right;
-	margin-right: 200px;
 	position: relative;
 	margin-top: 50px;
 }
 #go3 .goThree-Center .goThree-rightButtom{
-	margin-right: 200px;
 	float: right;
 	position: relative;
 	margin-top: -90px;
 }
 
 #oldSay{
-	width:320px;
-	height:200px;
-	font-size:23px;
-	color:white;
-	/*border:solid 3px black;*/
+	width: 320px;
+	height: 200px;
+	font-size: 23px;
+	color: white;
+	/* border: solid 3px black; */
 	position: absolute;
-	z-index:4;
-	top:40px;
-	left:300px;
+	z-index: 4;
+	margin-left: 360px;
+	top: 40px;
+	/* left: 300px; */
 }
 #oldSay .oldSayTwo{
 	font-size:16px;
@@ -308,10 +304,9 @@ float:left;
 }
 #go3 .goOne-buttom{
 	position: absolute;
-	top:290px;
-	z-index:40;
-	margin-left:20px;
-	background:#a4ddf9;
+	top: 380px;
+	z-index: 40;
+	background: #a4ddf9;
 
 
 }
@@ -321,6 +316,7 @@ float:left;
 #go4 .goFour-Center{
 	width:100%;
 	margin-top:195px;
+	min-width:1170px;
 	position: absolute;
 	/*border:solid 1px green;*/
 	height:400px;
@@ -328,13 +324,14 @@ float:left;
 #go4 .goFour-Center .goFour-CenterLeft,#go4 .goFour-Center .goFour-CenterLc,#go4 .goFour-Center .goFour-CenterRc,#go4 .goFour-Center .goFour-CenterRight{
 	width:210px;
 	height:350px;
+	margin-left:150px;
 	/*border:solid 3px black;*/
 	/*position: absolute;*/
-	margin-left:270px;
 	display: inline-block;
+
 }
 #go4 .goFour-Center .goFour-CenterLc,#go4 .goFour-Center .goFour-CenterRc,#go4 .goFour-Center .goFour-CenterRight{
-	margin-left:60px;
+	margin-left:10px;
 }
 #go4 .goFour-Center p{
 	font-size:20px;
@@ -375,11 +372,11 @@ float:left;
 
 }
  #sign{
-	display:inline-block;
-	float:right;
-	margin-right:40px;
-	 margin-top:29px;
-
+	 display: inline-block;
+	 margin-top: 29px;
+	 margin-left:160px;
+	 position: absolute;
+	 top: 10px;
 }
 #go2 #goOne .goTwo-center .newCenterOne{
 	font-size:20px;
@@ -393,12 +390,16 @@ float:left;
 	text-decoration: none;
 }
 #person-img{
+	display: inline-block;
 	width: 200px;
 	height: 70px;
-	float: right;
-	margin-right: 30px;
-	margin-top: 14px;
-
+	/* float: right; */
+	/* margin-right: 30px; */
+	/* margin-top: 14px; */
+	position: absolute;
+	top: 15px;
+	/* left: 1300px; */
+	margin-left: 100px;
 }
 #person-img img{
 	width:60px;
@@ -513,8 +514,8 @@ float:left;
 	z-index:20;
 	background:white;
 	/*border:solid 1px #d7d7d7;*/
-	left:400px;
-	top:-20px;
+	margin-left:30px;
+	top:-80px;
 	display: none;
 }
 #newMain #go4 #addCourse #addCourseLeft,#newMain #go4 #addCourse #addCourseRight{
@@ -603,4 +604,48 @@ float:left;
 	/*display:none;*/
 	 color:#d7d7d7;
 	left:50px;
+}
+ /*新增加的*/
+.mainTop #topMargin{
+	margin:0 auto;
+	width:800px;
+	height:93px;
+}
+.centerMargin{
+	width:1170px;
+	margin:auto;
+	min-width:1170px;
+}
+#go1 #oneAddTop{
+	margin:auto;
+	width:190px;
+	height:100px;
+}
+#go1 #oneAddTop p{
+	margin-left:30px;
+}
+#go1 #oneAddTop .goOne-find{
+	margin-left:70px;
+}
+#go2 #twoAddTop{
+	margin:auto;
+	width:190px;
+	height:100px;
+}
+#go2 #twoAddTop p{
+	margin-left:30px;
+}
+#go2 #twoAddTop .goOne-find{
+	margin-left:70px;
+}
+#go3 #threeAddTop,#go4 #fourAddTop{
+	margin:auto;
+	width:190px;
+	height:100px;
+}
+#go3 #threeAddTop p,#go4 #fourAddTop p{
+	margin-left:30px;
+}
+#go3 #threeAddTop .goOne-find,#go4 #fourAddTop .goOne-find{
+	margin-left:70px;
 }

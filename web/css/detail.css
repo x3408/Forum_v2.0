@@ -13,7 +13,7 @@
 	position: relative;
 }
 .center{
-	width: 1500px;
+	width: 1170px;
 	margin: auto;
 }
 .nav {
@@ -179,16 +179,16 @@ input::-webkit-input-placeholder{
 	
 }
 .main-center{
-	width: 1320px;
+	width: 1170px;
 	height: 100%;
 	margin: auto;
 	position: relative;
 }
 .box{
-	width: 580px;
+	width: 570px;
 	height: 200px;
 	float: left;
-	margin: 30px 70px 0 10px;
+	margin: 30px 15px 0 0px;
 	padding: 30px;
 	border: 1px solid rgba(245,245,245,0.8);
 	border-radius: 10px;

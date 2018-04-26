@@ -72,7 +72,7 @@ public class PersonAction extends ActionSupport implements ModelDriven<User>{
         User user = (User) ActionContext.getContext().getSession().get("listAllData");
         List<User> list2 = ps.findFans(user);
         String json2 = JSONArray.fromObject(list2).toString();
-        out.println(json2);
+
         ServletActionContext.getResponse().setContentType("application/json;charset=UTF-8");
         ServletActionContext.getResponse().getWriter().write(json2);
         return null;
